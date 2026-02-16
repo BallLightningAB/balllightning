@@ -1,0 +1,37 @@
+entries:
+  - date: "2026-02-16"
+    version: "0.1.1"
+    issue: "balllightning-cloud-remake"
+    commit: TBD
+    status: in_progress
+    title: "feat(rebuild): Visual QA, polish, and asset manifest"
+    details: |-
+      - Visual QA pass across all pages
+      - Asset manifest for logo ratios and OG image specs
+      - Biome/lint clean pass
+      - Typography refinements (Big Shoulders Variable)
+      - Contribution graph rendering fixes
+
+      Refs: specs/current-changes/implementation-plan-bl-rebuild.yaml
+
+  - date: "2026-01-23"
+    version: "0.1.0"
+    issue: "balllightning-cloud-remake"
+    commit: TBD
+    status: complete
+    title: "feat(rebuild): Debrand TBC boilerplate and build Ball Lightning site"
+    details: |-
+      - Debranded package.json, __root.tsx, structured-data.ts, meta.ts, email-service.ts
+      - Applied BL molten red/rose brand palette in styles.css (light + dark mode)
+      - Updated theme-provider storage key from tbc-theme to bl-theme
+      - Rewrote Header/Footer with BL navigation (Home, Services, Portfolio, Contact)
+      - Built Home page: trading card hero, GitHub contribution graph, founder section, TBC feed embed, newsletter CTA
+      - Built Services page with 3 tiers (Landing Page, Smart Site, Integrations) + competence grid
+      - Built Portfolio page with 5 scaffolded projects (Blightfell, Jorild.se, Skyscraper, Data Systems, Big Data)
+      - Updated Contact page for BL branding (email, colors, links)
+      - Removed TBC-specific routes (blog, news, newsletter, about) and supporting libs (content, newsletter, blog components, data)
+      - Rewrote TBC feed endpoint for TanStack Start (createServerFn)
+      - Updated sitemap.xml, robots.txt, manifest.json for balllightning.cloud
+      - Build passes successfully
+
+      Refs: specs/current-changes/hubert_build_brief_balllightning.yaml

@@ -1,0 +1,160 @@
+hubert_build_brief_balllightning:
+  meta:
+    date: 2026-01-19
+    project: "balllightning.cloud rebuild"
+    framework: "TanStack Start (existing boilerplate from thebuildercoil)"
+    working_dir: "/balllightning"
+    repo_status:
+      - "Repo folder copied from thebuildercoil → /balllightning"
+      - "node_modules removed"
+      - ".git removed (fresh history)"
+      - ".github retained (dependabot + secret-scan workflows)"
+      - ".vscode retained (Biome/Ultracite + TanStack workflow settings)"
+      - ".windsurf retained (agent rules/settings)"
+      - "pdd removed from /specs/memory-bank"
+      - "@active.yaml cleansed from /specs/"
+      - "@CHANGELOG.yaml cleansed from /specs/"
+      - "see https://github.com/BallLightningAB/brand-system/blob/main/README.md for instructions on how to use the shared Ball Lightning brand-system, which includes the shared PDD""
+    key_note:
+      - "This boilerplate is 'dirty/unredacted'—assume multiple-brand remnants exist and must be cleaned systematically."
+
+    main_initial_goals:
+      - "Analyze this file and the brand-system repo completely to understand the shared PDD and brand-system."
+      - "Create balllightning-pdd.yaml in /specs/ complementing the shared docs, never duplicate, instead reference frequently."
+      - "I have added content to migrate from the current site in specs/current-changes/content-migration. The images and videos are located in src/assets/portfolio/skyscraper."
+      - "I have added new content to add from LinkedIn for the blightfell and jorild.se projects in specs/current-changes/content-addition with their respective markdown files specs/current-changes/content-addition/blightfell/blightfell-project-documentation.md and specs/current-changes/content-addition/jorild-se/jorild-se-project-documentation.md. The images are located in src/assets/portfolio/blightfell (all relevant) and src/assets/portfolio/jorild-se (partially relevant)."
+      - "Create an implementation plan in @current-changes/ with a plan for cleaning the boilerplate of multiple-brand remnants as step 1 and building the site as step 2. Only complement the shared docs, never duplicate, instead reference frequently."
+      - "Once the plan is approved, build the site as fully as you can without interuptions."
+
+    memory_bank_usage:
+      must_keep:
+        path: "/balllightning/specs/memory-bank/memory-bank-usage.yaml"
+        reason: "Defines how our memory-bank system is used; do not delete or rewrite lightly."
+
+  build_goals:
+    primary:
+      - "Ship an SEO-first multi-page Ball Lightning site based on the thebuildercoil boilerplate."
+      - "Preserve shared structure/patterns: nav/footer, GitHub activity graph module, preview-card pattern, Resend contact form plumbing, tooling (Biome/Ultracite), overall layout system."
+      - "Replace TBC identity/content with Ball Lightning identity/content."
+    homepage_requirements:
+      hero:
+        layout: "2-column on desktop, stacked on mobile"
+        right_column: "Existing GitHub activity graph module (reuse as-is)"
+        left_column: "MTG-inspired trading card component"
+        trading_card:
+          image: "Use existing logo and favicon for now as placeholder"
+          copy: "Motto + short positioning text"
+          cta: "Primary CTA to Services or Portfolio"
+          note: "Must be easy to swap logo/image later without layout changes as I might want to re-use this feature"
+      embedded_tbc_content:
+        show:
+          - "Latest News (1 item)"
+          - "Latest Blog posts (2 items)"
+        ui: "Reuse existing preview-card pattern (smaller variant)"
+        behavior:
+          - "Cards link to canonical URLs on thebuildercoil.com"
+          - "Do not duplicate full content"
+    pages_and_ia:
+      required_pages:
+        - "/ (Home)"
+        - "/services"
+        - "/portfolio"
+        - "/contact"
+      optional_pages:
+        - "/portfolio/[slug] (case studies; start with 4–6 best)"
+        - "/about (lightweight; optional)"
+      services_content_source:
+        file: "specs/current-changes/content-addition/Services-text.md"
+        includes: ["Services", "Competence (brief)", "Selected work (brief)"]
+        excludes: ["Book a Meeting (leave out for now)"]
+      portfolio_migration:
+        source: "https://balllightning.cloud (existing site)"
+        plan:
+          - "Hubert inventories content and proposes initial project list (4–6)."
+        media_handling:
+          - "Build scaffolding with placeholders first if any are missing."
+
+  newsletter_policy:
+    canonical_newsletter: "The Upkeep (owned by The Builder Coil only)"
+    strict_rules:
+      - "Ball Lightning must NOT store subscriber PII."
+      - "Ball Lightning must NOT implement signup form that posts to its own storage."
+      - "Ball Lightning may show a CTA/button linking to TBC newsletter signup page/section."
+    note_for_cleanup:
+      - "If boilerplate contains local subscriber JSON storage or signup handling, remove/disable it for Ball Lightning and replace with CTA-only."
+
+  tbc_feed_endpoint_requirement:
+    intent: "Fresh updates on Ball Lightning without manual syncing."
+    decision: "Implement a public feed/endpoint on thebuildercoil and consume it from Ball Lightning."
+    responsibilities:
+      thebuildercoil_side:
+        - "Expose stable public endpoint returning minimal metadata for blog+news. Implemented in src/lib/builder-coil/feed.ts"
+        - "Include: type (blog/news), title, canonical URL/slug, published_at, excerpt, image metadata. Implemented in src/types/builder-coil-feed.ts"
+        - "Cache-friendly headers preferred."
+      balllightning_side:
+        - "Server-side fetch with caching/revalidation."
+        - "Graceful fallback if endpoint is unavailable (no broken homepage)."
+        - "See specs/current-changes/content-addition/tbc_feed_endpoint_implementation.md for a sample implementation file."
+    implementation_freedom:
+      - "Hubert chooses exact endpoint path/shape and consumption strategy."
+
+  cleanup_and_debranding_checklist:
+    remove_or_replace:
+      - "All TBC names in UI, metadata, structured data, and default OG settings"
+      - "TBC-specific canonical URLs/sitemap base if present"
+      - "TBC animated logo/background (do not reuse for Ball Lightning)"
+      - "Any TBC-only navigation items or routes (unless explicitly kept)"
+      - "Any local newsletter subscriber storage (CTA-only instead)"
+    keep:
+      - "Shared components and styling system"
+      - "GitHub activity graph"
+      - "Preview-card pattern (for TBC embeds)"
+      - "Resend contact form plumbing (Ball Lightning contact only)"
+      - "Biome/Ultracite config and editor/agent rules (.vscode, .windsurf)"
+      - ".github workflows (dependabot, secret scan)"
+
+  environment_and_secrets:
+    rules:
+      - "No secrets committed; all values in Vercel env vars."
+      - "Public repo is expected; ensure no private keys/IDs are introduced."
+      - "Ok to document env var names, not values; avoid posting internal endpoints/account IDs in docs."
+    resend_contact_form:
+      - "Confirm Ball Lightning contact form uses correct recipient and sender identity."
+      - "Ensure it does not share The Upkeep sending identity."
+
+  operational_steps_for_hubert:
+    step_0_sanity:
+      - "Confirm build runs locally (install → dev)."
+      - "Confirm Biome/Ultracite runs clean."
+    step_1_debrand:
+      - "Global replace brand identifiers, metadata, social links."
+      - "Update structured data if present."
+    step_2_pages:
+      - "Implement required pages + routing."
+      - "Populate Services page from provided markdown."
+      - "Scaffold Portfolio."
+    step_3_home_modules:
+      - "Implement hero: card left + GH graph right."
+      - "Embed TBC content cards via feed endpoint."
+      - "Add newsletter CTA linking to TBC."
+    step_4_seo:
+      - "Verify canonical, OG, sitemap/robots behaviors in Ball Lightning."
+      - "Ensure no duplicate full content from TBC."
+    step_5_asset_manifest:
+      - "Provide Nicolas a concise list of needed assets (names, ratios, sizes)."
+
+  acceptance_criteria:
+    - "No visible TBC branding on Ball Lightning site (except explicit 'From The Builder Coil' embeds)."
+    - "Home hero matches: trading card left + GH graph right (desktop)."
+    - "Home shows 1 latest TBC news + 2 latest TBC blog cards linking to canonical URLs."
+    - "Services page is present and populated; Book a Meeting excluded."
+    - "Portfolio exists and is ready for migrated content; at least 2 projects scaffolded."
+    - "Newsletter is CTA-only to TBC; no subscriber storage or signup on Ball Lightning."
+    - "Build + lint pass; no accidental generated directories committed."
+    - "memory-bank-usage.yaml remains intact and referenced by the repo’s docs/workflow."
+
+  reminders_possible_gotchas:
+    - "Verify TanStack Start SSR behavior so preview cards are server-rendered HTML."
+    - "Ensure .output/.tanstack/.vercel are not committed (gitignore)."
+    - "Double-check metadata/canonical base URL after debranding."
+    - "Confirm no hidden newsletter PII path exists in Ball Lightning build."

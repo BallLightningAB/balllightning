@@ -1,0 +1,130 @@
+balllightning_pdd:
+  meta:
+    name: "Ball Lightning AB — Site PDD"
+    code_name: "balllightning-pdd"
+    version: "0.1.0"
+    repo: "https://github.com/BallLightningAB/balllightning"
+    domain: "https://balllightning.cloud"
+    github_project: "https://github.com/users/BallLightningAB/projects/9"
+    owner:
+      individual: "Nicolas Brulay"
+      company: "Ball Lightning AB"
+    shared_references:
+      ecosystem_pdd: "https://github.com/BallLightningAB/brand-system/blob/main/shared-ecosystem-pdd.yaml"
+      architecture: "https://github.com/BallLightningAB/brand-system/blob/main/shared-architecture.yaml"
+      design_system: "https://github.com/BallLightningAB/brand-system/blob/main/shared-design-system.yaml"
+      brand_assets: "https://github.com/BallLightningAB/brand-system/tree/main/brand-assets"
+
+  product:
+    kind: "company_site"
+    description: >-
+      Primary company site for Ball Lightning AB. Showcases consulting services,
+      portfolio of completed projects, and provides a contact channel. SEO-first,
+      multi-page site built on TanStack Start.
+    positioning: >-
+      Ball Lightning AB is a software consulting and product development company
+      specializing in full-stack web development, systems integration, and AI-driven
+      solutions. Founded by Nicolas Brulay in Gothenburg, Sweden.
+
+  techstack:
+    # Inherits shared architecture — see shared-architecture.yaml
+    framework: "TanStack Start (Router + Loaders + Server Functions)"
+    runtime: "Vercel (Node)"
+    language: "TypeScript"
+    styling:
+      css: "TailwindCSS v4"
+      ui: "shadcn/ui, Lucide icons, Motion (Framer Motion)"
+    tooling:
+      lint_format: ["Biome", "Ultracite"]
+      hosting: "Vercel"
+    email:
+      provider: "Resend"
+      usage: "Contact form only (no newsletter)"
+
+  design:
+    # Inherits shared design foundations — see shared-design-system.yaml
+    brand: "balllightning"
+    color_reference: "shared-design-system.yaml#design.shared.color_schemes.balllightning"
+    typography_reference: "shared-design-system.yaml#design.shared.typography"
+    key_colors:
+      dark:
+        background_base: "#05070A"
+        background_elevated: "#0A1014"
+        foreground_body: "#E5E7EB"
+        heading_cream: "#F5E6D3"
+        deep_molten: "#9C1B12"
+        mid_red: "#DD3A28"
+        warm_rose: "#FF7268"
+        pale_ember: "#FFD4C9"
+        gradient: "linear-gradient(135deg, #DD3A28, #FF7268)"
+      light:
+        background_base: "#F5E6D3"
+        foreground_primary: "#111827"
+        deep_molten: "#9C1B12"
+        mid_red: "#DD3A28"
+    semantic_tokens:
+      brand_accent_1: "#DD3A28"
+      brand_accent_2: "#FF7268"
+      brand_gradient: "var(--bl-primary)"
+      brand_tag_bg: "rgba(221,58,40,0.16)"
+      brand_tag_text: "#F5E6D3"
+
+  routes:
+    required:
+      - path: "/"
+        purpose: "Home — hero (trading card + GH graph), TBC content embed, newsletter CTA"
+      - path: "/services"
+        purpose: "Service offerings with pricing tiers"
+      - path: "/portfolio"
+        purpose: "Portfolio index with project cards"
+      - path: "/contact"
+        purpose: "Contact form via Resend + company info"
+    optional:
+      - path: "/portfolio/:slug"
+        purpose: "Individual project case studies"
+      - path: "/about"
+        purpose: "Lightweight about page (optional — founder info on home for now)"
+
+  content:
+    services:
+      source: "specs/current-changes/content-addition/Services-text.md"
+      tiers: ["Landing Page", "Smart Site (Light)", "Integrations & APIs"]
+      excludes: ["Book a Meeting section"]
+    portfolio:
+      projects:
+        - slug: "blightfell"
+          title: "Blightfell — Web3 Integration for a Strategy Autobattler"
+          source: "specs/current-changes/content-addition/blightfell/blightfell-project-documentation.md"
+          assets: "src/assets/portfolio/blightfell/"
+        - slug: "jorild-se"
+          title: "Jorild.se — Modern Bilingual Clinic Website"
+          source: "specs/current-changes/content-addition/jorild-se/jorild-se-project-documentation.md"
+          assets: "src/assets/portfolio/jorild-se/"
+        - slug: "skyscraper"
+          title: "Skyscraper — Strategic MMO Deckbattler"
+          source: "specs/current-changes/content-migration/ (chapter-1.tsx)"
+          assets: "src/assets/portfolio/skyscraper/"
+        - slug: "data-driven-systems"
+          title: "Data-Driven Functional Systems Design"
+          source: "specs/current-changes/content-migration/ (chapter-2.tsx)"
+        - slug: "big-data-optimization"
+          title: "Big Data Optimization System"
+          source: "specs/current-changes/content-migration/ (chapter-2.tsx)"
+    tbc_feed:
+      description: "Embed latest TBC blog/news on homepage via public endpoint"
+      show: ["1 latest news", "2 latest blog posts"]
+      behavior: "Cards link to canonical URLs on thebuildercoil.com"
+      fallback: "Graceful degradation if endpoint unavailable"
+
+  policies:
+    newsletter:
+      rule: "CTA-only linking to The Builder Coil — no subscriber PII storage"
+      reference: "shared-design-system.yaml#cross_brand_policies.newsletter"
+    content_syndication:
+      rule: "Preview cards only, link to canonical TBC URLs, no full content duplication"
+      reference: "shared-design-system.yaml#cross_brand_policies.content_syndication"
+    secrets:
+      rule: "All values in Vercel env vars, public repo expected"
+    contact_form:
+      recipient: "info@balllightning.cloud"
+      sender_identity: "Ball Lightning <noreply@updates.chronomation.com>"

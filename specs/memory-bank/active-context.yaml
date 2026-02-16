@@ -1,0 +1,58 @@
+meta:
+  release: "0.1.1"
+  repo: github.com/BallLightningAB/balllightning
+  project: https://github.com/users/BallLightningAB/projects/9
+  pdd_version: "1.0"
+  current_changes: see specs/current-changes/
+  future_changes: see specs/future-changes/
+  references:
+    pdd: specs/balllightning-pdd.yaml
+    changelog: specs/CHANGELOG.yaml
+  # Legend:
+  # - I{issue}D{n}: deliverable n for GitHub issue #{issue} (e.g. I3D3 = Issue #3 Deliverable 3)
+  # - I3Docs / I3UI / I3Fix / I3Test / I3Biome: tags for documentation, UI polish, minor fixes, tests and Biome/tooling work not tied to a single deliverable
+roadmap:
+  current:
+    - id: balllightning-cloud-remake
+      issue: "#TBD"
+      title: "Remake Ball Lightning cloud site with TBC tech stack"
+      status: in_progress
+      links:
+        issue: ""
+        pr: ""
+      deliverables:
+        - "[done] Debrand boilerplate (package.json, metadata, styles, structured data)"
+        - "[done] Apply BL brand colors (molten red/rose palette)"
+        - "[done] Update Header/Footer for BL navigation"
+        - "[done] Build Home page (hero card, GH graph, founder, TBC feed, newsletter CTA)"
+        - "[done] Build Services page from Services-text.md"
+        - "[done] Build Portfolio page (5 scaffolded projects)"
+        - "[done] Update Contact page for BL"
+        - "[done] Remove TBC routes (blog, news, newsletter, about) + supporting libs"
+        - "[done] Update SEO (sitemap, robots, manifest, meta.ts, structured-data.ts)"
+        - "[done] Build passes successfully"
+        - "[pending] Visual QA and polish"
+        - "[pending] Asset manifest for logo/OG images"
+      est:
+        dev_h: 8
+        test_h: 2
+      sub_issues: []
+      remaining_deliverables:
+        - "Visual QA pass"
+        - "Asset manifest (logo ratios, OG image specs)"
+        - "Lint/Biome clean pass"
+      progress_log:
+        - "2026-01-23: PDD + implementation plan created"
+        - "2026-01-23: Full debranding pass complete"
+        - "2026-01-23: All core pages built (home, services, portfolio, contact)"
+        - "2026-01-23: TBC routes removed, feed endpoint rewritten for TanStack Start"
+        - "2026-01-23: Build passes with zero errors"
+  next_steps:
+    - "Visual QA — verify pages in browser"
+    - "Run Biome/lint for code quality"
+    - "Provide asset manifest to Nicolas"
+  recent_done:
+    - "Full site debranding from TBC to Ball Lightning AB"
+    - "Home page with trading card hero, GH graph, founder section, TBC feed embed"
+    - "Services page with 3 tiers + competence grid"
+    - "Portfolio page with 5 scaffolded project case studies"
