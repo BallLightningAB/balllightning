@@ -22,6 +22,7 @@ interface Project {
 	tags: string[];
 	image?: string;
 	externalUrl?: string;
+	secondaryUrl?: string;
 }
 
 const projects: Project[] = [
@@ -32,6 +33,17 @@ const projects: Project[] = [
 		description:
 			"Designed and implemented the Favor system for a blockchain-integrated autobattler — purchase flows, concurrency protection, and backend endpoints powering in-game currency mechanics.",
 		tags: ["Web3", "Node.js", "PostgreSQL", "Game Backend", "API Design"],
+		externalUrl: "https://blightfell.com",
+		secondaryUrl: "https://store.steampowered.com/app/3883980/Blightfell/",
+	},
+	{
+		slug: "the-builder-coil",
+		title: "The Builder Coil",
+		subtitle: "Developer Blog & Content Platform",
+		description:
+			"A public builder's log documenting the journey of shipping software. Built with TanStack Start, featuring a custom CMS, RSS feed API, newsletter system, and structured SEO — the same stack powering this site.",
+		tags: ["TanStack Start", "CMS", "SEO", "Newsletter", "Full-Stack"],
+		externalUrl: "https://thebuildercoil.com",
 	},
 	{
 		slug: "jorild-se",
@@ -51,14 +63,6 @@ const projects: Project[] = [
 		tags: ["Game Dev", "MMO", "Project Management", "Systems Design"],
 	},
 	{
-		slug: "data-driven-systems",
-		title: "Data-Driven Functional Systems",
-		subtitle: "Enterprise Systems Design",
-		description:
-			"Designed and implemented data-driven functional systems for enterprise clients — optimizing data pipelines, reporting workflows, and cross-system integrations for measurable business impact.",
-		tags: ["Data Engineering", "Systems Design", "ETL", "Analytics"],
-	},
-	{
 		slug: "big-data-optimization",
 		title: "Big Data Optimization",
 		subtitle: "Performance at Scale",
@@ -67,13 +71,12 @@ const projects: Project[] = [
 		tags: ["Big Data", "Performance", "PostgreSQL", "Infrastructure"],
 	},
 	{
-		slug: "the-builder-coil",
-		title: "The Builder Coil",
-		subtitle: "Developer Blog & Content Platform",
+		slug: "data-driven-systems",
+		title: "Data-Driven Functional Systems",
+		subtitle: "Enterprise Systems Design",
 		description:
-			"A public builder's log documenting the journey of shipping software. Built with TanStack Start, featuring a custom CMS, RSS feed API, newsletter system, and structured SEO — the same stack powering this site.",
-		tags: ["TanStack Start", "CMS", "SEO", "Newsletter", "Full-Stack"],
-		externalUrl: "https://thebuildercoil.com",
+			"Designed and implemented data-driven functional systems for enterprise clients — optimizing data pipelines, reporting workflows, and cross-system integrations for measurable business impact.",
+		tags: ["Data Engineering", "Systems Design", "ETL", "Analytics"],
 	},
 ];
 
@@ -138,15 +141,29 @@ function PortfolioPage() {
 								<p className="mb-4 flex-1 text-sm text-muted-foreground">
 									{project.description}
 								</p>
-								{project.externalUrl && (
-									<a
-										className="inline-flex items-center gap-1 text-sm text-bl-red hover:underline"
-										href={project.externalUrl}
-										rel="noopener noreferrer"
-										target="_blank"
-									>
-										Visit site <ExternalLink className="h-3 w-3" />
-									</a>
+								{(project.externalUrl || project.secondaryUrl) && (
+									<div className="flex flex-wrap gap-3">
+										{project.externalUrl && (
+											<a
+												className="inline-flex items-center gap-1 text-sm text-bl-red hover:underline"
+												href={project.externalUrl}
+												rel="noopener noreferrer"
+												target="_blank"
+											>
+												Visit site <ExternalLink className="h-3 w-3" />
+											</a>
+										)}
+										{project.secondaryUrl && (
+											<a
+												className="inline-flex items-center gap-1 text-sm text-bl-red hover:underline"
+												href={project.secondaryUrl}
+												rel="noopener noreferrer"
+												target="_blank"
+											>
+												View on Steam <ExternalLink className="h-3 w-3" />
+											</a>
+										)}
+									</div>
 								)}
 							</CardContent>
 						</Card>
@@ -159,7 +176,7 @@ function PortfolioPage() {
 						Ready to build something?
 					</h2>
 					<p className="mb-6 text-muted-foreground">
-						Tell us what you need and we'll scope it within 48 hours.
+						Tell me what you need and I'll scope it within 48 hours.
 					</p>
 					<Button asChild className="gap-2" size="lg">
 						<Link to="/contact">

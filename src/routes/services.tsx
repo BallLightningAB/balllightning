@@ -20,7 +20,7 @@ const serviceTiers = [
 		title: "Landing Page",
 		price: "From 15 000 SEK",
 		description:
-			"A single-page marketing site designed to convert visitors into leads or customers.",
+			"A single-page marketing site designed to convert visitors into leads or customers. Perfect for restaurants, salons, shops, and service businesses.",
 		features: [
 			"Responsive design (mobile-first)",
 			"SEO-optimized structure",
@@ -106,7 +106,7 @@ function ServicesPage() {
 				<div className="mb-16 text-center">
 					<h1 className="mb-4 font-bold text-4xl md:text-5xl">Services</h1>
 					<p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-						From landing pages to complex integrations — we build fast, modern
+						From landing pages to complex integrations — I build fast, modern
 						web applications that rank, convert, and scale. Every project ships
 						with performance, SEO, and clean code baked in.
 					</p>

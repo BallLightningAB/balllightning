@@ -74,7 +74,7 @@ export function Header() {
 						{socialLinks.map((link) => (
 							<a
 								aria-label={link.label}
-								className="rounded-md p-2 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+								className="rounded-md p-3 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
 								href={link.href}
 								key={link.href}
 								rel="noopener noreferrer"

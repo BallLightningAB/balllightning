@@ -13,7 +13,7 @@ import { AnimatedGroup } from "@/components/motion-primitives/animated-group";
 import { TextEffect } from "@/components/motion-primitives/text-effect";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { getBuilderCoilFeed } from "@/lib/builder-coil/feed";
+import { type FeedItem, getBuilderCoilFeed } from "@/lib/builder-coil/feed";
 import { getGitHubContributions } from "@/lib/github";
 
 export const Route = createFileRoute("/")({
@@ -32,9 +32,9 @@ function HomePage() {
 	const { feed, github } = Route.useLoaderData();
 
 	const newsItems =
-		feed?.items.filter((i) => i.type === "news").slice(0, 1) ?? [];
+		feed?.items.filter((i: FeedItem) => i.type === "news").slice(0, 1) ?? [];
 	const blogItems =
-		feed?.items.filter((i) => i.type === "blog").slice(0, 2) ?? [];
+		feed?.items.filter((i: FeedItem) => i.type === "blog").slice(0, 2) ?? [];
 	const feedCards = [...newsItems, ...blogItems];
 
 	return (
@@ -67,7 +67,7 @@ function HomePage() {
 						>
 							<TextEffect
 								as="h1"
-								className="mb-6 font-bold leading-tight"
+								className="mb-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
 								preset="fade-in-blur"
 							>
 								Ship faster with{" "}
@@ -113,7 +113,7 @@ function HomePage() {
 							>
 								<Button asChild className="gap-2" size="lg">
 									<Link to="/services">
-										See What We Build
+										See What I Build
 										<ArrowRight className="h-4 w-4" />
 									</Link>
 								</Button>
@@ -140,7 +140,7 @@ function HomePage() {
 										{github ? (
 											<ContributionGraph
 												blockRadius={2}
-												blockSize={12}
+												blockSize={10}
 												data={github.activities}
 												totalCount={github.totalCount}
 											>
@@ -236,7 +236,7 @@ function HomePage() {
 				<section className="border-border border-t bg-background py-16 md:py-24">
 					<div className="container mx-auto max-w-6xl px-4">
 						<AnimatedGroup
-							className="mb-12 flex items-center justify-between"
+							className="mb-12 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"
 							variants={{
 								container: {
 									hidden: { opacity: 0, y: 24, filter: "blur(12px)" },
@@ -361,7 +361,7 @@ function HomePage() {
 					<div className="mx-auto max-w-2xl text-center">
 						<h2 className="mb-4 font-semibold text-3xl">Stay in the Loop</h2>
 						<p className="mb-2 font-medium text-lg text-bl-red">
-							Our builder's newsletter
+							My builder's newsletter
 						</p>
 						<p className="mb-8 text-muted-foreground">
 							Devlogs from The Builder Coil sharing progress on Chronomation,

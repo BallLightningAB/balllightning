@@ -1,9 +1,26 @@
 entries:
   - date: "2026-02-16"
-    version: "0.1.1"
-    issue: "balllightning-cloud-remake"
+    version: "0.1.2"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/1"
     commit: TBD
-    status: in_progress
+    status: in-progress
+    title: "feat(content): First-person voice, portfolio updates, and PostCSS fix"
+    details: |-
+      - Convert entire site to first-person voice (I/my instead of we/our)
+      - Update Services Landing Page description to include restaurants/shops
+      - Add Blightfell Steam and website links to portfolio
+      - Reorder portfolio projects chronologically (Blightfell, TBC, Jorild.se, Skyscraper, Big Data, Data-Driven)
+      - Resolve PostCSS @import warning with proper font import ordering
+      - Mobile-responsiveness review completed with touch target optimizations
+      - Dev server running cleanly without warnings
+
+      Refs: specs/current-changes/implementation-plan-bl-rebuild.yaml
+
+  - date: "2026-02-16"
+    version: "0.1.1"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/1"
+    commit: TBD
+    status: completed
     title: "feat(rebuild): Visual QA, polish, and asset manifest"
     details: |-
       - Visual QA pass across all pages
@@ -16,7 +33,7 @@ entries:
 
   - date: "2026-01-23"
     version: "0.1.0"
-    issue: "balllightning-cloud-remake"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/1"
     commit: TBD
     status: complete
     title: "feat(rebuild): Debrand TBC boilerplate and build Ball Lightning site"

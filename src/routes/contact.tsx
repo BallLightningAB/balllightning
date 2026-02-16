@@ -72,8 +72,7 @@ function ContactPage() {
 				<div className="mb-16 text-center">
 					<h1 className="mb-4 font-bold text-4xl md:text-5xl">Get in Touch</h1>
 					<p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-						Have a project in mind? We typically respond within one business
-						day.
+						Have a project in mind? I typically respond within one business day.
 					</p>
 				</div>
 
@@ -86,7 +85,7 @@ function ContactPage() {
 							<Card className="border-green-500/50 bg-green-500/10">
 								<CardContent className="pt-6">
 									<p className="text-center text-green-400">
-										Thanks for your message! We'll get back to you soon.
+										Thanks for your message! I'll get back to you soon.
 									</p>
 								</CardContent>
 							</Card>
@@ -118,7 +117,7 @@ function ContactPage() {
 									<Textarea
 										id="message"
 										name="message"
-										placeholder="How can we help?"
+										placeholder="How can I help?"
 										required
 										rows={5}
 									/>

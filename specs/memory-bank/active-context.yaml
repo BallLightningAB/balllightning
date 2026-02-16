@@ -1,5 +1,5 @@
 meta:
-  release: "0.1.1"
+  release: "0.1.2"
   repo: github.com/BallLightningAB/balllightning
   project: https://github.com/users/BallLightningAB/projects/9
   pdd_version: "1.0"
@@ -14,11 +14,11 @@ meta:
 roadmap:
   current:
     - id: balllightning-cloud-remake
-      issue: "#TBD"
+      issue: https://github.com/BallLightningAB/balllightning/issues/1"
       title: "Remake Ball Lightning cloud site with TBC tech stack"
-      status: in_progress
+      status: in-progress
       links:
-        issue: ""
+        issue: "https://github.com/BallLightningAB/balllightning/issues/1"
         pr: ""
       deliverables:
         - "[done] Debrand boilerplate (package.json, metadata, styles, structured data)"
@@ -31,6 +31,9 @@ roadmap:
         - "[done] Remove TBC routes (blog, news, newsletter, about) + supporting libs"
         - "[done] Update SEO (sitemap, robots, manifest, meta.ts, structured-data.ts)"
         - "[done] Build passes successfully"
+        - "[done] Mobile-responsiveness review (viewport, touch targets, typography)"
+        - "[done] Content updates (first-person voice, service descriptions, portfolio links/ordering)"
+        - "[done] PostCSS warning resolution (font imports)"
         - "[pending] Visual QA and polish"
         - "[pending] Asset manifest for logo/OG images"
       est:
@@ -40,13 +43,16 @@ roadmap:
       remaining_deliverables:
         - "Visual QA pass"
         - "Asset manifest (logo ratios, OG image specs)"
-        - "Lint/Biome clean pass"
       progress_log:
         - "2026-01-23: PDD + implementation plan created"
         - "2026-01-23: Full debranding pass complete"
         - "2026-01-23: All core pages built (home, services, portfolio, contact)"
         - "2026-01-23: TBC routes removed, feed endpoint rewritten for TanStack Start"
-        - "2026-01-23: Build passes with zero errors"
+        - "2026-02-16: Mobile-responsiveness review completed"
+        - "2026-02-16: Content updates - first-person voice across all pages"
+        - "2026-02-16: Portfolio updates - Blightfell links, chronological ordering"
+        - "2026-02-16: PostCSS warning resolved with proper font import ordering"
+        - "2026-02-16: Dev server running cleanly on port 3001"
   next_steps:
     - "Visual QA — verify pages in browser"
     - "Run Biome/lint for code quality"

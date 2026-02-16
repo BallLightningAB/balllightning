@@ -39,7 +39,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRoute
-  '/portfolio/': typeof PortfolioIndexRoute
+  '/portfolio': typeof PortfolioIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -56,7 +56,7 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contact' | '/services' | '/portfolio/'
+  fullPaths: '/' | '/contact' | '/services' | '/portfolio'
   fileRoutesByTo: FileRoutesByTo
   to: '/' | '/contact' | '/services' | '/portfolio'
   id: '__root__' | '/' | '/contact' | '/services' | '/portfolio/'
@@ -95,7 +95,7 @@ declare module '@tanstack/react-router' {
     '/portfolio/': {
       id: '/portfolio/'
       path: '/portfolio'
-      fullPath: '/portfolio/'
+      fullPath: '/portfolio'
       preLoaderRoute: typeof PortfolioIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
