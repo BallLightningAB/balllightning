@@ -5,15 +5,16 @@ repos:
       - id: detect-private-key
         name: Detect private keys
 
-  # Run Gitleaks locally if installed.
-  - repo: local
-    hooks:
-      - id: gitleaks-protect
-        name: Gitleaks (local)
-        entry: gitleaks protect --verbose --redact --staged
-        language: system
-        types: [text]
-        pass_filenames: false
+  # Gitleaks hook removed - not installed
+  # To enable: install gitleaks and uncomment below:
+  # - repo: local
+  #   hooks:
+  #     - id: gitleaks-protect
+  #       name: Gitleaks (local)
+  #       entry: gitleaks protect --verbose --redact --staged
+  #       language: system
+  #       types: [text]
+  #       pass_filenames: false
 # Usage:
 #   1) Install pre-commit: pip install pre-commit  (or pipx install pre-commit)
 #   2) pre-commit install

@@ -97,11 +97,31 @@ Apply BL palette from `shared-design-system.yaml#balllightning`:
 ---
 
 ## Acceptance Criteria (from build brief)
-- [ ] No visible TBC branding (except explicit "From The Builder Coil" embeds)
-- [ ] Home hero: trading card left + GH graph right (desktop)
-- [ ] Home shows 1 latest TBC news + 2 latest TBC blog cards → canonical URLs
-- [ ] Services page present and populated; Book a Meeting excluded
-- [ ] Portfolio exists with at least 2 projects scaffolded
-- [ ] Newsletter CTA-only to TBC; no subscriber storage on BL
-- [ ] Build + lint pass; no accidental generated directories committed
-- [ ] memory-bank-usage.yaml remains intact
+- [x] No visible TBC branding (except explicit "From The Builder Coil" embeds)
+- [x] Home hero: trading card left + GH graph right (desktop)
+- [x] Home shows 1 latest TBC news + 2 latest TBC blog cards → canonical URLs
+- [x] Services page present and populated; Book a Meeting excluded
+- [x] Portfolio exists with at least 2 projects scaffolded (6 projects total)
+- [x] Newsletter CTA-only to TBC; no subscriber storage on BL
+- [x] Build + lint pass; no accidental generated directories committed
+- [x] memory-bank-usage.yaml remains intact
+
+## Status: ✅ All Acceptance Criteria Met
+
+**Completed**: 2026-02-17  
+**Issue**: [#1](https://github.com/BallLightningAB/balllightning/issues/1) — Closed  
+**Visual QA**: `specs/deliverables/visual-qa-report.md`  
+**Asset Manifest**: `specs/deliverables/asset-manifest.md`
+
+### Deliverables Complete (15/15)
+- ✅ Debranding complete
+- ✅ BL brand palette applied
+- ✅ All pages built (Home, Services, Portfolio, Contact)
+- ✅ Mobile-responsive
+- ✅ First-person voice throughout
+- ✅ Visual QA passed
+- ✅ Asset manifest created
+
+### Next Steps (Separate Issues)
+- **Issue #2**: Portfolio subpages and post-v1 enhancements
+- **Issue #3**: Asset assembly (logo, favicon, OG images) - **Critical for launch**
