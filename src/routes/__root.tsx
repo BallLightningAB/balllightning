@@ -47,6 +47,62 @@ export const Route = createRootRoute({
 				content:
 					"Software consulting and product development. Full-stack web, systems integration, and AI-driven solutions by Ball Lightning AB.",
 			},
+			{
+				name: "theme-color",
+				content: "#DD3A28",
+			},
+			{
+				name: "msapplication-TileColor",
+				content: "#DD3A28",
+			},
+			// Open Graph
+			{
+				property: "og:title",
+				content: "Ball Lightning AB | Software Consulting & Development",
+			},
+			{
+				property: "og:description",
+				content:
+					"Software consulting and product development. Full-stack web, systems integration, and AI-driven solutions by Ball Lightning AB.",
+			},
+			{
+				property: "og:image",
+				content: "/og-home.png",
+			},
+			{
+				property: "og:image:width",
+				content: "1200",
+			},
+			{
+				property: "og:image:height",
+				content: "630",
+			},
+			{
+				property: "og:type",
+				content: "website",
+			},
+			{
+				property: "og:site_name",
+				content: "Ball Lightning AB",
+			},
+			// Twitter Card
+			{
+				name: "twitter:card",
+				content: "summary_large_image",
+			},
+			{
+				name: "twitter:title",
+				content: "Ball Lightning AB | Software Consulting & Development",
+			},
+			{
+				name: "twitter:description",
+				content:
+					"Software consulting and product development. Full-stack web, systems integration, and AI-driven solutions.",
+			},
+			{
+				name: "twitter:image",
+				content: "/og-home.png",
+			},
 		],
 		links: [
 			{
@@ -66,9 +122,33 @@ export const Route = createRootRoute({
 				rel: "stylesheet",
 				href: "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@400;500;600;700&display=swap",
 			},
+			// Favicon
 			{
 				rel: "icon",
 				href: "/favicon.ico",
+				sizes: "any",
+			},
+			{
+				rel: "icon",
+				href: "/favicon-16x16.png",
+				sizes: "16x16",
+				type: "image/png",
+			},
+			{
+				rel: "icon",
+				href: "/favicon-32x32.png",
+				sizes: "32x32",
+				type: "image/png",
+			},
+			// Apple Touch Icon
+			{
+				rel: "apple-touch-icon",
+				href: "/apple-touch-icon.png",
+			},
+			// Manifest
+			{
+				rel: "manifest",
+				href: "/site.webmanifest",
 			},
 		],
 		scripts: [

@@ -36,10 +36,10 @@ export function Footer() {
 						<Link className="flex items-center gap-2" to="/">
 							<img
 								alt="Ball Lightning AB"
-								className="h-6 w-6"
-								height={24}
+								className="h-12 w-12"
+								height={48}
 								src="/logo.png"
-								width={24}
+								width={48}
 							/>
 							<span className="font-heading font-semibold text-lg">
 								Ball Lightning

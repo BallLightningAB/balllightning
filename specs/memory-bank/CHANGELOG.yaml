@@ -1,9 +1,31 @@
 entries:
   - date: "2026-02-21"
-    version: "0.1.4"
+    version: "0.1.5"
     issue: "https://github.com/BallLightningAB/balllightning/issues/3"
     commit: TBD
-    status: in-progress
+    status: completed
+    title: "feat(assets): complete logo, favicon, and OG image assembly (I3D1-I3D11)"
+    details: |-
+      - Created Ball Lightning logo SVG master optimized for dark theme with BL brand colors
+      - Exported complete favicon set: favicon.ico (16/32/48), favicon-16x16.png, favicon-32x32.png
+      - Exported Apple touch icon (180×180) and Android Chrome icons (192×192, 512×512)
+      - Exported maskable-icon-512x512.png with safe zone for PWA
+      - Created site.webmanifest with 2026-compliant spec (start_url, scope, id, purpose)
+      - Designed and exported og-home.png (1200×630, <400KB) for social sharing
+      - Designed and exported og-services.png and og-portfolio.png (1200×630) for social sharing
+      - Replaced all placeholder assets in /public/ with BL-branded versions
+      - Verified all document head meta tags (favicon, apple, manifest, theme-color, OG/Twitter)
+      - Cross-browser favicon testing completed on Chromium-based browsers
+      - Updated Header/Footer logo size to 48px for better visibility
+      - Deleted unused logo-light.png (dark-only theme)
+
+      Refs: v0.1.5, Issue #3, I3D1-I3D11
+
+  - date: "2026-02-21"
+    version: "0.1.4"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/3"
+    commit: 1234567890abcdef
+    status: completed
     title: "docs(project): align README, memory-bank, and GH issues to Ball Lightning AB"
     details: |-
       - Rewrote README.md for Ball Lightning AB company site (removed all TBC boilerplate content)

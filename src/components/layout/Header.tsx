@@ -42,10 +42,10 @@ export function Header() {
 				<Link className="flex items-center gap-2" to="/">
 					<img
 						alt="Ball Lightning AB"
-						className="h-8 w-8"
-						height={32}
+						className="h-12 w-12"
+						height={48}
 						src="/logo.png"
-						width={32}
+						width={48}
 					/>
 					<span className="font-heading font-semibold text-lg text-bl-cream">
 						Ball Lightning
