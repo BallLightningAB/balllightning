@@ -20,7 +20,7 @@ const serviceTiers = [
 		title: "Landing Page",
 		price: "From 15 000 SEK",
 		description:
-			"A single-page marketing site designed to convert visitors into leads or customers. Perfect for restaurants, salons, shops, and service businesses.",
+			"A single-page company site designed to convert visitors into leads or customers. Perfect for restaurants, salons, shops, and service businesses.",
 		features: [
 			"Responsive design (mobile-first)",
 			"SEO-optimized structure",

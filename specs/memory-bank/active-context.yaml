@@ -1,5 +1,5 @@
 meta:
-  release: "0.1.3"
+  release: "0.1.4"
   repo: github.com/BallLightningAB/balllightning
   project: https://github.com/users/BallLightningAB/projects/9
   pdd_version: "1.0"
@@ -13,13 +13,60 @@ meta:
   # - I3Docs / I3UI / I3Fix / I3Test / I3Biome: tags for documentation, UI polish, minor fixes, tests and Biome/tooling work not tied to a single deliverable
 roadmap:
   current:
+    - id: asset-assembly
+      issue: "https://github.com/BallLightningAB/balllightning/issues/3"
+      title: "Asset Assembly: Logo, Favicon, and OG Images (Critical for Launch)"
+      status: in-progress
+      links:
+        issue: "https://github.com/BallLightningAB/balllightning/issues/3"
+      deliverables:
+        - "[I3D1] Create Ball Lightning logo SVG master (dark-optimized, new brand colors)"
+        - "[I3D2] Export favicon set: favicon.ico (16/32/48), favicon-16x16.png, favicon-32x32.png"
+        - "[I3D3] Export apple-touch-icon.png (180×180)"
+        - "[I3D4] Export android-chrome-192x192.png and android-chrome-512x512.png"
+        - "[I3D5] Export maskable-icon-512x512.png (with safe zone)"
+        - "[I3D6] Update site.webmanifest with full 2026-compliant spec (start_url, scope, id, purpose)"
+        - "[I3D7] Design and export og-home.png (1200×630, <400KB)"
+        - "[I3D8] Design and export og-services.png and og-portfolio.png (1200×630)"
+        - "[I3D9] Replace all placeholder assets in /public/"
+        - "[I3D10] Verify all document head meta tags (favicon, apple, manifest, theme-color, OG/Twitter)"
+        - "[I3D11] Cross-browser favicon test and social OG preview validation"
+      est:
+        design_h: 3
+        dev_h: 2
+        test_h: 1
+      remaining_deliverables:
+        - "[I3D1] Logo SVG master (in design review)"
+        - "[I3D2] Favicon set"
+        - "[I3D3] Apple touch icon"
+        - "[I3D4] Android Chrome icons"
+        - "[I3D5] Maskable icon"
+        - "[I3D6] site.webmanifest 2026 update"
+        - "[I3D7] og-home.png"
+        - "[I3D8] og-services.png + og-portfolio.png"
+        - "[I3D9] Replace placeholder assets"
+        - "[I3D10] Meta tags verification"
+        - "[I3D11] Cross-browser + social testing"
+      progress_log:
+        - "2026-02-17: Issue #3 created — asset manifest and requirements defined"
+        - "2026-02-21: New logo created in updated BL brand colors; asset set reviewed against 2026 best practices"
   next_steps:
-    - "Assemble assets per manifest (logo package, OG images, favicon set)"
-    - "Implement portfolio subpages for latest 4 projects (separate issue)"
-    - "Add Skyscraper image/video gallery when subpages implemented"
+    - id: portfolio-subpages
+      issue: "https://github.com/BallLightningAB/balllightning/issues/2"
+      title: "Post-v1 Enhancements: Portfolio Subpages (5 projects incl. Chronomation)"
+      status: planned
+      deliverables:
+        - "[I2D1] Portfolio subpage: /portfolio/blightfell (Web3 Integration for Strategy Autobattler)"
+        - "[I2D2] Portfolio subpage: /portfolio/the-builder-coil (TanStack Start CMS + builder's log)"
+        - "[I2D3] Portfolio subpage: /portfolio/jorild-se (Bilingual Clinic Website)"
+        - "[I2D4] Portfolio subpage: /portfolio/skyscraper (MMO Deckbattler, image gallery)"
+        - "[I2D5] Portfolio subpage: /portfolio/chronomation (Multi-tenant content engine)"
+        - "[I2D6] Schema.org markup per project (SoftwareApplication / CreativeWork)"
+        - "[I2D7] OG images per portfolio page"
+        - "[I2D8] Image optimization (WebP/AVIF), lazy loading, accessibility (skip-to-content)"
   recent_done:
     - id: balllightning-cloud-remake
-      issue: https://github.com/BallLightningAB/balllightning/issues/1"
+      issue: "https://github.com/BallLightningAB/balllightning/issues/1"
       title: "Remake Ball Lightning cloud site with TBC tech stack"
       status: completed
       links:

@@ -1,8 +1,24 @@
 entries:
+  - date: "2026-02-21"
+    version: "0.1.4"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/3"
+    commit: TBD
+    status: in-progress
+    title: "docs(project): align README, memory-bank, and GH issues to Ball Lightning AB"
+    details: |-
+      - Rewrote README.md for Ball Lightning AB company site (removed all TBC boilerplate content)
+      - Updated memory-bank-usage.yaml: replaced all The Builder Coil / pdd-thebuildercoil.yaml references with Ball Lightning AB / balllightning-pdd.yaml; corrected GitHub project URL to projects/9; updated commit message examples
+      - Updated active-context.yaml: moved Issue #3 (asset assembly) to current with full structured deliverables (I3D1–I3D11); expanded next_steps with structured Issue #2 entry (I2D1–I2D8) incl. Chronomation; fixed malformed YAML quote on issue URL
+      - Updated GitHub Issue #2: added Chronomation as 5th portfolio subpage (architecture, AI pipeline, multi-tenant), updated file structure, acceptance criteria, estimated effort
+      - Updated GitHub Issue #3: applied 2026 best-practice review — logo ≠ favicon distinction; corrected manifest to site.webmanifest with full spec (id, start_url, scope, purpose fields); corrected theme_color to #05070A; clarified three distinct asset sets (logo / favicons / app icons); added head tag implementation notes and favicon caching warning
+      - FUNDING.yml, LICENSE, TRADEMARKS.md verified correct for Ball Lightning AB — no changes needed
+
+      Refs: v0.1.4, Issue #2, Issue #3, I3Docs
+
   - date: "2026-02-17"
     version: "0.1.3"
     issue: "https://github.com/BallLightningAB/balllightning/issues/1"
-    commit: TBD
+    commit: d694320
     status: completed
     title: "docs(deliverables): Visual QA report, asset manifest, and issue tracking"
     details: |-
