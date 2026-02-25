@@ -2,6 +2,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { X } from "lucide-react";
 import { motion } from "motion/react";
 import { useState } from "react";
+import { ResponsiveImage } from "@/components/ui/responsive-image";
 import { cn } from "@/lib/utils";
 
 interface GalleryImage {
@@ -42,12 +43,10 @@ export function ProjectImageGallery({
 						type="button"
 						whileHover={{ scale: 1.02 }}
 					>
-						<img
+						<ResponsiveImage
 							alt={image.alt}
 							className="h-auto w-full object-cover transition-transform duration-300 group-hover:scale-105"
-							decoding="async"
 							height={image.height ?? 400}
-							loading="lazy"
 							src={image.src}
 							width={image.width ?? 600}
 						/>
@@ -62,16 +61,21 @@ export function ProjectImageGallery({
 			>
 				<Dialog.Portal>
 					<Dialog.Overlay className="fixed inset-0 z-50 bg-black/80 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
-					<Dialog.Content className="fixed inset-4 z-50 flex items-center justify-center focus:outline-none">
+					<Dialog.Content
+						aria-label={`Image view: ${selectedImage?.alt || "Project image"}`}
+						className="fixed inset-4 z-50 flex items-center justify-center focus:outline-none"
+						role="dialog"
+					>
 						<Dialog.Close className="absolute right-4 top-4 z-10 rounded-full bg-black/50 p-2 text-white hover:bg-black/70 focus:outline-none focus-visible:ring-2 focus-visible:ring-bl-red">
 							<X className="h-5 w-5" />
-							<span className="sr-only">Close</span>
+							<span className="sr-only">Close image view</span>
 						</Dialog.Close>
 						{selectedImage && (
-							<img
+							<ResponsiveImage
 								alt={selectedImage.alt}
 								className="max-h-[90vh] max-w-[90vw] rounded-lg object-contain"
 								height={selectedImage.height ?? 800}
+								loading="eager"
 								src={selectedImage.src}
 								width={selectedImage.width ?? 1200}
 							/>

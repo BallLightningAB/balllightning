@@ -81,11 +81,11 @@ function SkyscraperPage() {
 		},
 		{
 			src: skyscraperHero,
-			alt: "Hero section from the Skyscraper website showcasing game art",
+			alt: "Hero section from the Skyscraper website featuring game artwork and navigation",
 		},
 		{
 			src: skyscraperPlot,
-			alt: "Game plot visualization showing the narrative arc",
+			alt: "Game plot visualization showing the narrative arc and story progression",
 		},
 		{
 			src: skyscraperLogo,

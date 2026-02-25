@@ -160,13 +160,13 @@ function TheBuilderCoilPage() {
 					images={[
 						{
 							src: "/src/assets/portfolio/the-builder-coil/tbc-blog.webp",
-							alt: "The Builder Coil blog post page",
+							alt: "The Builder Coil blog post page showing article layout and typography",
 							width: 1200,
 							height: 800,
 						},
 						{
 							src: "/src/assets/portfolio/the-builder-coil/tbc-feed.webp",
-							alt: "The Builder Coil feed API response",
+							alt: "The Builder Coil feed API response displaying JSON data structure",
 							width: 1200,
 							height: 800,
 						},

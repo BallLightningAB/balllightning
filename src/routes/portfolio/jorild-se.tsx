@@ -84,7 +84,7 @@ function JorildSePage() {
 		},
 		{
 			src: jorildHero,
-			alt: "Hero section with clinic branding and call-to-action",
+			alt: "Hero section with clinic branding, practitioner photo, and appointment call-to-action",
 		},
 		{
 			src: jorildAboutOsteopathy,
@@ -96,15 +96,15 @@ function JorildSePage() {
 		},
 		{
 			src: jorildServices,
-			alt: "Services section listing treatment options",
+			alt: "Services section listing osteopathy treatment options with descriptions",
 		},
 		{
 			src: jorildGbp,
-			alt: "Google Business Profile integration",
+			alt: "Google Business Profile integration showing clinic reviews and contact information",
 		},
 		{
 			src: jorildKaddio,
-			alt: "Kaddio online booking integration",
+			alt: "Kaddio online booking integration with calendar and appointment selection",
 		},
 	];
 

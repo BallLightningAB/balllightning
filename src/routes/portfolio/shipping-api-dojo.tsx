@@ -179,13 +179,13 @@ function ShippingApiDojoPage() {
 					images={[
 						{
 							src: "/src/assets/portfolio/shipping-api-dojo/sad-lesson.webp",
-							alt: "REST or SOAP lesson in progress",
+							alt: "REST or SOAP lesson interface showing code examples and exercises",
 							width: 1200,
 							height: 800,
 						},
 						{
 							src: "/src/assets/portfolio/shipping-api-dojo/sad-arena.webp",
-							alt: "Incident Arena scenario player",
+							alt: "Incident Arena scenario player debugging API integration issues",
 							width: 1200,
 							height: 800,
 						},

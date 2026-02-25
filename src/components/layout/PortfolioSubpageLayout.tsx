@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import { AnimatedGroup } from "@/components/motion-primitives/animated-group";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { ResponsiveImage } from "@/components/ui/responsive-image";
 
 interface ProjectLink {
 	label: string;
@@ -83,11 +84,12 @@ export function PortfolioSubpageLayout({
 				<div className="mb-12">
 					{heroImage && (
 						<div className="mb-8 overflow-hidden rounded-xl">
-							<img
+							<ResponsiveImage
 								alt={heroImageAlt ?? title}
 								className="h-auto w-full object-cover"
-								decoding="async"
+								fetchPriority="high"
 								height={600}
+								loading="eager"
 								src={heroImage}
 								width={1200}
 							/>

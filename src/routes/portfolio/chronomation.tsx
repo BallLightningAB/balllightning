@@ -187,13 +187,13 @@ function ChronomotionPage() {
 						images={[
 							{
 								src: "/src/assets/portfolio/chronomation/chronomation-app.webp",
-								alt: "Chronomation app — PDF editor / BankID signing UI",
+								alt: "Chronomation app interface showing PDF editor and BankID signing UI",
 								width: 1200,
 								height: 800,
 							},
 							{
 								src: "/src/assets/portfolio/chronomation/chronomation-architecture.webp",
-								alt: "Chronomation multi-tenant architecture diagram",
+								alt: "Chronomation multi-tenant architecture diagram showing database and service layers",
 								width: 1200,
 								height: 800,
 							},
