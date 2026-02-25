@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PortfolioSubpageLayout } from "@/components/layout/PortfolioSubpageLayout";
+import { ProjectImageGallery } from "@/components/ui/project-image-gallery";
 import {
 	generateCanonical,
 	generateProjectSchema,
@@ -74,7 +75,8 @@ export const Route = createFileRoute("/portfolio/shipping-api-dojo")({
 function ShippingApiDojoPage() {
 	return (
 		<PortfolioSubpageLayout
-			heroGradient="linear-gradient(135deg, #3B82F6 0%, #22C55E 50%, #EAB308 100%)"
+			heroImage="/src/assets/portfolio/shipping-api-dojo/sad-hero.webp"
+			heroImageAlt="Shipping API Dojo landing page"
 			links={[
 				{
 					label: "API Trainer (Live)",
@@ -169,17 +171,26 @@ function ShippingApiDojoPage() {
 				</ul>
 			</section>
 
-			{/* Why This Exists */}
+			{/* Screenshots */}
 			<section>
-				<h2 className="mb-4 text-2xl font-bold">Why This Exists</h2>
-				<p className="text-muted-foreground leading-relaxed">
-					Shipping API integration is one of the most under-documented areas in
-					enterprise software. Carrier docs are often incomplete, inconsistent
-					across regions, and assume deep domain knowledge. This platform exists
-					to bridge that gap — giving developers a structured path from "never
-					touched a shipping API" to "confidently integrating carriers in
-					production."
-				</p>
+				<h2 className="mb-4 text-2xl font-bold">Screenshots</h2>
+				<ProjectImageGallery
+					columns={2}
+					images={[
+						{
+							src: "/src/assets/portfolio/shipping-api-dojo/sad-lesson.webp",
+							alt: "REST or SOAP lesson in progress",
+							width: 1200,
+							height: 800,
+						},
+						{
+							src: "/src/assets/portfolio/shipping-api-dojo/sad-arena.webp",
+							alt: "Incident Arena scenario player",
+							width: 1200,
+							height: 800,
+						},
+					]}
+				/>
 			</section>
 		</PortfolioSubpageLayout>
 	);

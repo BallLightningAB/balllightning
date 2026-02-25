@@ -1,9 +1,25 @@
 entries:
 
   - date: "2026-02-25"
+    version: "0.1.6.4"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/2"
+    commit: TBD
+    status: completed
+    title: "feat(portfolio): implement hero images for Chronomation, The Builder Coil, and Shipping API Dojo (I2D8)"
+    details: |-
+      - Replaced gradient banners with WebP hero images in PortfolioSubpageLayout component
+      - Updated chronomation.tsx, the-builder-coil.tsx, shipping-api-dojo.tsx with heroImage props
+      - Removed hero images from bottom ProjectImageGallery to avoid duplication
+      - Preserved future app/architecture image comments for chronomation development
+      - Updated portfolio-missing-images-temp.md with implementation completion status
+      - All 7 WebP images now properly displayed across 3 portfolio subpages
+
+      Refs: Issue #2, I2D8
+
+  - date: "2026-02-25"
     version: "0.1.6.3"
     issue: "https://github.com/BallLightningAB/balllightning/issues/5"
-    commit: TBD
+    commit: 895e672
     status: completed
     title: "feat(typography): switch to Big Shoulders Stencil fonts and scale up base size (20px)"
     details: |-

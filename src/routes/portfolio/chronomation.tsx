@@ -73,7 +73,8 @@ export const Route = createFileRoute("/portfolio/chronomation")({
 function ChronomotionPage() {
 	return (
 		<PortfolioSubpageLayout
-			heroGradient="linear-gradient(135deg, #00BFFF 0%, #F81EA6 100%)"
+			heroImage="/src/assets/portfolio/chronomation/chronomation-hero.webp"
+			heroImageAlt="Chronomation landing page"
 			links={[
 				{
 					label: "Chronomation.com",
@@ -174,24 +175,32 @@ function ChronomotionPage() {
 					itself.
 				</p>
 
-				{/* TODO: Add real screenshots when app alpha is ready. Uncomment the gallery below once
-				images exist in src/assets/portfolio/chronomation/:
-				- chronomation-app.jpg — app.chronomation.com PDF editor or signing UI
-				- chronomation-architecture.jpg — architecture diagram showing multi-tenant setup
-				<ProjectImageGallery
-					columns={2}
-					images={[
-						{
-							src: "/src/assets/portfolio/chronomation/chronomation-app.jpg",
-							alt: "Chronomation app — PDF editor / BankID signing UI",
-						},
-						{
-							src: "/src/assets/portfolio/chronomation/chronomation-architecture.jpg",
-							alt: "Chronomation multi-tenant architecture diagram",
-						},
-					]}
-				/>
-				*/}
+				{/* Screenshots */}
+				<section>
+					<h2 className="mb-4 text-2xl font-bold">Screenshots</h2>
+					{/* TODO: Add real screenshots when app alpha is ready. Uncomment the gallery below once
+					images exist in src/assets/portfolio/chronomation/:
+					- chronomation-app.webp — app.chronomation.com PDF editor or signing UI
+					- chronomation-architecture.webp — architecture diagram showing multi-tenant setup
+					<ProjectImageGallery
+						columns={2}
+						images={[
+							{
+								src: "/src/assets/portfolio/chronomation/chronomation-app.webp",
+								alt: "Chronomation app — PDF editor / BankID signing UI",
+								width: 1200,
+								height: 800,
+							},
+							{
+								src: "/src/assets/portfolio/chronomation/chronomation-architecture.webp",
+								alt: "Chronomation multi-tenant architecture diagram",
+								width: 1200,
+								height: 800,
+							},
+						]}
+					/>
+					*/}
+				</section>
 			</section>
 		</PortfolioSubpageLayout>
 	);

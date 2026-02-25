@@ -1,20 +1,25 @@
-# Portfolio Subpages — Images Needed
+# Portfolio Subpages — Images Status
 
-Provide these 1200×800 screenshots to replace the gradient placeholders:
+All WebP images have been implemented and are now live in the portfolio subpages:
 
 ## Chronomation (`src/assets/portfolio/chronomation/`)
-- `chronomation-hero.jpg` — chronomation.com landing page
-- `chronomation-app.jpg` — app.chronomation.com PDF editor or signing UI
-- `chronomation-architecture.jpg` — architecture diagram showing multi-tenant setup
+- ✅ `chronomation-hero.webp` — chronomation.com landing page
+<!-- - `chronomation-app.webp` — app.chronomation.com PDF editor or signing UI -->
+<!-- - `chronomation-architecture.webp` — architecture diagram showing multi-tenant setup -->
+<!-- TODO: to be added as the app develops -->
 
 ## The Builder Coil (`src/assets/portfolio/the-builder-coil/`)
-- `tbc-hero.jpg` — thebuildercoil.com landing page
-- `tbc-blog.jpg` — blog post page
-- `tbc-feed.jpg` — feed API response or blog grid
+- ✅ `tbc-hero.webp` — thebuildercoil.com landing page
+- ✅ `tbc-blog.webp` — blog post page
+- ✅ `tbc-feed.webp` — feed API response or blog grid
 
 ## Shipping API Dojo (`src/assets/portfolio/shipping-api-dojo/`)
-- `api-trainer-hero.jpg` — api-trainer.balllightning.cloud landing page
-- `api-trainer-lesson.jpg` — REST or SOAP lesson in progress
-- `api-trainer-arena.jpg` — Incident Arena scenario player
+- ✅ `sad-hero.webp` — api-trainer.balllightning.cloud landing page
+- ✅ `sad-lesson.webp` — REST or SOAP lesson in progress
+- ✅ `sad-arena.webp` — Incident Arena scenario player
 
-Replace placeholders marked `{/* PLACEHOLDER: replace with real image */}` in the respective route files once these are added.
+## Implementation Notes
+- All images are WebP format (1200×800) as requested
+- ProjectImageGallery component used for responsive display with lightbox
+- Images are served from `/src/assets/portfolio/[project]/` paths
+- Only chronomation-app and chronomation-architecture remain commented out for future development

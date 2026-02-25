@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PortfolioSubpageLayout } from "@/components/layout/PortfolioSubpageLayout";
+import { ProjectImageGallery } from "@/components/ui/project-image-gallery";
 import {
 	generateCanonical,
 	generateProjectSchema,
@@ -72,7 +73,8 @@ export const Route = createFileRoute("/portfolio/the-builder-coil")({
 function TheBuilderCoilPage() {
 	return (
 		<PortfolioSubpageLayout
-			heroGradient="linear-gradient(135deg, #8B5CFF 0%, #23F0FF 100%)"
+			heroImage="/src/assets/portfolio/the-builder-coil/tbc-hero.webp"
+			heroImageAlt="The Builder Coil landing page"
 			links={[
 				{
 					label: "TheBuilderCoil.com",
@@ -150,18 +152,26 @@ function TheBuilderCoilPage() {
 				</ul>
 			</section>
 
-			{/* Devlog */}
+			{/* Screenshots */}
 			<section>
-				<h2 className="mb-4 text-2xl font-bold">
-					Devlog: Building Ball Lightning Publicly
-				</h2>
-				<p className="text-muted-foreground leading-relaxed">
-					The Builder Coil is where I share progress updates on Chronomation,
-					agentic AI experiments, and lessons learned while building Ball
-					Lightning AB. Each devlog post covers real decisions — what worked,
-					what didn't, and why. The goal is transparency: showing that shipping
-					software is messy, iterative work, not a polished highlight reel.
-				</p>
+				<h2 className="mb-4 text-2xl font-bold">Screenshots</h2>
+				<ProjectImageGallery
+					columns={2}
+					images={[
+						{
+							src: "/src/assets/portfolio/the-builder-coil/tbc-blog.webp",
+							alt: "The Builder Coil blog post page",
+							width: 1200,
+							height: 800,
+						},
+						{
+							src: "/src/assets/portfolio/the-builder-coil/tbc-feed.webp",
+							alt: "The Builder Coil feed API response",
+							width: 1200,
+							height: 800,
+						},
+					]}
+				/>
 			</section>
 		</PortfolioSubpageLayout>
 	);

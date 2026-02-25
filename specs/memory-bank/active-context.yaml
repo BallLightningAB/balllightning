@@ -1,5 +1,5 @@
 meta:
-  release: "0.1.6.3"
+  release: "0.1.6.4"
   repo: github.com/BallLightningAB/balllightning
   project: https://github.com/users/BallLightningAB/projects/9
   pdd_version: "1.0"
@@ -25,7 +25,7 @@ roadmap:
         - "[done] I2D5: Portfolio subpage: /portfolio/blightfell (Web3 Integration for Strategy Autobattler)"
         - "[done] I2D6: Portfolio subpage: /portfolio/skyscraper (MMO Deckbattler, image gallery)"
         - "[done] I2D7: Schema.org markup per project (SoftwareApplication / CreativeWork)"
-        - "[planned] I2D8: OG images per portfolio page"
+        - "[done] I2D8: OG images per portfolio page"
         - "[planned] I2D9: Image optimization (WebP/AVIF), lazy loading, accessibility (skip-to-content)"
       progress_log:
         - "2026-02-17: Issue #3 created — asset manifest and requirements defined (covers: I3D1-I3D11)"
@@ -34,6 +34,7 @@ roadmap:
         - "2026-02-21: Updated Header/Footer logo size to 48px for better visibility"
         - "2026-02-21: Created og-services.png and og-portfolio.png - all OG images now complete"
         - "2026-02-25: Implemented all 6 portfolio subpages + shared layout/gallery; GA4 injection; sitemap update; placeholders documented for Chronomation/TBC/Shipping API Dojo"
+        - "2026-02-25: Implemented hero images for Chronomation, The Builder Coil, and Shipping API Dojo (I2D8) - replaced gradient banners with WebP images and updated galleries"
   next_steps:
     - id: language-switching
       issue: "https://github.com/BallLightningAB/balllightning/issues/4"
