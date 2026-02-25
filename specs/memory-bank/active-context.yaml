@@ -1,5 +1,5 @@
 meta:
-  release: "0.1.5"
+  release: "0.1.6"
   repo: github.com/BallLightningAB/balllightning
   project: https://github.com/users/BallLightningAB/projects/9
   pdd_version: "1.0"
@@ -15,17 +15,18 @@ roadmap:
   current:
     - id: portfolio-subpages
       issue: "https://github.com/BallLightningAB/balllightning/issues/2"
-      title: "Post-v1 Enhancements: Portfolio Subpages (5 projects incl. Chronomation)"
+      title: "Post-v1 Enhancements: Portfolio Subpages (6 projects incl. Chronomation & Shipping API Dojo)"
       status: planned
       deliverables:
-        - "[I2D1] Portfolio subpage: /portfolio/chronomation (Multi-tenant content engine)"
-        - "[I2D2] Portfolio subpage: /portfolio/blightfell (Web3 Integration for Strategy Autobattler)"
-        - "[I2D3] Portfolio subpage: /portfolio/the-builder-coil (TanStack Start CMS + builder's log)"
+        - "[I2D1] Portfolio subpage: /portfolio/chronomation (Multi-tenant productivity tool)"
+        - "[I2D2] Portfolio subpage: /portfolio/the-builder-coil (TanStack Start CMS + builder's log)"
+        - "[I2D3] Portfolio subpage: /portfolio/shipping-api-dojo (Carrier API integration tutorial)"
         - "[I2D4] Portfolio subpage: /portfolio/jorild-se (Bilingual Clinic Website)"
-        - "[I2D5] Portfolio subpage: /portfolio/skyscraper (MMO Deckbattler, image gallery)"
-        - "[I2D6] Schema.org markup per project (SoftwareApplication / CreativeWork)"
-        - "[I2D7] OG images per portfolio page"
-        - "[I2D8] Image optimization (WebP/AVIF), lazy loading, accessibility (skip-to-content)"
+        - "[I2D5] Portfolio subpage: /portfolio/blightfell (Web3 Integration for Strategy Autobattler)"
+        - "[I2D6] Portfolio subpage: /portfolio/skyscraper (MMO Deckbattler, image gallery)"
+        - "[I2D7] Schema.org markup per project (SoftwareApplication / CreativeWork)"
+        - "[I2D8] OG images per portfolio page"
+        - "[I2D9] Image optimization (WebP/AVIF), lazy loading, accessibility (skip-to-content)"
   next_steps:
     - id: language-switching
       issue: "https://github.com/BallLightningAB/balllightning/issues/4"
