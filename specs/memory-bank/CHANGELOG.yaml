@@ -1,4 +1,8 @@
 entries:
+
+  - date: "2026-02-25"
+    version: "0.1.6.1"
+    title: "added .env.example"
   - date: "2026-02-25"
     version: "0.1.6"
     issue: "https://github.com/BallLightningAB/balllightning/issues/2"
