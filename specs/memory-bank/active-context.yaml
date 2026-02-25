@@ -1,5 +1,5 @@
 meta:
-  release: "0.1.6.2"
+  release: "0.1.6.3"
   repo: github.com/BallLightningAB/balllightning
   project: https://github.com/users/BallLightningAB/projects/9
   pdd_version: "1.0"
@@ -42,6 +42,27 @@ roadmap:
       links:
         issue: "https://github.com/BallLightningAB/balllightning/issues/4"
   recent_done:
+    - id: typography-enhancement
+      issue: "https://github.com/BallLightningAB/balllightning/issues/5"
+      title: "feat(typography): switch to Big Shoulders Stencil fonts and scale up base size (20px)"
+      status: completed
+      links:
+        issue: "https://github.com/BallLightningAB/balllightning/issues/5"
+      deliverables:
+        - "[done] I5D1: Replace Big Shoulders Variable with Big Shoulders Stencil Display (headings) and Stencil Text (body)"
+        - "[done] I5D2: Scale base font size from 16px to 20px (1.25x) for improved readability"
+        - "[done] I5D3: Update all heading sizes proportionally (h1: 3.75rem, h2: 2.875rem, etc.)"
+        - "[done] I5D4: Adjust heading font-weights to 500/700 and refine letter-spacing"
+        - "[done] I5D5: Update font imports in fonts.css and __root.tsx"
+        - "[done] I5D6: Increase Header/Footer logo text size"
+      progress_log:
+        - "2026-02-25: Typography enhancement completed - switched to Big Shoulders Stencil fonts and scaled base size to 20px"
+      est:
+        design_h: 1
+        dev_h: 2
+        test_h: 1
+      remaining_deliverables: []
+      sub_issues: []
     - id: asset-assembly
       issue: "https://github.com/BallLightningAB/balllightning/issues/3"
       title: "Asset Assembly: Logo, Favicon, and OG Images (Critical for Launch)"

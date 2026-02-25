@@ -41,7 +41,7 @@ export function Footer() {
 								src="/logo.png"
 								width={48}
 							/>
-							<span className="font-heading font-semibold text-lg">
+							<span className="font-heading font-semibold text-xl sm:text-3xl">
 								Ball Lightning
 							</span>
 						</Link>

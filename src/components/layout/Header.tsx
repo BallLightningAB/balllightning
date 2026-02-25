@@ -47,7 +47,7 @@ export function Header() {
 						src="/logo.png"
 						width={48}
 					/>
-					<span className="font-heading font-semibold text-lg text-bl-cream">
+					<span className="font-heading font-semibold text-xl sm:text-3xl text-bl-cream">
 						Ball Lightning
 					</span>
 				</Link>
@@ -57,7 +57,7 @@ export function Header() {
 					{navLinks.map((link) => (
 						<Link
 							className={
-								"font-medium text-muted-foreground text-sm transition-colors hover:text-foreground"
+								"font-medium text-muted-foreground text-base transition-colors hover:text-foreground"
 							}
 							key={link.href}
 							to={link.href}

@@ -1,6 +1,22 @@
 entries:
 
   - date: "2026-02-25"
+    version: "0.1.6.3"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/5"
+    commit: TBD
+    status: completed
+    title: "feat(typography): switch to Big Shoulders Stencil fonts and scale up base size (20px)"
+    details: |-
+      - Replaced Big Shoulders Variable with Big Shoulders Stencil Display (headings) and Stencil Text (body)
+      - Scaled base font size from 16px to 20px (1.25x) for improved readability
+      - Updated all heading sizes proportionally (h1: 3.75rem, h2: 2.875rem, etc.)
+      - Adjusted heading font-weights to 500/700 and refined letter-spacing
+      - Updated font imports in fonts.css and __root.tsx
+      - Increased Header/Footer logo text size
+
+      Refs: Issue #5, I5D1-I5D6
+
+  - date: "2026-02-25"
     version: "0.1.6.2"
     issue: "https://github.com/BallLightningAB/balllightning/issues/2"
     commit: TBD

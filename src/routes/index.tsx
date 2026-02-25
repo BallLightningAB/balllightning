@@ -31,6 +31,21 @@ export const Route = createFileRoute("/")({
 function HomePage() {
 	const { feed, github } = Route.useLoaderData();
 
+	// Filter to 4 months only on mobile
+	const fourMonthsAgo = new Date();
+	fourMonthsAgo.setMonth(fourMonthsAgo.getMonth() - 4);
+	const mobileGithub = github
+		? {
+				...github,
+				activities: github.activities.filter(
+					(day) => new Date(day.date) >= fourMonthsAgo
+				),
+				totalCount: github.activities
+					.filter((day) => new Date(day.date) >= fourMonthsAgo)
+					.reduce((sum, day) => sum + day.count, 0),
+			}
+		: github;
+
 	const newsItems =
 		feed?.items.filter((i: FeedItem) => i.type === "news").slice(0, 1) ?? [];
 	const blogItems =
@@ -67,17 +82,18 @@ function HomePage() {
 						>
 							<TextEffect
 								as="h1"
-								className="mb-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+								className="mb-6 font-heading text-3xl min-[400px]:text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-[0.9] tracking-tighter"
 								preset="fade-in-blur"
 							>
-								Ship faster with{" "}
+								Ship faster with
+								<br />
 								<span className="bg-gradient-to-r from-[#DD3A28] to-[#FF7268] bg-clip-text text-transparent">
 									Ball Lightning
 								</span>
 							</TextEffect>
 
 							<TextEffect
-								className="mb-8 max-w-[45ch] text-[1rem] text-muted-foreground md:text-[1.0625rem]"
+								className="mb-8 max-w-[40ch] text-muted-foreground pr-4"
 								delay={0.3}
 								preset="fade-in-blur"
 							>
@@ -138,25 +154,53 @@ function HomePage() {
 									</div>
 									<div className="w-full">
 										{github ? (
-											<ContributionGraph
-												blockRadius={2}
-												blockSize={10}
-												data={github.activities}
-												totalCount={github.totalCount}
-											>
-												<ContributionGraphCalendar>
-													{(blockProps) => (
-														<ContributionGraphBlock
-															{...blockProps}
-															className="stroke-[1px] stroke-border data-[level=0]:fill-muted data-[level=1]:fill-bl-red/20 data-[level=2]:fill-bl-red/40 data-[level=3]:fill-bl-red/60 data-[level=4]:fill-bl-red/80"
-														/>
-													)}
-												</ContributionGraphCalendar>
-												<ContributionGraphFooter className="mt-2 items-center">
-													<ContributionGraphTotalCount className="text-muted-foreground text-xs" />
-													<ContributionGraphLegend className="text-muted-foreground text-xs" />
-												</ContributionGraphFooter>
-											</ContributionGraph>
+											<>
+												{/* Mobile: 4 months */}
+												<div className="block md:hidden">
+													<ContributionGraph
+														blockRadius={2}
+														blockSize={10}
+														data={mobileGithub.activities}
+														totalCount={mobileGithub.totalCount}
+													>
+														<ContributionGraphCalendar>
+															{(blockProps) => (
+																<ContributionGraphBlock
+																	{...blockProps}
+																	className="stroke-[1px] stroke-border data-[level=0]:fill-muted data-[level=1]:fill-bl-red/20 data-[level=2]:fill-bl-red/40 data-[level=3]:fill-bl-red/60 data-[level=4]:fill-bl-red/80"
+																/>
+															)}
+														</ContributionGraphCalendar>
+														<ContributionGraphFooter className="mt-2 items-center">
+															<ContributionGraphTotalCount className="text-muted-foreground text-xs" />
+															<ContributionGraphLegend className="text-muted-foreground text-xs" />
+														</ContributionGraphFooter>
+													</ContributionGraph>
+												</div>
+
+												{/* Desktop: 12 months */}
+												<div className="hidden md:block">
+													<ContributionGraph
+														blockRadius={2}
+														blockSize={10}
+														data={github.activities}
+														totalCount={github.totalCount}
+													>
+														<ContributionGraphCalendar>
+															{(blockProps) => (
+																<ContributionGraphBlock
+																	{...blockProps}
+																	className="stroke-[1px] stroke-border data-[level=0]:fill-muted data-[level=1]:fill-bl-red/20 data-[level=2]:fill-bl-red/40 data-[level=3]:fill-bl-red/60 data-[level=4]:fill-bl-red/80"
+																/>
+															)}
+														</ContributionGraphCalendar>
+														<ContributionGraphFooter className="mt-2 items-center">
+															<ContributionGraphTotalCount className="text-muted-foreground text-xs" />
+															<ContributionGraphLegend className="text-muted-foreground text-xs" />
+														</ContributionGraphFooter>
+													</ContributionGraph>
+												</div>
+											</>
 										) : (
 											<div className="flex h-32 items-center justify-center">
 												<div className="text-muted-foreground text-sm">
@@ -171,7 +215,6 @@ function HomePage() {
 					</AnimatedGroup>
 				</div>
 			</section>
-
 			{/* About the Founder */}
 			<section className="py-16 md:py-24">
 				<div className="container mx-auto max-w-6xl px-4">
@@ -230,7 +273,6 @@ function HomePage() {
 					</AnimatedGroup>
 				</div>
 			</section>
-
 			{/* Latest from The Builder Coil */}
 			{feedCards.length > 0 && (
 				<section className="border-border border-t bg-background py-16 md:py-24">
@@ -354,7 +396,6 @@ function HomePage() {
 					</div>
 				</section>
 			)}
-
 			{/* Newsletter CTA — link to TBC only */}
 			<section className="border-border border-t bg-background py-16 md:py-24">
 				<div className="container mx-auto max-w-6xl px-4">
@@ -381,6 +422,7 @@ function HomePage() {
 					</div>
 				</div>
 			</section>
+			;
 		</div>
 	);
 }

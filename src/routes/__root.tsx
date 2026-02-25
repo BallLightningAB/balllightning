@@ -120,7 +120,7 @@ export const Route = createRootRoute({
 			},
 			{
 				rel: "stylesheet",
-				href: "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@400;500;600;700&display=swap",
+				href: "https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@100..900&family=Big+Shoulders+Stencil+Text:wght@100..900&family=JetBrains+Mono:ital,wght@0,400..800;1,400..800&display=swap",
 			},
 			// Favicon
 			{
