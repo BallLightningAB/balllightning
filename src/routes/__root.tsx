@@ -173,6 +173,7 @@ function RootComponent() {
 
 function RootDocument({ children }: { children: React.ReactNode }) {
 	const isDev = import.meta.env.DEV;
+	const ga4Id = import.meta.env.VITE_GA4;
 
 	return (
 		<html className="dark" lang="en">
@@ -181,6 +182,20 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 			</head>
 			<body className="scroll-smooth">
 				{children}
+				{ga4Id && !isDev && (
+					<>
+						<script
+							async
+							src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}
+						/>
+						<script
+							dangerouslySetInnerHTML={{
+								__html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${ga4Id}');`,
+							}}
+							suppressHydrationWarning
+						/>
+					</>
+				)}
 				{isDev && (
 					<TanStackDevtools
 						config={{

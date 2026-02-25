@@ -7,18 +7,26 @@
 import * as fs from "node:fs";
 import * as path from "node:path";
 
-const SITE_URL = "https://thebuildercoil.com";
+const SITE_URL = "https://balllightning.cloud";
 const CONTENT_DIR = path.join(process.cwd(), "src", "data");
 const OUTPUT_PATH = path.join(process.cwd(), "public", "sitemap.xml");
 
 // Static pages with priorities and change frequencies
 const STATIC_PAGES = [
 	{ path: "/", priority: "1.0", changefreq: "weekly" },
-	{ path: "/blog", priority: "0.9", changefreq: "daily" },
-	{ path: "/news", priority: "0.8", changefreq: "weekly" },
-	{ path: "/about", priority: "0.7", changefreq: "monthly" },
-	{ path: "/contact", priority: "0.6", changefreq: "monthly" },
-	{ path: "/newsletter", priority: "0.7", changefreq: "monthly" },
+	{ path: "/services", priority: "0.9", changefreq: "monthly" },
+	{ path: "/portfolio", priority: "0.9", changefreq: "weekly" },
+	{ path: "/contact", priority: "0.7", changefreq: "monthly" },
+];
+
+// Portfolio subpages
+const PORTFOLIO_SUBPAGES = [
+	"/portfolio/chronomation",
+	"/portfolio/the-builder-coil",
+	"/portfolio/shipping-api-dojo",
+	"/portfolio/jorild-se",
+	"/portfolio/blightfell",
+	"/portfolio/skyscraper",
 ];
 
 function formatDate(date: string): string {
@@ -93,6 +101,10 @@ function main() {
 		generateUrlEntry(page.path, undefined, page.changefreq, page.priority)
 	);
 
+	const portfolioEntries = PORTFOLIO_SUBPAGES.map((subpage) =>
+		generateUrlEntry(subpage, undefined, "monthly", "0.7")
+	);
+
 	const blogEntries = blogPosts.map((post) =>
 		generateUrlEntry(
 			`/blog/${post.slug}`,
@@ -114,6 +126,7 @@ function main() {
 	const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${staticEntries.join("\n")}
+${portfolioEntries.join("\n")}
 ${blogEntries.join("\n")}
 ${newsEntries.join("\n")}
 </urlset>`;

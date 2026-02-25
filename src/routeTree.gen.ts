@@ -13,6 +13,12 @@ import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PortfolioIndexRouteImport } from './routes/portfolio/index'
+import { Route as PortfolioTheBuilderCoilRouteImport } from './routes/portfolio/the-builder-coil'
+import { Route as PortfolioSkyscraperRouteImport } from './routes/portfolio/skyscraper'
+import { Route as PortfolioShippingApiDojoRouteImport } from './routes/portfolio/shipping-api-dojo'
+import { Route as PortfolioJorildSeRouteImport } from './routes/portfolio/jorild-se'
+import { Route as PortfolioChronomationRouteImport } from './routes/portfolio/chronomation'
+import { Route as PortfolioBlightfellRouteImport } from './routes/portfolio/blightfell'
 
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
@@ -34,17 +40,60 @@ const PortfolioIndexRoute = PortfolioIndexRouteImport.update({
   path: '/portfolio/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PortfolioTheBuilderCoilRoute = PortfolioTheBuilderCoilRouteImport.update({
+  id: '/portfolio/the-builder-coil',
+  path: '/portfolio/the-builder-coil',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortfolioSkyscraperRoute = PortfolioSkyscraperRouteImport.update({
+  id: '/portfolio/skyscraper',
+  path: '/portfolio/skyscraper',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortfolioShippingApiDojoRoute =
+  PortfolioShippingApiDojoRouteImport.update({
+    id: '/portfolio/shipping-api-dojo',
+    path: '/portfolio/shipping-api-dojo',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const PortfolioJorildSeRoute = PortfolioJorildSeRouteImport.update({
+  id: '/portfolio/jorild-se',
+  path: '/portfolio/jorild-se',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortfolioChronomationRoute = PortfolioChronomationRouteImport.update({
+  id: '/portfolio/chronomation',
+  path: '/portfolio/chronomation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortfolioBlightfellRoute = PortfolioBlightfellRouteImport.update({
+  id: '/portfolio/blightfell',
+  path: '/portfolio/blightfell',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRoute
+  '/portfolio/blightfell': typeof PortfolioBlightfellRoute
+  '/portfolio/chronomation': typeof PortfolioChronomationRoute
+  '/portfolio/jorild-se': typeof PortfolioJorildSeRoute
+  '/portfolio/shipping-api-dojo': typeof PortfolioShippingApiDojoRoute
+  '/portfolio/skyscraper': typeof PortfolioSkyscraperRoute
+  '/portfolio/the-builder-coil': typeof PortfolioTheBuilderCoilRoute
   '/portfolio': typeof PortfolioIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRoute
+  '/portfolio/blightfell': typeof PortfolioBlightfellRoute
+  '/portfolio/chronomation': typeof PortfolioChronomationRoute
+  '/portfolio/jorild-se': typeof PortfolioJorildSeRoute
+  '/portfolio/shipping-api-dojo': typeof PortfolioShippingApiDojoRoute
+  '/portfolio/skyscraper': typeof PortfolioSkyscraperRoute
+  '/portfolio/the-builder-coil': typeof PortfolioTheBuilderCoilRoute
   '/portfolio': typeof PortfolioIndexRoute
 }
 export interface FileRoutesById {
@@ -52,20 +101,63 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRoute
+  '/portfolio/blightfell': typeof PortfolioBlightfellRoute
+  '/portfolio/chronomation': typeof PortfolioChronomationRoute
+  '/portfolio/jorild-se': typeof PortfolioJorildSeRoute
+  '/portfolio/shipping-api-dojo': typeof PortfolioShippingApiDojoRoute
+  '/portfolio/skyscraper': typeof PortfolioSkyscraperRoute
+  '/portfolio/the-builder-coil': typeof PortfolioTheBuilderCoilRoute
   '/portfolio/': typeof PortfolioIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contact' | '/services' | '/portfolio'
+  fullPaths:
+    | '/'
+    | '/contact'
+    | '/services'
+    | '/portfolio/blightfell'
+    | '/portfolio/chronomation'
+    | '/portfolio/jorild-se'
+    | '/portfolio/shipping-api-dojo'
+    | '/portfolio/skyscraper'
+    | '/portfolio/the-builder-coil'
+    | '/portfolio'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contact' | '/services' | '/portfolio'
-  id: '__root__' | '/' | '/contact' | '/services' | '/portfolio/'
+  to:
+    | '/'
+    | '/contact'
+    | '/services'
+    | '/portfolio/blightfell'
+    | '/portfolio/chronomation'
+    | '/portfolio/jorild-se'
+    | '/portfolio/shipping-api-dojo'
+    | '/portfolio/skyscraper'
+    | '/portfolio/the-builder-coil'
+    | '/portfolio'
+  id:
+    | '__root__'
+    | '/'
+    | '/contact'
+    | '/services'
+    | '/portfolio/blightfell'
+    | '/portfolio/chronomation'
+    | '/portfolio/jorild-se'
+    | '/portfolio/shipping-api-dojo'
+    | '/portfolio/skyscraper'
+    | '/portfolio/the-builder-coil'
+    | '/portfolio/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
   ServicesRoute: typeof ServicesRoute
+  PortfolioBlightfellRoute: typeof PortfolioBlightfellRoute
+  PortfolioChronomationRoute: typeof PortfolioChronomationRoute
+  PortfolioJorildSeRoute: typeof PortfolioJorildSeRoute
+  PortfolioShippingApiDojoRoute: typeof PortfolioShippingApiDojoRoute
+  PortfolioSkyscraperRoute: typeof PortfolioSkyscraperRoute
+  PortfolioTheBuilderCoilRoute: typeof PortfolioTheBuilderCoilRoute
   PortfolioIndexRoute: typeof PortfolioIndexRoute
 }
 
@@ -99,6 +191,48 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PortfolioIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/portfolio/the-builder-coil': {
+      id: '/portfolio/the-builder-coil'
+      path: '/portfolio/the-builder-coil'
+      fullPath: '/portfolio/the-builder-coil'
+      preLoaderRoute: typeof PortfolioTheBuilderCoilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portfolio/skyscraper': {
+      id: '/portfolio/skyscraper'
+      path: '/portfolio/skyscraper'
+      fullPath: '/portfolio/skyscraper'
+      preLoaderRoute: typeof PortfolioSkyscraperRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portfolio/shipping-api-dojo': {
+      id: '/portfolio/shipping-api-dojo'
+      path: '/portfolio/shipping-api-dojo'
+      fullPath: '/portfolio/shipping-api-dojo'
+      preLoaderRoute: typeof PortfolioShippingApiDojoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portfolio/jorild-se': {
+      id: '/portfolio/jorild-se'
+      path: '/portfolio/jorild-se'
+      fullPath: '/portfolio/jorild-se'
+      preLoaderRoute: typeof PortfolioJorildSeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portfolio/chronomation': {
+      id: '/portfolio/chronomation'
+      path: '/portfolio/chronomation'
+      fullPath: '/portfolio/chronomation'
+      preLoaderRoute: typeof PortfolioChronomationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portfolio/blightfell': {
+      id: '/portfolio/blightfell'
+      path: '/portfolio/blightfell'
+      fullPath: '/portfolio/blightfell'
+      preLoaderRoute: typeof PortfolioBlightfellRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -106,6 +240,12 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
   ServicesRoute: ServicesRoute,
+  PortfolioBlightfellRoute: PortfolioBlightfellRoute,
+  PortfolioChronomationRoute: PortfolioChronomationRoute,
+  PortfolioJorildSeRoute: PortfolioJorildSeRoute,
+  PortfolioShippingApiDojoRoute: PortfolioShippingApiDojoRoute,
+  PortfolioSkyscraperRoute: PortfolioSkyscraperRoute,
+  PortfolioTheBuilderCoilRoute: PortfolioTheBuilderCoilRoute,
   PortfolioIndexRoute: PortfolioIndexRoute,
 }
 export const routeTree = rootRouteImport

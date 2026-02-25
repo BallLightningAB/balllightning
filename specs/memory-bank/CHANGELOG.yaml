@@ -1,8 +1,25 @@
 entries:
 
   - date: "2026-02-25"
+    version: "0.1.6.2"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/2"
+    commit: TBD
+    status: in-progress
+    title: "feat(portfolio): complete all 6 portfolio subpages + shared layout/SEO (I2D1-I2D9)"
+    details: |-
+      - Added shared PortfolioSubpageLayout + ProjectImageGallery components
+      - Implemented 6 portfolio subpages: Chronomation, The Builder Coil, Shipping API Dojo, Jorild.se, Blightfell, Skyscraper
+      - Added per-page Schema.org JSON-LD, canonical links, OG images (hero/fallback), and GA4 injection via VITE_GA4
+      - Updated sitemap generator for balllightning.cloud and new portfolio routes; added skip-to-content accessibility
+      - Documented missing screenshots for Chronomation/TBC/Shipping API Dojo in specs/deliverables/portfolio-missing-images-temp.md
+      - Reordered portfolio grid and fixed structured-data types (I2D1-I2D9)
+      
+      Refs: Issue #2, I2D1-I2D9
+
+  - date: "2026-02-25"
     version: "0.1.6.1"
     title: "added .env.example"
+
   - date: "2026-02-25"
     version: "0.1.6"
     issue: "https://github.com/BallLightningAB/balllightning/issues/2"

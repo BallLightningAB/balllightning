@@ -20,21 +20,24 @@ interface Project {
 	subtitle: string;
 	description: string;
 	tags: string[];
-	image?: string;
 	externalUrl?: string;
 	secondaryUrl?: string;
 }
 
 const projects: Project[] = [
 	{
-		slug: "blightfell",
-		title: "Blightfell",
-		subtitle: "Web3 Integration for a Strategy Autobattler",
+		slug: "chronomation",
+		title: "Chronomation",
+		subtitle: "Multi-tenant Productivity Platform",
 		description:
-			"Designed and implemented the Favor system for a blockchain-integrated autobattler — purchase flows, concurrency protection, and backend endpoints powering in-game currency mechanics.",
-		tags: ["Web3", "Node.js", "PostgreSQL", "Game Backend", "API Design"],
-		externalUrl: "https://blightfell.com",
-		secondaryUrl: "https://store.steampowered.com/app/3883980/Blightfell/",
+			"Multi-tenant content engine with PDF editing, BankID document signing, and content automation — built for Swedish SMEs. Currently in active development.",
+		tags: [
+			"SaaS",
+			"Multi-tenant",
+			"BankID",
+			"PDF Editor",
+			"Content Automation",
+		],
 	},
 	{
 		slug: "the-builder-coil",
@@ -46,6 +49,14 @@ const projects: Project[] = [
 		externalUrl: "https://thebuildercoil.com",
 	},
 	{
+		slug: "shipping-api-dojo",
+		title: "Shipping API Dojo",
+		subtitle: "Carrier API Tutorial Platform",
+		description:
+			"Interactive learning platform for shipping carrier API integration — hands-on REST, SOAP, and incident scenarios for FedEx, UPS, DHL, and more.",
+		tags: ["Education", "API Integration", "REST", "SOAP", "Developer Tools"],
+	},
+	{
 		slug: "jorild-se",
 		title: "Jorild.se",
 		subtitle: "Modern Bilingual Clinic Website",
@@ -55,28 +66,22 @@ const projects: Project[] = [
 		externalUrl: "https://jorild.se",
 	},
 	{
+		slug: "blightfell",
+		title: "Blightfell",
+		subtitle: "Web3 Integration for a Strategy Autobattler",
+		description:
+			"Designed and implemented the Favor system for a blockchain-integrated autobattler — purchase flows, concurrency protection, and backend endpoints powering in-game currency mechanics.",
+		tags: ["Web3", "Node.js", "PostgreSQL", "Game Backend", "API Design"],
+		externalUrl: "https://blightfell.com",
+		secondaryUrl: "https://store.steampowered.com/app/3883980/Blightfell/",
+	},
+	{
 		slug: "skyscraper",
 		title: "Skyscraper — Empires Rise",
 		subtitle: "Strategic MMO Deckbattler",
 		description:
 			"A massively multiplayer online deckbuilding strategy game. Managed the project from concept to live operations, including game systems design, server architecture, and community management.",
 		tags: ["Game Dev", "MMO", "Project Management", "Systems Design"],
-	},
-	{
-		slug: "big-data-optimization",
-		title: "Big Data Optimization",
-		subtitle: "Performance at Scale",
-		description:
-			"Built high-performance data processing systems handling large-scale datasets. Focused on query optimization, caching strategies, and infrastructure tuning for throughput and reliability.",
-		tags: ["Big Data", "Performance", "PostgreSQL", "Infrastructure"],
-	},
-	{
-		slug: "data-driven-systems",
-		title: "Data-Driven Functional Systems",
-		subtitle: "Enterprise Systems Design",
-		description:
-			"Designed and implemented data-driven functional systems for enterprise clients — optimizing data pipelines, reporting workflows, and cross-system integrations for measurable business impact.",
-		tags: ["Data Engineering", "Systems Design", "ETL", "Analytics"],
 	},
 ];
 
@@ -141,30 +146,34 @@ function PortfolioPage() {
 								<p className="mb-4 flex-1 text-sm text-muted-foreground">
 									{project.description}
 								</p>
-								{(project.externalUrl || project.secondaryUrl) && (
-									<div className="flex flex-wrap gap-3">
-										{project.externalUrl && (
-											<a
-												className="inline-flex items-center gap-1 text-sm text-bl-red hover:underline"
-												href={project.externalUrl}
-												rel="noopener noreferrer"
-												target="_blank"
-											>
-												Visit site <ExternalLink className="h-3 w-3" />
-											</a>
-										)}
-										{project.secondaryUrl && (
-											<a
-												className="inline-flex items-center gap-1 text-sm text-bl-red hover:underline"
-												href={project.secondaryUrl}
-												rel="noopener noreferrer"
-												target="_blank"
-											>
-												View on Steam <ExternalLink className="h-3 w-3" />
-											</a>
-										)}
-									</div>
-								)}
+								<div className="flex flex-wrap gap-3">
+									<a
+										className="inline-flex items-center gap-1 text-sm font-medium text-bl-red hover:underline"
+										href={`/portfolio/${project.slug}`}
+									>
+										View Case Study <ArrowRight className="h-3 w-3" />
+									</a>
+									{project.externalUrl && (
+										<a
+											className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-bl-red hover:underline"
+											href={project.externalUrl}
+											rel="noopener noreferrer"
+											target="_blank"
+										>
+											Visit site <ExternalLink className="h-3 w-3" />
+										</a>
+									)}
+									{project.secondaryUrl && (
+										<a
+											className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-bl-red hover:underline"
+											href={project.secondaryUrl}
+											rel="noopener noreferrer"
+											target="_blank"
+										>
+											View on Steam <ExternalLink className="h-3 w-3" />
+										</a>
+									)}
+								</div>
 							</CardContent>
 						</Card>
 					))}

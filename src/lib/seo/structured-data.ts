@@ -7,7 +7,18 @@
  * - Organization schema on about page
  */
 
-import type { Post } from "@/lib/content/types";
+interface Post {
+	slug: string;
+	title: string;
+	summary: string;
+	publishedAt: string;
+	updatedAt?: string;
+	author?: string;
+	heroImage?: string;
+	tags?: string[];
+	readingTime?: number;
+	type: string;
+}
 
 const SITE_URL = "https://balllightning.cloud";
 const SITE_NAME = "Ball Lightning AB";
@@ -238,6 +249,67 @@ export function generateNewsArticleSchema(post: Post) {
 			timeRequired: `PT${post.readingTime}M`,
 		}),
 	};
+}
+
+/**
+ * Project schema for portfolio subpages
+ */
+interface ProjectSchemaOptions {
+	name: string;
+	description: string;
+	slug: string;
+	schemaType: "SoftwareApplication" | "CreativeWork" | "VideoGame" | "WebSite";
+	applicationCategory?: string;
+	operatingSystem?: string;
+	image?: string;
+	dateCreated?: string;
+	keywords?: string[];
+	url?: string;
+}
+
+export function generateProjectSchema(options: ProjectSchemaOptions) {
+	const projectUrl = options.url ?? `${SITE_URL}/portfolio/${options.slug}`;
+
+	return {
+		"@context": "https://schema.org",
+		"@type": options.schemaType,
+		name: options.name,
+		description: options.description,
+		url: projectUrl,
+		author: {
+			"@type": "Organization",
+			"@id": ORGANIZATION_ID,
+			name: ORGANIZATION_NAME,
+		},
+		...(options.applicationCategory && {
+			applicationCategory: options.applicationCategory,
+		}),
+		...(options.operatingSystem && {
+			operatingSystem: options.operatingSystem,
+		}),
+		...(options.image && {
+			image: options.image.startsWith("http")
+				? options.image
+				: `${SITE_URL}${options.image}`,
+		}),
+		...(options.dateCreated && {
+			dateCreated: options.dateCreated,
+		}),
+		...(options.keywords?.length && {
+			keywords: options.keywords.join(", "),
+		}),
+		mainEntityOfPage: {
+			"@type": "WebPage",
+			"@id": `${SITE_URL}/portfolio/${options.slug}`,
+		},
+	};
+}
+
+/**
+ * Generate canonical URL for a page
+ */
+export function generateCanonical(path: string): string {
+	return `${SITE_URL}${path}`;
 }
 
 /**
