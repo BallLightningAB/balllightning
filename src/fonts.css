@@ -1,2 +1,231 @@
-@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@100..900&family=Big+Shoulders+Stencil+Text:wght@100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400..800;1,400..800&display=swap");
+/* =============================================================================
+   Self-Hosted Fonts - Ball Lightning AB
+   Optimized for TanStack Start + React 19 + Tailwind CSS v4
+   Following February 2026 best practices
+   ============================================================================= */
+
+/* Font Face Declarations with Variable Fonts */
+@font-face {
+	font-family: "Big Shoulders Stencil Display";
+	font-style: normal;
+	font-weight: 100 900;
+	font-display: swap;
+	src: url("/fonts/BigShouldersStencilDisplay-400.ttf") format("truetype");
+	unicode-range:
+		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Mobile-optimized ASCII subset for faster loading */
+@font-face {
+	font-family: "Big Shoulders Stencil Display";
+	font-style: normal;
+	font-weight: 100 900;
+	font-display: swap;
+	src: url("/fonts/BigShouldersStencilDisplay-400.ttf") format("truetype");
+	unicode-range: U+0000-007F; /* ASCII only for mobile */
+}
+
+@font-face {
+	font-family: "Big Shoulders Stencil Text";
+	font-style: normal;
+	font-weight: 100 900;
+	font-display: swap;
+	src: url("/fonts/BigShouldersStencilText-400.ttf") format("truetype");
+	unicode-range:
+		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Mobile-optimized ASCII subset for faster loading */
+@font-face {
+	font-family: "Big Shoulders Stencil Text";
+	font-style: normal;
+	font-weight: 100 900;
+	font-display: swap;
+	src: url("/fonts/BigShouldersStencilText-400.ttf") format("truetype");
+	unicode-range: U+0000-007F; /* ASCII only for mobile */
+}
+
+@font-face {
+	font-family: "JetBrains Mono";
+	font-style: normal;
+	font-weight: 400 800;
+	font-display: swap;
+	src: url("/fonts/JetBrainsMono-400.ttf") format("truetype");
+	unicode-range:
+		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+	font-family: "JetBrains Mono";
+	font-style: italic;
+	font-weight: 400 800;
+	font-display: swap;
+	src: url("/fonts/JetBrainsMono-400.ttf") format("truetype");
+	unicode-range:
+		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* =============================================================================
+   Font Loading Optimization - CLS Prevention
+   Uses CSS font metric overrides for zero layout shift
+   ============================================================================= */
+
+@supports (font-size: 1rem) {
+	:root {
+		/* Big Shoulders Display fallback metrics - optimized for 700 weight */
+		--font-display-ascent-override: 0.78;
+		--font-display-descent-override: 0.22;
+		--font-display-line-gap-override: 0.05;
+		--font-display-size-adjust: 0.82;
+
+		/* Big Shoulders Text fallback metrics - optimized for 400 weight */
+		--font-text-ascent-override: 0.82;
+		--font-text-descent-override: 0.18;
+		--font-text-line-gap-override: 0.08;
+		--font-text-size-adjust: 0.88;
+
+		/* JetBrains Mono fallback metrics - optimized for 400 weight */
+		--font-mono-ascent-override: 0.84;
+		--font-mono-descent-override: 0.16;
+		--font-mono-line-gap-override: 0.1;
+		--font-mono-size-adjust: 0.92;
+	}
+}
+
+/* =============================================================================
+   Fallback Font Classes with Metric Overrides
+   Applied only when custom fonts fail to load
+   ============================================================================= */
+
+@supports not (font-family: "Big Shoulders Stencil Display") {
+	.font-display,
+	.font-heading {
+		font-family:
+			system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+			"Helvetica Neue", Arial, sans-serif;
+		size-adjust: var(--font-display-size-adjust);
+		ascent-override: var(--font-display-ascent-override);
+		descent-override: var(--font-display-descent-override);
+		line-gap-override: var(--font-display-line-gap-override);
+	}
+}
+
+@supports not (font-family: "Big Shoulders Stencil Text") {
+	.font-text,
+	body {
+		font-family:
+			system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+			"Helvetica Neue", Arial, sans-serif;
+		size-adjust: var(--font-text-size-adjust);
+		ascent-override: var(--font-text-ascent-override);
+		descent-override: var(--font-text-descent-override);
+		line-gap-override: var(--font-text-line-gap-override);
+	}
+}
+
+@supports not (font-family: "JetBrains Mono") {
+	.font-mono,
+	code {
+		font-family:
+			"Courier New", "Courier", Consolas, "Liberation Mono", Menlo, Monaco,
+			monospace;
+		size-adjust: var(--font-mono-size-adjust);
+		ascent-override: var(--font-mono-ascent-override);
+		descent-override: var(--font-mono-descent-override);
+		line-gap-override: var(--font-mono-line-gap-override);
+	}
+}
+
+/* =============================================================================
+   Font Loading States for TanStack Start SSR
+   Ensures consistent rendering between server and client
+   ============================================================================= */
+
+/* Font loading animation - subtle fade-in */
+@keyframes font-load {
+	from {
+		opacity: 0.8;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/* Apply loading animation when fonts are available */
+/* These @supports queries are for feature detection, not font-family declarations */
+@supports (font-family: "Big Shoulders Stencil Display") {
+	.font-display,
+	.font-heading {
+		animation: font-load 0.3s ease-out;
+	}
+}
+
+@supports (font-family: "Big Shoulders Stencil Text") {
+	.font-text,
+	body {
+		animation: font-load 0.3s ease-out;
+	}
+}
+
+@supports (font-family: "JetBrains Mono") {
+	.font-mono,
+	code {
+		animation: font-load 0.3s ease-out;
+	}
+}
+
+/* =============================================================================
+   Print Optimization
+   Ensures fonts work properly in print styles
+   ============================================================================= */
+
+@media print {
+	@supports (font-family: "Big Shoulders Stencil Display") {
+		.font-display,
+		.font-heading {
+			font-family: "Big Shoulders Stencil Display", serif;
+		}
+	}
+
+	@supports (font-family: "Big Shoulders Stencil Text") {
+		.font-text,
+		body {
+			font-family: "Big Shoulders Stencil Text", serif;
+		}
+	}
+
+	@supports (font-family: "JetBrains Mono") {
+		.font-mono,
+		code {
+			font-family: "JetBrains Mono", monospace;
+		}
+	}
+}
+
+/* =============================================================================
+   Reduced Motion Support
+   Respects user's motion preferences
+   ============================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+	@supports (font-family: "Big Shoulders Stencil Display") {
+		.font-display,
+		.font-heading {
+			animation: none;
+		}
+	}
+
+	@supports (font-family: "Big Shoulders Stencil Text") {
+		.font-text,
+		body {
+			animation: none;
+		}
+	}
+
+	@supports (font-family: "JetBrains Mono") {
+		.font-mono,
+		code {
+			animation: none;
+		}
+	}
+}

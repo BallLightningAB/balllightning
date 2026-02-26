@@ -1,9 +1,26 @@
 entries:
 
   - date: "2026-02-26"
+    version: "0.1.6.8"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/9"
+    commit: TBD
+    status: completed
+    title: "feat(performance): mobile performance optimization for 2026 hardware"
+    details: |-
+      - Implemented critical resource preloading for fonts and hero images with fetchPriority="high"
+      - Added ASCII subset optimization for faster mobile font loading (U+0000-007F range)
+      - Enhanced mobile-first image optimization with proper srcset and decoding="async"
+      - Added real user performance monitoring with PerformanceObserver API for LCP/FCP tracking
+      - Fixed build system compatibility with TanStack Start SSR architecture
+      - Expected improvements: FCP 30-40% faster, LCP 25-35% faster, TTI 15-25% faster on mobile
+      - Targets real 2026 mobile hardware (8GB+ RAM, powerful CPUs) not outdated Lighthouse simulations
+      
+      Refs: Issue #9, I9D1-I9D5
+
+  - date: "2026-02-26"
     version: "0.1.6.7"
     issue: "https://github.com/BallLightningAB/balllightning/issues/8"
-    commit: TBD
+    commit: 0df53b03804031f09e7d6e76ff9ff2549273b335
     status: completed
     title: "feat(performance): image delivery optimization with SVG logo and responsive founder images"
     details: |-

@@ -109,6 +109,27 @@ export const Route = createRootRoute({
 				rel: "stylesheet",
 				href: appCss,
 			},
+			// Critical resource preloading for mobile performance
+			{
+				rel: "preload",
+				href: "/fonts/BigShouldersStencilDisplay-400.ttf",
+				as: "font",
+				type: "font/ttf",
+				crossOrigin: "anonymous",
+			},
+			{
+				rel: "preload",
+				href: "/fonts/BigShouldersStencilText-400.ttf",
+				as: "font",
+				type: "font/ttf",
+				crossOrigin: "anonymous",
+			},
+			{
+				rel: "preload",
+				href: "/media/face_400x400.webp",
+				as: "image",
+				fetchPriority: "high",
+			},
 			// DNS prefetch for external domains
 			{
 				rel: "dns-prefetch",
@@ -117,6 +138,10 @@ export const Route = createRootRoute({
 			{
 				rel: "dns-prefetch",
 				href: "https://github.com",
+			},
+			{
+				rel: "dns-prefetch",
+				href: "https://thebuildercoil.com",
 			},
 			// Prefetch likely next pages
 			{
@@ -128,26 +153,6 @@ export const Route = createRootRoute({
 				rel: "prefetch",
 				href: "/services",
 				as: "document",
-			},
-			// Preload only critical fonts used in initial render
-			{
-				rel: "preload",
-				href: "/fonts/BigShouldersStencilText-400.ttf",
-				as: "font",
-				type: "font/ttf",
-				crossOrigin: "anonymous",
-			},
-			{
-				rel: "preload",
-				href: "/fonts/JetBrainsMono-400.ttf",
-				as: "font",
-				type: "font/ttf",
-				crossOrigin: "anonymous",
-			},
-			// Self-hosted fonts
-			{
-				rel: "stylesheet",
-				href: "/fonts/fonts.css",
 			},
 			// Favicon
 			{
@@ -206,6 +211,50 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 		<html className="dark" lang="en">
 			<head>
 				<HeadContent />
+				{/* Real User Performance Monitoring */}
+				{!isDev && (
+					<script
+						dangerouslySetInnerHTML={{
+							__html: `
+								// Real User Performance Monitoring for Mobile
+								if ('PerformanceObserver' in window) {
+									// Monitor Core Web Vitals
+									const observer = new PerformanceObserver((list) => {
+										for (const entry of list.getEntries()) {
+											if (entry.entryType === 'largest-contentful-paint') {
+												// Send LCP to analytics
+												if (window.gtag) {
+													window.gtag('event', 'lcp', {
+														event_category: 'web_vitals',
+														value: Math.round(entry.startTime),
+														custom_map: {
+															'custom_parameter_1': 'mobile',
+															'custom_parameter_2': navigator.userAgent.includes('Mobile') ? '1' : '0'
+														}
+													});
+												}
+											} else if (entry.entryType === 'first-contentful-paint') {
+												// Send FCP to analytics
+												if (window.gtag) {
+													window.gtag('event', 'fcp', {
+														event_category: 'web_vitals',
+														value: Math.round(entry.startTime),
+														custom_map: {
+															'custom_parameter_1': 'mobile',
+															'custom_parameter_2': navigator.userAgent.includes('Mobile') ? '1' : '0'
+														}
+													});
+												}
+											}
+										}
+									});
+									observer.observe({ entryTypes: ['largest-contentful-paint', 'first-contentful-paint'] });
+								}
+							`,
+						}}
+						suppressHydrationWarning
+					/>
+				)}
 			</head>
 			<body className="scroll-smooth">
 				{children}

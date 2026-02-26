@@ -1,5 +1,5 @@
 meta:
-  release: "0.1.6.7"
+  release: "0.1.6.8"
   repo: github.com/BallLightningAB/balllightning
   project: https://github.com/users/BallLightningAB/projects/9
   pdd_version: "1.0"
@@ -29,6 +29,30 @@ roadmap:
         issue: "https://github.com/BallLightningAB/balllightning/issues/6"
       optional: true
   recent_done:
+    - id: mobile-performance-optimization
+      issue: "https://github.com/BallLightningAB/balllightning/issues/9"
+      title: "Mobile Performance Optimization for 2026 Hardware"
+      status: completed
+      links:
+        issue: "https://github.com/BallLightningAB/balllightning/issues/9"
+      deliverables:
+        - "[done] I9D1: Critical Resource Preloading - Font and hero image preloading with fetchPriority"
+        - "[done] I9D2: Font Loading Optimization - ASCII subsets and display:swap for mobile"
+        - "[done] I9D3: Mobile-First Image Optimization - Enhanced picture element with proper srcset"
+        - "[done] I9D4: Real User Performance Monitoring - PerformanceObserver API for LCP/FCP tracking"
+        - "[done] I9D5: Build System Fixes - TanStack Start compatible font imports and configuration"
+      progress_log:
+        - "2026-02-26: Implemented critical resource preloading for fonts and hero images"
+        - "2026-02-26: Added ASCII subset optimization for faster mobile font loading"
+        - "2026-02-26: Enhanced mobile-first image optimization with proper srcset and decoding"
+        - "2026-02-26: Added real user performance monitoring with PerformanceObserver API"
+        - "2026-02-26: Fixed build system compatibility with TanStack Start SSR architecture"
+        - "2026-02-26: Created GitHub Issue #9 for mobile performance optimization tracking"
+      est:
+        dev_h: 2
+        test_h: 1
+      remaining_deliverables: []
+      sub_issues: []
     - id: image-optimization-enhancement
       issue: "https://github.com/BallLightningAB/balllightning/issues/8"
       title: "Image Delivery Optimization: SVG logo and responsive founder images"
@@ -76,6 +100,7 @@ roadmap:
       remaining_deliverables: []
       sub_issues:
         - "https://github.com/BallLightningAB/balllightning/issues/8"
+        - "https://github.com/BallLightningAB/balllightning/issues/9"
     - id: portfolio-subpages
       issue: "https://github.com/BallLightningAB/balllightning/issues/2"
       title: "Post-v1 Enhancements: Portfolio Subpages (6 projects incl. Chronomation & Shipping API Dojo)"

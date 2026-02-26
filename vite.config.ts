@@ -93,6 +93,18 @@ const config = defineConfig({
 		tanstackStart(),
 		viteReact(),
 	],
+	// Mobile optimization build configuration
+	build: {
+		// Enable source maps for debugging (disable in production if needed)
+		sourcemap: false,
+	},
+	// Development server optimization
+	server: {
+		fs: {
+			// Allow serving files from the project root
+			allow: [".."],
+		},
+	},
 });
 
 export default config;

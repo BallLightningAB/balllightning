@@ -242,15 +242,25 @@ function HomePage() {
 					>
 						<div>
 							<picture>
+								{/* Mobile-first: use 400x400 for mobile */}
+								<source
+									media="(max-width: 767px)"
+									sizes="100vw"
+									srcSet="/media/face_400x400.webp"
+								/>
+								{/* Desktop: larger images */}
 								<source
 									media="(min-width: 768px)"
-									srcSet="/media/face_1024x1024.webp"
+									sizes="50vw"
+									srcSet="/media/face_400x400.webp 400w, /media/face_1024x1024.webp 1024w"
 								/>
 								<img
 									alt="Nicolas Brulay"
 									className="h-auto w-full rounded-2xl"
+									decoding="async"
 									fetchPriority="high"
 									height={400}
+									loading="eager"
 									src="/media/face_400x400.webp"
 									width={400}
 								/>
