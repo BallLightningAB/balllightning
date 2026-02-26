@@ -112,21 +112,21 @@ export const Route = createRootRoute({
 			// Critical resource preloading for mobile performance
 			{
 				rel: "preload",
-				href: "/fonts/BigShouldersStencilDisplay-400.ttf",
+				href: "/fonts/BigShouldersStencilDisplay-400.woff2",
 				as: "font",
-				type: "font/ttf",
+				type: "font/woff2",
 				crossOrigin: "anonymous",
 			},
 			{
 				rel: "preload",
-				href: "/fonts/BigShouldersStencilText-400.ttf",
+				href: "/fonts/BigShouldersStencilText-400.woff2",
 				as: "font",
-				type: "font/ttf",
+				type: "font/woff2",
 				crossOrigin: "anonymous",
 			},
 			{
 				rel: "preload",
-				href: "/media/face_400x400.webp",
+				href: "/media/face_200x200.webp",
 				as: "image",
 				fetchPriority: "high",
 			},

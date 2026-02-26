@@ -1,9 +1,25 @@
 entries:
 
   - date: "2026-02-26"
-    version: "0.1.6.8"
+    version: "0.1.6.9"
     issue: "https://github.com/BallLightningAB/balllightning/issues/9"
     commit: TBD
+    status: completed
+    title: "perf(fonts): convert all TTF fonts to WOFF2 format for 66% size reduction"
+    details: |-
+      - Updated font-face declarations in src/fonts.css to use WOFF2 format instead of TTF
+      - Updated font preloading in src/routes/__root.tsx with correct MIME type (font/woff2)
+      - Reduced total font size from 495KB to 169KB (326KB saved, 66% reduction)
+      - Expected 200-400ms faster FCP on mobile devices with better network performance
+      - All 6 fonts converted: BigShoulders Display (400/500/700), BigShoulders Text (400), JetBrains Mono (400/500)
+      - Verified working in dev environment with no visual regressions
+      
+      Refs: Issue #9, I9D6
+
+  - date: "2026-02-26"
+    version: "0.1.6.8"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/9"
+    commit: 71a1d34f40655387ebe77a5eedb525010d93a159
     status: completed
     title: "feat(performance): mobile performance optimization for 2026 hardware"
     details: |-

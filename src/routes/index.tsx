@@ -242,11 +242,11 @@ function HomePage() {
 					>
 						<div>
 							<picture>
-								{/* Mobile-first: use 400x400 for mobile */}
+								{/* Mobile-first: use 200x200 for mobile (8KB) */}
 								<source
 									media="(max-width: 767px)"
 									sizes="100vw"
-									srcSet="/media/face_400x400.webp"
+									srcSet="/media/face_200x200.webp"
 								/>
 								{/* Desktop: larger images */}
 								<source

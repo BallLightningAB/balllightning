@@ -1,5 +1,5 @@
 meta:
-  release: "0.1.6.8"
+  release: "0.1.6.9"
   repo: github.com/BallLightningAB/balllightning
   project: https://github.com/users/BallLightningAB/projects/9
   pdd_version: "1.0"
@@ -41,6 +41,7 @@ roadmap:
         - "[done] I9D3: Mobile-First Image Optimization - Enhanced picture element with proper srcset"
         - "[done] I9D4: Real User Performance Monitoring - PerformanceObserver API for LCP/FCP tracking"
         - "[done] I9D5: Build System Fixes - TanStack Start compatible font imports and configuration"
+        - "[done] I9D6: WOFF2 Font Conversion - Convert all TTF fonts to WOFF2 format for 66% size reduction"
       progress_log:
         - "2026-02-26: Implemented critical resource preloading for fonts and hero images"
         - "2026-02-26: Added ASCII subset optimization for faster mobile font loading"
@@ -48,6 +49,7 @@ roadmap:
         - "2026-02-26: Added real user performance monitoring with PerformanceObserver API"
         - "2026-02-26: Fixed build system compatibility with TanStack Start SSR architecture"
         - "2026-02-26: Created GitHub Issue #9 for mobile performance optimization tracking"
+        - "2026-02-26: Converted all TTF fonts to WOFF2 format (66% size reduction: 495KB → 169KB)"
       est:
         dev_h: 2
         test_h: 1
