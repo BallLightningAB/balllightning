@@ -122,7 +122,7 @@ export function generateOrganizationSchema() {
 		"@id": ORGANIZATION_ID,
 		name: ORGANIZATION_NAME,
 		url: BALL_LIGHTNING_URL,
-		logo: `${SITE_URL}/logo.png`,
+		logo: `${SITE_URL}/logo-60.svg`,
 		description:
 			"Software consulting and product development company specializing in full-stack web, systems integration, and AI-driven solutions.",
 		founder: {
@@ -159,7 +159,7 @@ export function generateBlogPostingSchema(post: Post) {
 			"@id": ORGANIZATION_ID,
 			logo: {
 				"@type": "ImageObject",
-				url: `${SITE_URL}/logo.png`,
+				url: `${SITE_URL}/logo-60.svg`,
 			},
 		},
 		mainEntityOfPage: {
@@ -230,7 +230,7 @@ export function generateNewsArticleSchema(post: Post) {
 			"@id": ORGANIZATION_ID,
 			logo: {
 				"@type": "ImageObject",
-				url: `${SITE_URL}/logo.png`,
+				url: `${SITE_URL}/logo-60.svg`,
 			},
 		},
 		mainEntityOfPage: {

@@ -241,14 +241,20 @@ function HomePage() {
 						}}
 					>
 						<div>
-							<img
-								alt="Nicolas Brulay"
-								className="h-auto w-full rounded-2xl"
-								fetchPriority="high"
-								height={400}
-								src="/media/face_400x400.webp"
-								width={400}
-							/>
+							<picture>
+								<source
+									media="(min-width: 768px)"
+									srcSet="/media/face_1024x1024.webp"
+								/>
+								<img
+									alt="Nicolas Brulay"
+									className="h-auto w-full rounded-2xl"
+									fetchPriority="high"
+									height={400}
+									src="/media/face_400x400.webp"
+									width={400}
+								/>
+							</picture>
 						</div>
 						<div>
 							<h2 className="mb-4 font-semibold text-3xl">Nicolas Brulay</h2>

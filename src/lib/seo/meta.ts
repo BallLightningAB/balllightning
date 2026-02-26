@@ -28,7 +28,7 @@ export interface SeoMeta {
 
 const SITE_NAME = "Ball Lightning AB";
 const SITE_URL = "https://balllightning.cloud";
-const DEFAULT_IMAGE = `${SITE_URL}/logo.png`;
+const DEFAULT_IMAGE = `${SITE_URL}/logo-60.svg`;
 const DEFAULT_DESCRIPTION =
 	"Software consulting and product development. Full-stack web, systems integration, and AI-driven solutions by Ball Lightning AB.";
 const TWITTER_HANDLE = "@nicbrulay";

@@ -1,9 +1,25 @@
 entries:
 
   - date: "2026-02-26"
+    version: "0.1.6.7"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/8"
+    commit: TBD
+    status: completed
+    title: "feat(performance): image delivery optimization with SVG logo and responsive founder images"
+    details: |-
+      - Replaced logo.png with optimized logo-60.svg in header/footer (scalable, smaller file size)
+      - Implemented responsive founder images using <picture> element (400x400 mobile, 1024x1024 desktop)
+      - Updated all SEO references (meta.ts, structured-data.ts) to use SVG logo
+      - Updated asset manifest to reflect SVG implementation and responsive images
+      - Deprecated old logo.png (1024x1024) for removal after SVG rollout
+      - Performance improvement: eliminates Lighthouse image delivery optimization warnings
+      
+      Refs: Issue #8, I8D1-I8D3
+
+  - date: "2026-02-26"
     version: "0.1.6.6"
     issue: "https://github.com/BallLightningAB/balllightning/issues/7"
-    commit: TBD
+    commit: 70263d8f1fc706bad11e57c84a067d03988ebd85
     status: completed
     title: "feat(performance): comprehensive performance optimization with TanStack Start best practices (closes #7)"
     details: |-

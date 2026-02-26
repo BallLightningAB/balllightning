@@ -1,5 +1,5 @@
 # Asset Manifest — Ball Lightning Site
-**Date**: 2026-02-21  
+**Date**: 2026-02-26  
 **Issue**: [#3](https://github.com/BallLightningAB/balllightning/issues/3)  
 **Purpose**: Comprehensive inventory of all required assets for balllightning.cloud
 
@@ -13,7 +13,8 @@
 | File | Location | Size | Format | Status | Notes |
 |------|----------|------|--------|--------|-------|
 | `logo.svg` | `/public/logo.svg` | Vector | SVG | ✅ Completed | BL logo master (dark-optimized) |
-| `logo.png` | `/public/logo.png` | 32×32px | PNG | ✅ Completed | Updated with BL branding |
+| `logo-60.svg` | `/public/logo-60.svg` | 60×60px | SVG | ✅ Completed | Header/footer logo (scalable) |
+| `logo.png` | `/public/logo.png` | 1024×1024px | PNG | 🗑️ Deprecated | Replaced by SVG |
 | `logo192.png` | `/public/logo192.png` | 192×192px | PNG | ✅ Completed | Updated with BL branding |
 | `logo512.png` | `/public/logo512.png` | 512×512px | PNG | ✅ Completed | Updated with BL branding |
 | `logo-light.png` | `/public/logo-light.png` | - | PNG | 🗑️ Deleted | Dark-only theme, not needed |
@@ -28,6 +29,7 @@
 | Asset Name | Dimensions | Format | Purpose | Priority |
 |------------|------------|--------|---------|----------|
 | `logo.svg` | Vector | SVG | Master logo file (optimized for dark bg) | ✅ Complete |
+| `logo-60.svg` | 60×60px | SVG | Header/footer logo (scalable, optimized) | ✅ Complete |
 | `logo-32.png` | 32×32px | PNG, WebP | Header logo (1×) | ✅ Complete |
 | `logo-64.png` | 64×64px | PNG, WebP | Header logo (2×) | ✅ Complete |
 | `logo-128.png` | 128×128px | PNG, WebP | General use | ✅ Complete |
@@ -138,9 +140,10 @@
 ### Current Status
 | File | Location | Status | Notes |
 |------|----------|--------|-------|
-| `face.webp` | `/public/media/face.webp` | ✅ Ready | Nicolas Brulay photo |
+| `face_400x400.webp` | `/public/media/face_400x400.webp` | ✅ Ready | Nicolas Brulay photo (mobile) |
+| `face_1024x1024.webp` | `/public/media/face_1024x1024.webp` | ✅ Ready | Nicolas Brulay photo (desktop) |
 
-**Status**: ✅ Complete — No additional founder assets needed
+**Status**: ✅ Complete — Responsive images implemented
 
 ---
 
@@ -387,7 +390,9 @@ Based on user's note about creating subpages for the four latest projects:
 ## Asset Checklist for Handoff
 
 - [x] Logo SVG master file
+- [x] Logo SVG optimized for header/footer (logo-60.svg)
 - [x] Logo PNG exports (16px, 32px, 64px, 192px, 512px)
+- [x] Responsive founder images (400x400, 1024x1024 WebP)
 - [x] Favicon.ico (multi-size)
 - [x] Apple touch icon (180×180px)
 - [x] OG image homepage (1200×630px)
@@ -396,6 +401,7 @@ Based on user's note about creating subpages for the four latest projects:
 - [x] All placeholder assets replaced
 - [x] Meta tags verification
 - [x] Cross-browser favicon testing
+- [x] SVG logo implementation (header/footer/SEO)
 
 **Total Estimated Assets**: 15-25 files depending on scope
 
