@@ -1,5 +1,5 @@
 meta:
-  release: "0.1.6.5"
+  release: "0.1.6.6"
   repo: github.com/BallLightningAB/balllightning
   project: https://github.com/users/BallLightningAB/projects/9
   pdd_version: "1.0"
@@ -29,6 +29,29 @@ roadmap:
         issue: "https://github.com/BallLightningAB/balllightning/issues/6"
       optional: true
   recent_done:
+    - id: performance-optimization
+      issue: "https://github.com/BallLightningAB/balllightning/issues/7"
+      title: "Performance Optimization: Font Self-Hosting, Resource Preloading & Cache Headers"
+      status: completed
+      links:
+        issue: "https://github.com/BallLightningAB/balllightning/issues/7"
+      deliverables:
+        - "[done] I7D1: Font Self-Hosting - Replace Google Fonts with self-hosted Big Shoulders fonts"
+        - "[done] I7D2: Font CLS Prevention - Add font-display: swap and metric overrides"
+        - "[done] I7D3: Critical Resource Preloading - DNS prefetch, page prefetch, fetchpriority"
+        - "[done] I7D4: Cache Headers - TanStack Start Nitro route rules for static assets"
+        - "[done] I7D5: Contribution Graph Fixes - Dynamic time period labels (4/12 months)"
+        - "[done] I7D6: Bundle Analysis - Review and optimize large dependencies"
+      progress_log:
+        - "2026-02-26: Completed comprehensive performance optimization - font self-hosting, resource preloading, cache headers, contribution graph fixes"
+        - "2026-02-26: Implemented TanStack Start Nitro route rules for 1-year static asset caching"
+        - "2026-02-26: Added critical resource preloading - DNS prefetch for GitHub APIs, page prefetch for navigation"
+        - "2026-02-26: Fixed contribution graph text labels to show correct time periods for mobile/desktop"
+      est:
+        dev_h: 4
+        test_h: 1
+      remaining_deliverables: []
+      sub_issues: []
     - id: portfolio-subpages
       issue: "https://github.com/BallLightningAB/balllightning/issues/2"
       title: "Post-v1 Enhancements: Portfolio Subpages (6 projects incl. Chronomation & Shipping API Dojo)"

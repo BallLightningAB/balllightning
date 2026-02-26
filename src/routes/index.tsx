@@ -172,7 +172,10 @@ function HomePage() {
 															)}
 														</ContributionGraphCalendar>
 														<ContributionGraphFooter className="mt-2 items-center">
-															<ContributionGraphTotalCount className="text-muted-foreground text-xs" />
+															<ContributionGraphTotalCount
+																className="text-muted-foreground text-xs"
+																label="{{count}} activities/4 months"
+															/>
 															<ContributionGraphLegend className="text-muted-foreground text-xs" />
 														</ContributionGraphFooter>
 													</ContributionGraph>
@@ -195,7 +198,10 @@ function HomePage() {
 															)}
 														</ContributionGraphCalendar>
 														<ContributionGraphFooter className="mt-2 items-center">
-															<ContributionGraphTotalCount className="text-muted-foreground text-xs" />
+															<ContributionGraphTotalCount
+																className="text-muted-foreground text-xs"
+																label="{{count}} activities/12 months"
+															/>
 															<ContributionGraphLegend className="text-muted-foreground text-xs" />
 														</ContributionGraphFooter>
 													</ContributionGraph>
@@ -238,8 +244,9 @@ function HomePage() {
 							<img
 								alt="Nicolas Brulay"
 								className="h-auto w-full rounded-2xl"
+								fetchPriority="high"
 								height={400}
-								src="/media/face.png"
+								src="/media/face_400x400.webp"
 								width={400}
 							/>
 						</div>

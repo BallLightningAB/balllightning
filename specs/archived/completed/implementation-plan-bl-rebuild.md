@@ -51,7 +51,7 @@ Apply BL palette from `shared-design-system.yaml#balllightning`:
   - Right: GitHub activity graph (reuse existing)
 - **TBC Content Embed**: 1 news + 2 blog cards from TBC feed endpoint (graceful fallback)
 - **Newsletter CTA**: Link-only to TBC signup
-- **About the Founder**: Inline section with `face.png` photo
+- **About the Founder**: Inline section with `face.webp` photo
 
 ### 2c. Services Page (`/services`)
 - Source: `specs/current-changes/content-addition/Services-text.md`
@@ -88,7 +88,7 @@ Apply BL palette from `shared-design-system.yaml#balllightning`:
 | Asset | Purpose | Ratio | Status |
 |-------|---------|-------|--------|
 | BL Logo (new) | Header, hero card, favicon | Square + wide | In redesign |
-| `face.png` | About the Founder section | Square | ✅ Ready |
+| `face.webp` | About the Founder section | Square | ✅ Ready |
 | Blightfell images | Portfolio case study | Various | Folder exists, images TBD |
 | Jorild.se images | Portfolio case study | Various | Folder exists, images TBD |
 | Skyscraper assets | Portfolio case study | Various | ✅ Ready (5 files) |

@@ -80,6 +80,7 @@ export function Header() {
 								rel="noopener noreferrer"
 								target="_blank"
 							>
+								<span className="sr-only">{link.label}</span>
 								<link.icon className="h-4 w-4" />
 							</a>
 						))}
@@ -125,7 +126,8 @@ export function Header() {
 										rel="noopener noreferrer"
 										target="_blank"
 									>
-										<link.icon className="h-5 w-5" />
+										<span className="sr-only">{link.label}</span>
+										<link.icon className="h-4 w-4" />
 									</a>
 								))}
 							</div>

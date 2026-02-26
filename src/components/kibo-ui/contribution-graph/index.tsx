@@ -454,11 +454,13 @@ export type ContributionGraphTotalCountProps = Omit<
 	"children"
 > & {
 	children?: (props: { totalCount: number; year: number }) => ReactNode;
+	label?: string;
 };
 
 export const ContributionGraphTotalCount = ({
 	className,
 	children,
+	label,
 	...props
 }: ContributionGraphTotalCountProps) => {
 	const { totalCount, year, labels } = useContributionGraph();
@@ -467,10 +469,13 @@ export const ContributionGraphTotalCount = ({
 		return <>{children({ totalCount, year })}</>;
 	}
 
+	// Use custom label if provided, otherwise fall back to default
+	const displayLabel = label || labels.totalCount;
+
 	return (
 		<div className={cn("text-muted-foreground", className)} {...props}>
-			{labels.totalCount
-				? labels.totalCount
+			{displayLabel
+				? displayLabel
 						.replace("{{count}}", String(totalCount))
 						.replace("{{year}}", String(year))
 				: `${totalCount} activities in ${year}`}

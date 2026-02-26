@@ -1,0 +1,98 @@
+/* Self-hosted fonts with font-display optimizations */
+
+/* Big Shoulders Stencil Display - Variable Font */
+@font-face {
+	font-family: "Big Shoulders Stencil Display";
+	font-style: normal;
+	font-weight: 100 900;
+	font-display: swap;
+	src: url("/fonts/BigShouldersStencilDisplay-400.ttf") format("truetype");
+	font-display: swap;
+}
+
+/* Big Shoulders Stencil Text - Variable Font */
+@font-face {
+	font-family: "Big Shoulders Stencil Text";
+	font-style: normal;
+	font-weight: 100 900;
+	font-display: swap;
+	src: url("/fonts/BigShouldersStencilText-400.ttf") format("truetype");
+	font-display: swap;
+}
+
+/* JetBrains Mono - Variable Font */
+@font-face {
+	font-family: "JetBrains Mono";
+	font-style: normal;
+	font-weight: 400 800;
+	font-display: swap;
+	src: url("/fonts/JetBrainsMono-400.ttf") format("truetype");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "JetBrains Mono";
+	font-style: italic;
+	font-weight: 400 800;
+	font-display: swap;
+	src: url("/fonts/JetBrainsMono-400.ttf") format("truetype");
+	font-display: swap;
+}
+
+/* Font metric overrides to reduce CLS */
+@supports (font-size: 1rem) {
+	:root {
+		/* Big Shoulders Display fallback metrics */
+		--font-display-ascent-override: 0.75;
+		--font-display-descent-override: 0.25;
+		--font-display-line-gap-override: 0;
+		--font-display-size-adjust: 0.85;
+
+		/* Big Shoulders Text fallback metrics */
+		--font-text-ascent-override: 0.8;
+		--font-text-descent-override: 0.2;
+		--font-text-line-gap-override: 0;
+		--font-text-size-adjust: 0.9;
+
+		/* JetBrains Mono fallback metrics */
+		--font-mono-ascent-override: 0.8;
+		--font-mono-descent-override: 0.2;
+		--font-mono-line-gap-override: 0;
+		--font-mono-size-adjust: 0.95;
+	}
+}
+
+/* Apply font metric overrides to fallback fonts */
+@supports not (font-family: "Big Shoulders Stencil Display") {
+	.font-display {
+		font-family:
+			system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+			sans-serif;
+		size-adjust: var(--font-display-size-adjust);
+		ascent-override: var(--font-display-ascent-override);
+		descent-override: var(--font-display-descent-override);
+		line-gap-override: var(--font-display-line-gap-override);
+	}
+}
+
+@supports not (font-family: "Big Shoulders Stencil Text") {
+	.font-text {
+		font-family:
+			system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+			sans-serif;
+		size-adjust: var(--font-text-size-adjust);
+		ascent-override: var(--font-text-ascent-override);
+		descent-override: var(--font-text-descent-override);
+		line-gap-override: var(--font-text-line-gap-override);
+	}
+}
+
+@supports not (font-family: "JetBrains Mono") {
+	.font-mono {
+		font-family: "Courier New", "Courier", monospace;
+		size-adjust: var(--font-mono-size-adjust);
+		ascent-override: var(--font-mono-ascent-override);
+		descent-override: var(--font-mono-descent-override);
+		line-gap-override: var(--font-mono-line-gap-override);
+	}
+}

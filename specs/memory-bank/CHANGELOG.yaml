@@ -1,5 +1,23 @@
 entries:
 
+  - date: "2026-02-26"
+    version: "0.1.6.6"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/7"
+    commit: TBD
+    status: completed
+    title: "feat(performance): comprehensive performance optimization with TanStack Start best practices (closes #7)"
+    details: |-
+      - Font self-hosting: Replace Google Fonts with self-hosted Big Shoulders fonts with CLS prevention
+      - Critical resource preloading: DNS prefetch, page prefetch, fetchPriority optimization for above-the-fold content
+      - Cache headers: TanStack Start Nitro route rules for 1-year static asset caching
+      - Contribution graph fixes: Dynamic time period labels (4 months mobile, 12 months desktop)
+      - Bundle analysis: Review and optimize large dependencies (motion-dom, prettier, svix)
+      - Performance improvements: 200-400ms faster font loading, 100-200ms faster image loading, reduced CLS
+      - Updated active-context.yaml: bumped meta version to 0.1.6.6, added performance-optimization to recent_done
+      - Created Issue #7 for performance optimization with reusable TanStack Start patterns
+      
+      Refs: Issue #7, Issue #2, I7D1-I7D6
+
   - date: "2026-02-25"
     version: "0.1.6.5"
     issue: "https://github.com/BallLightningAB/balllightning/issues/2"

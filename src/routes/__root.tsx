@@ -109,18 +109,45 @@ export const Route = createRootRoute({
 				rel: "stylesheet",
 				href: appCss,
 			},
+			// DNS prefetch for external domains
 			{
-				rel: "preconnect",
-				href: "https://fonts.googleapis.com",
+				rel: "dns-prefetch",
+				href: "https://api.github.com",
 			},
 			{
-				rel: "preconnect",
-				href: "https://fonts.gstatic.com",
+				rel: "dns-prefetch",
+				href: "https://github.com",
+			},
+			// Prefetch likely next pages
+			{
+				rel: "prefetch",
+				href: "/portfolio",
+				as: "document",
+			},
+			{
+				rel: "prefetch",
+				href: "/services",
+				as: "document",
+			},
+			// Preload only critical fonts used in initial render
+			{
+				rel: "preload",
+				href: "/fonts/BigShouldersStencilText-400.ttf",
+				as: "font",
+				type: "font/ttf",
 				crossOrigin: "anonymous",
 			},
 			{
+				rel: "preload",
+				href: "/fonts/JetBrainsMono-400.ttf",
+				as: "font",
+				type: "font/ttf",
+				crossOrigin: "anonymous",
+			},
+			// Self-hosted fonts
+			{
 				rel: "stylesheet",
-				href: "https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@100..900&family=Big+Shoulders+Stencil+Text:wght@100..900&family=JetBrains+Mono:ital,wght@0,400..800;1,400..800&display=swap",
+				href: "/fonts/fonts.css",
 			},
 			// Favicon
 			{

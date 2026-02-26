@@ -138,7 +138,7 @@
 ### Current Status
 | File | Location | Status | Notes |
 |------|----------|--------|-------|
-| `face.png` | `/public/media/face.png` | ✅ Ready | Nicolas Brulay photo |
+| `face.webp` | `/public/media/face.webp` | ✅ Ready | Nicolas Brulay photo |
 
 **Status**: ✅ Complete — No additional founder assets needed
 
