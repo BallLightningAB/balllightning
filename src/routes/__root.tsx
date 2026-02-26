@@ -128,6 +128,7 @@ export const Route = createRootRoute({
 				rel: "preload",
 				href: "/media/face_200x200.webp",
 				as: "image",
+				media: "(max-width: 767px)",
 				fetchPriority: "high",
 			},
 			// DNS prefetch for external domains
@@ -233,7 +234,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 														}
 													});
 												}
-											} else if (entry.entryType === 'first-contentful-paint') {
+											} else if (entry.entryType === 'paint' && entry.name === 'first-contentful-paint') {
 												// Send FCP to analytics
 												if (window.gtag) {
 													window.gtag('event', 'fcp', {
@@ -248,7 +249,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 											}
 										}
 									});
-									observer.observe({ entryTypes: ['largest-contentful-paint', 'first-contentful-paint'] });
+									observer.observe({ entryTypes: ['largest-contentful-paint', 'paint'] });
 								}
 							`,
 						}}

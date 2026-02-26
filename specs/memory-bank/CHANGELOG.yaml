@@ -1,9 +1,25 @@
 entries:
 
   - date: "2026-02-26"
-    version: "0.1.6.9"
+    version: "0.1.6.10"
     issue: "https://github.com/BallLightningAB/balllightning/issues/9"
     commit: TBD
+    status: completed
+    title: "fix(performance): resolve PerformanceObserver API errors and mobile image preloading warnings"
+    details: |-
+      - Fixed PerformanceObserver to use correct 'paint' entry type for FCP monitoring instead of invalid 'first-contentful-paint'
+      - Added media query to mobile image preloading to prevent desktop preload warnings for face_200x200.webp
+      - Eliminates console errors: "The entry type 'first-contentful-paint' does not exist or isn't supported"
+      - Eliminates preload warnings: unused face_200x200.webp preloaded on desktop where it's not used
+      - Maintains optimal mobile performance with proper conditional resource loading
+      - Performance monitoring now works correctly without browser console errors
+      
+      Refs: Issue #9
+
+  - date: "2026-02-26"
+    version: "0.1.6.9"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/9"
+    commit: 8e081597adfba7e52a15e148be155b73643282af
     status: completed
     title: "perf(fonts): convert all TTF fonts to WOFF2 format for 66% size reduction"
     details: |-
