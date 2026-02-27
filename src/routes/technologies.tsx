@@ -10,10 +10,7 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import {
-	generateCanonical,
-	jsonLdScript,
-} from "@/lib/seo/structured-data";
+import { generateCanonical, jsonLdScript } from "@/lib/seo/structured-data";
 import {
 	CATEGORY_LABELS,
 	technologiesByCategory,
@@ -117,9 +114,7 @@ function TechnologiesPage() {
 			>
 				{/* Header */}
 				<div className="mb-12 text-center">
-					<h1 className="mb-4 font-bold text-4xl md:text-5xl">
-						Technologies
-					</h1>
+					<h1 className="mb-4 font-bold text-4xl md:text-5xl">Technologies</h1>
 					<p className="mx-auto max-w-2xl text-lg text-muted-foreground">
 						The tools and frameworks behind every project — each backed by
 						real-world production experience across shipped case studies.
@@ -162,8 +157,8 @@ function TechnologiesPage() {
 						See These Technologies in Action
 					</h2>
 					<p className="mx-auto mb-8 max-w-xl text-muted-foreground">
-						Every technology listed here is demonstrated in a real,
-						shipped project.
+						Every technology listed here is demonstrated in a real, shipped
+						project.
 					</p>
 					<div className="flex flex-wrap justify-center gap-4">
 						<Button asChild className="gap-2" size="lg">

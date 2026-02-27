@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import { motion } from "motion/react";
+import { useMemo } from "react";
 import {
 	ContributionGraph,
 	ContributionGraphBlock,
@@ -31,20 +32,26 @@ export const Route = createFileRoute("/")({
 function HomePage() {
 	const { feed, github } = Route.useLoaderData();
 
-	// Filter to 4 months only on mobile
-	const fourMonthsAgo = new Date();
-	fourMonthsAgo.setMonth(fourMonthsAgo.getMonth() - 4);
-	const mobileGithub = github
-		? {
-				...github,
-				activities: github.activities.filter(
-					(day) => new Date(day.date) >= fourMonthsAgo
-				),
-				totalCount: github.activities
-					.filter((day) => new Date(day.date) >= fourMonthsAgo)
-					.reduce((sum, day) => sum + day.count, 0),
-			}
-		: github;
+	// Filter to 4 months only on mobile (memoized for performance)
+	const mobileGithub = useMemo(() => {
+		if (!github) {
+			return github;
+		}
+
+		const fourMonthsAgo = new Date();
+		fourMonthsAgo.setMonth(fourMonthsAgo.getMonth() - 4);
+
+		// Filter once, reuse result for both activities and count
+		const filteredActivities = github.activities.filter(
+			(day) => new Date(day.date) >= fourMonthsAgo
+		);
+
+		return {
+			...github,
+			activities: filteredActivities,
+			totalCount: filteredActivities.reduce((sum, day) => sum + day.count, 0),
+		};
+	}, [github]);
 
 	const newsItems =
 		feed?.items.filter((i: FeedItem) => i.type === "news").slice(0, 1) ?? [];

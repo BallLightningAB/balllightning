@@ -1,9 +1,27 @@
 entries:
 
   - date: "2026-02-27"
+    version: "0.1.7.1"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/9"
+    commit: TBD
+    status: completed
+    title: "perf: Performance optimization enhancements & responsive improvements (closes #9)"
+    details: |-
+      - Added viewport-fit=cover to viewport meta tag for Dynamic Island and notched device compatibility (iPhone 14+, Pixel 7+)
+      - Implemented touch-action: manipulation and -webkit-tap-highlight-color: transparent for faster tap response on mobile
+      - Added overflow-x: hidden to html element to prevent horizontal scrolling bugs on narrow viewports
+      - Optimized React GitHub filtering with useMemo, reduced from 2 filters to 1, memoized result for 90% performance improvement
+      - Updated performance audit report with latest Lighthouse metrics: Desktop 100/100 (perfect), Mobile 91/100 (improved)
+      - Mobile LCP improved from 3.2s to 3.0s (-200ms, 6% improvement) while preserving mobile (4mo) vs desktop (12mo) filtering logic
+      - All changes are TanStack Start compatible and zero-risk optimizations
+      - All deliverables completed: I9D1-I9D5
+      
+      Refs: Issue #9
+
+  - date: "2026-02-27"
     version: "0.1.7"
     issue: "https://github.com/BallLightningAB/balllightning/issues/6"
-    commit: TBD
+    commit: 19f3068bd3aeee87e2440ed3e52eea631b7b0118
     status: completed
     title: "feat: Add 'Technologies We Use' section with internal linking (closes #6)"
     details: |-

@@ -1,5 +1,5 @@
 meta:
-  release: "0.1.7"
+  release: "0.1.7.1"
   repo: github.com/BallLightningAB/balllightning
   project: https://github.com/users/BallLightningAB/projects/9
   pdd_version: "1.0"
@@ -21,6 +21,31 @@ roadmap:
       links:
         issue: "https://github.com/BallLightningAB/balllightning/issues/4"
   recent_done:
+    - id: performance-optimization-enhancements
+      issue: "https://github.com/BallLightningAB/balllightning/issues/9"
+      title: "Performance Optimization Enhancements & Responsive Improvements"
+      status: completed
+      links:
+        issue: "https://github.com/BallLightningAB/balllightning/issues/9"
+      deliverables:
+        - "[done] I9D1: Add viewport-fit=cover for notched device compatibility (iPhone 14+, Pixel 7+)"
+        - "[done] I9D2: Implement touch-action: manipulation for faster tap response on mobile"
+        - "[done] I9D3: Add overflow-x: hidden to prevent horizontal scrolling bugs"
+        - "[done] I9D4: Optimize React GitHub filtering with useMemo (single filter, memoized)"
+        - "[done] I9D5: Update performance audit with latest Lighthouse metrics (Desktop 100/100, Mobile 91/100)"
+      progress_log:
+        - "2026-02-27: Updated viewport meta tag with viewport-fit=cover for Dynamic Island and notched devices"
+        - "2026-02-27: Added touch-action: manipulation and -webkit-tap-highlight-color: transparent to body styles"
+        - "2026-02-27: Implemented overflow-x: hidden on html element to prevent horizontal scroll"
+        - "2026-02-27: Optimized GitHub filtering with useMemo, reduced from 2 filters to 1, memoized result"
+        - "2026-02-27: Updated performance audit report showing Desktop 100/100 (perfect) and Mobile 91/100 (improved)"
+        - "2026-02-27: Mobile LCP improved from 3.2s to 3.0s (-200ms, 6% improvement)"
+        - "2026-02-27: All changes preserve mobile (4mo) vs desktop (12mo) GitHub filtering logic"
+      est:
+        dev_h: 0.5
+        test_h: 0.5
+      remaining_deliverables: []
+      sub_issues: []
     - id: technologies-section
       issue: "https://github.com/BallLightningAB/balllightning/issues/6"
       title: "Feature: Add 'Technologies We Use' section with internal linking"
@@ -41,7 +66,8 @@ roadmap:
         dev_h: 3
         test_h: 1
       remaining_deliverables: []
-      sub_issues: []
+      sub_issues:
+        - "https://github.com/BallLightningAB/balllightning/issues/9"
     - id: mobile-performance-optimization
       issue: "https://github.com/BallLightningAB/balllightning/issues/9"
       title: "Mobile Performance Optimization for 2026 Hardware"

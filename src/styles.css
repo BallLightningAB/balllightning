@@ -14,7 +14,8 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    font-size: 20px; /* Scale base size to 20px (1.25x of 16px) */
+    font-size: 20px;
+    overflow-x: hidden;
   }
 
   body {
@@ -25,6 +26,8 @@
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
     @apply bg-background text-foreground;
   }
 
