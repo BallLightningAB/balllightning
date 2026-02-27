@@ -54,9 +54,9 @@ export function Footer() {
 
 					{/* Site Links */}
 					<div>
-						<h4 className="font-heading mb-3 font-semibold text-foreground text-sm">
+						<h3 className="font-heading mb-3 font-semibold text-foreground text-sm">
 							Site
-						</h4>
+						</h3>
 						<ul className="space-y-2">
 							{footerLinks.site.map((link) => (
 								<li key={link.href}>
@@ -73,9 +73,9 @@ export function Footer() {
 
 					{/* Ecosystem */}
 					<div>
-						<h4 className="font-heading mb-3 font-semibold text-foreground text-sm">
+						<h3 className="font-heading mb-3 font-semibold text-foreground text-sm">
 							Ecosystem
-						</h4>
+						</h3>
 						<ul className="space-y-2">
 							{footerLinks.ecosystem.map((link) => (
 								<li key={link.href}>
@@ -94,9 +94,9 @@ export function Footer() {
 
 					{/* Newsletter CTA (link to TBC only) */}
 					<div className="space-y-3">
-						<h4 className="font-heading font-semibold text-foreground text-sm">
+						<h3 className="font-heading font-semibold text-foreground text-sm">
 							The Upkeep
-						</h4>
+						</h3>
 						<p className="text-muted-foreground text-sm">
 							Devlogs and updates from The Builder Coil, our public builder's
 							log.

@@ -415,7 +415,7 @@ function HomePage() {
 												rel="noopener noreferrer"
 												target="_blank"
 											>
-												Read more
+												Read: {item.title}
 												<ExternalLink className="h-3 w-3" />
 											</a>
 										</Button>

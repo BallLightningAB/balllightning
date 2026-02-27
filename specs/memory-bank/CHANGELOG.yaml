@@ -1,9 +1,22 @@
 entries:
 
   - date: "2026-02-27"
-    version: "0.1.7.5"
+    version: "0.1.7.6"
     issue: "https://github.com/BallLightningAB/balllightning/issues/9"
     commit: TBD
+    status: completed
+    title: "perf: add cache headers and fix accessibility/SEO issues"
+    details: |-
+      - Added 1-year immutable cache headers for static assets, fonts, and common static extensions (106 KiB savings)
+      - Fixed accessibility heading order - changed footer h4 headings to h3 for proper hierarchy
+      - Fixed SEO link text - made feed 'Read more' links descriptive using post titles
+      
+      Refs: #9 I9D5
+
+  - date: "2026-02-27"
+    version: "0.1.7.5"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/9"
+    commit: b4ac2d14ac74c15a6414b12b72b7a07d113e0bcd
     status: completed
     title: "perf: remove document prefetch to restore mobile Speed Index"
     details: |-
