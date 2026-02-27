@@ -1,4 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
+import tbcBlog from "@/assets/portfolio/the-builder-coil/tbc-blog.webp";
+import tbcFeed from "@/assets/portfolio/the-builder-coil/tbc-feed.webp";
+import tbcHero from "@/assets/portfolio/the-builder-coil/tbc-hero.webp";
 import { PortfolioSubpageLayout } from "@/components/layout/PortfolioSubpageLayout";
 import { ProjectImageGallery } from "@/components/ui/project-image-gallery";
 import {
@@ -73,7 +76,7 @@ export const Route = createFileRoute("/portfolio/the-builder-coil")({
 function TheBuilderCoilPage() {
 	return (
 		<PortfolioSubpageLayout
-			heroImage="/src/assets/portfolio/the-builder-coil/tbc-hero.webp"
+			heroImage={tbcHero}
 			heroImageAlt="The Builder Coil landing page"
 			links={[
 				{
@@ -159,13 +162,13 @@ function TheBuilderCoilPage() {
 					columns={2}
 					images={[
 						{
-							src: "/src/assets/portfolio/the-builder-coil/tbc-blog.webp",
+							src: tbcBlog,
 							alt: "The Builder Coil blog post page showing article layout and typography",
 							width: 1200,
 							height: 800,
 						},
 						{
-							src: "/src/assets/portfolio/the-builder-coil/tbc-feed.webp",
+							src: tbcFeed,
 							alt: "The Builder Coil feed API response displaying JSON data structure",
 							width: 1200,
 							height: 800,

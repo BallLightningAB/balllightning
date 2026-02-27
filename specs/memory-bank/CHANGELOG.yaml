@@ -1,9 +1,22 @@
 entries:
 
   - date: "2026-02-27"
+    version: "0.1.7.3"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/2"
+    commit: 9869161c706ee12f55babea41762b6d42ba2d54f
+    status: completed
+    title: "perf(assets): migrate Blightfell & Jorild.se images to WebP and update release metadata"
+    details: |-
+      - Converted all Blightfell portfolio images to WebP with small footprint (12–85 KB range)
+      - Converted all Jorild.se portfolio images to WebP and confirmed sizes fit performance targets
+      - Bumped release metadata to 0.1.7.3 to reflect portfolio asset updates
+      
+      Refs: Issue #2
+
+  - date: "2026-02-27"
     version: "0.1.7.2"
     issue: "https://github.com/BallLightningAB/balllightning/issues/6"
-    commit: TBD
+    commit: 9869161c706ee12f55babea41762b6d42ba2d54f
     status: completed
     title: "feat(technologies): update C# description and add Game Design section"
     details: |-
@@ -17,7 +30,7 @@ entries:
   - date: "2026-02-27"
     version: "0.1.7.1"
     issue: "https://github.com/BallLightningAB/balllightning/issues/9"
-    commit: 1234567890abcdef
+    commit: 9265b38e4462e7a10b9482e85e54ffd92262bd20
     status: completed
     title: "perf: Performance optimization enhancements & responsive improvements (closes #9)"
     details: |-

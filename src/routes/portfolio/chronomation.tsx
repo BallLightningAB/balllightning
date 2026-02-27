@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import chronomationHero from "@/assets/portfolio/chronomation/chronomation-hero.webp";
 import { PortfolioSubpageLayout } from "@/components/layout/PortfolioSubpageLayout";
 import {
 	generateCanonical,
@@ -73,7 +74,7 @@ export const Route = createFileRoute("/portfolio/chronomation")({
 function ChronomotionPage() {
 	return (
 		<PortfolioSubpageLayout
-			heroImage="/src/assets/portfolio/chronomation/chronomation-hero.webp"
+			heroImage={chronomationHero}
 			heroImageAlt="Chronomation landing page"
 			links={[
 				{

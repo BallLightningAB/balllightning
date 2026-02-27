@@ -1,4 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
+import sadArena from "@/assets/portfolio/shipping-api-dojo/sad-arena.webp";
+import sadHero from "@/assets/portfolio/shipping-api-dojo/sad-hero.webp";
+import sadLesson from "@/assets/portfolio/shipping-api-dojo/sad-lesson.webp";
 import { PortfolioSubpageLayout } from "@/components/layout/PortfolioSubpageLayout";
 import { ProjectImageGallery } from "@/components/ui/project-image-gallery";
 import {
@@ -75,7 +78,7 @@ export const Route = createFileRoute("/portfolio/shipping-api-dojo")({
 function ShippingApiDojoPage() {
 	return (
 		<PortfolioSubpageLayout
-			heroImage="/src/assets/portfolio/shipping-api-dojo/sad-hero.webp"
+			heroImage={sadHero}
 			heroImageAlt="Shipping API Dojo landing page"
 			links={[
 				{
@@ -178,13 +181,13 @@ function ShippingApiDojoPage() {
 					columns={2}
 					images={[
 						{
-							src: "/src/assets/portfolio/shipping-api-dojo/sad-lesson.webp",
+							src: sadLesson,
 							alt: "REST or SOAP lesson interface showing code examples and exercises",
 							width: 1200,
 							height: 800,
 						},
 						{
-							src: "/src/assets/portfolio/shipping-api-dojo/sad-arena.webp",
+							src: sadArena,
 							alt: "Incident Arena scenario player debugging API integration issues",
 							width: 1200,
 							height: 800,
