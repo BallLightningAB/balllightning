@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import blightfellArchitecture from "@/assets/portfolio/blightfell/blightfell-architecture.jpg";
-import blightfellIngame from "@/assets/portfolio/blightfell/blightfell-ingame.jpg";
-import blightfellSite from "@/assets/portfolio/blightfell/blightfell-site.jpg";
-import blightfellSteam from "@/assets/portfolio/blightfell/blightfell-steam.jpg";
+import blightfellArchitecture from "@/assets/portfolio/blightfell/blightfell-architecture.webp";
+import blightfellIngame from "@/assets/portfolio/blightfell/blightfell-ingame.webp";
+import blightfellSite from "@/assets/portfolio/blightfell/blightfell-site.webp";
+import blightfellSteam from "@/assets/portfolio/blightfell/blightfell-steam.webp";
 import { PortfolioSubpageLayout } from "@/components/layout/PortfolioSubpageLayout";
 import { ProjectImageGallery } from "@/components/ui/project-image-gallery";
 import {

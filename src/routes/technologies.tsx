@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ExternalLink } from "lucide-react";
+
 import { AnimatedGroup } from "@/components/motion-primitives/animated-group";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -11,10 +12,10 @@ import {
 	CardTitle,
 } from "@/components/ui/card";
 import { generateCanonical, jsonLdScript } from "@/lib/seo/structured-data";
+import type { Technology } from "@/lib/technologies/data";
 import {
 	CATEGORY_LABELS,
 	technologiesByCategory,
-	type Technology,
 } from "@/lib/technologies/data";
 
 export const Route = createFileRoute("/technologies")({

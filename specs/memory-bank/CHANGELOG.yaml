@@ -1,6 +1,18 @@
 entries:
 
   - date: "2026-02-27"
+    version: "0.1.7.4"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/6"
+    commit: ee26131bb9b0bb3e40834d400612731200dff668
+    status: completed
+    title: "chore: sort imports on technologies route"
+    details: |-
+      - Updated some images from JPG to WEBP format
+      - Sorted imports and separated type-only imports on /technologies route to satisfy linting
+      
+      Refs: Issue #6
+
+  - date: "2026-02-27"
     version: "0.1.7.3"
     issue: "https://github.com/BallLightningAB/balllightning/issues/2"
     commit: 9869161c706ee12f55babea41762b6d42ba2d54f

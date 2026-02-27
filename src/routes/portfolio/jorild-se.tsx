@@ -1,11 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
-import jorildAboutOsteopathy from "@/assets/portfolio/jorild-se/jorild-se-about-osteopathy.jpg";
-import jorildAboutSection from "@/assets/portfolio/jorild-se/jorild-se-about-section.jpg";
-import jorildGbp from "@/assets/portfolio/jorild-se/jorild-se-gbp.jpg";
-import jorildHero from "@/assets/portfolio/jorild-se/jorild-se-hero-section.jpg";
-import jorildKaddio from "@/assets/portfolio/jorild-se/jorild-se-kaddio-online-booking.jpg";
-import jorildLanding from "@/assets/portfolio/jorild-se/jorild-se-landing-page.jpg";
-import jorildServices from "@/assets/portfolio/jorild-se/jorild-se-services-section.jpg";
+import jorildAboutOsteopathy from "@/assets/portfolio/jorild-se/jorild-se-about-osteopathy.webp";
+import jorildAboutSection from "@/assets/portfolio/jorild-se/jorild-se-about-section.webp";
+import jorildGbp from "@/assets/portfolio/jorild-se/jorild-se-gbp.webp";
+import jorildHero from "@/assets/portfolio/jorild-se/jorild-se-hero-section.webp";
+import jorildKaddio from "@/assets/portfolio/jorild-se/jorild-se-kaddio-online-booking.webp";
+import jorildLanding from "@/assets/portfolio/jorild-se/jorild-se-landing-page.webp";
+import jorildServices from "@/assets/portfolio/jorild-se/jorild-se-services-section.webp";
 import { PortfolioSubpageLayout } from "@/components/layout/PortfolioSubpageLayout";
 import { ProjectImageGallery } from "@/components/ui/project-image-gallery";
 import {
