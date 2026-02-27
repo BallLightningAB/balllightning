@@ -1,9 +1,26 @@
 entries:
 
+  - date: "2026-02-27"
+    version: "0.1.7"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/6"
+    commit: TBD
+    status: completed
+    title: "feat: Add 'Technologies We Use' section with internal linking (closes #6)"
+    details: |-
+      - Implemented technologies page with 25+ technologies across 5 categories (frontend, backend, deployment, tools, game-dev)
+      - Created comprehensive technology data structure with project mappings and competence linking
+      - Added internal linking strategy: services competence grid → /technologies#{tech-slug}, technologies page → /portfolio/{project-slug}
+      - Updated navigation (header + footer) to include Technologies link between Services and Portfolio
+      - Enhanced page with AnimatedGroup animations, category anchor navigation, and ItemList schema.org structured data
+      - Updated sitemap generator to include /technologies page with priority 0.8
+      - All deliverables completed: I6D1-I6D5
+      
+      Refs: Issue #6
+
   - date: "2026-02-26"
     version: "0.1.6.10"
     issue: "https://github.com/BallLightningAB/balllightning/issues/9"
-    commit: TBD
+    commit: ac5e639c51117966d88f1f9f925b3ad6e5abff16
     status: completed
     title: "fix(performance): resolve PerformanceObserver API errors and mobile image preloading warnings"
     details: |-

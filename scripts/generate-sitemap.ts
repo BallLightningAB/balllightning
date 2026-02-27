@@ -15,6 +15,7 @@ const OUTPUT_PATH = path.join(process.cwd(), "public", "sitemap.xml");
 const STATIC_PAGES = [
 	{ path: "/", priority: "1.0", changefreq: "weekly" },
 	{ path: "/services", priority: "0.9", changefreq: "monthly" },
+	{ path: "/technologies", priority: "0.8", changefreq: "monthly" },
 	{ path: "/portfolio", priority: "0.9", changefreq: "weekly" },
 	{ path: "/contact", priority: "0.7", changefreq: "monthly" },
 ];

@@ -9,6 +9,7 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
+import { COMPETENCE_TO_SLUG } from "@/lib/technologies/data";
 
 export const Route = createFileRoute("/services")({
 	component: ServicesPage,
@@ -171,14 +172,29 @@ function ServicesPage() {
 						Competence
 					</h2>
 					<div className="grid grid-cols-2 gap-3 md:grid-cols-4">
-						{competences.map((skill) => (
-							<div
-								className="rounded-lg border border-border bg-card/50 px-4 py-3 text-center text-sm font-medium transition-colors hover:border-bl-red/30 hover:bg-bl-red/5"
-								key={skill}
-							>
-								{skill}
-							</div>
-						))}
+						{competences.map((skill) => {
+							const slug = COMPETENCE_TO_SLUG[skill];
+							if (slug) {
+								return (
+									<Link
+										className="rounded-lg border border-border bg-card/50 px-4 py-3 text-center text-sm font-medium transition-colors hover:border-bl-red/30 hover:bg-bl-red/5"
+										hash={slug}
+										key={skill}
+										to="/technologies"
+									>
+										{skill}
+									</Link>
+								);
+							}
+							return (
+								<div
+									className="rounded-lg border border-border bg-card/50 px-4 py-3 text-center text-sm font-medium transition-colors hover:border-bl-red/30 hover:bg-bl-red/5"
+									key={skill}
+								>
+									{skill}
+								</div>
+							);
+						})}
 					</div>
 				</div>
 

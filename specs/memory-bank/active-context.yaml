@@ -1,5 +1,5 @@
 meta:
-  release: "0.1.6.10"
+  release: "0.1.7"
   repo: github.com/BallLightningAB/balllightning
   project: https://github.com/users/BallLightningAB/projects/9
   pdd_version: "1.0"
@@ -13,22 +13,35 @@ meta:
   # - I3Docs / I3UI / I3Fix / I3Test / I3Biome: tags for documentation, UI polish, minor fixes, tests and Biome/tooling work not tied to a single deliverable
 roadmap:
   current:
-      - id: language-switching
-        issue: "https://github.com/BallLightningAB/balllightning/issues/4"
-        title: "Feature: Add language switching support (Swedish)"
-        status: planned
-        links:
-          issue: "https://github.com/BallLightningAB/balllightning/issues/4"
   next_steps:
-
+    - id: language-switching
+      issue: "https://github.com/BallLightningAB/balllightning/issues/4"
+      title: "Feature: Add language switching support (Swedish)"
+      status: planned
+      links:
+        issue: "https://github.com/BallLightningAB/balllightning/issues/4"
+  recent_done:
     - id: technologies-section
       issue: "https://github.com/BallLightningAB/balllightning/issues/6"
       title: "Feature: Add 'Technologies We Use' section with internal linking"
-      status: planned
+      status: completed
       links:
         issue: "https://github.com/BallLightningAB/balllightning/issues/6"
-      optional: true
-  recent_done:
+      deliverables:
+        - "[done] I6D1: Create technologies data structure with 25+ technologies across 5 categories"
+        - "[done] I6D2: Build technologies page with category navigation and project links"
+        - "[done] I6D3: Add internal linking from services competence grid to technology anchors"
+        - "[done] I6D4: Update navigation (header + footer) to include Technologies link"
+        - "[done] I6D5: Update sitemap to include /technologies page"
+      progress_log:
+        - "2026-02-27: Implemented technologies section with 25 technologies across 5 categories (frontend, backend, deployment, tools, game-dev)"
+        - "2026-02-27: Added internal linking strategy: services competence grid → /technologies#{tech-slug}, technologies page → /portfolio/{project-slug}"
+        - "2026-02-27: Updated navigation and sitemap, added AnimatedGroup animations and ItemList schema.org structured data"
+      est:
+        dev_h: 3
+        test_h: 1
+      remaining_deliverables: []
+      sub_issues: []
     - id: mobile-performance-optimization
       issue: "https://github.com/BallLightningAB/balllightning/issues/9"
       title: "Mobile Performance Optimization for 2026 Hardware"

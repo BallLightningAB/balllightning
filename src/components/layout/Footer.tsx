@@ -6,6 +6,7 @@ const footerLinks = {
 	site: [
 		{ href: "/", label: "Home" },
 		{ href: "/services", label: "Services" },
+		{ href: "/technologies", label: "Technologies" },
 		{ href: "/portfolio", label: "Portfolio" },
 		{ href: "/contact", label: "Contact" },
 	],

@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TechnologiesRouteImport } from './routes/technologies'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
@@ -20,6 +21,11 @@ import { Route as PortfolioJorildSeRouteImport } from './routes/portfolio/jorild
 import { Route as PortfolioChronomationRouteImport } from './routes/portfolio/chronomation'
 import { Route as PortfolioBlightfellRouteImport } from './routes/portfolio/blightfell'
 
+const TechnologiesRoute = TechnologiesRouteImport.update({
+  id: '/technologies',
+  path: '/technologies',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
@@ -76,6 +82,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRoute
+  '/technologies': typeof TechnologiesRoute
   '/portfolio/blightfell': typeof PortfolioBlightfellRoute
   '/portfolio/chronomation': typeof PortfolioChronomationRoute
   '/portfolio/jorild-se': typeof PortfolioJorildSeRoute
@@ -88,6 +95,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRoute
+  '/technologies': typeof TechnologiesRoute
   '/portfolio/blightfell': typeof PortfolioBlightfellRoute
   '/portfolio/chronomation': typeof PortfolioChronomationRoute
   '/portfolio/jorild-se': typeof PortfolioJorildSeRoute
@@ -101,6 +109,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRoute
+  '/technologies': typeof TechnologiesRoute
   '/portfolio/blightfell': typeof PortfolioBlightfellRoute
   '/portfolio/chronomation': typeof PortfolioChronomationRoute
   '/portfolio/jorild-se': typeof PortfolioJorildSeRoute
@@ -115,6 +124,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/services'
+    | '/technologies'
     | '/portfolio/blightfell'
     | '/portfolio/chronomation'
     | '/portfolio/jorild-se'
@@ -127,6 +137,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/services'
+    | '/technologies'
     | '/portfolio/blightfell'
     | '/portfolio/chronomation'
     | '/portfolio/jorild-se'
@@ -139,6 +150,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/services'
+    | '/technologies'
     | '/portfolio/blightfell'
     | '/portfolio/chronomation'
     | '/portfolio/jorild-se'
@@ -152,6 +164,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
   ServicesRoute: typeof ServicesRoute
+  TechnologiesRoute: typeof TechnologiesRoute
   PortfolioBlightfellRoute: typeof PortfolioBlightfellRoute
   PortfolioChronomationRoute: typeof PortfolioChronomationRoute
   PortfolioJorildSeRoute: typeof PortfolioJorildSeRoute
@@ -163,6 +176,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/technologies': {
+      id: '/technologies'
+      path: '/technologies'
+      fullPath: '/technologies'
+      preLoaderRoute: typeof TechnologiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services': {
       id: '/services'
       path: '/services'
@@ -240,6 +260,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
   ServicesRoute: ServicesRoute,
+  TechnologiesRoute: TechnologiesRoute,
   PortfolioBlightfellRoute: PortfolioBlightfellRoute,
   PortfolioChronomationRoute: PortfolioChronomationRoute,
   PortfolioJorildSeRoute: PortfolioJorildSeRoute,
