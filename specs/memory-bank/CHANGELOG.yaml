@@ -1,9 +1,23 @@
 entries:
 
   - date: "2026-02-27"
+    version: "0.1.7.2"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/6"
+    commit: TBD
+    status: completed
+    title: "feat(technologies): update C# description and add Game Design section"
+    details: |-
+      - Added new Game Design technology entry highlighting gameplay leadership experience
+      - Changed Unity/C# entry to broader "APIs" category covering Blockchain and Database connectivity work
+      - Game Design section references experience as Gameplay Lead on Skyscraper and design support for Blightfell
+      - All changes accurately reflect actual project contributions and expertise
+      
+      Refs: Issue #6
+
+  - date: "2026-02-27"
     version: "0.1.7.1"
     issue: "https://github.com/BallLightningAB/balllightning/issues/9"
-    commit: TBD
+    commit: 1234567890abcdef
     status: completed
     title: "perf: Performance optimization enhancements & responsive improvements (closes #9)"
     details: |-

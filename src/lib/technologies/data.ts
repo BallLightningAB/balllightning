@@ -230,20 +230,12 @@ export const TECHNOLOGIES: Technology[] = [
 
 	// ── Game Development ─────────────────────────────────────
 	{
-		slug: "unity",
-		name: "Unity",
+		slug: "api",
+		name: "APIs",
 		category: "game-dev",
 		description:
-			"Industry-standard game engine used for the Skyscraper MMO deckbattler. Server-authoritative architecture with real-time multiplayer.",
-		projects: [skyscraper],
-	},
-	{
-		slug: "csharp",
-		name: "C#",
-		category: "game-dev",
-		description:
-			"Primary language for Unity game logic, server-side game systems, and card battle mechanics in the Skyscraper project.",
-		projects: [skyscraper],
+			"Supported Unity integration, focusing on API development for Blockchain and Database connectivity rather than direct game logic implementation.",
+		projects: [blightfell],
 	},
 	{
 		slug: "discordjs",
@@ -252,6 +244,14 @@ export const TECHNOLOGIES: Technology[] = [
 		description:
 			"Bot framework for community management, social games, and automated moderation across a 2.5k+ member Discord server.",
 		projects: [skyscraper],
+	},
+	{
+		slug: "game-design",
+		name: "Game Design",
+		category: "game-dev",
+		description:
+			"Gameplay leadership and design direction for multiplayer games. Served as Gameplay Lead on Skyscraper MMO deckbattler and supported game design & testing for Blightfell Web3 strategy autobattler.",
+		projects: [skyscraper, blightfell],
 	},
 ];
 
