@@ -1,6 +1,18 @@
 entries:
 
   - date: "2026-02-27"
+    version: "0.1.7.5"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/9"
+    commit: TBD
+    status: completed
+    title: "perf: remove document prefetch to restore mobile Speed Index"
+    details: |-
+      - Removed non-critical document prefetch links for /portfolio and /services to prevent competing network requests during initial render on mobile
+      - Expected to recover Speed Index regression and return mobile Lighthouse to 95+
+      
+      Refs: I9D5
+
+  - date: "2026-02-27"
     version: "0.1.7.4"
     issue: "https://github.com/BallLightningAB/balllightning/issues/6"
     commit: ee26131bb9b0bb3e40834d400612731200dff668

@@ -144,17 +144,6 @@ export const Route = createRootRoute({
 				rel: "dns-prefetch",
 				href: "https://thebuildercoil.com",
 			},
-			// Prefetch likely next pages
-			{
-				rel: "prefetch",
-				href: "/portfolio",
-				as: "document",
-			},
-			{
-				rel: "prefetch",
-				href: "/services",
-				as: "document",
-			},
 			// Favicon
 			{
 				rel: "icon",
