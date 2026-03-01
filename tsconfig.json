@@ -20,6 +20,7 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "allowJs": true
   }
 }

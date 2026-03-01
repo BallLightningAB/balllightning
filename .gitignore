@@ -42,5 +42,8 @@ favor.yaml
 # Admin
 admin/
 
+# Paraglide generated output
+src/paraglide/
+
 # Newsletter PII data (Phase 1 JSON storage)
 content/newsletter/subscribers.json

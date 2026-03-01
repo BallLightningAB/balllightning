@@ -9,6 +9,7 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
+import * as m from "@/paraglide/messages.js";
 
 export const Route = createFileRoute("/portfolio/")({
 	component: PortfolioPage,
@@ -112,10 +113,11 @@ function PortfolioPage() {
 			>
 				{/* Header */}
 				<div className="mb-16 text-center">
-					<h1 className="mb-4 font-bold text-4xl md:text-5xl">Portfolio</h1>
+					<h1 className="mb-4 font-bold text-4xl md:text-5xl">
+						{m.portfolio_title()}
+					</h1>
 					<p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-						Shipped projects across game development, web applications, data
-						engineering, and content platforms — each built to last.
+						{m.portfolio_subtitle()}
 					</p>
 				</div>
 
@@ -151,7 +153,8 @@ function PortfolioPage() {
 										className="inline-flex items-center gap-1 text-sm font-medium text-bl-red hover:underline"
 										href={`/portfolio/${project.slug}`}
 									>
-										View Case Study <ArrowRight className="h-3 w-3" />
+										{m.portfolio_view_case_study()}{" "}
+										<ArrowRight className="h-3 w-3" />
 									</a>
 									{project.externalUrl && (
 										<a
@@ -160,7 +163,8 @@ function PortfolioPage() {
 											rel="noopener noreferrer"
 											target="_blank"
 										>
-											Visit site <ExternalLink className="h-3 w-3" />
+											{m.portfolio_visit_site()}{" "}
+											<ExternalLink className="h-3 w-3" />
 										</a>
 									)}
 									{project.secondaryUrl && (
@@ -170,7 +174,8 @@ function PortfolioPage() {
 											rel="noopener noreferrer"
 											target="_blank"
 										>
-											View on Steam <ExternalLink className="h-3 w-3" />
+											{m.portfolio_view_on_steam()}{" "}
+											<ExternalLink className="h-3 w-3" />
 										</a>
 									)}
 								</div>
@@ -182,14 +187,14 @@ function PortfolioPage() {
 				{/* CTA */}
 				<div className="mt-16 text-center">
 					<h2 className="mb-4 font-semibold text-2xl">
-						Ready to build something?
+						{m.portfolio_cta_title()}
 					</h2>
 					<p className="mb-6 text-muted-foreground">
-						Tell me what you need and I'll scope it within 48 hours.
+						{m.portfolio_cta_description()}
 					</p>
 					<Button asChild className="gap-2" size="lg">
 						<Link to="/contact">
-							Start a Conversation
+							{m.portfolio_cta_button()}
 							<ArrowRight className="h-4 w-4" />
 						</Link>
 					</Button>

@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { submitContactForm } from "@/lib/contact/server";
+import * as m from "@/paraglide/messages.js";
 
 export const Route = createFileRoute("/contact")({
 	component: ContactPage,
@@ -37,9 +38,7 @@ function ContactPage() {
 		} catch (err) {
 			setFormState("error");
 			setErrorMessage(
-				err instanceof Error
-					? err.message
-					: "Failed to send message. Please try again."
+				err instanceof Error ? err.message : m.contact_form_error_default()
 			);
 		}
 	};
@@ -70,54 +69,60 @@ function ContactPage() {
 			>
 				{/* Header */}
 				<div className="mb-16 text-center">
-					<h1 className="mb-4 font-bold text-4xl md:text-5xl">Get in Touch</h1>
+					<h1 className="mb-4 font-bold text-4xl md:text-5xl">
+						{m.contact_title()}
+					</h1>
 					<p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-						Have a project in mind? I typically respond within one business day.
+						{m.contact_subtitle()}
 					</p>
 				</div>
 
 				<div className="grid gap-12 md:grid-cols-2">
 					{/* Contact Form */}
 					<div>
-						<h2 className="mb-6 font-semibold text-2xl">Send a Message</h2>
+						<h2 className="mb-6 font-semibold text-2xl">
+							{m.contact_form_title()}
+						</h2>
 
 						{formState === "success" ? (
 							<Card className="border-green-500/50 bg-green-500/10">
 								<CardContent className="pt-6">
 									<p className="text-center text-green-400">
-										Thanks for your message! I'll get back to you soon.
+										{m.contact_form_success()}
 									</p>
 								</CardContent>
 							</Card>
 						) : (
 							<form className="space-y-6" onSubmit={handleSubmit}>
 								<div className="space-y-2">
-									<Label htmlFor="name">Name</Label>
+									<Label htmlFor="name">{m.contact_form_name_label()}</Label>
 									<Input
 										id="name"
 										name="name"
-										placeholder="Your name"
+										placeholder={m.contact_form_name_placeholder()}
 										required
 									/>
 								</div>
 
 								<div className="space-y-2">
-									<Label htmlFor="email">Email</Label>
+									<Label htmlFor="email">{m.contact_form_email_label()}</Label>
 									<Input
 										id="email"
 										name="email"
-										placeholder="your@email.com"
+										placeholder={m.contact_form_email_placeholder()}
 										required
 										type="email"
 									/>
 								</div>
 
 								<div className="space-y-2">
-									<Label htmlFor="message">Message</Label>
+									<Label htmlFor="message">
+										{m.contact_form_message_label()}
+									</Label>
 									<Textarea
 										id="message"
 										name="message"
-										placeholder="How can I help?"
+										placeholder={m.contact_form_message_placeholder()}
 										required
 										rows={5}
 									/>
@@ -133,7 +138,9 @@ function ContactPage() {
 									size="lg"
 									type="submit"
 								>
-									{formState === "loading" ? "Sending..." : "Send Message →"}
+									{formState === "loading"
+										? m.contact_form_sending()
+										: m.contact_form_submit()}
 								</Button>
 							</form>
 						)}
@@ -142,7 +149,7 @@ function ContactPage() {
 					{/* Contact Info */}
 					<div>
 						<h2 className="mb-6 font-semibold text-2xl">
-							Other Ways to Connect
+							{m.contact_info_title()}
 						</h2>
 
 						<div className="space-y-4">
@@ -150,7 +157,7 @@ function ContactPage() {
 								<CardHeader className="pb-2">
 									<CardTitle className="flex items-center gap-2 text-base">
 										<Mail className="h-4 w-4 text-bl-red" />
-										Email
+										{m.contact_info_email()}
 									</CardTitle>
 								</CardHeader>
 								<CardContent>
@@ -167,11 +174,13 @@ function ContactPage() {
 								<CardHeader className="pb-2">
 									<CardTitle className="flex items-center gap-2 text-base">
 										<MapPin className="h-4 w-4 text-bl-rose" />
-										Location
+										{m.contact_info_location()}
 									</CardTitle>
 								</CardHeader>
 								<CardContent>
-									<p className="text-muted-foreground">Mölndal, Sweden</p>
+									<p className="text-muted-foreground">
+										{m.contact_info_location_value()}
+									</p>
 								</CardContent>
 							</Card>
 
@@ -179,7 +188,7 @@ function ContactPage() {
 								<CardHeader className="pb-2">
 									<CardTitle className="flex items-center gap-2 text-base">
 										<ExternalLink className="h-4 w-4 text-bl-ember" />
-										Links
+										{m.contact_info_links()}
 									</CardTitle>
 								</CardHeader>
 								<CardContent className="space-y-2">

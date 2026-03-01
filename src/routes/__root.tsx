@@ -4,25 +4,30 @@ import {
 	HeadContent,
 	Outlet,
 	Scripts,
+	useRouterState,
 } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { Layout } from "@/components/layout/Layout";
 import {
+	generateCanonical,
+	generateHreflangLinks,
 	generateRootEntityGraphSchema,
 	jsonLdScript,
 } from "@/lib/seo/structured-data";
+import * as m from "../paraglide/messages.js";
+import { getLocale } from "../paraglide/runtime.js";
 import appCss from "../styles.css?url";
 
 function RootNotFound() {
 	return (
 		<main className="py-20">
 			<div className="container mx-auto max-w-3xl px-4 text-center">
-				<h1 className="mb-4 font-bold text-3xl">Page not found</h1>
+				<h1 className="mb-4 font-bold text-3xl">{m.not_found_title()}</h1>
 				<p className="mb-6 text-muted-foreground">
-					The page you are looking for does not exist.
+					{m.not_found_description()}
 				</p>
 				<a className="text-bl-red hover:underline" href="/">
-					Go back home
+					{m.not_found_link()}
 				</a>
 			</div>
 		</main>
@@ -196,11 +201,25 @@ function RootComponent() {
 function RootDocument({ children }: { children: React.ReactNode }) {
 	const isDev = import.meta.env.DEV;
 	const ga4Id = import.meta.env.VITE_GA4;
+	const locale = getLocale();
+	const routerState = useRouterState();
+	const pathname = routerState.location.pathname;
+	const hreflangLinks = generateHreflangLinks(pathname);
+	const canonicalUrl = generateCanonical(pathname, locale);
 
 	return (
-		<html className="dark" lang="en">
+		<html className="dark" lang={locale}>
 			<head>
 				<HeadContent />
+				<link href={canonicalUrl} rel="canonical" />
+				{hreflangLinks.map((link) => (
+					<link
+						href={link.href}
+						hrefLang={link.hreflang}
+						key={link.hreflang}
+						rel={link.rel}
+					/>
+				))}
 				{/* Real User Performance Monitoring */}
 				{!isDev && (
 					<script

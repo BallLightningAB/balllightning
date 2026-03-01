@@ -89,7 +89,7 @@ export interface FileRoutesByFullPath {
   '/portfolio/shipping-api-dojo': typeof PortfolioShippingApiDojoRoute
   '/portfolio/skyscraper': typeof PortfolioSkyscraperRoute
   '/portfolio/the-builder-coil': typeof PortfolioTheBuilderCoilRoute
-  '/portfolio/': typeof PortfolioIndexRoute
+  '/portfolio': typeof PortfolioIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -131,7 +131,7 @@ export interface FileRouteTypes {
     | '/portfolio/shipping-api-dojo'
     | '/portfolio/skyscraper'
     | '/portfolio/the-builder-coil'
-    | '/portfolio/'
+    | '/portfolio'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -207,7 +207,7 @@ declare module '@tanstack/react-router' {
     '/portfolio/': {
       id: '/portfolio/'
       path: '/portfolio'
-      fullPath: '/portfolio/'
+      fullPath: '/portfolio'
       preLoaderRoute: typeof PortfolioIndexRouteImport
       parentRoute: typeof rootRouteImport
     }

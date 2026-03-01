@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { type FeedItem, getBuilderCoilFeed } from "@/lib/builder-coil/feed";
 import { getGitHubContributions } from "@/lib/github";
+import * as m from "@/paraglide/messages.js";
 
 export const Route = createFileRoute("/")({
 	component: HomePage,
@@ -92,10 +93,10 @@ function HomePage() {
 								className="mb-6 font-heading text-3xl min-[400px]:text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-[0.9] tracking-tighter"
 								preset="fade-in-blur"
 							>
-								Ship faster with
+								{m.home_hero_title_line1()}
 								<br />
 								<span className="bg-gradient-to-r from-[#DD3A28] to-[#FF7268] bg-clip-text text-transparent">
-									Ball Lightning
+									{m.home_hero_title_line2()}
 								</span>
 							</TextEffect>
 
@@ -104,9 +105,7 @@ function HomePage() {
 								delay={0.3}
 								preset="fade-in-blur"
 							>
-								Full-stack web development, systems integration, and AI-driven
-								solutions — from first commit to production. Based in Mölndal,
-								Sweden.
+								{m.home_hero_subtitle()}
 							</TextEffect>
 
 							<AnimatedGroup
@@ -136,12 +135,12 @@ function HomePage() {
 							>
 								<Button asChild className="gap-2" size="lg">
 									<Link to="/services">
-										See What I Build
+										{m.home_hero_cta_services()}
 										<ArrowRight className="h-4 w-4" />
 									</Link>
 								</Button>
 								<Button asChild size="lg" variant="outline">
-									<Link to="/portfolio">View Past Work</Link>
+									<Link to="/portfolio">{m.home_hero_cta_portfolio()}</Link>
 								</Button>
 							</AnimatedGroup>
 						</motion.div>
@@ -157,7 +156,7 @@ function HomePage() {
 								<div className="absolute inset-0 bg-[repeating-linear-gradient(to_right,rgba(255,255,255,0.02)_0,rgba(255,255,255,0.02)_1px,transparent_1px,transparent_32px),repeating-linear-gradient(to_bottom,rgba(255,255,255,0.02)_0,rgba(255,255,255,0.02)_1px,transparent_1px,transparent_32px)]" />
 								<div className="relative z-10">
 									<div className="mb-4 text-sm font-medium uppercase tracking-wide text-bl-red">
-										Activity
+										{m.home_activity_label()}
 									</div>
 									<div className="w-full">
 										{github ? (
@@ -217,7 +216,7 @@ function HomePage() {
 										) : (
 											<div className="flex h-32 items-center justify-center">
 												<div className="text-muted-foreground text-sm">
-													Loading activity...
+													{m.home_activity_loading()}
 												</div>
 											</div>
 										)}
@@ -274,19 +273,18 @@ function HomePage() {
 							</picture>
 						</div>
 						<div>
-							<h2 className="mb-4 font-semibold text-3xl">Nicolas Brulay</h2>
+							<h2 className="mb-4 font-semibold text-3xl">
+								{m.home_founder_name()}
+							</h2>
 							<p className="mb-2 text-sm font-medium uppercase tracking-wide text-bl-red">
-								Founder & Lead Developer
+								{m.home_founder_role()}
 							</p>
 							<p className="mb-4 max-w-2xl text-muted-foreground">
-								Project manager and full-stack developer who has shipped MMOs,
-								clinic websites, enterprise data systems, and blockchain
-								integrations. Currently building Chronomation and documenting
-								the journey on The Builder Coil.
+								{m.home_founder_bio()}
 							</p>
 							<div className="flex gap-4">
 								<Button asChild size="sm" variant="outline">
-									<Link to="/contact">Get in Touch</Link>
+									<Link to="/contact">{m.home_founder_cta_contact()}</Link>
 								</Button>
 								<Button asChild size="sm" variant="ghost">
 									<a
@@ -294,7 +292,7 @@ function HomePage() {
 										rel="noopener noreferrer"
 										target="_blank"
 									>
-										The Builder Coil
+										{m.home_founder_cta_tbc()}
 										<ExternalLink className="ml-2 h-3 w-3" />
 									</a>
 								</Button>
@@ -325,10 +323,10 @@ function HomePage() {
 						>
 							<div>
 								<h2 className="mb-2 font-semibold text-3xl">
-									Latest from The Builder Coil
+									{m.home_feed_title()}
 								</h2>
 								<p className="text-muted-foreground">
-									Devlogs, progress updates, and technical insights
+									{m.home_feed_subtitle()}
 								</p>
 							</div>
 							<Button asChild variant="outline">
@@ -337,7 +335,7 @@ function HomePage() {
 									rel="noopener noreferrer"
 									target="_blank"
 								>
-									View all posts
+									{m.home_feed_view_all()}
 									<ExternalLink className="ml-2 h-4 w-4" />
 								</a>
 							</Button>
@@ -388,7 +386,9 @@ function HomePage() {
 														: "bg-bl-rose/10 text-bl-rose"
 												}`}
 											>
-												{item.type === "news" ? "News" : "Blog"}
+												{item.type === "news"
+													? m.home_feed_type_news()
+													: m.home_feed_type_blog()}
 											</span>
 											<span className="text-muted-foreground text-xs">
 												{new Date(item.publishedAt || "").toLocaleDateString(
@@ -415,7 +415,7 @@ function HomePage() {
 												rel="noopener noreferrer"
 												target="_blank"
 											>
-												Read: {item.title}
+												{m.home_feed_read({ title: item.title })}
 												<ExternalLink className="h-3 w-3" />
 											</a>
 										</Button>
@@ -430,14 +430,14 @@ function HomePage() {
 			<section className="border-border border-t bg-background py-16 md:py-24">
 				<div className="container mx-auto max-w-6xl px-4">
 					<div className="mx-auto max-w-2xl text-center">
-						<h2 className="mb-4 font-semibold text-3xl">Stay in the Loop</h2>
+						<h2 className="mb-4 font-semibold text-3xl">
+							{m.home_newsletter_title()}
+						</h2>
 						<p className="mb-2 font-medium text-lg text-bl-red">
-							My builder's newsletter
+							{m.home_newsletter_subtitle()}
 						</p>
 						<p className="mb-8 text-muted-foreground">
-							Devlogs from The Builder Coil sharing progress on Chronomation,
-							agentic AI experiments, and lessons learned building Ball
-							Lightning AB.
+							{m.home_newsletter_description()}
 						</p>
 						<Button asChild className="gap-2" size="lg">
 							<a
@@ -445,7 +445,7 @@ function HomePage() {
 								rel="noopener noreferrer"
 								target="_blank"
 							>
-								Subscribe
+								{m.home_newsletter_cta()}
 								<ArrowRight className="h-4 w-4" />
 							</a>
 						</Button>

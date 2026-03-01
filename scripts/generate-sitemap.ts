@@ -8,6 +8,7 @@ import * as fs from "node:fs";
 import * as path from "node:path";
 
 const SITE_URL = "https://balllightning.cloud";
+const LOCALES = ["en", "sv", "de", "fr"] as const;
 const CONTENT_DIR = path.join(process.cwd(), "src", "data");
 const OUTPUT_PATH = path.join(process.cwd(), "public", "sitemap.xml");
 
@@ -34,6 +35,17 @@ function formatDate(date: string): string {
 	return new Date(date).toISOString().split("T")[0];
 }
 
+function generateHreflangLinks(pagePath: string): string {
+	const links = LOCALES.map(
+		(locale) =>
+			`    <xhtml:link rel="alternate" hreflang="${locale}" href="${SITE_URL}/${locale}${pagePath}" />`
+	);
+	links.push(
+		`    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/en${pagePath}" />`
+	);
+	return links.join("\n");
+}
+
 function generateUrlEntry(
 	loc: string,
 	lastmod?: string,
@@ -43,11 +55,16 @@ function generateUrlEntry(
 	const lastmodTag = lastmod
 		? `\n    <lastmod>${formatDate(lastmod)}</lastmod>`
 		: "";
-	return `  <url>
-    <loc>${SITE_URL}${loc}</loc>${lastmodTag}
+	const hreflangLinks = generateHreflangLinks(loc);
+
+	return LOCALES.map(
+		(locale) => `  <url>
+    <loc>${SITE_URL}/${locale}${loc}</loc>${lastmodTag}
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
-  </url>`;
+${hreflangLinks}
+  </url>`
+	).join("\n");
 }
 
 interface PostMeta {
@@ -125,7 +142,8 @@ function main() {
 	);
 
 	const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${staticEntries.join("\n")}
 ${portfolioEntries.join("\n")}
 ${blogEntries.join("\n")}

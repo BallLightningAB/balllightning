@@ -1,5 +1,36 @@
 entries:
 
+  - date: "2026-03-01"
+    version: "0.2"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/4"
+    commit: TBD
+    status: in-progress
+    title: "chore: bump version to 0.2 for i18n troubleshooting"
+    details: |-
+      - Updated meta release version to 0.2 for language switching implementation
+      - Updated issue #4 status to "troubleshooting" due to redirect loop (ERR_TOO_MANY_REDIRECTS)
+      - Site correctly redirects localhost:3000 to localhost:3000/en but creates infinite loop
+      - Basic i18n infrastructure appears to be in place from previous implementation
+      - Need to debug middleware/routing configuration causing infinite redirects
+      
+      Implementation Summary:
+      - Paraglide JS v2 fully configured with always-prefixed URL strategy (url → cookie → preferredLanguage → baseLocale)
+      - vite.config.ts: paraglideVitePlugin with urlPatterns for / and /:path(.*)? across en/sv/de/fr
+      - server.ts: paraglideMiddleware wrapped around TanStack Start handler
+      - router.tsx: rewrite with deLocalizeUrl/localizeUrl for proper locale handling
+      - Language switcher component: desktop Select + mobile buttons with flag icons
+      - 105 translation keys created for all 4 locales (en, sv, de, fr) in messages/
+      - All routes updated to import and use messages: `import * as m from "@/paraglide/messages.js"`
+      - Sitemap generator updated with hreflang links for all locales
+      - i18n-check.ts script validates missing keys and placeholder parity
+      - package.json: added "i18n:check" and "machine-translate" scripts
+      
+      Deliverables Status:
+      - I4D1-I4D3: In progress (routing validation, SSR loading, language switching)
+      - I4D4-I4D14: Complete (QA checks, Paraglide setup, components, translations)
+      
+      Refs: Issue #4
+
   - date: "2026-02-27"
     version: "0.1.7.6"
     issue: "https://github.com/BallLightningAB/balllightning/issues/9"

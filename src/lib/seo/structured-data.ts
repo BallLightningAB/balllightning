@@ -305,11 +305,32 @@ export function generateProjectSchema(options: ProjectSchemaOptions) {
 	};
 }
 
+const LOCALES = ["en", "sv", "de", "fr"] as const;
+
 /**
- * Generate canonical URL for a page
+ * Generate canonical URL for a page (locale-aware)
  */
-export function generateCanonical(path: string): string {
-	return `${SITE_URL}${path}`;
+export function generateCanonical(path: string, locale?: string): string {
+	const prefix = locale ? `/${locale}` : "";
+	return `${SITE_URL}${prefix}${path}`;
+}
+
+/**
+ * Generate hreflang link objects for all locales
+ */
+export function generateHreflangLinks(path: string) {
+	return [
+		...LOCALES.map((locale) => ({
+			rel: "alternate",
+			hreflang: locale,
+			href: `${SITE_URL}/${locale}${path}`,
+		})),
+		{
+			rel: "alternate",
+			hreflang: "x-default",
+			href: `${SITE_URL}/en${path}`,
+		},
+	];
 }
 
 /**

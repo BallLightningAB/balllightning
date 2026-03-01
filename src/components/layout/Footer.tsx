@@ -1,15 +1,19 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import * as m from "@/paraglide/messages.js";
+
+function useSiteLinks() {
+	return [
+		{ href: "/", label: m.nav_home() },
+		{ href: "/services", label: m.nav_services() },
+		{ href: "/technologies", label: m.nav_technologies() },
+		{ href: "/portfolio", label: m.nav_portfolio() },
+		{ href: "/contact", label: m.nav_contact() },
+	];
+}
 
 const footerLinks = {
-	site: [
-		{ href: "/", label: "Home" },
-		{ href: "/services", label: "Services" },
-		{ href: "/technologies", label: "Technologies" },
-		{ href: "/portfolio", label: "Portfolio" },
-		{ href: "/contact", label: "Contact" },
-	],
 	ecosystem: [
 		{
 			href: "https://thebuildercoil.com",
@@ -27,6 +31,7 @@ const footerLinks = {
 
 export function Footer() {
 	const currentYear = new Date().getFullYear();
+	const siteLinks = useSiteLinks();
 
 	return (
 		<footer className="border-border border-t bg-background">
@@ -47,18 +52,17 @@ export function Footer() {
 							</span>
 						</Link>
 						<p className="mt-3 text-muted-foreground text-sm">
-							Software consulting and product development. Full-stack web,
-							systems integration, and AI-driven solutions.
+							{m.footer_brand_description()}
 						</p>
 					</div>
 
 					{/* Site Links */}
 					<div>
 						<h3 className="font-heading mb-3 font-semibold text-foreground text-sm">
-							Site
+							{m.footer_site()}
 						</h3>
 						<ul className="space-y-2">
-							{footerLinks.site.map((link) => (
+							{siteLinks.map((link) => (
 								<li key={link.href}>
 									<Link
 										className="text-muted-foreground text-sm transition-colors hover:text-foreground"
@@ -74,7 +78,7 @@ export function Footer() {
 					{/* Ecosystem */}
 					<div>
 						<h3 className="font-heading mb-3 font-semibold text-foreground text-sm">
-							Ecosystem
+							{m.footer_ecosystem()}
 						</h3>
 						<ul className="space-y-2">
 							{footerLinks.ecosystem.map((link) => (
@@ -95,11 +99,10 @@ export function Footer() {
 					{/* Newsletter CTA (link to TBC only) */}
 					<div className="space-y-3">
 						<h3 className="font-heading font-semibold text-foreground text-sm">
-							The Upkeep
+							{m.footer_newsletter_title()}
 						</h3>
 						<p className="text-muted-foreground text-sm">
-							Devlogs and updates from The Builder Coil, our public builder's
-							log.
+							{m.footer_newsletter_description()}
 						</p>
 						<Button asChild className="gap-2" size="sm" variant="outline">
 							<a
@@ -107,7 +110,7 @@ export function Footer() {
 								rel="noopener noreferrer"
 								target="_blank"
 							>
-								Subscribe
+								{m.footer_subscribe()}
 								<ArrowRight className="h-4 w-4" />
 							</a>
 						</Button>
@@ -117,9 +120,9 @@ export function Footer() {
 				{/* Bottom */}
 				<div className="mt-8 flex flex-col items-center justify-between gap-4 border-border border-t pt-8 md:flex-row">
 					<p className="text-muted-foreground text-sm">
-						© {currentYear} Ball Lightning AB. All rights reserved.
+						{m.footer_copyright({ year: String(currentYear) })}
 					</p>
-					<p className="text-muted-foreground text-sm">Mölndal, Sweden</p>
+					<p className="text-muted-foreground text-sm">{m.footer_location()}</p>
 				</div>
 			</div>
 		</footer>

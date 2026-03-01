@@ -2,7 +2,7 @@ balllightning_pdd:
   meta:
     name: "Ball Lightning AB — Site PDD"
     code_name: "balllightning-pdd"
-    version: "0.1.0"
+    version: "0.1.1"
     repo: "https://github.com/BallLightningAB/balllightning"
     domain: "https://balllightning.cloud"
     github_project: "https://github.com/users/BallLightningAB/projects/9"
@@ -37,6 +37,15 @@ balllightning_pdd:
     tooling:
       lint_format: ["Biome", "Ultracite"]
       hosting: "Vercel"
+    i18n:
+      library: "Paraglide JS v2"
+      locales: ["en", "sv", "de", "fr"]
+      default_locale: "en"
+      strategy: ["url", "cookie", "preferredLanguage", "baseLocale"]
+      url_pattern: "always-prefixed (/{locale}/...)" 
+      ssr: "paraglideMiddleware in src/server.ts"
+      translations: "messages/{locale}.json"
+      qa_script: "pnpm i18n:check"
     email:
       provider: "Resend"
       usage: "Contact form only (no newsletter)"

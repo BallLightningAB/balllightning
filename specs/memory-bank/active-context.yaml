@@ -1,8 +1,8 @@
 meta:
-  release: "0.1.7.6"
+  release: "0.2"
   repo: github.com/BallLightningAB/balllightning
   project: https://github.com/users/BallLightningAB/projects/9
-  pdd_version: "1.0"
+  pdd_version: "1.1"
   current_changes: see specs/current-changes/
   future_changes: see specs/future-changes/
   references:
@@ -16,9 +16,33 @@ roadmap:
     - id: language-switching
       issue: "https://github.com/BallLightningAB/balllightning/issues/4"
       title: "Feature: Add language switching support"
-      status: planned
+      status: troubleshooting
       links:
         issue: "https://github.com/BallLightningAB/balllightning/issues/4"
+      deliverables:
+        - "[in-progress] I4D1: Implement locale routing + validation"
+        - "[in-progress] I4D2: SSR load common namespace"
+        - "[in-progress] I4D3: Language switcher sets cookie + navigates"
+        - "[done] I4D4: Add QA checks (missing keys + placeholder parity)"
+        - "[done] I4D5: Set up Paraglide JS v2 with always-prefixed URL strategy"
+        - "[done] I4D6: Configure vite.config.ts with paraglideVitePlugin"
+        - "[done] I4D7: Add paraglideMiddleware to server.ts"
+        - "[done] I4D8: Implement router rewrite with deLocalizeUrl/localizeUrl"
+        - "[done] I4D9: Create language switcher component (desktop + mobile)"
+        - "[done] I4D10: Add language switcher to Header.tsx"
+        - "[done] I4D11: Create initial translations for en/sv/de/fr (105 keys each)"
+        - "[done] I4D12: Update routes to import messages"
+        - "[done] I4D13: Generate localized sitemap with hreflang links"
+        - "[done] I4D14: Add i18n:check script to package.json"
+      progress_log:
+        - "2026-03-01: Experiencing redirect loop (ERR_TOO_MANY_REDIRECTS) when localhost:3000 redirects to localhost:3000/en"
+        - "2026-03-01: Basic i18n infrastructure appears to be in place from previous implementation"
+        - "2026-03-01: Need to debug middleware/routing configuration causing infinite redirects"
+        - "2026-03-01: All Paraglide JS v2 infrastructure configured (vite, server, router, messages)"
+        - "2026-03-01: Language switcher component implemented with desktop Select and mobile buttons"
+        - "2026-03-01: 105 translation keys created for all 4 locales (en, sv, de, fr)"
+        - "2026-03-01: Sitemap generator updated with hreflang links for all locales"
+        - "2026-03-01: i18n-check.ts script validates missing keys and placeholder parity"
   next_steps:
   recent_done:
     - id: performance-optimization-enhancements

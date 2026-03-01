@@ -17,6 +17,7 @@ import {
 	CATEGORY_LABELS,
 	technologiesByCategory,
 } from "@/lib/technologies/data";
+import * as m from "@/paraglide/messages.js";
 
 export const Route = createFileRoute("/technologies")({
 	head: () => ({
@@ -115,10 +116,11 @@ function TechnologiesPage() {
 			>
 				{/* Header */}
 				<div className="mb-12 text-center">
-					<h1 className="mb-4 font-bold text-4xl md:text-5xl">Technologies</h1>
+					<h1 className="mb-4 font-bold text-4xl md:text-5xl">
+						{m.technologies_title()}
+					</h1>
 					<p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-						The tools and frameworks behind every project — each backed by
-						real-world production experience across shipped case studies.
+						{m.technologies_subtitle()}
 					</p>
 				</div>
 
@@ -155,22 +157,21 @@ function TechnologiesPage() {
 				{/* CTA */}
 				<div className="mt-8 text-center">
 					<h2 className="mb-4 font-semibold text-3xl">
-						See These Technologies in Action
+						{m.technologies_cta_title()}
 					</h2>
 					<p className="mx-auto mb-8 max-w-xl text-muted-foreground">
-						Every technology listed here is demonstrated in a real, shipped
-						project.
+						{m.technologies_cta_description()}
 					</p>
 					<div className="flex flex-wrap justify-center gap-4">
 						<Button asChild className="gap-2" size="lg">
 							<Link to="/portfolio">
-								View Portfolio
+								{m.technologies_cta_portfolio()}
 								<ArrowRight className="h-4 w-4" />
 							</Link>
 						</Button>
 						<Button asChild className="gap-2" size="lg" variant="outline">
 							<Link to="/services">
-								Our Services
+								{m.technologies_cta_services()}
 								<ArrowRight className="h-4 w-4" />
 							</Link>
 						</Button>
@@ -192,7 +193,7 @@ function TechnologyCard({ tech }: { tech: Technology }) {
 			</CardHeader>
 			<CardContent className="mt-auto">
 				<p className="mb-2 text-xs font-medium uppercase tracking-wider text-muted-foreground">
-					Used in
+					{m.technologies_used_in()}
 				</p>
 				<div className="flex flex-wrap gap-2">
 					{tech.projects.map((project) => (

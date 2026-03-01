@@ -10,58 +10,58 @@ import {
 	CardTitle,
 } from "@/components/ui/card";
 import { COMPETENCE_TO_SLUG } from "@/lib/technologies/data";
+import * as m from "@/paraglide/messages.js";
 
 export const Route = createFileRoute("/services")({
 	component: ServicesPage,
 });
 
-const serviceTiers = [
-	{
-		icon: Globe,
-		title: "Landing Page",
-		price: "From 15 000 SEK",
-		description:
-			"A single-page company site designed to convert visitors into leads or customers. Perfect for restaurants, salons, shops, and service businesses.",
-		features: [
-			"Responsive design (mobile-first)",
-			"SEO-optimized structure",
-			"Contact form integration",
-			"Analytics setup",
-			"Fast load times",
-		],
-	},
-	{
-		icon: Code,
-		title: "Smart Site (Light)",
-		price: "From 30 000 SEK",
-		description:
-			"A multi-page site with dynamic content, CMS integration, and advanced interactions.",
-		features: [
-			"Everything in Landing Page",
-			"Multi-page routing",
-			"CMS or headless content",
-			"Blog / news section",
-			"Custom components",
-			"Performance optimization",
-		],
-		highlighted: true,
-	},
-	{
-		icon: Puzzle,
-		title: "Integrations & APIs",
-		price: "Custom quote",
-		description:
-			"Connect your systems with third-party services, build APIs, or automate workflows.",
-		features: [
-			"REST / GraphQL API development",
-			"Third-party service integration",
-			"Data pipeline design",
-			"Webhook implementations",
-			"Authentication & authorization",
-			"Documentation & handoff",
-		],
-	},
-];
+function useServiceTiers() {
+	return [
+		{
+			icon: Globe,
+			title: m.services_tier_landing_title(),
+			price: m.services_tier_landing_price(),
+			description: m.services_tier_landing_description(),
+			features: [
+				m.services_tier_landing_f1(),
+				m.services_tier_landing_f2(),
+				m.services_tier_landing_f3(),
+				m.services_tier_landing_f4(),
+				m.services_tier_landing_f5(),
+			],
+		},
+		{
+			icon: Code,
+			title: m.services_tier_smart_title(),
+			price: m.services_tier_smart_price(),
+			description: m.services_tier_smart_description(),
+			features: [
+				m.services_tier_smart_f1(),
+				m.services_tier_smart_f2(),
+				m.services_tier_smart_f3(),
+				m.services_tier_smart_f4(),
+				m.services_tier_smart_f5(),
+				m.services_tier_smart_f6(),
+			],
+			highlighted: true,
+		},
+		{
+			icon: Puzzle,
+			title: m.services_tier_integrations_title(),
+			price: m.services_tier_integrations_price(),
+			description: m.services_tier_integrations_description(),
+			features: [
+				m.services_tier_integrations_f1(),
+				m.services_tier_integrations_f2(),
+				m.services_tier_integrations_f3(),
+				m.services_tier_integrations_f4(),
+				m.services_tier_integrations_f5(),
+				m.services_tier_integrations_f6(),
+			],
+		},
+	];
+}
 
 const competences = [
 	"TypeScript / JavaScript",
@@ -79,6 +79,8 @@ const competences = [
 ];
 
 function ServicesPage() {
+	const serviceTiers = useServiceTiers();
+
 	return (
 		<div className="py-12 md:py-20">
 			<AnimatedGroup
@@ -105,11 +107,11 @@ function ServicesPage() {
 			>
 				{/* Header */}
 				<div className="mb-16 text-center">
-					<h1 className="mb-4 font-bold text-4xl md:text-5xl">Services</h1>
+					<h1 className="mb-4 font-bold text-4xl md:text-5xl">
+						{m.services_title()}
+					</h1>
 					<p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-						From landing pages to complex integrations — I build fast, modern
-						web applications that rank, convert, and scale. Every project ships
-						with performance, SEO, and clean code baked in.
+						{m.services_subtitle()}
 					</p>
 				</div>
 
@@ -126,7 +128,7 @@ function ServicesPage() {
 						>
 							{tier.highlighted && (
 								<div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-[#DD3A28] to-[#FF7268] px-3 py-1 text-xs font-medium text-white">
-									Recommended
+									{m.services_recommended()}
 								</div>
 							)}
 							<CardHeader>
@@ -157,7 +159,7 @@ function ServicesPage() {
 									variant={tier.highlighted ? "default" : "outline"}
 								>
 									<Link to="/contact">
-										Get Started
+										{m.services_get_started()}
 										<ArrowRight className="h-4 w-4" />
 									</Link>
 								</Button>
@@ -169,7 +171,7 @@ function ServicesPage() {
 				{/* Competence */}
 				<div className="mb-20">
 					<h2 className="mb-8 text-center font-semibold text-3xl">
-						Competence
+						{m.services_competence_title()}
 					</h2>
 					<div className="grid grid-cols-2 gap-3 md:grid-cols-4">
 						{competences.map((skill) => {
@@ -200,14 +202,15 @@ function ServicesPage() {
 
 				{/* Selected Work */}
 				<div className="text-center">
-					<h2 className="mb-4 font-semibold text-3xl">Selected Work</h2>
+					<h2 className="mb-4 font-semibold text-3xl">
+						{m.services_selected_work_title()}
+					</h2>
 					<p className="mx-auto mb-8 max-w-xl text-muted-foreground">
-						From game backends to clinic websites — six shipped projects across
-						web, data, and game development.
+						{m.services_selected_work_description()}
 					</p>
 					<Button asChild className="gap-2" size="lg">
 						<Link to="/portfolio">
-							See Past Work
+							{m.services_see_past_work()}
 							<ArrowRight className="h-4 w-4" />
 						</Link>
 					</Button>

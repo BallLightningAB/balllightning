@@ -3,6 +3,10 @@ import { Github, Linkedin, Menu, Twitter } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
+	LanguageSwitcher,
+	LanguageSwitcherMobile,
+} from "@/components/ui/language-switcher";
+import {
 	Sheet,
 	SheetContent,
 	SheetDescription,
@@ -10,14 +14,17 @@ import {
 	SheetTitle,
 	SheetTrigger,
 } from "@/components/ui/sheet";
+import * as m from "@/paraglide/messages.js";
 
-const navLinks = [
-	{ href: "/", label: "Home" },
-	{ href: "/services", label: "Services" },
-	{ href: "/technologies", label: "Technologies" },
-	{ href: "/portfolio", label: "Portfolio" },
-	{ href: "/contact", label: "Contact" },
-];
+function useNavLinks() {
+	return [
+		{ href: "/", label: m.nav_home() },
+		{ href: "/services", label: m.nav_services() },
+		{ href: "/technologies", label: m.nav_technologies() },
+		{ href: "/portfolio", label: m.nav_portfolio() },
+		{ href: "/contact", label: m.nav_contact() },
+	];
+}
 
 const socialLinks = [
 	{
@@ -35,6 +42,7 @@ const socialLinks = [
 
 export function Header() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+	const navLinks = useNavLinks();
 
 	return (
 		<header className="sticky top-0 z-50 w-full border-border/40 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -70,6 +78,11 @@ export function Header() {
 
 				{/* Actions */}
 				<div className="flex items-center gap-3">
+					{/* Language switcher - desktop only */}
+					<div className="hidden md:block">
+						<LanguageSwitcher />
+					</div>
+
 					{/* Social icons - desktop only */}
 					<div className="hidden items-center gap-1 md:flex">
 						{socialLinks.map((link) => (
@@ -116,8 +129,12 @@ export function Header() {
 									</Link>
 								))}
 							</nav>
+							{/* Language switcher in mobile menu */}
+							<div className="mt-8 border-border border-t pt-6">
+								<LanguageSwitcherMobile />
+							</div>
 							{/* Social icons in mobile menu */}
-							<div className="mt-8 flex gap-4 border-border border-t pt-6">
+							<div className="mt-6 flex gap-4 border-border border-t pt-6">
 								{socialLinks.map((link) => (
 									<a
 										aria-label={link.label}
