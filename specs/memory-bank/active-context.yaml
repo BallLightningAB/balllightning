@@ -13,13 +13,13 @@ meta:
   # - I3Docs / I3UI / I3Fix / I3Test / I3Biome: tags for documentation, UI polish, minor fixes, tests and Biome/tooling work not tied to a single deliverable
 roadmap:
   current:
-  next_steps:
     - id: language-switching
       issue: "https://github.com/BallLightningAB/balllightning/issues/4"
-      title: "Feature: Add language switching support (Swedish)"
+      title: "Feature: Add language switching support"
       status: planned
       links:
         issue: "https://github.com/BallLightningAB/balllightning/issues/4"
+  next_steps:
   recent_done:
     - id: performance-optimization-enhancements
       issue: "https://github.com/BallLightningAB/balllightning/issues/9"
