@@ -180,9 +180,13 @@ function HomePage() {
 														<ContributionGraphFooter className="mt-2 items-center">
 															<ContributionGraphTotalCount
 																className="text-muted-foreground text-xs"
-																label="{{count}} activities/4 months"
+																label={m.home_activity_period()}
 															/>
-															<ContributionGraphLegend className="text-muted-foreground text-xs" />
+															<ContributionGraphLegend
+																className="text-muted-foreground text-xs"
+																lessLabel={m.home_activity_less()}
+																moreLabel={m.home_activity_more()}
+															/>
 														</ContributionGraphFooter>
 													</ContributionGraph>
 												</div>
@@ -206,9 +210,13 @@ function HomePage() {
 														<ContributionGraphFooter className="mt-2 items-center">
 															<ContributionGraphTotalCount
 																className="text-muted-foreground text-xs"
-																label="{{count}} activities/12 months"
+																label={m.home_activity_period()}
 															/>
-															<ContributionGraphLegend className="text-muted-foreground text-xs" />
+															<ContributionGraphLegend
+																className="text-muted-foreground text-xs"
+																lessLabel={m.home_activity_less()}
+																moreLabel={m.home_activity_more()}
+															/>
 														</ContributionGraphFooter>
 													</ContributionGraph>
 												</div>

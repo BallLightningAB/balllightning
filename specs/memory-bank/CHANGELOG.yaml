@@ -1,10 +1,29 @@
 entries:
 
   - date: "2026-03-01"
+    version: "0.2.1"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/4"
+    commit: TBD
+    status: completed
+    title: "fix: resolve i18n redirect loop and add contribution graph translations"
+    details: |-
+      - Fixed redirect loop in Paraglide middleware by using correct request pattern
+      - Updated server.ts to use original request instead of modified request from callback
+      - Confirmed fix working - localhost:3000 redirects to /en (307), /en loads successfully (200)
+      - Added full GitHub contribution graph translations (activity period, less/more labels)
+      - Enhanced ContributionGraphLegend component to accept custom translation props
+      - Added translation keys for contribution graph in all 4 locales (en, sv, de, fr)
+      - Updated services to reference MCP (Model Context Protocol) instead of GraphQL
+      - All 108 translation keys now consistent across all locales
+      - Updated biome.json to ignore generated paraglide files and archived specs
+      
+      Refs: #4
+
+  - date: "2026-03-01"
     version: "0.2"
     issue: "https://github.com/BallLightningAB/balllightning/issues/4"
     commit: TBD
-    status: in-progress
+    status: troubleshooting
     title: "chore: bump version to 0.2 for i18n troubleshooting"
     details: |-
       - Updated meta release version to 0.2 for language switching implementation

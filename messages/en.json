@@ -27,6 +27,9 @@
   "home_hero_cta_portfolio": "View Past Work",
   "home_activity_label": "Activity",
   "home_activity_loading": "Loading activity...",
+  "home_activity_period": "804 activities/12 months",
+  "home_activity_less": "Less",
+  "home_activity_more": "More",
 
   "home_founder_name": "Nicolas Brulay",
   "home_founder_role": "Founder & Lead Developer",
@@ -68,7 +71,7 @@
   "services_tier_integrations_title": "Integrations & APIs",
   "services_tier_integrations_price": "Custom quote",
   "services_tier_integrations_description": "Connect your systems with third-party services, build APIs, or automate workflows.",
-  "services_tier_integrations_f1": "REST / GraphQL API development",
+  "services_tier_integrations_f1": "REST / MCP development",
   "services_tier_integrations_f2": "Third-party service integration",
   "services_tier_integrations_f3": "Data pipeline design",
   "services_tier_integrations_f4": "Webhook implementations",

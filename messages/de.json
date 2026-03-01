@@ -27,6 +27,9 @@
   "home_hero_cta_portfolio": "Bisherige Arbeiten",
   "home_activity_label": "Aktivität",
   "home_activity_loading": "Aktivität wird geladen...",
+  "home_activity_period": "804 Aktivitäten/12 Monate",
+  "home_activity_less": "Weniger",
+  "home_activity_more": "Mehr",
 
   "home_founder_name": "Nicolas Brulay",
   "home_founder_role": "Gründer & Leitender Entwickler",
@@ -68,7 +71,7 @@
   "services_tier_integrations_title": "Integrationen & APIs",
   "services_tier_integrations_price": "Individuelles Angebot",
   "services_tier_integrations_description": "Verbinden Sie Ihre Systeme mit Drittanbieterdiensten, erstellen Sie APIs oder automatisieren Sie Arbeitsabläufe.",
-  "services_tier_integrations_f1": "REST / GraphQL API-Entwicklung",
+  "services_tier_integrations_f1": "REST / MCP API-Entwicklung",
   "services_tier_integrations_f2": "Drittanbieter-Integration",
   "services_tier_integrations_f3": "Datenpipeline-Design",
   "services_tier_integrations_f4": "Webhook-Implementierungen",

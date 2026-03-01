@@ -488,11 +488,15 @@ export type ContributionGraphLegendProps = Omit<
 	"children"
 > & {
 	children?: (props: { level: number }) => ReactNode;
+	lessLabel?: string;
+	moreLabel?: string;
 };
 
 export const ContributionGraphLegend = ({
 	className,
 	children,
+	lessLabel,
+	moreLabel,
 	...props
 }: ContributionGraphLegendProps) => {
 	const { labels, maxLevel, blockSize, blockRadius } = useContributionGraph();
@@ -507,7 +511,7 @@ export const ContributionGraphLegend = ({
 			{...props}
 		>
 			<span className="mr-1 text-muted-foreground">
-				{labels.legend?.less || "Less"}
+				{lessLabel || labels.legend?.less || "Less"}
 			</span>
 			{levels.map((level) =>
 				children ? (
@@ -534,7 +538,7 @@ export const ContributionGraphLegend = ({
 				)
 			)}
 			<span className="ml-1 text-muted-foreground">
-				{labels.legend?.more || "More"}
+				{moreLabel || labels.legend?.more || "More"}
 			</span>
 		</div>
 	);

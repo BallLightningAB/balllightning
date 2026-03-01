@@ -1,5 +1,5 @@
 meta:
-  release: "0.2"
+  release: "0.2.1"
   repo: github.com/BallLightningAB/balllightning
   project: https://github.com/users/BallLightningAB/projects/9
   pdd_version: "1.1"
@@ -16,7 +16,7 @@ roadmap:
     - id: language-switching
       issue: "https://github.com/BallLightningAB/balllightning/issues/4"
       title: "Feature: Add language switching support"
-      status: troubleshooting
+      status: in-progress
       links:
         issue: "https://github.com/BallLightningAB/balllightning/issues/4"
       deliverables:
@@ -35,6 +35,10 @@ roadmap:
         - "[done] I4D13: Generate localized sitemap with hreflang links"
         - "[done] I4D14: Add i18n:check script to package.json"
       progress_log:
+        - "2026-03-01: FIXED redirect loop by correcting Paraglide middleware pattern in server.ts - use original request instead of modified request from callback"
+        - "2026-03-01: Confirmed fix working - localhost:3000 redirects to /en (307), /en loads successfully (200)"
+        - "2026-03-01: Added GitHub contribution graph translations - updated all 4 locales with activity period, less, and more labels"
+        - "2026-03-01: Updated ContributionGraphLegend component to accept custom translation props"
         - "2026-03-01: Experiencing redirect loop (ERR_TOO_MANY_REDIRECTS) when localhost:3000 redirects to localhost:3000/en"
         - "2026-03-01: Basic i18n infrastructure appears to be in place from previous implementation"
         - "2026-03-01: Need to debug middleware/routing configuration causing infinite redirects"
