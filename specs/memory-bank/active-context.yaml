@@ -72,7 +72,31 @@ roadmap:
         - "2026-03-01: Language switcher component implemented with desktop Select and mobile buttons"
         - "2026-03-01: 105 translation keys created for all 4 locales (en, sv, de, fr)"
         - "2026-03-01: Sitemap generator updated with hreflang links for all locales"
-        - "2026-03-01: i18n-check.ts script validates missing keys and placeholder parity"  
+        - "2026-03-01: i18n-check.ts script validates missing keys and placeholder parity"
+      remaining_deliverables: []
+      sub_issues:
+        - "https://github.com/BallLightningAB/balllightning/issues/11"
+    - id: brave-mobile-shields-debug
+      issue: "https://github.com/BallLightningAB/balllightning/issues/11"
+      title: "Debug: Brave Mobile Shields causes unstyled HTML"
+      status: pending
+      links:
+        issue: "https://github.com/BallLightningAB/balllightning/issues/11"
+      deliverables:
+        - "[pending] I11D1: Confirm Brave Mobile Shields symptom and blocked resources"
+        - "[pending] I11D2: Inspect SSR HTML and identify missing/blocked CSS/JS"
+        - "[pending] I11D3: Validate asset responses and headers"
+        - "[pending] I11D4: Implement fix for Brave Mobile compatibility"
+        - "[pending] I11D5: Document solution and re-test matrix"
+      progress_log:
+        - "2026-03-02: Issue created based on Glenn's report - Brave Mobile Shields causes unstyled HTML while Desktop Brave works fine"
+        - "2026-03-02: Added comprehensive debugging plan with 8 systematic steps to identify root cause"
+        - "2026-03-02: Hypothesis: Critical CSS or JS resource blocked on Brave mobile, causing global styles to never apply"
+      est:
+        dev_h: 2
+        test_h: 1
+      remaining_deliverables: []
+      sub_issues: []
     - id: performance-optimization-enhancements
       issue: "https://github.com/BallLightningAB/balllightning/issues/9"
       title: "Performance Optimization Enhancements & Responsive Improvements"
