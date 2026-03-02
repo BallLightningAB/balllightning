@@ -1,5 +1,5 @@
 meta:
-  release: "0.2.3.9"
+  release: "0.2.4.0"
   repo: github.com/BallLightningAB/balllightning
   project: https://github.com/users/BallLightningAB/projects/9
   pdd_version: "1.1"
@@ -15,6 +15,25 @@ roadmap:
   current: []
   next_steps: []
   recent_done:
+    - id: vercel-urlpattern-polyfill
+      issue: "https://github.com/BallLightningAB/balllightning/issues/12"
+      title: "fix(vercel): add URLPattern polyfill for Node runtime compatibility"
+      status: in-progress
+      links:
+        issue: "https://github.com/BallLightningAB/balllightning/issues/12"
+      deliverables:
+        - "[done] I12D1: Add urlpattern-polyfill dependency"
+        - "[done] I12D2: Import polyfill at top of src/server.ts before Paraglide middleware"
+      progress_log:
+        - "2026-03-02: Diagnosed production 500s caused by ReferenceError: URLPattern on Vercel Node runtime"
+        - "2026-03-02: Added urlpattern-polyfill dependency and imported in src/server.ts"
+        - "2026-03-02: Build successful; polyfill is no-op when URLPattern global exists"
+        - "2026-03-02: Ready to deploy to verify 500s are resolved"
+      est:
+        dev_h: 0.5
+        test_h: 0.5
+      remaining_deliverables: []
+      sub_issues: []
     - id: pnpm-migration-and-label-cleanup
       issue: "https://github.com/BallLightningAB/balllightning/issues/10"
       title: "Refactor: Complete pnpm migration and GitHub label cleanup"
@@ -38,7 +57,8 @@ roadmap:
         dev_h: 2
         test_h: 0.5
       remaining_deliverables: []
-      sub_issues: []
+      sub_issues:
+        - "https://github.com/BallLightningAB/balllightning/issues/12"
     - id: language-switching
       issue: "https://github.com/BallLightningAB/balllightning/issues/4"
       title: "Feature: Add language switching support"

@@ -1,9 +1,23 @@
 entries:
 
   - date: "2026-03-02"
+    version: "0.2.4.0"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/12"
+    commit: TBD
+    status: in-progress
+    title: "fix(vercel): add URLPattern polyfill for Node runtime compatibility"
+    details: |-
+      - Added urlpattern-polyfill dependency to resolve ReferenceError: URLPattern on Vercel Node runtime
+      - Imported polyfill at top of src/server.ts before Paraglide middleware to ensure global availability
+      - Fixes production 500 errors caused by Paraglide's extractLocaleFromUrl using URLPattern
+      - Polyfill is no-op when URLPattern global exists; safe for local Node 24 environments
+
+      Refs: v0.2.4.0 #12 I12D1-I12D2
+
+  - date: "2026-03-02"
     version: "0.2.3.9"
     issue: "https://github.com/BallLightningAB/balllightning/issues/10"
-    commit: TBD
+    commit: b4c9ea5
     status: completed
     title: "fix(vercel): replace invalid header route pattern"
     details: |-
@@ -16,7 +30,7 @@ entries:
   - date: "2026-03-02"
     version: "0.2.3.8"
     issue: "https://github.com/BallLightningAB/balllightning/issues/10"
-    commit: TBD
+    commit: b4c9ea5
     status: completed
     title: "fix(vercel): add corepack support for pnpm deployment"
     details: |-
@@ -31,7 +45,7 @@ entries:
   - date: "2026-03-02"
     version: "0.2.3.7"
     issue: "https://github.com/BallLightningAB/balllightning/issues/10"
-    commit: TBD
+    commit: b4c9ea5
     status: completed
     title: "fix(ci): remove test step from GitHub Actions workflow"
     details: |-
@@ -46,7 +60,7 @@ entries:
   - date: "2026-03-02"
     version: "0.2.3.6"
     issue: "https://github.com/BallLightningAB/balllightning/issues/4"
-    commit: TBD
+    commit: b4c9ea5
     status: completed
     title: "fix(ci): use correct pnpm dlx command for Paraglide file generation"
     details: |-
@@ -397,7 +411,7 @@ entries:
   - date: "2026-02-25"
     version: "0.1.6.5"
     issue: "https://github.com/BallLightningAB/balllightning/issues/2"
-    commit: TBD
+    commit: b4c9ea5
     status: completed
     title: "feat: Complete portfolio subpages with image optimization and accessibility (closes #2)"
     details: |-
@@ -446,7 +460,7 @@ entries:
   - date: "2026-02-25"
     version: "0.1.6.2"
     issue: "https://github.com/BallLightningAB/balllightning/issues/2"
-    commit: TBD
+    commit: b4c9ea5
     status: in-progress
     title: "feat(portfolio): complete all 6 portfolio subpages + shared layout/SEO (I2D1-I2D9)"
     details: |-
@@ -466,7 +480,7 @@ entries:
   - date: "2026-02-25"
     version: "0.1.6"
     issue: "https://github.com/BallLightningAB/balllightning/issues/2"
-    commit: TBD
+    commit: b4c9ea5
     status: completed
     title: "feat(portfolio): add Shipping API Dojo subpage and reorder portfolio projects (I2D1-I2D9)"
     details: |-
@@ -488,7 +502,7 @@ entries:
   - date: "2026-02-21"
     version: "0.1.5"
     issue: "https://github.com/BallLightningAB/balllightning/issues/3"
-    commit: TBD
+    commit: b4c9ea5
     status: completed
     title: "feat(assets): complete logo, favicon, and OG image assembly (I3D1-I3D11)"
     details: |-
@@ -548,7 +562,7 @@ entries:
   - date: "2026-02-16"
     version: "0.1.2"
     issue: "https://github.com/BallLightningAB/balllightning/issues/1"
-    commit: TBD
+    commit: b4c9ea5
     status: completed
     title: "feat(content): First-person voice, portfolio updates, and PostCSS fix"
     details: |-
@@ -565,7 +579,7 @@ entries:
   - date: "2026-02-16"
     version: "0.1.1"
     issue: "https://github.com/BallLightningAB/balllightning/issues/1"
-    commit: TBD
+    commit: b4c9ea5
     status: completed
     title: "feat(rebuild): Visual QA, polish, and asset manifest"
     details: |-
@@ -580,7 +594,7 @@ entries:
   - date: "2026-01-23"
     version: "0.1.0"
     issue: "https://github.com/BallLightningAB/balllightning/issues/1"
-    commit: TBD
+    commit: b4c9ea5
     status: complete
     title: "feat(rebuild): Debrand TBC boilerplate and build Ball Lightning site"
     details: |-

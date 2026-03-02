@@ -1,3 +1,4 @@
+import "urlpattern-polyfill";
 import {
 	createStartHandler,
 	defaultStreamHandler,
