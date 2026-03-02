@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "vite dev --host 127.0.0.1 --port 3000",
     "build": "vite build",
+    "vercel-build": "corepack enable && pnpm run build",
     "serve": "vite preview",
     "test": "vitest run",
     "format": "biome format --write",

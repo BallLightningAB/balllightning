@@ -1,6 +1,21 @@
 entries:
 
   - date: "2026-03-02"
+    version: "0.2.3.8"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/10"
+    commit: TBD
+    status: completed
+    title: "fix(vercel): add corepack support for pnpm deployment"
+    details: |-
+      - Added 'vercel-build' script to package.json with corepack enable
+      - Updated vercel.json buildCommand to use 'pnpm run vercel-build'
+      - Ensures pnpm 10.23.0 is properly activated during Vercel builds
+      - Fixes deployment issues after pnpm migration where Vercel wasn't triggering
+      - Build process now: corepack enable → pnpm run build
+      
+      Refs: v0.2.3.8 #10 I10D5
+
+  - date: "2026-03-02"
     version: "0.2.3.7"
     issue: "https://github.com/BallLightningAB/balllightning/issues/10"
     commit: TBD
