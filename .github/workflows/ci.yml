@@ -17,8 +17,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Enable corepack
+        run: corepack enable
+
       - name: Prepare pnpm
         run: corepack prepare pnpm@latest --activate
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: 'pnpm'        
 
       - name: Fail if npm lockfile exists
         shell: bash
@@ -28,20 +37,11 @@ jobs:
             exit 1
           fi
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '24'
-          cache: 'pnpm'
-
-      - name: Enable corepack
-        run: corepack enable
+      - name: Guard package manager
+        run: pnpm run guard:pm         
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-
-      - name: Guard package manager
-        run: pnpm run guard:pm
 
       - name: Type check
         run: pnpm run typecheck

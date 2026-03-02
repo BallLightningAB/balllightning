@@ -1,6 +1,20 @@
 entries:
 
   - date: "2026-03-02"
+    version: "0.2.3.3"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/10"
+    commit: TBD
+    status: completed
+    title: "fix(ci): correct package manager guard placement in GitHub Actions"
+    details: |-
+      - Moved "Guard package manager" step to run after lockfile validation, before installation
+      - Ensures guard validates package manager before any installation occurs
+      - Provides early failure detection if wrong package manager is used
+      - Corrects workflow order: checkout → prepare pnpm → setup-node → fail npm lockfile → guard → install
+      
+      Refs: #10 I10D3
+
+  - date: "2026-03-02"
     version: "0.2.3.2"
     issue: "https://github.com/BallLightningAB/balllightning/issues/10"
     commit: TBD
