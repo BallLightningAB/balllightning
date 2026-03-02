@@ -92,6 +92,10 @@ roadmap:
         - "2026-03-02: Issue created based on Glenn's report - Brave Mobile Shields causes unstyled HTML while Desktop Brave works fine"
         - "2026-03-02: Added comprehensive debugging plan with 8 systematic steps to identify root cause"
         - "2026-03-02: Hypothesis: Critical CSS or JS resource blocked on Brave mobile, causing global styles to never apply"
+        - "2026-03-02: ROOT CAUSE IDENTIFIED: /en returns 404 instead of 200 - Paraglide middleware issue in server.ts"
+        - "2026-03-02: FIXED: Corrected Paraglide middleware pattern and added outputStructure to Vite plugin"
+        - "2026-03-02: Local testing confirms fix works - / redirects to /en (307), /en returns 200 (success)"
+        - "2026-03-02: Commit bb6c72f implements fix for production deployment"
       est:
         dev_h: 2
         test_h: 1
