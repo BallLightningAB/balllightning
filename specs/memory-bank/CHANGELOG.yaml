@@ -1,17 +1,32 @@
 entries:
 
   - date: "2026-03-02"
+    version: "0.2.4.1"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/12"
+    commit: TBD
+    status: completed
+    title: "fix(vercel): add URLPattern polyfill for Node runtime compatibility"
+    details: |-
+      - Added urlpattern-polyfill dependency to resolve ReferenceError: URLPattern on Vercel Node runtime
+      - Imported polyfill at top of src/server.ts before Paraglide middleware to ensure global availability
+      - Investigated local preview server conflicts with Node 24 native URLPattern support
+      - Confirmed polyfill is no-op when URLPattern global exists, safe for local development
+      - Local preview server limitation acceptable; production deployment should resolve 500 errors
+      
+      Refs: v0.2.4.1 #12 I12D1-I12D2
+
+  - date: "2026-03-02"
     version: "0.2.4.0"
     issue: "https://github.com/BallLightningAB/balllightning/issues/12"
     commit: TBD
-    status: in-progress
+    status: completed
     title: "fix(vercel): add URLPattern polyfill for Node runtime compatibility"
     details: |-
       - Added urlpattern-polyfill dependency to resolve ReferenceError: URLPattern on Vercel Node runtime
       - Imported polyfill at top of src/server.ts before Paraglide middleware to ensure global availability
       - Fixes production 500 errors caused by Paraglide's extractLocaleFromUrl using URLPattern
       - Polyfill is no-op when URLPattern global exists; safe for local Node 24 environments
-
+      
       Refs: v0.2.4.0 #12 I12D1-I12D2
 
   - date: "2026-03-02"

@@ -1,4 +1,6 @@
+// Import URLPattern polyfill for Vercel Node runtime compatibility
 import "urlpattern-polyfill";
+
 import {
 	createStartHandler,
 	defaultStreamHandler,
