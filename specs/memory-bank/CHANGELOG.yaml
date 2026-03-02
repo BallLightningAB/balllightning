@@ -1,6 +1,19 @@
 entries:
 
   - date: "2026-03-02"
+    version: "0.2.3.9"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/10"
+    commit: TBD
+    status: completed
+    title: "fix(vercel): replace invalid header route pattern"
+    details: |-
+      - Replaced combined regex header route with per-extension patterns (/:path*.css, /:path*.js, /:path*.png, etc.)
+      - Aligns with Vercel path-to-regexp requirements to avoid invalid route source pattern error
+      - Keeps long-term caching headers for static assets while remaining Vercel-compatible
+
+      Refs: v0.2.3.9 #10 I10D5
+
+  - date: "2026-03-02"
     version: "0.2.3.8"
     issue: "https://github.com/BallLightningAB/balllightning/issues/10"
     commit: TBD
