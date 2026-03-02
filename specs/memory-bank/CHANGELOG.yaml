@@ -1,9 +1,24 @@
 entries:
 
   - date: "2026-03-02"
-    version: "0.2.3.5"
+    version: "0.2.3.6"
     issue: "https://github.com/BallLightningAB/balllightning/issues/4"
     commit: TBD
+    status: completed
+    title: "fix(ci): use correct pnpm dlx command for Paraglide file generation"
+    details: |-
+      - Replaced incorrect 'pnpm inlang project compile' with 'pnpm dlx @inlang/paraglide-js compile'
+      - Uses pnpm dlx for consistency with pnpm-based project instead of npx
+      - Specifies project file (--project ./project.inlang) and output directory (--outdir ./src/paraglide)
+      - Fixes CI build error: "error: unknown command 'project'"
+      - Ensures Paraglide files are properly generated before type checking
+      
+      Refs: v0.2.3.6 #4 I4D5
+
+  - date: "2026-03-02"
+    version: "0.2.3.5"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/4"
+    commit: 579e4bc
     status: completed
     title: "fix(ci): add Paraglide file generation to GitHub Actions workflow"
     details: |-
@@ -18,7 +33,7 @@ entries:
   - date: "2026-03-02"
     version: "0.2.3.4"
     issue: "https://github.com/BallLightningAB/balllightning/issues/10"
-    commit: TBD
+    commit: 0c5bf63
     status: completed
     title: "fix(types): exclude archived content migration from TypeScript compilation"
     details: |-
@@ -32,7 +47,7 @@ entries:
   - date: "2026-03-02"
     version: "0.2.3.3"
     issue: "https://github.com/BallLightningAB/balllightning/issues/10"
-    commit: TBD
+    commit: c08c76e
     status: completed
     title: "fix(ci): correct package manager guard placement in GitHub Actions"
     details: |-
@@ -46,7 +61,7 @@ entries:
   - date: "2026-03-02"
     version: "0.2.3.2"
     issue: "https://github.com/BallLightningAB/balllightning/issues/10"
-    commit: TBD
+    commit: 789c605
     status: completed
     title: "fix(ci): move pnpm preparation before checkout to fix setup-node caching"
     details: |-
@@ -60,7 +75,7 @@ entries:
   - date: "2026-03-02"
     version: "0.2.3.1"
     issue: "https://github.com/BallLightningAB/balllightning/issues/10"
-    commit: TBD
+    commit: 8a12cb0
     status: completed
     title: "fix: move pnpm preparation before setup-node action"
     details: |-
@@ -74,7 +89,7 @@ entries:
   - date: "2026-03-02"
     version: "0.2.3"
     issue: "https://github.com/BallLightningAB/balllightning/issues/10"
-    commit: TBD
+    commit: f036ba7
     status: in-review
     title: "fix(ci): add pnpm preparation step to GitHub Actions"
     details: |-

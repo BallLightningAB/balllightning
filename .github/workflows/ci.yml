@@ -44,7 +44,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Generate Paraglide files
-        run: pnpm inlang project compile
+        run: pnpm dlx @inlang/paraglide-js compile --project ./project.inlang --outdir ./src/paraglide
 
       - name: Type check
         run: pnpm run typecheck
