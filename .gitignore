@@ -12,6 +12,7 @@ count.txt
 .output
 .vinxi
 todos.json
+package-lock.json
 
 # Logs
 npm-debug.log*

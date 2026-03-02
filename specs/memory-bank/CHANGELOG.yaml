@@ -1,9 +1,28 @@
 entries:
 
+  - date: "2026-03-02"
+    version: "0.2.2"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/10"
+    commit: TBD
+    status: completed
+    title: "refactor: complete pnpm migration and GitHub label cleanup"
+    details: |-
+      - Converted memory-bank-usage.yaml from markdown to structured YAML format
+      - Removed status, risk, and size labels from all repositories (balllightning, chronomation, thebuildercoil, api-trainer, jorild-se)
+      - Updated memory-bank-usage.yaml files in balllightning, thebuildercoil, api-trainer to remove deprecated labels
+      - Implemented pnpm@10.23.0 as packageManager with guard scripts and comprehensive CI workflow
+      - Created scripts/guard-pnpm.sh to prevent npm usage with double protection in CI
+      - Added .github/workflows/ci.yml with pnpm caching, corepack enable, and package manager guards
+      - Updated memory documentation with current GitHub labels (type, area, special labels only)
+      - Created comprehensive pnpm migration guide in specs/archived/completed/pnpm-migration-guide.md
+      - All deliverables completed: I10D1-I10D5
+      
+      Refs: #10
+
   - date: "2026-03-01"
     version: "0.2.1"
     issue: "https://github.com/BallLightningAB/balllightning/issues/4"
-    commit: TBD
+    commit: e3e08c3
     status: completed
     title: "fix: resolve i18n redirect loop and add contribution graph translations"
     details: |-
@@ -22,7 +41,7 @@ entries:
   - date: "2026-03-01"
     version: "0.2"
     issue: "https://github.com/BallLightningAB/balllightning/issues/4"
-    commit: TBD
+    commit: 346c5cb
     status: troubleshooting
     title: "chore: bump version to 0.2 for i18n troubleshooting"
     details: |-
@@ -53,7 +72,7 @@ entries:
   - date: "2026-02-27"
     version: "0.1.7.6"
     issue: "https://github.com/BallLightningAB/balllightning/issues/9"
-    commit: TBD
+    commit: f22c24e
     status: completed
     title: "perf: add cache headers and fix accessibility/SEO issues"
     details: |-
