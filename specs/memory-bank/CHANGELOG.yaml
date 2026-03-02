@@ -1,6 +1,21 @@
 entries:
 
   - date: "2026-03-02"
+    version: "0.2.3.7"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/10"
+    commit: TBD
+    status: completed
+    title: "fix(ci): remove test step from GitHub Actions workflow"
+    details: |-
+      - Removed 'Test' step from .github/workflows/ci.yml since project has no test files
+      - Fixes CI build failure: 'ReferenceError: module is not defined' in Vitest
+      - Vitest was failing due to ES module issues when no test files exist
+      - CI workflow now runs: typecheck → lint → build (no test step)
+      - Test step can be re-added when actual test files are created
+      
+      Refs: v0.2.3.7 #10 I10D4
+
+  - date: "2026-03-02"
     version: "0.2.3.6"
     issue: "https://github.com/BallLightningAB/balllightning/issues/4"
     commit: TBD
