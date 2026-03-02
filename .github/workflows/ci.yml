@@ -24,6 +24,9 @@ jobs:
             echo "package-lock.json found. Use pnpm only."
             exit 1
           fi
+      
+      - name: Prepare pnpm
+        run: corepack prepare pnpm@latest --activate
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -33,9 +36,6 @@ jobs:
 
       - name: Enable corepack
         run: corepack enable
-
-      - name: Prepare pnpm
-        run: corepack prepare pnpm@latest --activate
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile

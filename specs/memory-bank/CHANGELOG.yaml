@@ -1,6 +1,20 @@
 entries:
 
   - date: "2026-03-02"
+    version: "0.2.3.1"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/10"
+    commit: TBD
+    status: completed
+    title: "fix: move pnpm preparation before setup-node action"
+    details: |-
+      - Moved "Prepare pnpm" step before "Setup Node.js" in .github/workflows/ci.yml
+      - Ensures pnpm is available when setup-node action attempts to use it for caching
+      - Fixes "Unable to locate executable file: pnpm" error in CI workflow
+      - Step placement: after "Fail if npm lockfile exists", before "Setup Node.js"
+      
+      Refs: #10 I10D3
+
+  - date: "2026-03-02"
     version: "0.2.3"
     issue: "https://github.com/BallLightningAB/balllightning/issues/10"
     commit: TBD
