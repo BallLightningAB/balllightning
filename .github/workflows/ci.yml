@@ -17,6 +17,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Prepare pnpm
+        run: corepack prepare pnpm@latest --activate
+
       - name: Fail if npm lockfile exists
         shell: bash
         run: |
@@ -24,9 +27,6 @@ jobs:
             echo "package-lock.json found. Use pnpm only."
             exit 1
           fi
-      
-      - name: Prepare pnpm
-        run: corepack prepare pnpm@latest --activate
 
       - name: Setup Node.js
         uses: actions/setup-node@v4

@@ -1,6 +1,20 @@
 entries:
 
   - date: "2026-03-02"
+    version: "0.2.3.2"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/10"
+    commit: TBD
+    status: completed
+    title: "fix(ci): move pnpm preparation before checkout to fix setup-node caching"
+    details: |-
+      - Moved "Prepare pnpm" step to run immediately after checkout in .github/workflows/ci.yml
+      - Ensures pnpm is available in PATH when setup-node action attempts to use it for caching
+      - Fixes "Unable to locate executable file: pnpm" error in GitHub Actions
+      - Critical timing: prepare pnpm must run before setup-node, not just before enable corepack
+      
+      Refs: #10 I10D3
+
+  - date: "2026-03-02"
     version: "0.2.3.1"
     issue: "https://github.com/BallLightningAB/balllightning/issues/10"
     commit: TBD
