@@ -31,7 +31,10 @@ export function LanguageSwitcher() {
 		if (newLocale === currentLocale) {
 			return;
 		}
-		const href = localizeHref(currentPath, { locale: newLocale });
+		// Remove current locale prefix from path to get the base path
+		const basePath =
+			currentPath.replace(new RegExp(`^/${currentLocale}`), "") || "/";
+		const href = localizeHref(basePath, { locale: newLocale });
 		window.location.href = href;
 	};
 
@@ -67,7 +70,10 @@ export function LanguageSwitcherMobile() {
 		<div className="flex flex-wrap gap-2">
 			{locales.map((locale) => {
 				const isActive = locale === currentLocale;
-				const href = localizeHref(currentPath, { locale });
+				// Remove current locale prefix from path to get the base path
+				const basePath =
+					currentPath.replace(new RegExp(`^/${currentLocale}`), "") || "/";
+				const href = localizeHref(basePath, { locale });
 				return (
 					<a
 						className={`inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${

@@ -1,9 +1,24 @@
 entries:
 
   - date: "2026-03-03"
-    version: "0.2.4.4"
+    version: "0.2.4.5"
     issue: "https://github.com/BallLightningAB/balllightning/issues/12"
     commit: TBD
+    status: in-review
+    title: "fix(i18n): preserve current page when switching languages"
+    details: |-
+      - Fixed language switcher to strip current locale prefix before localizing to new locale
+      - Updated both desktop (Select) and mobile (buttons) language switchers with base path logic
+      - Now switching from /en/technologies to German redirects to /de/technologies instead of /de
+      - Preserves user's current page context across all locale switches
+      - Applied to LanguageSwitcher and LanguageSwitcherMobile components
+      
+      Refs: v0.2.4.5 #12 I12D1-I12D2
+
+  - date: "2026-03-03"
+    version: "0.2.4.4"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/12"
+    commit: fabe94d
     status: in-review
     title: "fix(i18n): restore URL strategy and fix middleware/rewrite interference for locale routing"
     details: |-
