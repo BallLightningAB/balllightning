@@ -2,10 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Github, Linkedin, Menu, Twitter } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import {
-	LanguageSwitcher,
-	LanguageSwitcherMobile,
-} from "@/components/ui/language-switcher";
+import { LanguageSwitcher } from "@/components/ui/language-switcher";
 import {
 	Sheet,
 	SheetContent,
@@ -78,6 +75,11 @@ export function Header() {
 
 				{/* Actions */}
 				<div className="flex items-center gap-3">
+					{/* Language switcher - mobile only (next to hamburger) */}
+					<div className="md:hidden">
+						<LanguageSwitcher />
+					</div>
+
 					{/* Language switcher - desktop only */}
 					<div className="hidden md:block">
 						<LanguageSwitcher />
@@ -115,7 +117,7 @@ export function Header() {
 									Main navigation links for mobile devices
 								</SheetDescription>
 							</SheetHeader>
-							<nav className="mt-8 flex flex-col gap-4">
+							<nav className="px-4 mt-8 flex flex-col gap-4">
 								{navLinks.map((link) => (
 									<Link
 										className={
@@ -129,12 +131,8 @@ export function Header() {
 									</Link>
 								))}
 							</nav>
-							{/* Language switcher in mobile menu */}
-							<div className="mt-8 border-border border-t pt-6">
-								<LanguageSwitcherMobile />
-							</div>
 							{/* Social icons in mobile menu */}
-							<div className="mt-6 flex gap-4 border-border border-t pt-6">
+							<div className="px-4 mt-8 flex gap-4 border-border border-t pt-8">
 								{socialLinks.map((link) => (
 									<a
 										aria-label={link.label}

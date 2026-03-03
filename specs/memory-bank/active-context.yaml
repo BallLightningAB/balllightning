@@ -1,5 +1,5 @@
 meta:
-  release: "0.2.4.8"
+  release: "0.2.4.9"
   repo: github.com/BallLightningAB/balllightning
   project: https://github.com/users/BallLightningAB/projects/9
   pdd_version: "1.1"
@@ -31,6 +31,9 @@ roadmap:
         - "2026-03-02: Investigated local preview server conflicts - Node 24 has native URLPattern causing polyfill conflicts"
         - "2026-03-02: Confirmed polyfill is necessary for Vercel deployment; local preview limitation acceptable"
         - "2026-03-02: Ready to deploy to verify 500s are resolved"
+        - "2026-03-03: Fixed language switching path preservation issue - now captures current path at switching moment"
+        - "2026-03-03: Language switching now works correctly: /sv/services → switch to German → /de/services"
+        - "2026-03-03: Issue fully resolved - both production 500 errors and language switching UX fixed"
       est:
         dev_h: 0.5
         test_h: 0.5
@@ -57,10 +60,39 @@ roadmap:
         - "2026-03-02: Updated memory documentation with current GitHub labels"
       est:
         dev_h: 2
-        test_h: 0.5
+        test_h: 2
       remaining_deliverables: []
       sub_issues:
         - "https://github.com/BallLightningAB/balllightning/issues/12"
+    - id: mobile-language-switcher-fix
+      issue: "https://github.com/BallLightningAB/balllightning/issues/13"
+      title: "fix(mobile): language switcher cut off in navigation menu"
+      status: completed
+      links:
+        issue: "https://github.com/BallLightningAB/balllightning/issues/13"
+      deliverables:
+        - "[done] I13D1: Replace Radix Select with Sheet component for reliable mobile positioning"
+        - "[done] I13D2: Simplify to flag emojis only with compact 25vw width (200px max)"
+        - "[done] I13D3: Apply Big Shoulders Stencil font and proper accessibility"
+        - "[done] I13D4: Move language switcher from mobile menu to header (next to hamburger)"
+        - "[done] I13D5: Add proper touch targets and optimize mobile responsiveness"
+      progress_log:
+        - "2026-03-03: Issue created - mobile language switcher cut off on Samsung S23, hiding German and French options"
+        - "2026-03-03: All 4 language options now fully visible and accessible on mobile devices"
+        - "2026-03-03: UX IMPROVEMENT: Moved language switcher from mobile menu to header (next to hamburger)"
+        - "2026-03-03: UX IMPROVEMENT: Added px-4 padding to nav and social sections to align with title"
+        - "2026-03-03: UX IMPROVEMENT: Removed language switcher from mobile menu entirely - now in header like desktop"
+        - "2026-03-03: ENHANCEMENT: Replaced Radix Select with Sheet component for reliable mobile positioning"
+        - "2026-03-03: ENHANCEMENT: Simplified to show only flag emojis (no language names) for compact design"
+        - "2026-03-03: ENHANCEMENT: Optimized Sheet width to 25vw with 200px max for mobile responsiveness"
+        - "2026-03-03: ENHANCEMENT: Applied Big Shoulders Stencil font to flag emojis for brand consistency"
+        - "2026-03-03: ENHANCEMENT: Added proper accessibility with visually hidden SheetTitle and SheetDescription"
+        - "2026-03-03: FINAL: Ultra-compact language switcher (64-124px on phones) with centered flag emojis"
+      est:
+        dev_h: 1
+        test_h: 3
+      remaining_deliverables: []
+      sub_issues: []
     - id: language-switching
       issue: "https://github.com/BallLightningAB/balllightning/issues/4"
       title: "Feature: Add language switching support"
@@ -98,6 +130,7 @@ roadmap:
       remaining_deliverables: []
       sub_issues:
         - "https://github.com/BallLightningAB/balllightning/issues/11"
+        - "https://github.com/BallLightningAB/balllightning/issues/13"
     - id: brave-mobile-shields-debug
       issue: "https://github.com/BallLightningAB/balllightning/issues/11"
       title: "Debug: Brave Mobile Shields causes unstyled HTML"

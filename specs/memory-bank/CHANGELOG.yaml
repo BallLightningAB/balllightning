@@ -1,6 +1,22 @@
 entries:
 
   - date: "2026-03-03"
+    version: "0.2.4.9"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/13"
+    commit: TBD
+    status: in-review
+    title: "fix(mobile): language switcher cut off in navigation menu"
+    details: |-
+      - Replaced unreliable Radix Select with Sheet component for consistent mobile positioning
+      - Simplified to show only flag emojis with ultra-compact 25vw width (200px max)
+      - Applied Big Shoulders Stencil font for brand consistency and proper accessibility
+      - Moved language switcher from mobile menu to header (next to hamburger)
+      - Added proper touch targets and optimized mobile responsiveness
+      - Final result: Ultra-compact language switcher (64-124px on phones) with centered flags
+      
+      Refs: v0.2.4.9 #13 I13D1-I13D5
+
+  - date: "2026-03-03"
     version: "0.2.4.8"
     issue: "https://github.com/BallLightningAB/balllightning/issues/12"
     commit: TBD

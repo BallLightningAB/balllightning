@@ -61,7 +61,7 @@ function HomePage() {
 	const feedCards = [...newsItems, ...blogItems];
 
 	return (
-		<div className="flex flex-col">
+		<div className="flex flex-col" suppressHydrationWarning>
 			{/* Hero Section */}
 			<section className="relative overflow-hidden py-20 md:py-32">
 				<div className="container mx-auto max-w-6xl px-4">

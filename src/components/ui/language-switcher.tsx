@@ -1,18 +1,20 @@
 import { Globe } from "lucide-react";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
 import {
-	Select,
-	SelectContent,
-	SelectItem,
-	SelectTrigger,
-	SelectValue,
-} from "@/components/ui/select";
+	Sheet,
+	SheetContent,
+	SheetDescription,
+	SheetTitle,
+	SheetTrigger,
+} from "@/components/ui/sheet";
 import { getLocale, locales, localizeHref } from "@/paraglide/runtime.js";
 
-const localeLabels: Record<string, string> = {
-	en: "English",
-	sv: "Svenska",
-	de: "Deutsch",
-	fr: "Français",
+const localeCodes: Record<string, string> = {
+	en: "EN",
+	sv: "SE",
+	de: "DE",
+	fr: "FR",
 };
 
 const localeFlags: Record<string, string> = {
@@ -24,57 +26,64 @@ const localeFlags: Record<string, string> = {
 
 export function LanguageSwitcher() {
 	const currentLocale = getLocale();
-	const currentPath =
-		typeof window !== "undefined" ? window.location.pathname : "/";
+	const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
 
 	const handleLocaleChange = (newLocale: string) => {
 		if (newLocale === currentLocale) {
 			return;
 		}
 
-		// Get the current path at the moment of switching (not at render time)
-		const switchingPath =
-			typeof window !== "undefined" ? window.location.pathname : "/";
-
-		// Remove current locale prefix from path to get the base path
-		// Only match if locale is followed by / or end of string to avoid partial matches
+		// Get the current path at the moment of switching
+		const switchingPath = window.location.pathname;
 		const basePath =
 			switchingPath.replace(new RegExp(`^/${currentLocale}(/|$)`), "/") || "/";
 		const href = localizeHref(basePath, { locale: newLocale });
-
-		// Debug logging (remove in production)
-		console.log("Language switch debug:", {
-			renderPath: currentPath,
-			switchingPath,
-			currentLocale,
-			newLocale,
-			basePath,
-			href,
-		});
 
 		window.location.href = href;
 	};
 
 	return (
-		<Select onValueChange={handleLocaleChange} value={currentLocale}>
-			<SelectTrigger
-				aria-label="Select language"
-				className="h-9 w-auto gap-1.5 border-none bg-transparent px-2 text-muted-foreground shadow-none hover:text-foreground focus:ring-0"
-			>
-				<Globe className="h-4 w-4" />
-				<SelectValue />
-			</SelectTrigger>
-			<SelectContent align="end">
-				{locales.map((locale) => (
-					<SelectItem key={locale} value={locale}>
-						<span className="flex items-center gap-2">
-							<span>{localeFlags[locale]}</span>
-							<span>{localeLabels[locale]}</span>
-						</span>
-					</SelectItem>
-				))}
-			</SelectContent>
-		</Select>
+		<Sheet onOpenChange={setLanguageMenuOpen} open={languageMenuOpen}>
+			<SheetTrigger asChild>
+				<Button
+					aria-label="Select language"
+					className="h-9 w-auto gap-1.5 border-none bg-transparent px-2 text-muted-foreground shadow-none hover:bg-transparent hover:text-foreground"
+					size="icon"
+					variant="ghost"
+				>
+					<Globe className="h-4 w-4" />
+					<span className="ml-1.5">{localeCodes[currentLocale]}</span>
+				</Button>
+			</SheetTrigger>
+			<SheetContent className="w-[25vw] max-w-[200px]" side="right">
+				<SheetTitle className="sr-only">Language Menu</SheetTitle>
+				<SheetDescription className="sr-only">
+					Select your preferred language
+				</SheetDescription>
+				<nav className="px-4 py-4 mt-4 flex flex-col gap-4 items-center">
+					{locales.map((locale) => {
+						const isActive = locale === currentLocale;
+						return (
+							<button
+								className={`flex items-center justify-center gap-3 font-medium text-lg transition-colors ${
+									isActive ? "text-bl-red" : "text-foreground hover:text-bl-red"
+								}`}
+								key={locale}
+								onClick={() => {
+									setLanguageMenuOpen(false);
+									handleLocaleChange(locale);
+								}}
+								type="button"
+							>
+								<span className="text-4xl font-[BigShouldersStencilDisplay]">
+									{localeFlags[locale]}
+								</span>
+							</button>
+						);
+					})}
+				</nav>
+			</SheetContent>
+		</Sheet>
 	);
 }
 
@@ -82,30 +91,37 @@ export function LanguageSwitcherMobile() {
 	const currentLocale = getLocale();
 
 	return (
-		<div className="flex flex-wrap gap-2">
+		<div className="grid grid-cols-2 gap-2">
 			{locales.map((locale) => {
 				const isActive = locale === currentLocale;
-				// Get the current path at the moment of clicking (not at render time)
-				const switchingPath =
-					typeof window !== "undefined" ? window.location.pathname : "/";
-				// Remove current locale prefix from path to get the base path
-				// Only match if locale is followed by / or end of string to avoid partial matches
-				const basePath =
-					switchingPath.replace(new RegExp(`^/${currentLocale}(/|$)`), "/") ||
-					"/";
+				// Use a simple base path for SSR - the actual navigation will be handled client-side
+				const basePath = "/";
 				const href = localizeHref(basePath, { locale });
 				return (
 					<a
-						className={`inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
+						className={`inline-flex items-center justify-center gap-1.5 rounded-md px-2 py-2 text-sm font-medium transition-colors min-h-[44px] ${
 							isActive
 								? "bg-bl-red/10 text-bl-red"
 								: "text-muted-foreground hover:bg-muted hover:text-foreground"
 						}`}
 						href={href}
 						key={locale}
+						onClick={(e) => {
+							e.preventDefault();
+							// Get the current path at the moment of clicking
+							const switchingPath = window.location.pathname;
+							// Remove current locale prefix from path to get the base path
+							const actualBasePath =
+								switchingPath.replace(
+									new RegExp(`^/${currentLocale}(/|$)`),
+									"/"
+								) || "/";
+							const actualHref = localizeHref(actualBasePath, { locale });
+							window.location.href = actualHref;
+						}}
 					>
-						<span>{localeFlags[locale]}</span>
-						<span>{localeLabels[locale]}</span>
+						<span className="text-base">{localeFlags[locale]}</span>
+						<span className="text-xs leading-tight">{localeCodes[locale]}</span>
 					</a>
 				);
 			})}
