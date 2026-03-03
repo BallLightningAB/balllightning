@@ -1,9 +1,25 @@
 entries:
 
   - date: "2026-03-03"
+    version: "0.2.5.2"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/14"
+    commit: TBD
+    status: in-progress
+    title: "feat(i18n): add locale standardization and portfolio translation roadmap"
+    details: |-
+      - Added I14D8: Change locale route from 'sv' to 'se' to align with ISO 3166-1 standard
+      - Added I14D9: Update language menu labels - rename 'gb' to 'en' for consistency
+      - Created GitHub issue #16 for comprehensive portfolio subpage translation project
+      - Updated issue #14 with expanded scope and related issue references
+      - Added sub-issue linking between translation work and portfolio content
+      - Bumped version to 0.2.5.2 in active-context.yaml
+      
+      Refs: v0.2.5.2 #14 I14D8-I14D9 #16
+
+  - date: "2026-03-03"
     version: "0.2.5.1"
     issue: "https://github.com/BallLightningAB/balllightning/issues/15"
-    commit: TBD
+    commit: c2ea541
     status: pending
     title: "feat(seo): create Google Search Console indexing and post-rebuild optimization issue"
     details: |-
