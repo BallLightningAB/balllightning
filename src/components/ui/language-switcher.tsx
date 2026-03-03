@@ -31,15 +31,21 @@ export function LanguageSwitcher() {
 		if (newLocale === currentLocale) {
 			return;
 		}
+
+		// Get the current path at the moment of switching (not at render time)
+		const switchingPath =
+			typeof window !== "undefined" ? window.location.pathname : "/";
+
 		// Remove current locale prefix from path to get the base path
 		// Only match if locale is followed by / or end of string to avoid partial matches
 		const basePath =
-			currentPath.replace(new RegExp(`^/${currentLocale}(/|$)`), "/") || "/";
+			switchingPath.replace(new RegExp(`^/${currentLocale}(/|$)`), "/") || "/";
 		const href = localizeHref(basePath, { locale: newLocale });
 
 		// Debug logging (remove in production)
 		console.log("Language switch debug:", {
-			currentPath,
+			renderPath: currentPath,
+			switchingPath,
 			currentLocale,
 			newLocale,
 			basePath,
@@ -74,17 +80,18 @@ export function LanguageSwitcher() {
 
 export function LanguageSwitcherMobile() {
 	const currentLocale = getLocale();
-	const currentPath =
-		typeof window !== "undefined" ? window.location.pathname : "/";
 
 	return (
 		<div className="flex flex-wrap gap-2">
 			{locales.map((locale) => {
 				const isActive = locale === currentLocale;
+				// Get the current path at the moment of clicking (not at render time)
+				const switchingPath =
+					typeof window !== "undefined" ? window.location.pathname : "/";
 				// Remove current locale prefix from path to get the base path
 				// Only match if locale is followed by / or end of string to avoid partial matches
 				const basePath =
-					currentPath.replace(new RegExp(`^/${currentLocale}(/|$)`), "/") ||
+					switchingPath.replace(new RegExp(`^/${currentLocale}(/|$)`), "/") ||
 					"/";
 				const href = localizeHref(basePath, { locale });
 				return (

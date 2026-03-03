@@ -1,9 +1,25 @@
 entries:
 
   - date: "2026-03-03"
-    version: "0.2.4.7"
+    version: "0.2.4.8"
     issue: "https://github.com/BallLightningAB/balllightning/issues/12"
     commit: TBD
+    status: in-review
+    title: "fix(i18n): capture current path at language switching moment instead of render time"
+    details: |-
+      - Fixed language switcher to capture window.location.pathname at moment of switching, not component render
+      - Updated handleLocaleChange to use switchingPath instead of stale currentPath from render time
+      - Updated LanguageSwitcherMobile to capture path at click time inside map function
+      - Enhanced debug logging to show renderPath vs switchingPath comparison
+      - Root cause: Component was using stale path captured at initial render, causing wrong redirects
+      - Now properly preserves current page context: /sv/services → switch to German → /de/services
+      
+      Refs: v0.2.4.8 #12 I12D1-I12D2
+
+  - date: "2026-03-03"
+    version: "0.2.4.7"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/12"
+    commit: d0c39d6
     status: in-review
     title: "fix(i18n): add debugging to language switcher for path detection issues"
     details: |-
