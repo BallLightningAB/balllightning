@@ -41,6 +41,11 @@ const config = defineConfig({
 		nitro({
 			// Use Vercel preset for deployment
 			preset: "vercel",
+			vercel: {
+				functions: {
+					runtime: "nodejs24.x",
+				},
+			},
 			// Route rules for static asset caching
 			routeRules: {
 				// Fonts and media files - long term caching

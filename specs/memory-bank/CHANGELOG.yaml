@@ -1,10 +1,25 @@
 entries:
 
+  - date: "2026-03-03"
+    version: "0.2.4.2"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/12"
+    commit: TBD
+    status: in-progress
+    title: "fix(vercel): resolve production 500 errors via runtime pin + i18n rewrite conflict fix"
+    details: |-
+      - Pinned Nitro Vercel function runtime to nodejs24.x to prevent nodejs22.x output in generated Nitro config
+      - Fixed Paraglide middleware resolve callback to forward rewritten request object to TanStack handler
+      - Removed TanStack Router rewrite (deLocalizeUrl/localizeUrl) to avoid double URL localization with Paraglide middleware
+      - Verified build output now contains runtime nodejs24.x via nitro.json
+      - Kept outputStructure: 'message-modules' in paraglideVitePlugin since removing it broke dev environment
+      
+      Refs: v0.2.4.2 #12 I12D1-I12D2
+
   - date: "2026-03-02"
     version: "0.2.4.1"
     issue: "https://github.com/BallLightningAB/balllightning/issues/12"
-    commit: TBD
-    status: completed
+    commit: bff36ad
+    status: in-progress
     title: "fix(vercel): add URLPattern polyfill for Node runtime compatibility"
     details: |-
       - Added urlpattern-polyfill dependency to resolve ReferenceError: URLPattern on Vercel Node runtime
@@ -18,8 +33,8 @@ entries:
   - date: "2026-03-02"
     version: "0.2.4.0"
     issue: "https://github.com/BallLightningAB/balllightning/issues/12"
-    commit: TBD
-    status: completed
+    commit: c2b07ea
+    status: in-progress
     title: "fix(vercel): add URLPattern polyfill for Node runtime compatibility"
     details: |-
       - Added urlpattern-polyfill dependency to resolve ReferenceError: URLPattern on Vercel Node runtime

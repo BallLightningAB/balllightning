@@ -13,7 +13,7 @@ importers:
         version: 5.2.2(react-hook-form@7.66.1(react@19.2.3))
       '@inlang/paraglide-js':
         specifier: ^2.13.0
-        version: 2.13.0
+        version: 2.13.1
       '@radix-ui/react-avatar':
         specifier: ^1.1.11
         version: 1.1.11(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -737,8 +737,8 @@ packages:
     engines: {node: '>=18.0.0'}
     hasBin: true
 
-  '@inlang/paraglide-js@2.13.0':
-    resolution: {integrity: sha512-m7JQiTeLC3tY3DusUCc4iRWlsKoMuDLhw4iGhkY0yI96ki7PK42DLsi1kMk8ubSVenKOwgrs7eqQZN1Htvkhew==}
+  '@inlang/paraglide-js@2.13.1':
+    resolution: {integrity: sha512-IsGm5gHmH6hVA9iwzvoRkt+Q9nrzX+6+G1nAmxODk/l+mpm0siPebfkXiu6DODSluFuHg0Q6fjXcDXAaqOen+Q==}
     hasBin: true
 
   '@inlang/recommend-sherlock@0.2.1':
@@ -4139,7 +4139,7 @@ snapshots:
     transitivePeerDependencies:
       - babel-plugin-macros
 
-  '@inlang/paraglide-js@2.13.0':
+  '@inlang/paraglide-js@2.13.1':
     dependencies:
       '@inlang/recommend-sherlock': 0.2.1
       '@inlang/sdk': 2.7.0

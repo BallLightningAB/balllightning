@@ -1,5 +1,7 @@
-// Import URLPattern polyfill for Vercel Node runtime compatibility
-import "urlpattern-polyfill";
+// Import URLPattern polyfill for Vercel Node runtime compatibility if needed
+if (typeof globalThis.URLPattern === "undefined") {
+	await import("urlpattern-polyfill");
+}
 
 import {
 	createStartHandler,
@@ -12,6 +14,8 @@ const handler = createStartHandler(defaultStreamHandler);
 
 export default createServerEntry({
 	fetch(request: Request) {
-		return paraglideMiddleware(request, () => handler(request));
+		return paraglideMiddleware(request, ({ request: localizedRequest }) =>
+			handler(localizedRequest)
+		);
 	},
 });
