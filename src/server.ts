@@ -14,8 +14,6 @@ const handler = createStartHandler(defaultStreamHandler);
 
 export default createServerEntry({
 	fetch(request: Request) {
-		return paraglideMiddleware(request, ({ request: localizedRequest }) =>
-			handler(localizedRequest)
-		);
+		return paraglideMiddleware(request, () => handler(request));
 	},
 });

@@ -1,9 +1,25 @@
 entries:
 
   - date: "2026-03-03"
-    version: "0.2.4.3"
+    version: "0.2.4.4"
     issue: "https://github.com/BallLightningAB/balllightning/issues/12"
     commit: TBD
+    status: in-review
+    title: "fix(i18n): restore URL strategy and fix middleware/rewrite interference for locale routing"
+    details: |-
+      - Restored URL strategy + urlPatterns in Paraglide config to recognize /de, /sv, /fr routes
+      - Adjusted paraglideMiddleware callback to use original request instead of rewritten request
+      - Kept TanStack Router rewrite (deLocalizeUrl/localizeUrl) for client-side URL localization
+      - Verified /de/ route now returns 200 OK with German content (lang="de", "Startseite" labels)
+      - Confirmed URL strategy overrides cookie preference when accessing locale-prefixed routes
+      - Fixed redirect loops while maintaining functional language switching
+      
+      Refs: v0.2.4.4 #12 I12D1-I12D2
+
+  - date: "2026-03-03"
+    version: "0.2.4.3"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/12"
+    commit: 58699af
     status: in-review
     title: "fix(vercel): resolve production 500 errors via runtime pin + i18n rewrite conflict fix"
     details: |-
