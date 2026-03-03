@@ -32,8 +32,9 @@ export function LanguageSwitcher() {
 			return;
 		}
 		// Remove current locale prefix from path to get the base path
+		// Only match if locale is followed by / or end of string to avoid partial matches
 		const basePath =
-			currentPath.replace(new RegExp(`^/${currentLocale}`), "") || "/";
+			currentPath.replace(new RegExp(`^/${currentLocale}(/|$)`), "/") || "/";
 		const href = localizeHref(basePath, { locale: newLocale });
 		window.location.href = href;
 	};
@@ -71,8 +72,10 @@ export function LanguageSwitcherMobile() {
 			{locales.map((locale) => {
 				const isActive = locale === currentLocale;
 				// Remove current locale prefix from path to get the base path
+				// Only match if locale is followed by / or end of string to avoid partial matches
 				const basePath =
-					currentPath.replace(new RegExp(`^/${currentLocale}`), "") || "/";
+					currentPath.replace(new RegExp(`^/${currentLocale}(/|$)`), "/") ||
+					"/";
 				const href = localizeHref(basePath, { locale });
 				return (
 					<a

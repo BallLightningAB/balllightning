@@ -21,6 +21,7 @@ core_files:
       - "Tracks all version releases with dates, commits, and detailed change descriptions"
       - "Refs: lines include version, issue number, and relevant IxDy IDs for linkage"
       - "Maintains reverse chronological order (latest versions first)"
+      - "When the changelog surpasses 600 lines, only the first 150 lines are kept and the rest are moved to changelog-archive/. Look there if you need specific version details."
     maintenance:
       - "Add new entries for each version release"
       - "Extend Refs: lines with corresponding IxDy IDs from active-context.yaml"
