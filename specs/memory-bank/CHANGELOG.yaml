@@ -1,9 +1,24 @@
 entries:
 
   - date: "2026-03-03"
+    version: "0.2.5.1"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/15"
+    commit: TBD
+    status: pending
+    title: "feat(seo): create Google Search Console indexing and post-rebuild optimization issue"
+    details: |-
+      - Created GitHub issue #15 for comprehensive SEO optimization after rebuild completion
+      - Added 5 deliverables: GSC setup, technical audit, GBP optimization, performance monitoring, content indexing
+      - Updated memory bank with new issue in next_steps section
+      - Bumped version to 0.2.5.1 in active-context.yaml
+      - Issue addresses GSC indexing recommendation from issue #14 feedback
+      
+      Refs: v0.2.5.1 #15 I15D1-I15D5
+
+  - date: "2026-03-03"
     version: "0.2.5.0"
     issue: "https://github.com/BallLightningAB/balllightning/issues/14"
-    commit: TBD
+    commit: 9594f3b
     status: in-review
     title: "fix(i18n): implement German translation and mobile responsiveness feedback fixes"
     details: |-
@@ -22,7 +37,7 @@ entries:
   - date: "2026-03-03"
     version: "0.2.4.9"
     issue: "https://github.com/BallLightningAB/balllightning/issues/13"
-    commit: TBD
+    commit: 3eb35ef
     status: in-review
     title: "fix(mobile): language switcher cut off in navigation menu"
     details: |-
@@ -38,7 +53,7 @@ entries:
   - date: "2026-03-03"
     version: "0.2.4.8"
     issue: "https://github.com/BallLightningAB/balllightning/issues/12"
-    commit: TBD
+    commit: 753eaa8
     status: in-review
     title: "fix(i18n): capture current path at language switching moment instead of render time"
     details: |-

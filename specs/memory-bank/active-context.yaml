@@ -1,5 +1,5 @@
 meta:
-  release: "0.2.5.0"
+  release: "0.2.5.1"
   repo: github.com/BallLightningAB/balllightning
   project: https://github.com/users/BallLightningAB/projects/9
   pdd_version: "1.1"
@@ -44,7 +44,32 @@ roadmap:
         test_h: 1
       remaining_deliverables: []
       sub_issues: []
-  next_steps: []
+  next_steps:
+    - id: gsc-indexing-optimization
+      issue: "https://github.com/BallLightningAB/balllightning/issues/15"
+      title: "SEO: Google Search Console indexing and post-rebuild optimization"
+      status: pending
+      priority: medium
+      labels:
+        - seo
+        - enhancement
+        - post-launch
+      deliverables:
+        - "[pending] I15D1: Google Search Console Setup & Indexing"
+        - "[pending] I15D2: SEO Technical Audit"
+        - "[pending] I15D3: Google Business Profile Optimization"
+        - "[pending] I15D4: Performance & Core Web Vitals"
+        - "[pending] I15D5: Content Indexing Strategy"
+      progress_log:
+        - "2026-03-03: Issue created based on GSC indexing recommendation from issue #14"
+        - "2026-03-03: Comprehensive SEO optimization plan for post-rebuild phase"
+        - "2026-03-03: Includes GSC setup, technical audit, GBP optimization, and performance monitoring"
+        - "2026-03-03: Should be addressed after translation fixes are complete and deployed"
+      est:
+        dev_h: 4
+        test_h: 2
+      remaining_deliverables: []
+      sub_issues: []
   recent_done:
     - id: vercel-urlpattern-polyfill
       issue: "https://github.com/BallLightningAB/balllightning/issues/12"
