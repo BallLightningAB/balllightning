@@ -1,9 +1,24 @@
 entries:
 
   - date: "2026-03-03"
+    version: "0.2.4.7"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/12"
+    commit: TBD
+    status: in-review
+    title: "fix(i18n): add debugging to language switcher for path detection issues"
+    details: |-
+      - Added console logging to LanguageSwitcher component to debug path detection
+      - Debug logs show currentPath, currentLocale, newLocale, basePath, and href
+      - Deployed with debug logging to investigate why language switching always redirects to /technologies
+      - Issue: language switching from any page (e.g., /en/portfolio) redirects to /de/technologies instead of /de/portfolio
+      - Debug logging will help identify if issue is with path detection, locale detection, or localizeHref function
+      
+      Refs: v0.2.4.7 #12 I12D1-I12D2
+
+  - date: "2026-03-03"
     version: "0.2.4.6"
     issue: "changelog-rotation-fix"
-    commit: TBD
+    commit: be83f3e
     status: in-review
     title: "chore: fix changelog rotation script naming and implement quarterly archives"
     details: |-

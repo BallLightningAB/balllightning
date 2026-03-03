@@ -36,6 +36,16 @@ export function LanguageSwitcher() {
 		const basePath =
 			currentPath.replace(new RegExp(`^/${currentLocale}(/|$)`), "/") || "/";
 		const href = localizeHref(basePath, { locale: newLocale });
+
+		// Debug logging (remove in production)
+		console.log("Language switch debug:", {
+			currentPath,
+			currentLocale,
+			newLocale,
+			basePath,
+			href,
+		});
+
 		window.location.href = href;
 	};
 
