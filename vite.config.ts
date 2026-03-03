@@ -13,27 +13,7 @@ const config = defineConfig({
 			project: "./project.inlang",
 			outdir: "./src/paraglide",
 			outputStructure: "message-modules",
-			strategy: ["url", "cookie", "preferredLanguage", "baseLocale"],
-			urlPatterns: [
-				{
-					pattern: "/",
-					localized: [
-						["en", "/en"],
-						["sv", "/sv"],
-						["de", "/de"],
-						["fr", "/fr"],
-					],
-				},
-				{
-					pattern: "/:path(.*)?",
-					localized: [
-						["en", "/en/:path(.*)?"],
-						["sv", "/sv/:path(.*)?"],
-						["de", "/de/:path(.*)?"],
-						["fr", "/fr/:path(.*)?"],
-					],
-				},
-			],
+			strategy: ["cookie", "preferredLanguage", "baseLocale"],
 			cookieName: "locale",
 			cookieDomain: "balllightning.cloud",
 		}),
