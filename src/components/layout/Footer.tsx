@@ -44,7 +44,7 @@ export function Footer() {
 								alt="Ball Lightning AB"
 								className="h-12 w-12"
 								height={48}
-								src="/logo-60.svg"
+								src="/logo-60x60-transparent.webp"
 								width={48}
 							/>
 							<span className="font-heading font-semibold text-xl sm:text-3xl">

@@ -1,6 +1,21 @@
 entries:
 
   - date: "2026-03-03"
+    version: "0.2.5.0"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/14"
+    commit: TBD
+    status: in-review
+    title: "fix(i18n): implement German translation and mobile responsiveness feedback fixes"
+    details: |-2
+      - FIXED I14D5: Updated logo to use transparent WebP version (logo-60x60-transparent.webp) in Header and Footer
+      - FIXED I14D7: Updated Twitter link from @nicbrulay to @BallLightningAB in Header navigation
+      - UPDATED I14D2: Expanded currency fix from German-only to English/German/French locales, swapping SEK for EUR
+      - Created GitHub issue #14 to collect br1dge's feedback on German translation and mobile responsiveness
+      - Added issue to memory bank with 7 deliverables, 2 completed and 5 pending
+      
+      Refs: v0.2.5.0 #14 I14D5-I14D7
+
+  - date: "2026-03-03"
     version: "0.2.4.9"
     issue: "https://github.com/BallLightningAB/balllightning/issues/13"
     commit: TBD
