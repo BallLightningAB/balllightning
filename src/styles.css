@@ -29,6 +29,19 @@
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
     @apply bg-background text-foreground;
+    overflow-x: hidden;
+  }
+
+  /* Prevent horizontal scroll on all elements */
+  * {
+    overflow-x: hidden;
+    @apply border-border outline-ring/50;
+  }
+
+  /* Ensure images don't overflow */
+  img, picture, svg {
+    max-width: 100%;
+    height: auto;
   }
 
   code {
@@ -106,10 +119,6 @@
       ui-serif,
       Georgia,
       serif;
-  }
-
-  * {
-    @apply border-border outline-ring/50;
   }
 
   h1,

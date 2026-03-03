@@ -16,7 +16,7 @@ roadmap:
     - id: german-translation-feedback
       issue: "https://github.com/BallLightningAB/balllightning/issues/14"
       title: "German Translation and Mobile Responsiveness Feedback"
-      status: in-progress
+      status: in-review
       priority: medium
       labels:
         - i18n
@@ -24,12 +24,12 @@ roadmap:
         - enhancement
         - mobile
       deliverables:
-        - "[pending] I14D1: Fix 'Liefern' translation - consider 'shippen' or 'Schneller ans Ziel kommen'"
-        - "[pending] I14D2: Fix Swedish Krona currency display for English/German/French locale, swapping for Euro"
-        - "[pending] I14D3: Translate detail boxes on technologies page"
-        - "[pending] I14D4: Translate portfolio section content"
+        - "[done] I14D1: Fix 'Liefern' translation - consider 'shippen' or 'Schneller ans Ziel kommen'"
+        - "[done] I14D2: Fix Swedish Krona currency display for English/German/French locale, swapping for Euro"
+        - "[done] I14D3: Translate detail boxes on technologies page"
+        - "[done] I14D4: Translate portfolio section content"
         - "[done] I14D5: Add transparent background to logo image"
-        - "[pending] I14D6: Fix mobile horizontal scroll issue"
+        - "[done] I14D6: Fix mobile horizontal scroll issue"
         - "[done] I14D7: Fix broken Twitter link in navigation"
       progress_log:
         - "2026-03-03: Issue created based on br1dge feedback regarding German translation and mobile responsiveness"

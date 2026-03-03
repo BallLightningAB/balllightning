@@ -6,14 +6,18 @@ entries:
     commit: TBD
     status: in-review
     title: "fix(i18n): implement German translation and mobile responsiveness feedback fixes"
-    details: |-2
+    details: |-
+      - FIXED I14D1: Updated 'Liefern' translation to 'shippen' in German locale
+      - FIXED I14D2: Replaced SEK with EUR for English/German/French locales (kept SEK for Swedish)
+      - FIXED I14D3: Translated technology category labels on technologies page using Paraglide messages
+      - FIXED I14D4: Translated all portfolio section content (titles, subtitles, descriptions, tags) across all locales
       - FIXED I14D5: Updated logo to use transparent WebP version (logo-60x60-transparent.webp) in Header and Footer
+      - FIXED I14D6: Added comprehensive overflow-x hidden rules to prevent mobile horizontal scrolling
       - FIXED I14D7: Updated Twitter link from @nicbrulay to @BallLightningAB in Header navigation
-      - UPDATED I14D2: Expanded currency fix from German-only to English/German/French locales, swapping SEK for EUR
       - Created GitHub issue #14 to collect br1dge's feedback on German translation and mobile responsiveness
-      - Added issue to memory bank with 7 deliverables, 2 completed and 5 pending
+      - Added issue to memory bank with 7 deliverables, all completed
       
-      Refs: v0.2.5.0 #14 I14D5-I14D7
+      Refs: v0.2.5.0 #14 I14D1-I14D7
 
   - date: "2026-03-03"
     version: "0.2.4.9"

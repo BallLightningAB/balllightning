@@ -13,11 +13,18 @@ import {
 } from "@/components/ui/card";
 import { generateCanonical, jsonLdScript } from "@/lib/seo/structured-data";
 import type { Technology } from "@/lib/technologies/data";
-import {
-	CATEGORY_LABELS,
-	technologiesByCategory,
-} from "@/lib/technologies/data";
+import { technologiesByCategory } from "@/lib/technologies/data";
 import * as m from "@/paraglide/messages.js";
+
+function CATEGORY_LABELS(): Record<string, string> {
+	return {
+		frontend: m.tech_category_frontend(),
+		backend: m.tech_category_backend(),
+		deployment: m.tech_category_deployment(),
+		tools: m.tech_category_tools(),
+		"game-dev": m.tech_category_game_dev(),
+	};
+}
 
 export const Route = createFileRoute("/technologies")({
 	head: () => ({
@@ -89,6 +96,7 @@ function generateTechnologiesSchema() {
 function TechnologiesPage() {
 	const grouped = technologiesByCategory();
 	const categories = grouped.map(([cat]) => cat);
+	const categoryLabels = CATEGORY_LABELS();
 
 	return (
 		<div className="py-12 md:py-20">
@@ -135,7 +143,7 @@ function TechnologiesPage() {
 							href={`#${cat}`}
 							key={cat}
 						>
-							{CATEGORY_LABELS[cat]}
+							{categoryLabels[cat]}
 						</a>
 					))}
 				</nav>
@@ -144,7 +152,7 @@ function TechnologiesPage() {
 				{grouped.map(([category, techs]) => (
 					<section className="mb-16" id={category} key={category}>
 						<h2 className="mb-8 font-semibold text-2xl md:text-3xl">
-							{CATEGORY_LABELS[category]}
+							{categoryLabels[category]}
 						</h2>
 						<div className="grid gap-6 md:grid-cols-2">
 							{techs.map((tech) => (
