@@ -1,5 +1,5 @@
 meta:
-  release: "0.2.5.11"
+  release: "0.2.5.12"
   repo: github.com/BallLightningAB/balllightning
   project: https://github.com/users/BallLightningAB/projects/9
   pdd_version: "1.1"
@@ -77,6 +77,7 @@ roadmap:
         - "[done] I16D6: Blightfell Page Translation"
         - "[done] I16D7: Skyscraper Page Translation"
         - "[done] I16D8: Implementation and Testing"
+        - "[done] I14D9: Jorild-se Facebook & LinkedIn Management section"
       progress_log:
         - "2026-03-03: Issue created for comprehensive portfolio subpage translation project"
         - "2026-03-03: Covers 6 portfolio subpages with 8 deliverables each"
@@ -89,6 +90,7 @@ roadmap:
         - "2026-03-04: IN PROGRESS I16D8 - Recompiled Paraglide message modules; i18n:check, typecheck, biome check, and build all pass"
         - "2026-03-04: COMPLETED I16D8 - Final implementation/testing sweep completed (mobile responsiveness checklist + performance workflow review + full validation gates)"
         - "2026-03-04: Synced GitHub issue checklist boxes for #16 deliverables and #14 completed I14D8-I14D10 items"
+        - "2026-03-04: COMPLETED I14D9 - Added Facebook & LinkedIn Management section to Jorild.se portfolio with 5 key points including Unsplash photos guidance; translated across all 4 locales"
       est:
         dev_h: 16
         test_h: 4

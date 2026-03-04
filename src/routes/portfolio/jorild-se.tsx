@@ -180,6 +180,23 @@ function JorildSePage() {
 				</p>
 			</section>
 
+			{/* Facebook & LinkedIn Management */}
+			<section>
+				<h2 className="mb-4 text-2xl font-bold">
+					{m.portfolio_jorild_se_social_heading()}
+				</h2>
+				<p className="mb-4 text-muted-foreground leading-relaxed">
+					{m.portfolio_jorild_se_social_body()}
+				</p>
+				<ul className="list-disc space-y-2 pl-5 text-muted-foreground">
+					<li>{m.portfolio_jorild_se_social_list_1()}</li>
+					<li>{m.portfolio_jorild_se_social_list_2()}</li>
+					<li>{m.portfolio_jorild_se_social_list_3()}</li>
+					<li>{m.portfolio_jorild_se_social_list_4()}</li>
+					<li>{m.portfolio_jorild_se_social_list_5()}</li>
+				</ul>
+			</section>
+
 			{/* Performance & Accessibility */}
 			<section>
 				<h2 className="mb-4 text-2xl font-bold">
