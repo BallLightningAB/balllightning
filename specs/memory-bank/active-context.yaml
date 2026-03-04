@@ -1,5 +1,5 @@
 meta:
-  release: "0.2.5.6"
+  release: "0.2.5.7"
   repo: github.com/BallLightningAB/balllightning
   project: https://github.com/users/BallLightningAB/projects/9
   pdd_version: "1.1"
@@ -34,6 +34,7 @@ roadmap:
         - "[pending] I14D8: Change locale route from 'sv' to 'se' to align with ISO 3166-1 standard"
         - "[pending] I14D9: Update language menu labels - rename 'gb' to 'en' for consistency"
         - "[pending] I14D10: Remove unwanted scrollbars caused by I14D6 overflow-x hidden rules"
+        - "[added] I14D11: Thoroughly comb through all current translations for accuracy and consistency"
       progress_log:
         - "2026-03-03: Issue created based on br1dge feedback regarding German translation and mobile responsiveness"
         - "2026-03-03: Feedback includes translation suggestions for 'Liefern', currency display, untranslated content areas"
@@ -50,6 +51,7 @@ roadmap:
         - "I14D8: Change locale route from 'sv' to 'se' to align with ISO 3166-1 standard"
         - "I14D9: Update language menu labels - rename 'gb' to 'en' for consistency"
         - "I14D10: Remove unwanted scrollbars caused by I14D6 overflow-x hidden rules"
+        - "I14D11: Thoroughly comb through all current translations for accuracy and consistency"
       sub_issues:
         - "https://github.com/BallLightningAB/balllightning/issues/16"
   next_steps:
