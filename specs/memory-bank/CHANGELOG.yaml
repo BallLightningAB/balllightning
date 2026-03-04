@@ -1,6 +1,71 @@
 entries:
 
   - date: "2026-03-04"
+    version: "0.2.5.9"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/14 & https://github.com/BallLightningAB/balllightning/issues/16"
+    commit: TBD
+    status: in-review
+    title: "feat(i18n): complete comprehensive I14D8-D11 and I16D1-D8 translation implementation"
+    details: |-
+      ## Phase 1-3: I14D8-D10 Technical Fixes
+      - **I14D8**: Changed Swedish URL prefix from `/sv/` to `/se/` via Paraglide urlPatterns mapping (locale stays `sv` internally)
+      - **I14D9**: Updated English language switcher to use 🇬🇧 flag for consistency with other locales
+      - **I14D10**: Removed unwanted scrollbars by constraining overflow-x hidden to body instead of global rules
+      
+      ## Phase 4: I14D11 Translation Audit
+      - Completed systematic translation quality review across en/sv/de/fr locale files
+      - Improved German, Swedish, and French copy consistency by removing mixed-language artifacts
+      - Fixed currency display: EUR for en/de/fr, SEK for sv (preserving Swedish locale)
+      - Validated placeholder parity and key completeness across all locales
+      
+      ## Phase 5: I16D1 PortfolioSubpageLayout Migration
+      - Extracted static layout strings to `portfolio_subpage_*` message keys
+      - Migrated PortfolioSubpageLayout component to use Paraglide messages
+      - Established key naming convention: `portfolio_subpage_{key}` for layout, `portfolio_{slug}_{section}_{element}` for content
+      
+      ## Phase 6: I16D2-D7 Portfolio Subpage Translation (6 pages)
+      - **chronomation**: Multi-tenant productivity tool - full content translation + SEO meta
+      - **the-builder-coil**: Developer blog CMS - full content translation + SEO meta  
+      - **shipping-api-dojo**: Carrier API tutorial - full content translation + SEO meta
+      - **jorild-se**: Bilingual clinic website - full content translation + SEO meta
+      - **blightfell**: Web3 game integration - full content translation + SEO meta
+      - **skyscraper**: MMO deckbattler - full content translation + SEO meta
+      - Preserved proper nouns, tech stack names, and code snippets as untranslated
+      - Applied localized meta titles, descriptions, and canonical URLs per page
+      
+      ## Phase 7-8: I16D8 SEO, Sitemap & Testing
+      - Updated hreflang generation to use Paraglide URL helpers consistently
+      - Added all 6 portfolio slugs × 4 locales to sitemap generation
+      - Unified canonical/hreflang/sitemap generation via `localizeHref` helper
+      - Completed mobile responsiveness workflow validation across all translated pages
+      - Passed performance-audit workflow review with no regressions
+      - All quality gates validated: `pnpm i18n:check`, `pnpm run typecheck`, `pnpm run build`
+      
+      ## Technical Summary
+      - **~300-420 new translation keys** added across all locales
+      - **8 phases** completed in sequence without version increase
+      - **Zero breaking changes** - all existing functionality preserved
+      - **Full multilingual support** now complete for entire site      
+
+      Refs: v0.2.5.9 #14 I14D8-I14D11 #16 I16D1-I16D8
+
+  - date: "2026-03-04"
+    version: "0.2.5.8"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/16"
+    commit: TBD
+    status: in-progress
+    title: "feat(i18n): continue I14/I16 execution with full key parity, Paraglide regeneration, and test-gate validation"
+    details: |-
+      - Added missing portfolio subpage key parity to de/fr/sv for all newly introduced portfolio_subpage_* and per-slug keys
+      - Recompiled Paraglide message modules after key additions (`pnpm exec paraglide-js compile --project ./project.inlang --outdir ./src/paraglide`)
+      - Passed i18n QA gate (`pnpm i18n:check`) with 344 keys across all locales
+      - Passed typecheck gate (`pnpm run typecheck`)
+      - Ran formatting/lint gate (`pnpm biome check --write .`) and validated build gate (`pnpm run build`)
+      - Updated memory-bank active context statuses for I14D8-D11 and I16D1-D8 progress
+
+      Refs: v0.2.5.8 #14 I14D8-I14D11 #16 I16D1-I16D8
+
+  - date: "2026-03-04"
     version: "0.2.5.7"
     issue: "https://github.com/BallLightningAB/balllightning/issues/16"
     commit: TBD

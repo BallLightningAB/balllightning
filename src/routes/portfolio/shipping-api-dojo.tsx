@@ -9,69 +9,71 @@ import {
 	generateProjectSchema,
 	jsonLdScript,
 } from "@/lib/seo/structured-data";
+import * as m from "@/paraglide/messages.js";
+import { getLocale } from "@/paraglide/runtime.js";
 
 export const Route = createFileRoute("/portfolio/shipping-api-dojo")({
-	head: () => ({
-		meta: [
-			{
-				title:
-					"Shipping API Dojo — Carrier API Tutorial Platform | Ball Lightning AB",
-			},
-			{
-				name: "description",
-				content:
-					"Interactive learning platform for shipping carrier API integration — REST, SOAP, and incident scenarios for FedEx, UPS, DHL, and more.",
-			},
-			{
-				property: "og:title",
-				content: "Shipping API Dojo — Carrier API Tutorial Platform",
-			},
-			{
-				property: "og:description",
-				content:
-					"Learn shipping carrier API integration through hands-on REST, SOAP, and incident scenarios.",
-			},
-			{
-				property: "og:image",
-				content: "/og-portfolio.png",
-			},
-			{
-				property: "og:type",
-				content: "article",
-			},
-		],
-		links: [
-			{
-				rel: "canonical",
-				href: generateCanonical("/portfolio/shipping-api-dojo"),
-			},
-		],
-		scripts: [
-			{
-				type: "application/ld+json",
-				children: jsonLdScript(
-					generateProjectSchema({
-						name: "Shipping API Dojo",
-						description:
-							"Interactive and Gamefied learning platform for shipping carrier API integration with REST, SOAP, and incident scenario training.",
-						slug: "shipping-api-dojo",
-						schemaType: "SoftwareApplication",
-						applicationCategory: "EducationalApplication",
-						operatingSystem: "Web",
-						url: "https://api-trainer.balllightning.cloud",
-						dateCreated: "2026-02",
-						keywords: [
-							"shipping API integration",
-							"carrier API tutorial",
-							"FedEx API",
-							"UPS API",
-							"DHL API",
-						],
-					})
-				),
-			},
-		],
-	}),
+	head: () => {
+		const locale = getLocale();
+
+		return {
+			meta: [
+				{
+					title: m.portfolio_shipping_api_dojo_meta_title(),
+				},
+				{
+					name: "description",
+					content: m.portfolio_shipping_api_dojo_meta_description(),
+				},
+				{
+					property: "og:title",
+					content: m.portfolio_shipping_api_dojo_og_title(),
+				},
+				{
+					property: "og:description",
+					content: m.portfolio_shipping_api_dojo_og_description(),
+				},
+				{
+					property: "og:image",
+					content: "/og-portfolio.png",
+				},
+				{
+					property: "og:type",
+					content: "article",
+				},
+			],
+			links: [
+				{
+					rel: "canonical",
+					href: generateCanonical("/portfolio/shipping-api-dojo", locale),
+				},
+			],
+			scripts: [
+				{
+					type: "application/ld+json",
+					children: jsonLdScript(
+						generateProjectSchema({
+							name: "Shipping API Dojo",
+							description: m.portfolio_shipping_api_dojo_schema_description(),
+							slug: "shipping-api-dojo",
+							schemaType: "SoftwareApplication",
+							applicationCategory: "EducationalApplication",
+							operatingSystem: "Web",
+							url: "https://api-trainer.balllightning.cloud",
+							dateCreated: "2026-02",
+							keywords: [
+								"shipping API integration",
+								"carrier API tutorial",
+								"FedEx API",
+								"UPS API",
+								"DHL API",
+							],
+						})
+					),
+				},
+			],
+		};
+	},
 	component: ShippingApiDojoPage,
 });
 
@@ -79,22 +81,25 @@ function ShippingApiDojoPage() {
 	return (
 		<PortfolioSubpageLayout
 			heroImage={sadHero}
-			heroImageAlt="Shipping API Dojo landing page"
+			heroImageAlt={m.portfolio_shipping_api_dojo_hero_alt()}
 			links={[
 				{
-					label: "API Trainer (Live)",
+					label: m.portfolio_shipping_api_dojo_link_live(),
 					url: "https://api-trainer.balllightning.cloud",
 					external: true,
 				},
 				{
-					label: "GitHub",
+					label: m.portfolio_shipping_api_dojo_link_github(),
 					url: "https://github.com/BallLightningAB/api-trainer",
 					external: true,
 				},
 			]}
-			nextProject={{ title: "Blightfell", slug: "blightfell" }}
-			projectRole="Creator & Developer"
-			subtitle="Interactive and Gamefied learning platform for shipping carrier API integration"
+			nextProject={{
+				title: m.portfolio_blightfell_title(),
+				slug: "blightfell",
+			}}
+			projectRole={m.portfolio_shipping_api_dojo_role()}
+			subtitle={m.portfolio_shipping_api_dojo_subtitle_long()}
 			tags={["Education", "API Integration", "REST", "SOAP", "Developer Tools"]}
 			techStack={[
 				"TanStack Start",
@@ -104,54 +109,47 @@ function ShippingApiDojoPage() {
 				"shadcn/ui",
 				"Vercel",
 			]}
-			timeline="2026 – Present"
-			title="Shipping API Dojo"
+			timeline={m.portfolio_shipping_api_dojo_timeline()}
+			title={m.portfolio_shipping_api_dojo_title()}
 		>
 			{/* Overview */}
 			<section>
-				<h2 className="mb-4 text-2xl font-bold">Overview</h2>
+				<h2 className="mb-4 text-2xl font-bold">
+					{m.portfolio_shipping_api_dojo_overview_heading()}
+				</h2>
 				<p className="text-muted-foreground leading-relaxed">
-					Shipping API Dojo is an interactive and gamefied learning platform
-					born from years of integrating carrier APIs at enterprise scale. It
-					teaches developers how to work with FedEx, UPS, DHL, and other
-					shipping providers through hands-on lessons, real API patterns, and
-					incident scenarios that mirror production challenges. Progress is
-					stored locally.
+					{m.portfolio_shipping_api_dojo_overview_body()}
 				</p>
 			</section>
 
 			{/* Learning Tracks */}
 			<section>
-				<h2 className="mb-4 text-2xl font-bold">Learning Tracks</h2>
+				<h2 className="mb-4 text-2xl font-bold">
+					{m.portfolio_shipping_api_dojo_tracks_heading()}
+				</h2>
 				<div className="space-y-6">
 					<div>
 						<h3 className="mb-2 text-lg font-semibold text-foreground">
-							REST Integration Track
+							{m.portfolio_shipping_api_dojo_track_rest_heading()}
 						</h3>
 						<p className="text-muted-foreground leading-relaxed">
-							Modern carrier APIs using RESTful patterns — authentication flows,
-							rate quoting, label generation, tracking webhooks, and error
-							handling for FedEx, UPS, and regional carriers.
+							{m.portfolio_shipping_api_dojo_track_rest_body()}
 						</p>
 					</div>
 					<div>
 						<h3 className="mb-2 text-lg font-semibold text-foreground">
-							SOAP Integration Track
+							{m.portfolio_shipping_api_dojo_track_soap_heading()}
 						</h3>
 						<p className="text-muted-foreground leading-relaxed">
-							Legacy carrier APIs still in active use — WSDL parsing, XML
-							envelope construction, certificate auth, and migration strategies
-							from SOAP to REST.
+							{m.portfolio_shipping_api_dojo_track_soap_body()}
 						</p>
 					</div>
 					<div>
 						<h3 className="mb-2 text-lg font-semibold text-foreground">
-							Incident Arena
+							{m.portfolio_shipping_api_dojo_track_incident_heading()}
 						</h3>
 						<p className="text-muted-foreground leading-relaxed">
-							Scenario-based training where learners debug realistic shipping
-							integration failures — rate limit storms, stale token cascades,
-							label void races, and carrier outage fallbacks.
+							{m.portfolio_shipping_api_dojo_track_incident_body()}
 						</p>
 					</div>
 				</div>
@@ -159,36 +157,37 @@ function ShippingApiDojoPage() {
 
 			{/* Wiki & Directory */}
 			<section>
-				<h2 className="mb-4 text-2xl font-bold">Wiki & Carrier Directory</h2>
+				<h2 className="mb-4 text-2xl font-bold">
+					{m.portfolio_shipping_api_dojo_wiki_heading()}
+				</h2>
 				<p className="mb-4 text-muted-foreground leading-relaxed">
-					A comprehensive reference directory covering major shipping carriers,
-					their API capabilities, authentication methods, sandbox environments,
-					and known quirks. Each entry includes quick-start guides and common
-					pitfalls gathered from real integration projects.
+					{m.portfolio_shipping_api_dojo_wiki_body()}
 				</p>
 				<ul className="list-disc space-y-2 pl-5 text-muted-foreground">
-					<li>Carrier-by-carrier API reference and comparison</li>
-					<li>Authentication pattern guides (OAuth, API key, certificate)</li>
-					<li>Sandbox setup walkthroughs</li>
-					<li>Known edge cases and workarounds</li>
+					<li>{m.portfolio_shipping_api_dojo_wiki_list_1()}</li>
+					<li>{m.portfolio_shipping_api_dojo_wiki_list_2()}</li>
+					<li>{m.portfolio_shipping_api_dojo_wiki_list_3()}</li>
+					<li>{m.portfolio_shipping_api_dojo_wiki_list_4()}</li>
 				</ul>
 			</section>
 
 			{/* Screenshots */}
 			<section>
-				<h2 className="mb-4 text-2xl font-bold">Screenshots</h2>
+				<h2 className="mb-4 text-2xl font-bold">
+					{m.portfolio_shipping_api_dojo_screenshots_heading()}
+				</h2>
 				<ProjectImageGallery
 					columns={2}
 					images={[
 						{
 							src: sadLesson,
-							alt: "REST or SOAP lesson interface showing code examples and exercises",
+							alt: m.portfolio_shipping_api_dojo_gallery_alt_lesson(),
 							width: 1200,
 							height: 800,
 						},
 						{
 							src: sadArena,
-							alt: "Incident Arena scenario player debugging API integration issues",
+							alt: m.portfolio_shipping_api_dojo_gallery_alt_arena(),
 							width: 1200,
 							height: 800,
 						},

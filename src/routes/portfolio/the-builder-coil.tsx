@@ -9,67 +9,70 @@ import {
 	generateProjectSchema,
 	jsonLdScript,
 } from "@/lib/seo/structured-data";
+import * as m from "@/paraglide/messages.js";
+import { getLocale } from "@/paraglide/runtime.js";
 
 export const Route = createFileRoute("/portfolio/the-builder-coil")({
-	head: () => ({
-		meta: [
-			{
-				title: "The Builder Coil — Developer Blog & CMS | Ball Lightning AB",
-			},
-			{
-				name: "description",
-				content:
-					"Public builder's log documenting the journey of shipping software. Built with TanStack Start, featuring a custom CMS, RSS feed API, newsletter system, and structured SEO.",
-			},
-			{
-				property: "og:title",
-				content: "The Builder Coil — Developer Blog & CMS",
-			},
-			{
-				property: "og:description",
-				content:
-					"Developer blog platform built with TanStack Start — custom CMS, RSS feed, newsletter, and structured SEO.",
-			},
-			{
-				property: "og:image",
-				content: "/og-portfolio.png",
-			},
-			{
-				property: "og:type",
-				content: "article",
-			},
-		],
-		links: [
-			{
-				rel: "canonical",
-				href: generateCanonical("/portfolio/the-builder-coil"),
-			},
-		],
-		scripts: [
-			{
-				type: "application/ld+json",
-				children: jsonLdScript(
-					generateProjectSchema({
-						name: "The Builder Coil",
-						description:
-							"Developer blog and content platform built with TanStack Start, featuring a custom CMS, RSS feed API, newsletter system, and structured SEO.",
-						slug: "the-builder-coil",
-						schemaType: "SoftwareApplication",
-						applicationCategory: "WebApplication",
-						operatingSystem: "Web",
-						url: "https://thebuildercoil.com",
-						dateCreated: "2025",
-						keywords: [
-							"TanStack Start blog",
-							"developer blog CMS",
-							"builder's log",
-							"RSS feed",
-						],
-					})
-				),
-			},
-		],
-	}),
+	head: () => {
+		const locale = getLocale();
+
+		return {
+			meta: [
+				{
+					title: m.portfolio_the_builder_coil_meta_title(),
+				},
+				{
+					name: "description",
+					content: m.portfolio_the_builder_coil_meta_description(),
+				},
+				{
+					property: "og:title",
+					content: m.portfolio_the_builder_coil_og_title(),
+				},
+				{
+					property: "og:description",
+					content: m.portfolio_the_builder_coil_og_description(),
+				},
+				{
+					property: "og:image",
+					content: "/og-portfolio.png",
+				},
+				{
+					property: "og:type",
+					content: "article",
+				},
+			],
+			links: [
+				{
+					rel: "canonical",
+					href: generateCanonical("/portfolio/the-builder-coil", locale),
+				},
+			],
+			scripts: [
+				{
+					type: "application/ld+json",
+					children: jsonLdScript(
+						generateProjectSchema({
+							name: "The Builder Coil",
+							description: m.portfolio_the_builder_coil_schema_description(),
+							slug: "the-builder-coil",
+							schemaType: "SoftwareApplication",
+							applicationCategory: "WebApplication",
+							operatingSystem: "Web",
+							url: "https://thebuildercoil.com",
+							dateCreated: "2025",
+							keywords: [
+								"TanStack Start blog",
+								"developer blog CMS",
+								"builder's log",
+								"RSS feed",
+							],
+						})
+					),
+				},
+			],
+		};
+	},
 	component: TheBuilderCoilPage,
 });
 
@@ -77,25 +80,25 @@ function TheBuilderCoilPage() {
 	return (
 		<PortfolioSubpageLayout
 			heroImage={tbcHero}
-			heroImageAlt="The Builder Coil landing page"
+			heroImageAlt={m.portfolio_the_builder_coil_hero_alt()}
 			links={[
 				{
-					label: "TheBuilderCoil.com",
+					label: m.portfolio_the_builder_coil_link_primary(),
 					url: "https://thebuildercoil.com",
 					external: true,
 				},
 				{
-					label: "GitHub",
+					label: m.portfolio_the_builder_coil_link_github(),
 					url: "https://github.com/BallLightningAB/thebuildercoil",
 					external: true,
 				},
 			]}
 			nextProject={{
-				title: "Shipping API Dojo",
+				title: m.portfolio_shipping_api_dojo_title(),
 				slug: "shipping-api-dojo",
 			}}
-			projectRole="Founder & Developer"
-			subtitle="A public builder's log documenting the journey of shipping software"
+			projectRole={m.portfolio_the_builder_coil_role()}
+			subtitle={m.portfolio_the_builder_coil_subtitle_long()}
 			tags={["TanStack Start", "CMS", "SEO", "Newsletter", "Full-Stack"]}
 			techStack={[
 				"TanStack Start",
@@ -107,69 +110,67 @@ function TheBuilderCoilPage() {
 				"Resend",
 				"Vercel",
 			]}
-			timeline="2025 – Present"
-			title="The Builder Coil"
+			timeline={m.portfolio_the_builder_coil_timeline()}
+			title={m.portfolio_the_builder_coil_title()}
 		>
 			{/* Overview */}
 			<section>
-				<h2 className="mb-4 text-2xl font-bold">Overview</h2>
+				<h2 className="mb-4 text-2xl font-bold">
+					{m.portfolio_the_builder_coil_overview_heading()}
+				</h2>
 				<p className="text-muted-foreground leading-relaxed">
-					The Builder Coil is a developer blog and content platform where I
-					document the journey of shipping software — from architecture
-					decisions to production incidents. It serves as the public voice of
-					Ball Lightning AB, built with the same TanStack Start stack powering
-					this very site.
+					{m.portfolio_the_builder_coil_overview_body()}
 				</p>
 			</section>
 
 			{/* Content System */}
 			<section>
-				<h2 className="mb-4 text-2xl font-bold">Content System</h2>
+				<h2 className="mb-4 text-2xl font-bold">
+					{m.portfolio_the_builder_coil_content_heading()}
+				</h2>
 				<p className="mb-4 text-muted-foreground leading-relaxed">
-					A custom file-based CMS using JSON content files with frontmatter
-					metadata. Blog posts and news articles support Markdown rendering,
-					syntax-highlighted code blocks via Shiki, and automatic reading time
-					estimation.
+					{m.portfolio_the_builder_coil_content_body()}
 				</p>
 				<ul className="list-disc space-y-2 pl-5 text-muted-foreground">
-					<li>File-based JSON CMS with typed frontmatter</li>
-					<li>Markdown rendering with syntax highlighting (Shiki)</li>
-					<li>Automatic reading time and word count</li>
-					<li>Blog + News content types with separate feeds</li>
+					<li>{m.portfolio_the_builder_coil_content_list_1()}</li>
+					<li>{m.portfolio_the_builder_coil_content_list_2()}</li>
+					<li>{m.portfolio_the_builder_coil_content_list_3()}</li>
+					<li>{m.portfolio_the_builder_coil_content_list_4()}</li>
 				</ul>
 			</section>
 
 			{/* Feed API */}
 			<section>
-				<h2 className="mb-4 text-2xl font-bold">Feed API</h2>
+				<h2 className="mb-4 text-2xl font-bold">
+					{m.portfolio_the_builder_coil_feed_heading()}
+				</h2>
 				<p className="mb-4 text-muted-foreground leading-relaxed">
-					A public RSS/JSON feed API that powers the "Latest from The Builder
-					Coil" section on the Ball Lightning homepage. The feed is consumed
-					cross-site, demonstrating how the content platform integrates into the
-					broader Ball Lightning ecosystem.
+					{m.portfolio_the_builder_coil_feed_body()}
 				</p>
 				<ul className="list-disc space-y-2 pl-5 text-muted-foreground">
-					<li>RSS 2.0 and JSON Feed endpoints</li>
-					<li>Cross-origin feed consumption for BL homepage</li>
-					<li>Automatic sitemap generation</li>
+					<li>{m.portfolio_the_builder_coil_feed_list_1()}</li>
+					<li>{m.portfolio_the_builder_coil_feed_list_2()}</li>
+					<li>{m.portfolio_the_builder_coil_feed_list_3()}</li>
 				</ul>
 			</section>
 
 			{/* Screenshots */}
 			<section>
-				<h2 className="mb-4 text-2xl font-bold">Screenshots</h2>
+				<h2 className="mb-4 text-2xl font-bold">
+					{m.portfolio_the_builder_coil_screenshots_heading()}
+				</h2>
 				<ProjectImageGallery
 					columns={2}
 					images={[
 						{
 							src: tbcBlog,
-							alt: "The Builder Coil blog post page showing article layout and typography",
+							alt: m.portfolio_the_builder_coil_gallery_alt_blog(),
 							width: 1200,
 							height: 800,
 						},
 						{
 							src: tbcFeed,
-							alt: "The Builder Coil feed API response displaying JSON data structure",
+							alt: m.portfolio_the_builder_coil_gallery_alt_feed(),
 							width: 1200,
 							height: 800,
 						},

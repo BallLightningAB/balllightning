@@ -15,7 +15,7 @@ import {
 	jsonLdScript,
 } from "@/lib/seo/structured-data";
 import * as m from "../paraglide/messages.js";
-import { getLocale } from "../paraglide/runtime.js";
+import { deLocalizeUrl, getLocale } from "../paraglide/runtime.js";
 import appCss from "../styles.css?url";
 
 function RootNotFound() {
@@ -204,8 +204,11 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 	const locale = getLocale();
 	const routerState = useRouterState();
 	const pathname = routerState.location.pathname;
-	const hreflangLinks = generateHreflangLinks(pathname);
-	const canonicalUrl = generateCanonical(pathname, locale);
+	const deLocalizedPathname =
+		deLocalizeUrl(new URL(pathname, "https://balllightning.cloud")).pathname ||
+		"/";
+	const hreflangLinks = generateHreflangLinks(deLocalizedPathname);
+	const canonicalUrl = generateCanonical(deLocalizedPathname, locale);
 
 	return (
 		<html className="dark" lang={locale}>

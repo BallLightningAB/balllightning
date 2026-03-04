@@ -15,7 +15,6 @@
   html {
     scroll-behavior: smooth;
     font-size: 20px;
-    overflow-x: hidden;
   }
 
   body {
@@ -29,12 +28,11 @@
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
     @apply bg-background text-foreground;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 
-  /* Prevent horizontal scroll on all elements */
+  /* Keep shared border/outline token defaults */
   * {
-    overflow-x: hidden;
     @apply border-border outline-ring/50;
   }
 

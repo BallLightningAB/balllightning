@@ -6,6 +6,7 @@
 
 import * as fs from "node:fs";
 import * as path from "node:path";
+import { localizeHref } from "../src/paraglide/runtime.js";
 
 const SITE_URL = "https://balllightning.cloud";
 const LOCALES = ["en", "sv", "de", "fr"] as const;
@@ -38,10 +39,10 @@ function formatDate(date: string): string {
 function generateHreflangLinks(pagePath: string): string {
 	const links = LOCALES.map(
 		(locale) =>
-			`    <xhtml:link rel="alternate" hreflang="${locale}" href="${SITE_URL}/${locale}${pagePath}" />`
+			`    <xhtml:link rel="alternate" hreflang="${locale}" href="${SITE_URL}${localizeHref(pagePath, { locale })}" />`
 	);
 	links.push(
-		`    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/en${pagePath}" />`
+		`    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}${localizeHref(pagePath, { locale: "en" })}" />`
 	);
 	return links.join("\n");
 }
@@ -59,7 +60,7 @@ function generateUrlEntry(
 
 	return LOCALES.map(
 		(locale) => `  <url>
-    <loc>${SITE_URL}/${locale}${loc}</loc>${lastmodTag}
+    <loc>${SITE_URL}${localizeHref(loc, { locale })}</loc>${lastmodTag}
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
 ${hreflangLinks}

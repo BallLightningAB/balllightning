@@ -13,66 +13,69 @@ import {
 	generateProjectSchema,
 	jsonLdScript,
 } from "@/lib/seo/structured-data";
+import * as m from "@/paraglide/messages.js";
+import { getLocale } from "@/paraglide/runtime.js";
 
 export const Route = createFileRoute("/portfolio/jorild-se")({
-	head: () => ({
-		meta: [
-			{
-				title: "Jorild.se — Bilingual Clinic Website | Ball Lightning AB",
-			},
-			{
-				name: "description",
-				content:
-					"Modern bilingual website for Jorild Osteopati: Next.js 15, Swedish/English i18n, WCAG 2.1 AA accessibility, 100/100 Lighthouse SEO, and Google Business Profile integration.",
-			},
-			{
-				property: "og:title",
-				content: "Jorild.se — Bilingual Clinic Website | Ball Lightning AB",
-			},
-			{
-				property: "og:description",
-				content:
-					"Modern bilingual website for a Swedish osteopathy clinic with i18n, accessibility, and performance-first architecture.",
-			},
-			{
-				property: "og:image",
-				content: jorildLanding,
-			},
-			{
-				property: "og:type",
-				content: "article",
-			},
-		],
-		links: [
-			{
-				rel: "canonical",
-				href: generateCanonical("/portfolio/jorild-se"),
-			},
-		],
-		scripts: [
-			{
-				type: "application/ld+json",
-				children: jsonLdScript(
-					generateProjectSchema({
-						name: "Jorild.se — Bilingual Clinic Website",
-						description:
-							"Modern bilingual website for Jorild Osteopati with Swedish/English i18n, WCAG 2.1 AA accessibility, and 100/100 Lighthouse SEO.",
-						slug: "jorild-se",
-						schemaType: "CreativeWork",
-						url: "https://jorild.se",
-						dateCreated: "2025-05",
-						keywords: [
-							"bilingual website",
-							"Next.js clinic website",
-							"i18n",
-							"accessibility",
-							"SEO",
-						],
-					})
-				),
-			},
-		],
-	}),
+	head: () => {
+		const locale = getLocale();
+
+		return {
+			meta: [
+				{
+					title: m.portfolio_jorild_se_meta_title(),
+				},
+				{
+					name: "description",
+					content: m.portfolio_jorild_se_meta_description(),
+				},
+				{
+					property: "og:title",
+					content: m.portfolio_jorild_se_og_title(),
+				},
+				{
+					property: "og:description",
+					content: m.portfolio_jorild_se_og_description(),
+				},
+				{
+					property: "og:image",
+					content: jorildLanding,
+				},
+				{
+					property: "og:type",
+					content: "article",
+				},
+			],
+			links: [
+				{
+					rel: "canonical",
+					href: generateCanonical("/portfolio/jorild-se", locale),
+				},
+			],
+			scripts: [
+				{
+					type: "application/ld+json",
+					children: jsonLdScript(
+						generateProjectSchema({
+							name: m.portfolio_jorild_se_schema_name(),
+							description: m.portfolio_jorild_se_schema_description(),
+							slug: "jorild-se",
+							schemaType: "CreativeWork",
+							url: "https://jorild.se",
+							dateCreated: "2025-05",
+							keywords: [
+								"bilingual website",
+								"Next.js clinic website",
+								"i18n",
+								"accessibility",
+								"SEO",
+							],
+						})
+					),
+				},
+			],
+		};
+	},
 	component: JorildSePage,
 });
 
@@ -80,53 +83,56 @@ function JorildSePage() {
 	const galleryImages = [
 		{
 			src: jorildLanding,
-			alt: "Jorild.se landing page — bilingual clinic website",
+			alt: m.portfolio_jorild_se_gallery_alt_landing(),
 		},
 		{
 			src: jorildHero,
-			alt: "Hero section with clinic branding, practitioner photo, and appointment call-to-action",
+			alt: m.portfolio_jorild_se_gallery_alt_hero(),
 		},
 		{
 			src: jorildAboutOsteopathy,
-			alt: "About Osteopathy informational section",
+			alt: m.portfolio_jorild_se_gallery_alt_about_osteopathy(),
 		},
 		{
 			src: jorildAboutSection,
-			alt: "About the clinic section with practitioner information",
+			alt: m.portfolio_jorild_se_gallery_alt_about_clinic(),
 		},
 		{
 			src: jorildServices,
-			alt: "Services section listing osteopathy treatment options with descriptions",
+			alt: m.portfolio_jorild_se_gallery_alt_services(),
 		},
 		{
 			src: jorildGbp,
-			alt: "Google Business Profile integration showing clinic reviews and contact information",
+			alt: m.portfolio_jorild_se_gallery_alt_gbp(),
 		},
 		{
 			src: jorildKaddio,
-			alt: "Kaddio online booking integration with calendar and appointment selection",
+			alt: m.portfolio_jorild_se_gallery_alt_kaddio(),
 		},
 	];
 
 	return (
 		<PortfolioSubpageLayout
 			heroImage={jorildLanding}
-			heroImageAlt="Jorild.se — bilingual osteopathy clinic website"
+			heroImageAlt={m.portfolio_jorild_se_hero_alt()}
 			links={[
 				{
-					label: "Jorild.se",
+					label: m.portfolio_jorild_se_link_primary(),
 					url: "https://jorild.se",
 					external: true,
 				},
 				{
-					label: "Kaddio Online Booking",
+					label: m.portfolio_jorild_se_link_booking(),
 					url: "https://kaddio.com/c/jorildosteopati",
 					external: true,
 				},
 			]}
-			nextProject={{ title: "Skyscraper", slug: "skyscraper" }}
-			projectRole="Full-Stack Developer & Designer"
-			subtitle="Modern bilingual website for a Swedish osteopathy clinic"
+			nextProject={{
+				title: m.portfolio_skyscraper_title(),
+				slug: "skyscraper",
+			}}
+			projectRole={m.portfolio_jorild_se_role()}
+			subtitle={m.portfolio_jorild_se_subtitle_long()}
 			tags={["Next.js", "i18n", "SEO", "Accessibility", "Google Business"]}
 			techStack={[
 				"Next.js 15",
@@ -136,69 +142,65 @@ function JorildSePage() {
 				"shadcn/ui",
 				"Edge Runtime",
 			]}
-			timeline="May – Jun 2025"
-			title="Jorild.se"
+			timeline={m.portfolio_jorild_se_timeline()}
+			title={m.portfolio_jorild_se_title()}
 		>
 			{/* Overview */}
 			<section>
-				<h2 className="mb-4 text-2xl font-bold">Overview</h2>
+				<h2 className="mb-4 text-2xl font-bold">
+					{m.portfolio_jorild_se_overview_heading()}
+				</h2>
 				<p className="text-muted-foreground leading-relaxed">
-					Designed and developed a modern, high-performance bilingual website
-					for Jorild Osteopati, an osteopathy clinic in Sweden. The result is a
-					conversion-focused, SEO-friendly platform delivering a seamless
-					experience on both desktop and mobile, coupled with a new Google
-					Business Profile. Integrated with Kaddio online booking.
+					{m.portfolio_jorild_se_overview_body()}
 				</p>
 			</section>
 
 			{/* i18n Implementation */}
 			<section>
-				<h2 className="mb-4 text-2xl font-bold">i18n Implementation</h2>
+				<h2 className="mb-4 text-2xl font-bold">
+					{m.portfolio_jorild_se_i18n_heading()}
+				</h2>
 				<p className="mb-4 text-muted-foreground leading-relaxed">
-					Full Swedish/English bilingual support with geolocation-based language
-					detection and a manual language switcher. Content is structured for
-					both languages from the ground up, ensuring natural translations
-					rather than machine-generated output.
+					{m.portfolio_jorild_se_i18n_body()}
 				</p>
 				<ul className="list-disc space-y-2 pl-5 text-muted-foreground">
-					<li>Geolocation-based automatic language detection</li>
-					<li>Manual language switch with persistent preference</li>
-					<li>Fully localized content, metadata, and structured data</li>
+					<li>{m.portfolio_jorild_se_i18n_list_1()}</li>
+					<li>{m.portfolio_jorild_se_i18n_list_2()}</li>
+					<li>{m.portfolio_jorild_se_i18n_list_3()}</li>
 				</ul>
 			</section>
 
 			{/* SEO & Google Business */}
 			<section>
 				<h2 className="mb-4 text-2xl font-bold">
-					SEO & Google Business Profile
+					{m.portfolio_jorild_se_seo_heading()}
 				</h2>
 				<p className="mb-4 text-muted-foreground leading-relaxed">
-					Achieved a 100/100 Lighthouse SEO score with structured data for
-					improved search visibility, optimized meta tags for both languages,
-					and a new Google Business Profile connecting the clinic to local
-					search results.
+					{m.portfolio_jorild_se_seo_body()}
 				</p>
 			</section>
 
 			{/* Performance & Accessibility */}
 			<section>
-				<h2 className="mb-4 text-2xl font-bold">Performance & Accessibility</h2>
+				<h2 className="mb-4 text-2xl font-bold">
+					{m.portfolio_jorild_se_performance_heading()}
+				</h2>
 				<p className="mb-4 text-muted-foreground leading-relaxed">
-					WCAG 2.1 AA accessible with Core Web Vitals optimization throughout.
-					Edge-optimized middleware, automatic image and font optimization, code
-					splitting, and lazy loading ensure fast load times on all devices.
+					{m.portfolio_jorild_se_performance_body()}
 				</p>
 				<ul className="list-disc space-y-2 pl-5 text-muted-foreground">
-					<li>WCAG 2.1 AA compliance</li>
-					<li>Core Web Vitals optimized</li>
-					<li>Edge-optimized middleware for fast TTFB</li>
-					<li>Automatic image optimization and lazy loading</li>
+					<li>{m.portfolio_jorild_se_performance_list_1()}</li>
+					<li>{m.portfolio_jorild_se_performance_list_2()}</li>
+					<li>{m.portfolio_jorild_se_performance_list_3()}</li>
+					<li>{m.portfolio_jorild_se_performance_list_4()}</li>
 				</ul>
 			</section>
 
 			{/* Gallery */}
 			<section>
-				<h2 className="mb-4 text-2xl font-bold">Screenshots</h2>
+				<h2 className="mb-4 text-2xl font-bold">
+					{m.portfolio_jorild_se_screenshots_heading()}
+				</h2>
 				<ProjectImageGallery columns={2} images={galleryImages} />
 			</section>
 		</PortfolioSubpageLayout>

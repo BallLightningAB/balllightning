@@ -3,6 +3,18 @@
   "buildCommand": "pnpm run vercel-build",
   "installCommand": "pnpm install",
   "framework": null,
+  "redirects": [
+    {
+      "source": "/sv",
+      "destination": "/se",
+      "permanent": true
+    },
+    {
+      "source": "/sv/:path*",
+      "destination": "/se/:path*",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/",
@@ -39,7 +51,7 @@
       ]
     },
     {
-      "source": "/sv/:path*",
+      "source": "/se/:path*",
       "headers": [
         {
           "key": "Cache-Control",

@@ -19,7 +19,7 @@ const config = defineConfig({
 					pattern: "/",
 					localized: [
 						["en", "/en"],
-						["sv", "/sv"],
+						["sv", "/se"],
 						["de", "/de"],
 						["fr", "/fr"],
 					],
@@ -28,7 +28,7 @@ const config = defineConfig({
 					pattern: "/:path(.*)?",
 					localized: [
 						["en", "/en/:path(.*)?"],
-						["sv", "/sv/:path(.*)?"],
+						["sv", "/se/:path(.*)?"],
 						["de", "/de/:path(.*)?"],
 						["fr", "/fr/:path(.*)?"],
 					],

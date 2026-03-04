@@ -5,6 +5,8 @@ import { AnimatedGroup } from "@/components/motion-primitives/animated-group";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ResponsiveImage } from "@/components/ui/responsive-image";
+import * as m from "@/paraglide/messages.js";
+import { localizeHref } from "@/paraglide/runtime.js";
 
 interface ProjectLink {
 	label: string;
@@ -75,7 +77,7 @@ export function PortfolioSubpageLayout({
 					<Button asChild className="gap-2" size="sm" variant="ghost">
 						<Link to="/portfolio">
 							<ArrowLeft className="h-4 w-4" />
-							Back to Portfolio
+							{m.portfolio_subpage_back()}
 						</Link>
 					</Button>
 				</div>
@@ -132,7 +134,7 @@ export function PortfolioSubpageLayout({
 						{projectRole && (
 							<div>
 								<h3 className="mb-1 text-sm font-medium uppercase tracking-wide text-bl-red">
-									Role
+									{m.portfolio_subpage_role()}
 								</h3>
 								<p className="text-sm text-muted-foreground">{projectRole}</p>
 							</div>
@@ -141,7 +143,7 @@ export function PortfolioSubpageLayout({
 						{timeline && (
 							<div>
 								<h3 className="mb-1 text-sm font-medium uppercase tracking-wide text-bl-red">
-									Timeline
+									{m.portfolio_subpage_timeline()}
 								</h3>
 								<p className="text-sm text-muted-foreground">{timeline}</p>
 							</div>
@@ -150,7 +152,7 @@ export function PortfolioSubpageLayout({
 						{techStack && techStack.length > 0 && (
 							<div>
 								<h3 className="mb-2 text-sm font-medium uppercase tracking-wide text-bl-red">
-									Tech Stack
+									{m.portfolio_subpage_tech_stack()}
 								</h3>
 								<div className="flex flex-wrap gap-1.5">
 									{techStack.map((tech) => (
@@ -168,7 +170,7 @@ export function PortfolioSubpageLayout({
 						{links && links.length > 0 && (
 							<div>
 								<h3 className="mb-2 text-sm font-medium uppercase tracking-wide text-bl-red">
-									Links
+									{m.portfolio_subpage_links()}
 								</h3>
 								<div className="flex flex-col gap-2">
 									{links.map((link) =>
@@ -204,12 +206,12 @@ export function PortfolioSubpageLayout({
 					<Button asChild className="gap-2" variant="outline">
 						<Link to="/portfolio">
 							<ArrowLeft className="h-4 w-4" />
-							All Projects
+							{m.portfolio_subpage_all_projects()}
 						</Link>
 					</Button>
 					{nextProject && (
 						<Button asChild className="gap-2" variant="outline">
-							<a href={`/portfolio/${nextProject.slug}`}>
+							<a href={localizeHref(`/portfolio/${nextProject.slug}`)}>
 								{nextProject.title}
 								<ArrowRight className="h-4 w-4" />
 							</a>

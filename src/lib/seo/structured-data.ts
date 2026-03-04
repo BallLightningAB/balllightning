@@ -7,6 +7,8 @@
  * - Organization schema on about page
  */
 
+import { localizeHref } from "@/paraglide/runtime.js";
+
 interface Post {
 	slug: string;
 	title: string;
@@ -311,8 +313,8 @@ const LOCALES = ["en", "sv", "de", "fr"] as const;
  * Generate canonical URL for a page (locale-aware)
  */
 export function generateCanonical(path: string, locale?: string): string {
-	const prefix = locale ? `/${locale}` : "";
-	return `${SITE_URL}${prefix}${path}`;
+	const localizedPath = locale ? localizeHref(path, { locale }) : path;
+	return `${SITE_URL}${localizedPath}`;
 }
 
 /**
@@ -323,12 +325,12 @@ export function generateHreflangLinks(path: string) {
 		...LOCALES.map((locale) => ({
 			rel: "alternate",
 			hreflang: locale,
-			href: `${SITE_URL}/${locale}${path}`,
+			href: `${SITE_URL}${localizeHref(path, { locale })}`,
 		})),
 		{
 			rel: "alternate",
 			hreflang: "x-default",
-			href: `${SITE_URL}/en${path}`,
+			href: `${SITE_URL}${localizeHref(path, { locale: "en" })}`,
 		},
 	];
 }

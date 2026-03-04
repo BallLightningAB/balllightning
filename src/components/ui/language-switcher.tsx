@@ -8,7 +8,12 @@ import {
 	SheetTitle,
 	SheetTrigger,
 } from "@/components/ui/sheet";
-import { getLocale, locales, localizeHref } from "@/paraglide/runtime.js";
+import {
+	deLocalizeUrl,
+	getLocale,
+	locales,
+	localizeHref,
+} from "@/paraglide/runtime.js";
 
 const localeCodes: Record<string, string> = {
 	en: "EN",
@@ -24,6 +29,13 @@ const localeFlags: Record<string, string> = {
 	fr: "🇫🇷",
 };
 
+function getCurrentDeLocalizedHref(): string {
+	const currentUrl = new URL(window.location.href);
+	const deLocalizedUrl = deLocalizeUrl(currentUrl);
+
+	return `${deLocalizedUrl.pathname}${deLocalizedUrl.search}${deLocalizedUrl.hash}`;
+}
+
 export function LanguageSwitcher() {
 	const currentLocale = getLocale();
 	const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
@@ -33,11 +45,8 @@ export function LanguageSwitcher() {
 			return;
 		}
 
-		// Get the current path at the moment of switching
-		const switchingPath = window.location.pathname;
-		const basePath =
-			switchingPath.replace(new RegExp(`^/${currentLocale}(/|$)`), "/") || "/";
-		const href = localizeHref(basePath, { locale: newLocale });
+		const deLocalizedHref = getCurrentDeLocalizedHref();
+		const href = localizeHref(deLocalizedHref, { locale: newLocale });
 
 		window.location.href = href;
 	};
@@ -55,7 +64,7 @@ export function LanguageSwitcher() {
 					<span className="ml-1.5">{localeCodes[currentLocale]}</span>
 				</Button>
 			</SheetTrigger>
-			<SheetContent className="w-[25vw] max-w-[200px]" side="right">
+			<SheetContent className="w-[25vw] max-w-[200px] md:w-[10vw] md:max-w-[120px]" side="right">
 				<SheetTitle className="sr-only">Language Menu</SheetTitle>
 				<SheetDescription className="sr-only">
 					Select your preferred language
@@ -108,15 +117,8 @@ export function LanguageSwitcherMobile() {
 						key={locale}
 						onClick={(e) => {
 							e.preventDefault();
-							// Get the current path at the moment of clicking
-							const switchingPath = window.location.pathname;
-							// Remove current locale prefix from path to get the base path
-							const actualBasePath =
-								switchingPath.replace(
-									new RegExp(`^/${currentLocale}(/|$)`),
-									"/"
-								) || "/";
-							const actualHref = localizeHref(actualBasePath, { locale });
+							const deLocalizedHref = getCurrentDeLocalizedHref();
+							const actualHref = localizeHref(deLocalizedHref, { locale });
 							window.location.href = actualHref;
 						}}
 					>
