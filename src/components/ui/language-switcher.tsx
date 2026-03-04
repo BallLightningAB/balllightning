@@ -64,7 +64,10 @@ export function LanguageSwitcher() {
 					<span className="ml-1.5">{localeCodes[currentLocale]}</span>
 				</Button>
 			</SheetTrigger>
-			<SheetContent className="w-[25vw] max-w-[200px] md:w-[10vw] md:max-w-[120px]" side="right">
+			<SheetContent
+				className="w-[25vw] max-w-[200px] md:w-[10vw] md:max-w-[120px]"
+				side="right"
+			>
 				<SheetTitle className="sr-only">Language Menu</SheetTitle>
 				<SheetDescription className="sr-only">
 					Select your preferred language
@@ -84,9 +87,7 @@ export function LanguageSwitcher() {
 								}}
 								type="button"
 							>
-								<span className="text-4xl font-[BigShouldersStencilDisplay]">
-									{localeFlags[locale]}
-								</span>
+								<span className="text-4xl">{localeFlags[locale]}</span>
 							</button>
 						);
 					})}

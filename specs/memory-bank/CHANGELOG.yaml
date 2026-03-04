@@ -1,6 +1,20 @@
 entries:
 
   - date: "2026-03-04"
+    version: "0.2.5.10"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/14"
+    commit: TBD
+    status: ready
+    title: "fix(i18n): restore flag emojis and improve language switcher responsive design"
+    details: |-
+      - Restored flag emoji display (🇬🇧🇸🇪🇩🇪🇫🇷) in language switcher for visual consistency
+      - Removed BigShouldersStencilDisplay font class from flag display to fix emoji rendering
+      - Implemented responsive sheet width: 25vw/200px for mobile, 10vw/120px for desktop
+      - Maintained existing functionality while improving visual appearance and UX
+
+      Refs: v0.2.5.10 #14 I14D9
+
+  - date: "2026-03-04"
     version: "0.2.5.9"
     issue: "https://github.com/BallLightningAB/balllightning/issues/14 & https://github.com/BallLightningAB/balllightning/issues/16"
     commit: TBD
