@@ -56,7 +56,7 @@ export const Route = createFileRoute("/portfolio/chronomation")({
 							schemaType: "SoftwareApplication",
 							applicationCategory: "ProductivityApplication",
 							operatingSystem: "Web",
-							url: "https://chronomation.com",
+							url: generateCanonical("/portfolio/chronomation", locale),
 							dateCreated: "2025",
 							keywords: [
 								"BankID document signing",

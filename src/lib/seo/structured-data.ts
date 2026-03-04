@@ -302,7 +302,7 @@ export function generateProjectSchema(options: ProjectSchemaOptions) {
 		}),
 		mainEntityOfPage: {
 			"@type": "WebPage",
-			"@id": `${SITE_URL}/portfolio/${options.slug}`,
+			"@id": projectUrl,
 		},
 	};
 }

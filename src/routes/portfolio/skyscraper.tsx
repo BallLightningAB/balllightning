@@ -60,6 +60,7 @@ export const Route = createFileRoute("/portfolio/skyscraper")({
 							slug: "skyscraper",
 							schemaType: "VideoGame",
 							dateCreated: "2022",
+							url: generateCanonical("/portfolio/skyscraper", locale),
 							keywords: [
 								"strategic MMO deckbattler",
 								"game project management",

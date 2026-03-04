@@ -1,6 +1,23 @@
 entries:
 
   - date: "2026-03-04"
+    version: "0.2.5.14"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/16"
+    commit: TBD
+    status: ready
+    title: "fix(seo): resolve duplicate canonical links and JSON-LD mainEntityOfPage URLs for portfolio pages"
+    details: |- 
+      - Fixed duplicate canonical links on portfolio pages by removing canonical generation from root layout
+      - Kept canonical generation in individual portfolio routes to ensure single canonical link per page
+      - Updated generateProjectSchema to use localized URLs for mainEntityOfPage matching canonical URLs
+      - Applied fixes to all 6 portfolio subpages: chronomation, the-builder-coil, shipping-api-dojo, jorild-se, blightfell, skyscraper
+      - Removed unused generateCanonical import from root route to clean up code
+      - JSON-LD structured data now properly localized per locale (e.g., /se/portfolio/chronomation for Swedish)
+      - Build, typecheck, and i18n:check all pass - ready for deployment
+      
+      Refs: v0.2.5.14 #16 I16D10
+
+  - date: "2026-03-04"
     version: "0.2.5.13"
     issue: "https://github.com/BallLightningAB/balllightning/issues/14"
     commit: TBD

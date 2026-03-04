@@ -9,7 +9,6 @@ import {
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { Layout } from "@/components/layout/Layout";
 import {
-	generateCanonical,
 	generateHreflangLinks,
 	generateRootEntityGraphSchema,
 	jsonLdScript,
@@ -208,13 +207,11 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 		deLocalizeUrl(new URL(pathname, "https://balllightning.cloud")).pathname ||
 		"/";
 	const hreflangLinks = generateHreflangLinks(deLocalizedPathname);
-	const canonicalUrl = generateCanonical(deLocalizedPathname, locale);
 
 	return (
 		<html className="dark" lang={locale}>
 			<head>
 				<HeadContent />
-				<link href={canonicalUrl} rel="canonical" />
 				{hreflangLinks.map((link) => (
 					<link
 						href={link.href}

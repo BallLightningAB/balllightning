@@ -1,5 +1,5 @@
 meta:
-  release: "0.2.5.13"
+  release: "0.2.5.14"
   repo: github.com/BallLightningAB/balllightning
   project: https://github.com/users/BallLightningAB/projects/9
   pdd_version: "1.1"
@@ -36,16 +36,17 @@ roadmap:
         - "[done] I14D10: Remove unwanted scrollbars caused by I14D6 overflow-x hidden rules"
         - "[done] I14D11: Thoroughly comb through all current translations for accuracy and consistency"
       progress_log:
-        - "2026-03-03: Issue created based on br1dge feedback regarding German translation and mobile responsiveness"
+        - "2026-03-03: Issue created based on feedback from https://github.com/br1dge-dev regarding German translation and mobile responsiveness"
         - "2026-03-03: Feedback includes translation suggestions for 'Liefern', currency display, untranslated content areas"
         - "2026-03-03: Mobile responsiveness issues identified - horizontal scroll and logo background"
         - "2026-03-03: Additional issues found - broken Twitter link and GSC indexing recommendation"
         - "2026-03-03: FIXED I14D5 - Updated logo to use transparent WebP version (logo-60x60-transparent.webp) in Header and Footer"
         - "2026-03-03: FIXED I14D7 - Updated Twitter link from @nicbrulay to @BallLightningAB in Header navigation"
         - "2026-03-03: UPDATED I14D2 - Expanded currency fix from German-only to English/German/French locales, swapping SEK for EUR"
-        - "2026-03-04: ADDED I14D10 - New feedback from br1dge: unwanted scrollbars appeared as result of I14D6 overflow-x hidden rules"
+        - "2026-03-04: ADDED I14D10 - New feedback from https://github.com/br1dge-dev: unwanted scrollbars appeared as result of I14D6 overflow-x hidden rules"
         - "2026-03-04: COMPLETED I14D8 - Updated Paraglide urlPatterns to map locale 'sv' to URL prefix '/se'; added Vercel 308 redirects /sv -> /se"
         - "2026-03-04: 🔧 TESTING FINDING - /sv/ route not caught by /sv -> /se redirect, instead treated as path segment under /en/sv - added /sv/ and /sv/:path* redirects to fix"
+        - "2026-03-04: 🔧 SEO FEEDBACK - Fixed duplicate canonical links on portfolio pages (removed from root layout, kept in routes) and updated JSON-LD mainEntityOfPage to use localized URLs matching canonical"
         - "2026-03-04: COMPLETED I14D9 - Language switcher uses 🇬🇧 flag for English to maintain consistency with other locale flags"
         - "2026-03-04: COMPLETED I14D10 - Removed broad overflow-x hidden rules and constrained horizontal clipping to body"
         - "2026-03-04: IN PROGRESS I14D11 - Added/normalized new portfolio key parity across en/sv/de/fr and validated with i18n:check"
@@ -78,7 +79,8 @@ roadmap:
         - "[done] I16D6: Blightfell Page Translation"
         - "[done] I16D7: Skyscraper Page Translation"
         - "[done] I16D8: Implementation and Testing"
-        - "[done] I14D9: Jorild-se Facebook & LinkedIn Management section"
+        - "[done] I16D9: Jorild-se Facebook & LinkedIn Management section"
+        - "[done] I16D10: Fix duplicate canonical links and JSON-LD mainEntityOfPage URLs for portfolio pages"
       progress_log:
         - "2026-03-03: Issue created for comprehensive portfolio subpage translation project"
         - "2026-03-03: Covers 6 portfolio subpages with 8 deliverables each"
@@ -92,6 +94,7 @@ roadmap:
         - "2026-03-04: COMPLETED I16D8 - Final implementation/testing sweep completed (mobile responsiveness checklist + performance workflow review + full validation gates)"
         - "2026-03-04: Synced GitHub issue checklist boxes for #16 deliverables and #14 completed I14D8-I14D10 items"
         - "2026-03-04: COMPLETED I14D9 - Added Facebook & LinkedIn Management section to Jorild.se portfolio with 5 key points including Unsplash photos guidance; translated across all 4 locales"
+        - "2026-03-04: 🔧 SEO FEEDBACK - Fixed duplicate canonical links on portfolio pages (removed from root layout, kept in routes) and updated JSON-LD mainEntityOfPage to use localized URLs matching canonical"
       est:
         dev_h: 16
         test_h: 4

@@ -59,7 +59,7 @@ export const Route = createFileRoute("/portfolio/shipping-api-dojo")({
 							schemaType: "SoftwareApplication",
 							applicationCategory: "EducationalApplication",
 							operatingSystem: "Web",
-							url: "https://api-trainer.balllightning.cloud",
+							url: generateCanonical("/portfolio/shipping-api-dojo", locale),
 							dateCreated: "2026-02",
 							keywords: [
 								"shipping API integration",

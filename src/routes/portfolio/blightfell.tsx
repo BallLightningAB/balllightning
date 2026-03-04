@@ -59,7 +59,7 @@ export const Route = createFileRoute("/portfolio/blightfell")({
 							slug: "blightfell",
 							schemaType: "SoftwareApplication",
 							applicationCategory: "GameApplication",
-							url: "https://blightfell.com",
+							url: generateCanonical("/portfolio/blightfell", locale),
 							dateCreated: "2025-09",
 							keywords: [
 								"web3 game integration",

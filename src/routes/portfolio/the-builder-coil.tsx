@@ -59,7 +59,7 @@ export const Route = createFileRoute("/portfolio/the-builder-coil")({
 							schemaType: "SoftwareApplication",
 							applicationCategory: "WebApplication",
 							operatingSystem: "Web",
-							url: "https://thebuildercoil.com",
+							url: generateCanonical("/portfolio/the-builder-coil", locale),
 							dateCreated: "2025",
 							keywords: [
 								"TanStack Start blog",

@@ -61,7 +61,7 @@ export const Route = createFileRoute("/portfolio/jorild-se")({
 							description: m.portfolio_jorild_se_schema_description(),
 							slug: "jorild-se",
 							schemaType: "CreativeWork",
-							url: "https://jorild.se",
+							url: generateCanonical("/portfolio/jorild-se", locale),
 							dateCreated: "2025-05",
 							keywords: [
 								"bilingual website",
