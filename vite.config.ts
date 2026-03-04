@@ -46,7 +46,7 @@ const config = defineConfig({
 					runtime: "nodejs24.x",
 				},
 			},
-			// Route rules for static asset caching
+			// Route rules for static asset caching only
 			routeRules: {
 				// Fonts and media files - long term caching
 				"/fonts/**": {

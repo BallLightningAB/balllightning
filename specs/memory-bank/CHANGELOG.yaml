@@ -1,5 +1,23 @@
 entries:
 
+  - date: "2026-03-04"
+    version: "0.2.5.3"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/17"
+    commit: TBD
+    status: ready
+    title: "fix(i18n): implement optimized cache-busting headers to prevent edge caching from serving wrong locale content"
+    details: |-
+      - Fixed Nitro routeRules patterns from regex to proper glob syntax (/en/** etc)
+      - Added Vercel-targeted cache headers (Cache-Control + CDN-Cache-Control + Vercel-CDN-Cache-Control) for HTML responses in server.ts
+      - Simplified vercel.json with explicit path patterns using /en/:path* style for locale root coverage
+      - Removed risky extension-wide immutable rules (/:path*.png, /:path*.svg, etc) that could cause stale icon caches
+      - Added explicit cache rules for favicons (1 hour) and logos/OG images (1 day) with moderate caching
+      - Maintained aggressive caching for build assets (/assets/** and /fonts/** with immutable)
+      - Optimized for Vercel-only deployment (Cloudflare DNS-only) with correctness-first approach
+      - Added I14D10: Remove unwanted scrollbars caused by I14D6 overflow-x hidden rules"
+
+      Refs: #17 I17D1-I17D3
+
   - date: "2026-03-03"
     version: "0.2.5.2"
     issue: "https://github.com/BallLightningAB/balllightning/issues/14"
