@@ -1,5 +1,5 @@
 meta:
-  release: "0.2.5.4"
+  release: "0.2.5.5"
   repo: github.com/BallLightningAB/balllightning
   project: https://github.com/users/BallLightningAB/projects/9
   pdd_version: "1.1"
@@ -13,35 +13,6 @@ meta:
   # - I3Docs / I3UI / I3Fix / I3Test / I3Biome: tags for documentation, UI polish, minor fixes, tests and Biome/tooling work not tied to a single deliverable
 roadmap:
   current:
-    - id: i18n-cache-busting
-      issue: "https://github.com/BallLightningAB/balllightning/issues/17"
-      title: "fix(i18n): implement cache-busting headers to prevent edge caching from serving wrong locale content"
-      status: in-review
-      priority: high
-      labels:
-        - i18n
-        - cache
-        - bug
-        - performance
-      deliverables:
-        - "[done] I17D1: Add Vercel.json headers for HTML route cache-busting"
-        - "[done] I17D2: Add Nitro route rules for complementary cache control"
-        - "[done] I17D3: Implement server-level HTML response cache control"
-        - "[pending] I17D4: Deploy and verify cache-busting effectiveness"
-        - "[pending] I17D5: Test locale routes for correct language content"
-      progress_log:
-        - "2026-03-04: Issue created based on ChatGPT report of wrong language content in locale routes"
-        - "2026-03-04: Root cause identified: Edge caching serving stale HTML variants"
-        - "2026-03-04: Confirmed via cache-busted URLs (?x=1) working correctly"
-        - "2026-03-04: Implemented multi-layer cache-busting solution (Vercel + Nitro + Server)"
-        - "2026-03-04: Build successful, ready for deployment testing"
-      est:
-        dev_h: 2
-        test_h: 1
-      remaining_deliverables:
-        - "I17D4: Deploy and verify cache-busting effectiveness"
-        - "I17D5: Test locale routes for correct language content"
-      sub_issues: []
     - id: german-translation-feedback
       issue: "https://github.com/BallLightningAB/balllightning/issues/14"
       title: "German Translation and Mobile Responsiveness Feedback"
@@ -108,6 +79,33 @@ roadmap:
       remaining_deliverables: []
       sub_issues: []
   recent_done:
+    - id: i18n-cache-busting
+      issue: "https://github.com/BallLightningAB/balllightning/issues/17"
+      title: "fix(i18n): implement cache-busting headers to prevent edge caching from serving wrong locale content"
+      status: completed
+      links:
+        issue: "https://github.com/BallLightningAB/balllightning/issues/17"
+      deliverables:
+        - "[done] I17D1: Add Vercel.json headers for HTML route cache-busting"
+        - "[done] I17D2: Add Nitro route rules for complementary cache control"
+        - "[done] I17D3: Implement server-level HTML response cache control"
+        - "[done] I17D4: Deploy and verify cache-busting effectiveness"
+        - "[done] I17D5: Test locale routes for correct language content"
+      progress_log:
+        - "2026-03-04: Issue created based on ChatGPT report of wrong language content in locale routes"
+        - "2026-03-04: Root cause identified: Edge caching serving stale HTML variants"
+        - "2026-03-04: Confirmed via cache-busted URLs (?x=1) working correctly"
+        - "2026-03-04: Implemented multi-layer cache-busting solution (Vercel + Nitro + Server)"
+        - "2026-03-04: Build successful, ready for deployment testing"
+        - "2026-03-04: FIXED contradictory cache headers - HTML was receiving both no-store and immutable"
+        - "2026-03-04: REMOVED all Nitro routeRules to eliminate header conflicts and centralize caching"
+        - "2026-03-04: VERIFIED production deployment - HTML routes return no-store, assets cached correctly"
+        - "2026-03-04: ISSUE RESOLVED - all cache headers working as expected, i18n content mixing prevented"
+      est:
+        dev_h: 2.5
+        test_h: 1.5
+      remaining_deliverables: []
+      sub_issues: []
     - id: vercel-urlpattern-polyfill
       issue: "https://github.com/BallLightningAB/balllightning/issues/12"
       title: "fix(vercel): add URLPattern polyfill for Node runtime compatibility"

@@ -1,6 +1,23 @@
 entries:
 
   - date: "2026-03-04"
+    version: "0.2.5.5"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/17"
+    commit: TBD
+    status: ready
+    title: "fix(cache): remove Nitro routeRules to prevent header conflicts and centralize caching in vercel.json"
+    details: |-
+      - Removed all Nitro routeRules (fonts, images, CSS/JS, SEO files) to eliminate header conflicts
+      - Moved robots.txt and sitemap.xml caching rules from Nitro to vercel.json
+      - Centralized all cache control: server.ts (HTML no-store) + vercel.json (static assets)
+      - Fixed contradictory cache headers where HTML received both no-store and immutable headers
+      - Eliminated dual source of truth for caching to prevent future header conflicts
+      - Maintained performance with /assets/** and /fonts/** immutable caching in vercel.json
+      - Verified production deployment shows correct headers: HTML no-store, assets cached appropriately
+
+      Refs: #17 I17D1-I17D3
+
+  - date: "2026-03-04"
     version: "0.2.5.4"
     issue: "https://github.com/BallLightningAB/balllightning/issues/17"
     commit: TBD
