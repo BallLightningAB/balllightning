@@ -1,9 +1,25 @@
 entries:
 
   - date: "2026-03-04"
+    version: "0.2.5.6"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/16"
+    commit: TBD
+    status: ready
+    title: "feat(i18n): add portfolio subpage translation project to memory bank"
+    details: |-
+      - Added issue #16 to memory bank next_steps section for comprehensive portfolio subpage translation
+      - Covers 6 portfolio subpages with 8 deliverables each (I16D1-I16D8)
+      - Estimated 300-600 new translation keys across all languages (en, sv, de, fr)
+      - Substantial technical content requiring careful translation approach
+      - SEO implementation includes hreflang, meta tags, and localized URLs
+      - Bumped version to 0.2.5.6 in active-context.yaml
+      
+      Refs: v0.2.5.6 #16 I16D1-I16D8
+
+  - date: "2026-03-04"
     version: "0.2.5.5"
     issue: "https://github.com/BallLightningAB/balllightning/issues/17"
-    commit: TBD
+    commit: 9ffa2f5
     status: ready
     title: "fix(cache): remove Nitro routeRules to prevent header conflicts and centralize caching in vercel.json"
     details: |-
@@ -20,7 +36,7 @@ entries:
   - date: "2026-03-04"
     version: "0.2.5.4"
     issue: "https://github.com/BallLightningAB/balllightning/issues/17"
-    commit: TBD
+    commit: ed8ac12
     status: ready
     title: "fix(cache): remove Nitro routeRules to prevent header conflicts and centralize caching in vercel.json"
     details: |-
@@ -36,7 +52,7 @@ entries:
   - date: "2026-03-04"
     version: "0.2.5.3"
     issue: "https://github.com/BallLightningAB/balllightning/issues/17"
-    commit: TBD
+    commit: 3f20976
     status: ready
     title: "fix(i18n): implement optimized cache-busting headers to prevent edge caching from serving wrong locale content"
     details: |-
@@ -54,7 +70,7 @@ entries:
   - date: "2026-03-03"
     version: "0.2.5.2"
     issue: "https://github.com/BallLightningAB/balllightning/issues/14"
-    commit: TBD
+    commit: abd76a8
     status: in-progress
     title: "feat(i18n): add locale standardization and portfolio translation roadmap"
     details: |-
@@ -170,7 +186,7 @@ entries:
   - date: "2026-03-03"
     version: "0.2.4.5"
     issue: "https://github.com/BallLightningAB/balllightning/issues/12"
-    commit: TBD
+    commit: b7134cd
     status: in-review
     title: "fix(i18n): preserve current page when switching languages"
     details: |-
