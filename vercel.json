@@ -10,6 +10,11 @@
       "permanent": true
     },
     {
+      "source": "/sv/",
+      "destination": "/se",
+      "permanent": true
+    },
+    {
       "source": "/sv/:path*",
       "destination": "/se/:path*",
       "permanent": true

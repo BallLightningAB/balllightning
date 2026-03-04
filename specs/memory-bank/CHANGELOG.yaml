@@ -1,6 +1,21 @@
 entries:
 
   - date: "2026-03-04"
+    version: "0.2.5.13"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/14"
+    commit: TBD
+    status: ready
+    title: "fix(i18n): add missing /sv/ and /sv/:path* redirects to prevent fallback to /en/sv"
+    details: |- 
+      - Added /sv/ redirect pattern to catch Swedish root route with trailing slash
+      - Added /sv/:path* redirect pattern to catch all Swedish sub-routes
+      - Fixed issue where /sv/ was treated as path segment under /en/sv instead of redirecting to /se
+      - Updated vercel.json headers to use /se/:path* instead of /sv/:path* for cache control
+      - Testing confirmed /sv/ now redirects correctly to /se instead of /en/sv
+      
+      Refs: v0.2.5.13 #14 I14D8
+
+  - date: "2026-03-04"
     version: "0.2.5.12"
     issue: "https://github.com/BallLightningAB/balllightning/issues/16"
     commit: TBD
