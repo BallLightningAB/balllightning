@@ -15,10 +15,44 @@ import { TextEffect } from "@/components/motion-primitives/text-effect";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { type FeedItem, getBuilderCoilFeed } from "@/lib/builder-coil/feed";
+import { generateCanonical } from "@/lib/seo/structured-data";
 import { getGitHubContributions } from "@/lib/github";
 import * as m from "@/paraglide/messages.js";
+import { getLocale } from "@/paraglide/runtime.js";
 
 export const Route = createFileRoute("/")({
+	head: () => {
+		const locale = getLocale();
+		const canonical = generateCanonical("/", locale);
+
+		return {
+			meta: [
+				{
+					title: "Ball Lightning AB | Software Consulting & Development",
+				},
+				{
+					name: "description",
+					content:
+						"Software consulting and product development. Full-stack web, systems integration, and AI-driven solutions by Ball Lightning AB.",
+				},
+				{
+					property: "og:title",
+					content: "Ball Lightning AB | Software Consulting & Development",
+				},
+				{
+					property: "og:description",
+					content:
+						"Software consulting and product development. Full-stack web, systems integration, and AI-driven solutions by Ball Lightning AB.",
+				},
+			],
+			links: [
+				{
+					rel: "canonical",
+					href: canonical,
+				},
+			],
+		};
+	},
 	component: HomePage,
 	loader: async () => {
 		const [feed, github] = await Promise.all([

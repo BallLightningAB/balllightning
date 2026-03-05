@@ -1,23 +1,446 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://balllightning.cloud/</loc>
+    <loc>https://balllightning.cloud/en</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en" />
   </url>
   <url>
-    <loc>https://balllightning.cloud/services</loc>
+    <loc>https://balllightning.cloud/se</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/de</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/fr</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/en/services</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/services" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/services" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/services" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/services" />
   </url>
   <url>
-    <loc>https://balllightning.cloud/portfolio</loc>
+    <loc>https://balllightning.cloud/se/services</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/services" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/services" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/services" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/services" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/de/services</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/services" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/services" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/services" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/services" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/fr/services</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/services" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/services" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/services" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/services" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/en/technologies</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/technologies" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/technologies" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/technologies" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/technologies" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/technologies" />
   </url>
   <url>
-    <loc>https://balllightning.cloud/contact</loc>
+    <loc>https://balllightning.cloud/se/technologies</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/technologies" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/technologies" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/technologies" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/technologies" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/technologies" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/de/technologies</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/technologies" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/technologies" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/technologies" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/technologies" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/technologies" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/fr/technologies</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/technologies" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/technologies" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/technologies" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/technologies" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/technologies" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/en/portfolio</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/portfolio" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/portfolio" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/portfolio" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/portfolio" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/portfolio" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/se/portfolio</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/portfolio" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/portfolio" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/portfolio" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/portfolio" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/portfolio" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/de/portfolio</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/portfolio" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/portfolio" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/portfolio" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/portfolio" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/portfolio" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/fr/portfolio</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/portfolio" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/portfolio" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/portfolio" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/portfolio" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/portfolio" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/en/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/contact" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/contact" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/contact" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/contact" />
   </url>
+  <url>
+    <loc>https://balllightning.cloud/se/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/contact" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/contact" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/contact" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/contact" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/de/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/contact" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/contact" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/contact" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/contact" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/fr/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/contact" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/contact" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/contact" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/contact" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/en/portfolio/chronomation</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/portfolio/chronomation" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/portfolio/chronomation" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/portfolio/chronomation" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/portfolio/chronomation" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/portfolio/chronomation" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/se/portfolio/chronomation</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/portfolio/chronomation" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/portfolio/chronomation" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/portfolio/chronomation" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/portfolio/chronomation" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/portfolio/chronomation" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/de/portfolio/chronomation</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/portfolio/chronomation" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/portfolio/chronomation" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/portfolio/chronomation" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/portfolio/chronomation" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/portfolio/chronomation" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/fr/portfolio/chronomation</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/portfolio/chronomation" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/portfolio/chronomation" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/portfolio/chronomation" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/portfolio/chronomation" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/portfolio/chronomation" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/en/portfolio/the-builder-coil</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/portfolio/the-builder-coil" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/portfolio/the-builder-coil" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/portfolio/the-builder-coil" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/portfolio/the-builder-coil" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/portfolio/the-builder-coil" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/se/portfolio/the-builder-coil</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/portfolio/the-builder-coil" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/portfolio/the-builder-coil" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/portfolio/the-builder-coil" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/portfolio/the-builder-coil" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/portfolio/the-builder-coil" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/de/portfolio/the-builder-coil</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/portfolio/the-builder-coil" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/portfolio/the-builder-coil" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/portfolio/the-builder-coil" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/portfolio/the-builder-coil" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/portfolio/the-builder-coil" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/fr/portfolio/the-builder-coil</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/portfolio/the-builder-coil" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/portfolio/the-builder-coil" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/portfolio/the-builder-coil" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/portfolio/the-builder-coil" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/portfolio/the-builder-coil" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/en/portfolio/shipping-api-dojo</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/portfolio/shipping-api-dojo" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/portfolio/shipping-api-dojo" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/portfolio/shipping-api-dojo" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/portfolio/shipping-api-dojo" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/portfolio/shipping-api-dojo" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/se/portfolio/shipping-api-dojo</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/portfolio/shipping-api-dojo" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/portfolio/shipping-api-dojo" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/portfolio/shipping-api-dojo" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/portfolio/shipping-api-dojo" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/portfolio/shipping-api-dojo" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/de/portfolio/shipping-api-dojo</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/portfolio/shipping-api-dojo" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/portfolio/shipping-api-dojo" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/portfolio/shipping-api-dojo" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/portfolio/shipping-api-dojo" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/portfolio/shipping-api-dojo" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/fr/portfolio/shipping-api-dojo</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/portfolio/shipping-api-dojo" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/portfolio/shipping-api-dojo" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/portfolio/shipping-api-dojo" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/portfolio/shipping-api-dojo" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/portfolio/shipping-api-dojo" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/en/portfolio/jorild-se</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/portfolio/jorild-se" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/portfolio/jorild-se" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/portfolio/jorild-se" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/portfolio/jorild-se" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/portfolio/jorild-se" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/se/portfolio/jorild-se</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/portfolio/jorild-se" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/portfolio/jorild-se" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/portfolio/jorild-se" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/portfolio/jorild-se" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/portfolio/jorild-se" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/de/portfolio/jorild-se</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/portfolio/jorild-se" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/portfolio/jorild-se" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/portfolio/jorild-se" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/portfolio/jorild-se" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/portfolio/jorild-se" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/fr/portfolio/jorild-se</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/portfolio/jorild-se" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/portfolio/jorild-se" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/portfolio/jorild-se" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/portfolio/jorild-se" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/portfolio/jorild-se" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/en/portfolio/blightfell</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/portfolio/blightfell" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/portfolio/blightfell" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/portfolio/blightfell" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/portfolio/blightfell" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/portfolio/blightfell" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/se/portfolio/blightfell</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/portfolio/blightfell" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/portfolio/blightfell" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/portfolio/blightfell" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/portfolio/blightfell" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/portfolio/blightfell" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/de/portfolio/blightfell</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/portfolio/blightfell" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/portfolio/blightfell" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/portfolio/blightfell" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/portfolio/blightfell" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/portfolio/blightfell" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/fr/portfolio/blightfell</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/portfolio/blightfell" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/portfolio/blightfell" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/portfolio/blightfell" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/portfolio/blightfell" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/portfolio/blightfell" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/en/portfolio/skyscraper</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/portfolio/skyscraper" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/portfolio/skyscraper" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/portfolio/skyscraper" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/portfolio/skyscraper" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/portfolio/skyscraper" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/se/portfolio/skyscraper</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/portfolio/skyscraper" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/portfolio/skyscraper" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/portfolio/skyscraper" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/portfolio/skyscraper" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/portfolio/skyscraper" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/de/portfolio/skyscraper</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/portfolio/skyscraper" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/portfolio/skyscraper" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/portfolio/skyscraper" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/portfolio/skyscraper" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/portfolio/skyscraper" />
+  </url>
+  <url>
+    <loc>https://balllightning.cloud/fr/portfolio/skyscraper</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://balllightning.cloud/en/portfolio/skyscraper" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://balllightning.cloud/se/portfolio/skyscraper" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://balllightning.cloud/de/portfolio/skyscraper" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://balllightning.cloud/fr/portfolio/skyscraper" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://balllightning.cloud/en/portfolio/skyscraper" />
+  </url>
+
+
 </urlset>

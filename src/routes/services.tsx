@@ -9,10 +9,30 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
+import { generateCanonical } from "@/lib/seo/structured-data";
 import { COMPETENCE_TO_SLUG } from "@/lib/technologies/data";
 import * as m from "@/paraglide/messages.js";
+import { getLocale } from "@/paraglide/runtime.js";
 
 export const Route = createFileRoute("/services")({
+	head: () => {
+		const locale = getLocale();
+
+		return {
+			meta: [
+				{ title: `${m.services_title()} | Ball Lightning AB` },
+				{ name: "description", content: m.services_subtitle() },
+				{
+					property: "og:title",
+					content: `${m.services_title()} | Ball Lightning AB`,
+				},
+				{ property: "og:description", content: m.services_subtitle() },
+			],
+			links: [
+				{ rel: "canonical", href: generateCanonical("/services", locale) },
+			],
+		};
+	},
 	component: ServicesPage,
 });
 

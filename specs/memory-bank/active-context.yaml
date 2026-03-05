@@ -1,5 +1,5 @@
 meta:
-  release: "0.2.5.15"
+  release: "0.2.6"
   repo: github.com/BallLightningAB/balllightning
   project: https://github.com/users/BallLightningAB/projects/9
   pdd_version: "1.1"
@@ -16,7 +16,7 @@ roadmap:
     - id: gsc-indexing-optimization
       issue: "https://github.com/BallLightningAB/balllightning/issues/15"
       title: "SEO: Google Search Console indexing and post-rebuild optimization"
-      status: pending
+      status: in-progress
       priority: medium
       labels:
         - seo
@@ -34,6 +34,12 @@ roadmap:
         - "2026-03-03: Includes GSC setup, technical audit, performance monitoring, and internal linking"
         - "2026-03-03: Should be addressed after translation fixes are complete and deployed"
         - "2026-03-04: Split GBP work into separate issue #18 to focus #15 on technical SEO"
+        - "2026-03-05: Ran production preflight checks: robots/sitemap 200, locale roots 200, /sv redirects verified as HTTP 308"
+        - "2026-03-05: Identified sitemap regression in deployed output (missing localized and portfolio URLs); regenerated public/sitemap.xml from scripts/generate-sitemap.ts"
+        - "2026-03-05: Added non-prod duplicate-content guard in server.ts via X-Robots-Tag noindex,nofollow for *.vercel.app hosts"
+        - "2026-03-05: Added localized canonical + route-level meta coverage for home/services/contact/portfolio index; fixed technologies canonical/schema URL to locale-aware canonical"
+        - "2026-03-05: Internal linking audit passed for all 6 portfolio slugs across en/se/de/fr portfolio indexes"
+        - "2026-03-05: Validation gates passed (format, lint, i18n:check, typecheck, build); pending manual GSC URL Inspection/index requests and Rich Results checks"
       est:
         dev_h: 4
         test_h: 2

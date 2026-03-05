@@ -8,9 +8,29 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { submitContactForm } from "@/lib/contact/server";
+import { generateCanonical } from "@/lib/seo/structured-data";
 import * as m from "@/paraglide/messages.js";
+import { getLocale } from "@/paraglide/runtime.js";
 
 export const Route = createFileRoute("/contact")({
+	head: () => {
+		const locale = getLocale();
+
+		return {
+			meta: [
+				{ title: `${m.contact_title()} | Ball Lightning AB` },
+				{ name: "description", content: m.contact_subtitle() },
+				{
+					property: "og:title",
+					content: `${m.contact_title()} | Ball Lightning AB`,
+				},
+				{ property: "og:description", content: m.contact_subtitle() },
+			],
+			links: [
+				{ rel: "canonical", href: generateCanonical("/contact", locale) },
+			],
+		};
+	},
 	component: ContactPage,
 });
 

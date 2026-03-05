@@ -9,9 +9,29 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
+import { generateCanonical } from "@/lib/seo/structured-data";
 import * as m from "@/paraglide/messages.js";
+import { getLocale } from "@/paraglide/runtime.js";
 
 export const Route = createFileRoute("/portfolio/")({
+	head: () => {
+		const locale = getLocale();
+
+		return {
+			meta: [
+				{ title: `${m.portfolio_title()} | Ball Lightning AB` },
+				{ name: "description", content: m.portfolio_subtitle() },
+				{
+					property: "og:title",
+					content: `${m.portfolio_title()} | Ball Lightning AB`,
+				},
+				{ property: "og:description", content: m.portfolio_subtitle() },
+			],
+			links: [
+				{ rel: "canonical", href: generateCanonical("/portfolio", locale) },
+			],
+		};
+	},
 	component: PortfolioPage,
 });
 

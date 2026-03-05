@@ -1,6 +1,24 @@
 entries:
 
   - date: "2026-03-05"
+    version: "0.2.6"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/15"
+    commit: TBD
+    status: in-review
+    title: "fix(seo): restore sitemap completeness and tighten canonical/non-prod indexing guards"
+    details: |-
+      - Ran production preflight checks: robots/sitemap 200, locale roots 200, and /sv redirects verified as 308 to /se equivalents
+      - Confirmed deployed sitemap regression (only 4 URLs, missing localized pages and portfolio detail routes)
+      - Regenerated public/sitemap.xml with locale-aware entries + hreflang alternates (en/sv/de/fr + x-default)
+      - Added non-prod duplicate-content protection in src/server.ts: X-Robots-Tag noindex,nofollow for *.vercel.app HTML responses
+      - Added route-level canonical/meta coverage for home, services, contact, and portfolio index routes
+      - Fixed technologies route canonical and ItemList schema URL to use locale-aware canonical URL
+      - Verified internal-link discovery on production portfolio indexes (all 6 slugs present across en/se/de/fr)
+      - Passed validation gates: pnpm format, pnpm lint, pnpm i18n:check, pnpm typecheck, pnpm build
+
+      Refs: v0.2.5.6 #15 I15D2-I15D4
+
+  - date: "2026-03-05"
     version: "0.2.5.15"
     issue: "https://github.com/BallLightningAB/balllightning/issues/15"
     commit: TBD

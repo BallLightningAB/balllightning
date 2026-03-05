@@ -15,6 +15,7 @@ import { generateCanonical, jsonLdScript } from "@/lib/seo/structured-data";
 import type { Technology } from "@/lib/technologies/data";
 import { technologiesByCategory } from "@/lib/technologies/data";
 import * as m from "@/paraglide/messages.js";
+import { getLocale } from "@/paraglide/runtime.js";
 
 function CATEGORY_LABELS(): Record<string, string> {
 	return {
@@ -27,51 +28,56 @@ function CATEGORY_LABELS(): Record<string, string> {
 }
 
 export const Route = createFileRoute("/technologies")({
-	head: () => ({
-		meta: [
-			{
-				title: "Technologies We Use | Ball Lightning AB",
-			},
-			{
-				name: "description",
-				content:
-					"Full-stack technology expertise: React 19, TanStack Start, TypeScript, Node.js, PostgreSQL, Vercel, and more — with real project case studies for each.",
-			},
-			{
-				property: "og:title",
-				content: "Technologies We Use | Ball Lightning AB",
-			},
-			{
-				property: "og:description",
-				content:
-					"Full-stack technology expertise with real project case studies. React, TanStack, TypeScript, Node.js, PostgreSQL, and more.",
-			},
-			{
-				property: "og:image",
-				content: "/og-home.png",
-			},
-			{
-				property: "og:type",
-				content: "website",
-			},
-		],
-		links: [
-			{
-				rel: "canonical",
-				href: generateCanonical("/technologies"),
-			},
-		],
-		scripts: [
-			{
-				type: "application/ld+json",
-				children: jsonLdScript(generateTechnologiesSchema()),
-			},
-		],
-	}),
+	head: () => {
+		const locale = getLocale();
+		const canonical = generateCanonical("/technologies", locale);
+
+		return {
+			meta: [
+				{
+					title: "Technologies We Use | Ball Lightning AB",
+				},
+				{
+					name: "description",
+					content:
+						"Full-stack technology expertise: React 19, TanStack Start, TypeScript, Node.js, PostgreSQL, Vercel, and more — with real project case studies for each.",
+				},
+				{
+					property: "og:title",
+					content: "Technologies We Use | Ball Lightning AB",
+				},
+				{
+					property: "og:description",
+					content:
+						"Full-stack technology expertise with real project case studies. React, TanStack, TypeScript, Node.js, PostgreSQL, and more.",
+				},
+				{
+					property: "og:image",
+					content: "/og-home.png",
+				},
+				{
+					property: "og:type",
+					content: "website",
+				},
+			],
+			links: [
+				{
+					rel: "canonical",
+					href: canonical,
+				},
+			],
+			scripts: [
+				{
+					type: "application/ld+json",
+					children: jsonLdScript(generateTechnologiesSchema(canonical)),
+				},
+			],
+		};
+	},
 	component: TechnologiesPage,
 });
 
-function generateTechnologiesSchema() {
+function generateTechnologiesSchema(canonicalUrl: string) {
 	const grouped = technologiesByCategory();
 	const items = grouped.flatMap(([, techs]) => techs);
 
@@ -81,7 +87,7 @@ function generateTechnologiesSchema() {
 		name: "Technologies Used by Ball Lightning AB",
 		description:
 			"Full-stack technology expertise with real project case studies.",
-		url: "https://balllightning.cloud/technologies",
+		url: canonicalUrl,
 		numberOfItems: items.length,
 		itemListElement: items.map((tech, i) => ({
 			"@type": "ListItem",
