@@ -1,5 +1,5 @@
 meta:
-  release: "0.2.5.14"
+  release: "0.2.5.15"
   repo: github.com/BallLightningAB/balllightning
   project: https://github.com/users/BallLightningAB/projects/9
   pdd_version: "1.1"
@@ -13,6 +13,126 @@ meta:
   # - I3Docs / I3UI / I3Fix / I3Test / I3Biome: tags for documentation, UI polish, minor fixes, tests and Biome/tooling work not tied to a single deliverable
 roadmap:
   current:
+    - id: gsc-indexing-optimization
+      issue: "https://github.com/BallLightningAB/balllightning/issues/15"
+      title: "SEO: Google Search Console indexing and post-rebuild optimization"
+      status: pending
+      priority: medium
+      labels:
+        - seo
+        - enhancement
+        - post-launch
+      deliverables:
+        - "[pending] I15D1: Search Console setup + initial indexing pass"
+        - "[pending] I15D2: Technical SEO audit (crawlability, canonicalization, i18n)"
+        - "[pending] I15D3: Performance & Core Web Vitals (baseline + actions)"
+        - "[pending] I15D4: Discovery & internal linking audit (post-rebuild)"
+        - "[pending] I15D5: Monitoring & follow-ups (short window)"
+      progress_log:
+        - "2026-03-03: Issue created based on GSC indexing recommendation from issue #14"
+        - "2026-03-03: Comprehensive SEO optimization plan for post-rebuild phase"
+        - "2026-03-03: Includes GSC setup, technical audit, performance monitoring, and internal linking"
+        - "2026-03-03: Should be addressed after translation fixes are complete and deployed"
+        - "2026-03-04: Split GBP work into separate issue #18 to focus #15 on technical SEO"
+      est:
+        dev_h: 4
+        test_h: 2
+      remaining_deliverables: []
+      sub_issues: []
+    - id: google-business-profile-refresh
+      issue: "https://github.com/BallLightningAB/balllightning/issues/18"
+      title: "Google Business Profile (GBP) Refresh — Post-Rebuild"
+      status: pending
+      priority: medium
+      labels:
+        - seo
+        - enhancement
+        - post-launch
+        - gbp
+      deliverables:
+        - "[pending] I18D1: Access + verification"
+        - "[pending] I18D2: Core profile accuracy (NAP + key fields)"
+        - "[pending] I18D3: Categories + services"
+        - "[pending] I18D4: Visual assets (logo, cover, photos)"
+        - "[pending] I18D5: Links + light ongoing hygiene"
+        - "[pending] I18D6: Refresh social media profiles (LinkedIn, Facebook, X) with new logos/description"
+      progress_log:
+        - "2026-03-04: Issue created to separate GBP work from technical SEO issue #15"
+        - "2026-03-04: Focus on updating profile to reflect new site and branding"
+        - "2026-03-04: Should be addressed after translation fixes are complete and deployed"
+        - "2026-03-05: Added I18D6 for social media refresh to ensure brand consistency across platforms"
+      est:
+        dev_h: 3
+        test_h: 1
+      remaining_deliverables: []
+      sub_issues: []
+  next_steps:
+    - id: analytics-integration-review
+      issue: "https://github.com/BallLightningAB/balllightning/issues/19"
+      title: "Analytics Integration + Review (GA4 + Vercel Insights) with Easy Disable Switch"
+      status: pending
+      priority: medium
+      labels:
+        - type: feature
+        - area: infra
+      deliverables:
+        - "[pending] I19D1: Central analytics gate (single render point)"
+        - "[pending] I19D2: GA4 integration (SSR-safe + SPA navigation tracking)"
+        - "[pending] I19D3: Vercel Speed Insights (gated)"
+        - "[pending] I19D4: Vercel Web Analytics (gated + easy to disable later)"
+        - "[pending] I19D5: Validation checklist (local + prod)"
+      progress_log:
+        - "2026-03-05: Issue created for analytics integration with single switch control"
+        - "2026-03-05: Goal: GA4 primary analytics, optional Vercel insights while on Free plan"
+        - "2026-03-05: Key requirement: one env switch (VITE_ANALYTICS_MODE) controls everything"
+        - "2026-03-05: Modes: none | ga4 | ga4_vercel for flexible analytics configuration"
+        - "2026-03-05: Verify existing GA4 implementation status first"
+      est:
+        dev_h: 3
+        test_h: 1
+      remaining_deliverables: []
+      sub_issues: []
+  recent_done:
+    - id: portfolio-subpage-translation
+      issue: "https://github.com/BallLightningAB/balllightning/issues/16"
+      title: "i18n: Translate all portfolio subpages to complete multilingual support"
+      status: in-review
+      priority: medium
+      labels:
+        - enhancement
+        - content
+        - i18n
+        - portfolio
+      deliverables:
+        - "[done] I16D1: Content Translation Strategy"
+        - "[done] I16D2: Chronomation Page Translation"
+        - "[done] I16D3: The Builder Coil Page Translation"
+        - "[done] I16D4: Shipping API Dojo Page Translation"
+        - "[done] I16D5: Jorild-se Page Translation"
+        - "[done] I16D6: Blightfell Page Translation"
+        - "[done] I16D7: Skyscraper Page Translation"
+        - "[done] I16D8: Implementation and Testing"
+        - "[done] I16D9: Jorild-se Facebook & LinkedIn Management section"
+        - "[done] I16D10: Fix duplicate canonical links and JSON-LD mainEntityOfPage URLs for portfolio pages"
+      progress_log:
+        - "2026-03-03: Issue created for comprehensive portfolio subpage translation project"
+        - "2026-03-03: Covers 6 portfolio subpages with 8 deliverables each"
+        - "2026-03-03: Estimated 300-600 new translation keys across all languages"
+        - "2026-03-03: Substantial technical content requiring careful translation approach"
+        - "2026-03-03: SEO implementation includes hreflang, meta tags, and localized URLs"
+        - "2026-03-04: COMPLETED I16D1 - PortfolioSubpageLayout migrated to Paraglide keys with portfolio_subpage_* naming"
+        - "2026-03-04: COMPLETED I16D2-I16D7 - Localized all six portfolio subpage routes (content, SEO meta, canonical handling)"
+        - "2026-03-04: COMPLETED SEO/sitemap helper unification - canonical/hreflang/sitemap generation now use Paraglide URL helpers"
+        - "2026-03-04: IN PROGRESS I16D8 - Recompiled Paraglide message modules; i18n:check, typecheck, biome check, and build all pass"
+        - "2026-03-04: COMPLETED I16D8 - Final implementation/testing sweep completed (mobile responsiveness checklist + performance workflow review + full validation gates)"
+        - "2026-03-04: Synced GitHub issue checklist boxes for #16 deliverables and #14 completed I14D8-I14D10 items"
+        - "2026-03-04: COMPLETED I14D9 - Added Facebook & LinkedIn Management section to Jorild.se portfolio with 5 key points including Unsplash photos guidance; translated across all 4 locales"
+        - "2026-03-04: 🔧 SEO FEEDBACK - Fixed duplicate canonical links on portfolio pages (removed from root layout, kept in routes) and updated JSON-LD mainEntityOfPage to use localized URLs matching canonical"
+      est:
+        dev_h: 16
+        test_h: 4
+      remaining_deliverables: []
+      sub_issues: []
     - id: german-translation-feedback
       issue: "https://github.com/BallLightningAB/balllightning/issues/14"
       title: "German Translation and Mobile Responsiveness Feedback"
@@ -59,73 +179,6 @@ roadmap:
       remaining_deliverables: []
       sub_issues:
         - "https://github.com/BallLightningAB/balllightning/issues/16"
-  next_steps:
-    - id: portfolio-subpage-translation
-      issue: "https://github.com/BallLightningAB/balllightning/issues/16"
-      title: "i18n: Translate all portfolio subpages to complete multilingual support"
-      status: in-review
-      priority: medium
-      labels:
-        - enhancement
-        - content
-        - i18n
-        - portfolio
-      deliverables:
-        - "[done] I16D1: Content Translation Strategy"
-        - "[done] I16D2: Chronomation Page Translation"
-        - "[done] I16D3: The Builder Coil Page Translation"
-        - "[done] I16D4: Shipping API Dojo Page Translation"
-        - "[done] I16D5: Jorild-se Page Translation"
-        - "[done] I16D6: Blightfell Page Translation"
-        - "[done] I16D7: Skyscraper Page Translation"
-        - "[done] I16D8: Implementation and Testing"
-        - "[done] I16D9: Jorild-se Facebook & LinkedIn Management section"
-        - "[done] I16D10: Fix duplicate canonical links and JSON-LD mainEntityOfPage URLs for portfolio pages"
-      progress_log:
-        - "2026-03-03: Issue created for comprehensive portfolio subpage translation project"
-        - "2026-03-03: Covers 6 portfolio subpages with 8 deliverables each"
-        - "2026-03-03: Estimated 300-600 new translation keys across all languages"
-        - "2026-03-03: Substantial technical content requiring careful translation approach"
-        - "2026-03-03: SEO implementation includes hreflang, meta tags, and localized URLs"
-        - "2026-03-04: COMPLETED I16D1 - PortfolioSubpageLayout migrated to Paraglide keys with portfolio_subpage_* naming"
-        - "2026-03-04: COMPLETED I16D2-I16D7 - Localized all six portfolio subpage routes (content, SEO meta, canonical handling)"
-        - "2026-03-04: COMPLETED SEO/sitemap helper unification - canonical/hreflang/sitemap generation now use Paraglide URL helpers"
-        - "2026-03-04: IN PROGRESS I16D8 - Recompiled Paraglide message modules; i18n:check, typecheck, biome check, and build all pass"
-        - "2026-03-04: COMPLETED I16D8 - Final implementation/testing sweep completed (mobile responsiveness checklist + performance workflow review + full validation gates)"
-        - "2026-03-04: Synced GitHub issue checklist boxes for #16 deliverables and #14 completed I14D8-I14D10 items"
-        - "2026-03-04: COMPLETED I14D9 - Added Facebook & LinkedIn Management section to Jorild.se portfolio with 5 key points including Unsplash photos guidance; translated across all 4 locales"
-        - "2026-03-04: 🔧 SEO FEEDBACK - Fixed duplicate canonical links on portfolio pages (removed from root layout, kept in routes) and updated JSON-LD mainEntityOfPage to use localized URLs matching canonical"
-      est:
-        dev_h: 16
-        test_h: 4
-      remaining_deliverables: []
-      sub_issues: []
-    - id: gsc-indexing-optimization
-      issue: "https://github.com/BallLightningAB/balllightning/issues/15"
-      title: "SEO: Google Search Console indexing and post-rebuild optimization"
-      status: blocked
-      priority: medium
-      labels:
-        - seo
-        - enhancement
-        - post-launch
-      deliverables:
-        - "[pending] I15D1: Google Search Console Setup & Indexing"
-        - "[pending] I15D2: SEO Technical Audit"
-        - "[pending] I15D3: Google Business Profile Optimization"
-        - "[pending] I15D4: Performance & Core Web Vitals"
-        - "[pending] I15D5: Content Indexing Strategy"
-      progress_log:
-        - "2026-03-03: Issue created based on GSC indexing recommendation from issue #14"
-        - "2026-03-03: Comprehensive SEO optimization plan for post-rebuild phase"
-        - "2026-03-03: Includes GSC setup, technical audit, GBP optimization, and performance monitoring"
-        - "2026-03-03: Should be addressed after translation fixes are complete and deployed"
-      est:
-        dev_h: 4
-        test_h: 2
-      remaining_deliverables: []
-      sub_issues: []
-  recent_done:
     - id: i18n-cache-busting
       issue: "https://github.com/BallLightningAB/balllightning/issues/17"
       title: "fix(i18n): implement cache-busting headers to prevent edge caching from serving wrong locale content"
