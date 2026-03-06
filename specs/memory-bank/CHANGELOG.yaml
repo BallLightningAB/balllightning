@@ -1,6 +1,22 @@
 entries:
 
   - date: "2026-03-06"
+    version: "0.2.7.1"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/19"
+    commit: TBD
+    status: completed
+    title: "docs(analytics): update memory bank with EU consent issues and correct issue details"
+    details: |-
+      - Updated analytics integration issue #19 status to in-review with completed deliverables
+      - Added sub-issues #20 and #21 to analytics integration review issue
+      - Added issues #20 and #21 as separate entries in next_steps with correct GitHub content
+      - Issue #20: Implement EU cookie consent banner + Google Consent Mode for GA4
+      - Issue #21: Add Privacy & Cookies page for analytics consent and footer policy links
+      - Bumped version to 0.2.7.1 for memory bank updates
+
+      Refs: v0.2.7.1 #19 #20 #21
+
+  - date: "2026-03-06"
     version: "0.2.7"
     issue: "https://github.com/BallLightningAB/balllightning/issues/19"
     commit: TBD

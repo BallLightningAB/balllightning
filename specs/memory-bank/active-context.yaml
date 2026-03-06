@@ -1,5 +1,5 @@
 meta:
-  release: "0.2.7"
+  release: "0.2.7.1"
   repo: github.com/BallLightningAB/balllightning
   project: https://github.com/users/BallLightningAB/projects/9
   pdd_version: "1.1"
@@ -87,7 +87,9 @@ roadmap:
         dev_h: 3
         test_h: 1
       remaining_deliverables: []
-      sub_issues: []
+      sub_issues:
+        - "https://github.com/BallLightningAB/balllightning/issues/20"
+        - "https://github.com/BallLightningAB/balllightning/issues/21"
   next_steps:
     - id: google-business-profile-refresh
       issue: "https://github.com/BallLightningAB/balllightning/issues/18"
@@ -113,6 +115,55 @@ roadmap:
         - "2026-03-05: Added I18D6 for social media refresh to ensure brand consistency across platforms"
       est:
         dev_h: 3
+        test_h: 1
+      remaining_deliverables: []
+      sub_issues: []
+    - id: analytics-speed-insights-integration
+      issue: "https://github.com/BallLightningAB/balllightning/issues/20"
+      title: "Implement EU cookie consent banner + Google Consent Mode for GA4"
+      status: pending
+      priority: high
+      labels:
+        - type: feature
+        - area: frontend
+        - type: security
+      deliverables:
+        - "[pending] I20D1: Add consent state flow and banner component"
+        - "[pending] I20D2: Integrate Google Consent Mode for GA4"
+        - "[pending] I20D3: Prevent GA4 mounting before consent"
+        - "[pending] I20D4: Add footer Cookie settings link and persistence"
+        - "[pending] I20D5: Add privacy/cookie copy and settings modal"
+      progress_log:
+        - "2026-03-06: Issue created for EU/EEA compliance with analytics consent"
+        - "2026-03-06: Goal: analytics off by default, GA4 only after explicit consent"
+        - "2026-03-06: Scope: custom consent banner, Google Basic Consent Mode, clear reject option"
+        - "2026-03-06: Architecture: src/lib/consent/*, CookieBanner.tsx, CookieSettings.tsx"
+      est:
+        dev_h: 4
+        test_h: 2
+      remaining_deliverables: []
+      sub_issues: []
+    - id: analytics-production-validation
+      issue: "https://github.com/BallLightningAB/balllightning/issues/21"
+      title: "Add Privacy & Cookies page for analytics consent and footer policy links"
+      status: pending
+      priority: medium
+      labels:
+        - type: chore
+        - area: frontend
+        - type: security
+      deliverables:
+        - "[pending] I21D1: Create Privacy & Cookies page route and component"
+        - "[pending] I21D2: Add footer links to Privacy & Cookies and Cookie settings"
+        - "[pending] I21D3: Write analytics disclosure copy in plain language"
+        - "[pending] I21D4: Add consent management instructions and contact info"
+      progress_log:
+        - "2026-03-06: Issue created to support consent banner with dedicated privacy page"
+        - "2026-03-06: Goal: simple, professional page explaining GA4 use and consent flow"
+        - "2026-03-06: Scope: /privacy route, footer links, analytics disclosure, consent instructions"
+        - "2026-03-06: Must match actual consent implementation, avoid over-engineering"
+      est:
+        dev_h: 2
         test_h: 1
       remaining_deliverables: []
       sub_issues: []  
