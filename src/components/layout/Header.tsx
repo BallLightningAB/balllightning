@@ -46,13 +46,16 @@ export function Header() {
 			<div className="container mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
 				{/* Logo */}
 				<Link className="flex items-center gap-2" to="/">
-					<img
-						alt="Ball Lightning AB"
-						className="h-12 w-12"
-						height={48}
-						src="/logo-60x60-transparent.webp"
-						width={48}
-					/>
+					<picture>
+						<img
+							alt="Ball Lightning AB"
+							className="h-12 w-12"
+							decoding="async"
+							height={48}
+							src="/logo-120x120-transparent.webp"
+							width={48}
+						/>
+					</picture>
 					<span className="font-heading font-semibold text-xl sm:text-3xl text-bl-cream">
 						Ball Lightning
 					</span>

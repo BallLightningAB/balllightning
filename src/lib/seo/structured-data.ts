@@ -27,11 +27,9 @@ const SITE_NAME = "Ball Lightning AB";
 const ORGANIZATION_NAME = "Ball Lightning AB";
 const AUTHOR_NAME = "Nicolas Brulay";
 const BALL_LIGHTNING_URL = "https://balllightning.cloud";
-const CHRONOMATION_URL = "https://chronomation.com";
 
 const ORGANIZATION_ID = `${BALL_LIGHTNING_URL}/#organization`;
 const WEBSITE_ID = `${SITE_URL}/#website`;
-const CHRONOMATION_PRODUCT_ID = `${CHRONOMATION_URL}/#product`;
 
 export function generateRootEntityGraphSchema() {
 	return {
@@ -71,17 +69,6 @@ export function generateRootEntityGraphSchema() {
 						urlTemplate: `${SITE_URL}/blog?q={search_term_string}`,
 					},
 					"query-input": "required name=search_term_string",
-				},
-			},
-			{
-				"@type": "Product",
-				"@id": CHRONOMATION_PRODUCT_ID,
-				name: "Chronomation",
-				description:
-					"Multi-tenant content engine that turns work artifacts into narrative blog posts and social content.",
-				url: CHRONOMATION_URL,
-				brand: {
-					"@id": ORGANIZATION_ID,
 				},
 			},
 		],

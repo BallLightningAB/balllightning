@@ -1,5 +1,5 @@
 meta:
-  release: "0.2.6"
+  release: "0.2.6.1"
   repo: github.com/BallLightningAB/balllightning
   project: https://github.com/users/BallLightningAB/projects/9
   pdd_version: "1.1"
@@ -40,6 +40,13 @@ roadmap:
         - "2026-03-05: Added localized canonical + route-level meta coverage for home/services/contact/portfolio index; fixed technologies canonical/schema URL to locale-aware canonical"
         - "2026-03-05: Internal linking audit passed for all 6 portfolio slugs across en/se/de/fr portfolio indexes"
         - "2026-03-05: Validation gates passed (format, lint, i18n:check, typecheck, build); pending manual GSC URL Inspection/index requests and Rich Results checks"
+        - "2026-03-06: Implemented SEO cleanup to address GSC enhancement warnings and Lighthouse issues"
+        - "2026-03-06: Removed Product schema from structured data (eliminates GSC 'Product snippets invalid' warnings)"
+        - "2026-03-06: Removed face image preload to eliminate Lighthouse preload warnings (relies on fetchpriority instead)"
+        - "2026-03-06: Upgraded face image to use 400x400 as default with 1024x1024 for high-DPR displays"
+        - "2026-03-06: Updated logo to use 120x120 version for better resolution and Lighthouse compliance"
+        - "2026-03-06: Fixed Biome binary resolution by updating package.json scripts to use 'pnpm exec biome'"
+        - "2026-03-06: All validation gates passed; ready for deployment and GSC testing"
       est:
         dev_h: 4
         test_h: 2

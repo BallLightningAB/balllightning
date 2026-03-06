@@ -40,13 +40,16 @@ export function Footer() {
 					{/* Brand */}
 					<div className="md:col-span-1">
 						<Link className="flex items-center gap-2" to="/">
-							<img
-								alt="Ball Lightning AB"
-								className="h-12 w-12"
-								height={48}
-								src="/logo-60x60-transparent.webp"
-								width={48}
-							/>
+							<picture>
+								<img
+									alt="Ball Lightning AB"
+									className="h-12 w-12"
+									decoding="async"
+									height={48}
+									src="/logo-120x120-transparent.webp"
+									width={48}
+								/>
+							</picture>
 							<span className="font-heading font-semibold text-xl sm:text-3xl">
 								Ball Lightning
 							</span>

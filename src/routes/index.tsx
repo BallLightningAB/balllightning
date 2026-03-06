@@ -290,13 +290,13 @@ function HomePage() {
 					>
 						<div>
 							<picture>
-								{/* Mobile-first: use 200x200 for mobile (8KB) */}
+								{/* Mobile: use 400x400 as default, add 1024x1024 for high-DPR */}
 								<source
 									media="(max-width: 767px)"
 									sizes="100vw"
-									srcSet="/media/face_200x200.webp"
+									srcSet="/media/face_400x400.webp 400w, /media/face_1024x1024.webp 1024w"
 								/>
-								{/* Desktop: larger images */}
+								{/* Desktop: same srcset for consistency */}
 								<source
 									media="(min-width: 768px)"
 									sizes="50vw"

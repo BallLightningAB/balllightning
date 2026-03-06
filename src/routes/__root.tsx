@@ -128,13 +128,6 @@ export const Route = createRootRoute({
 				type: "font/woff2",
 				crossOrigin: "anonymous",
 			},
-			{
-				rel: "preload",
-				href: "/media/face_200x200.webp",
-				as: "image",
-				media: "(max-width: 767px)",
-				fetchPriority: "high",
-			},
 			// DNS prefetch for external domains
 			{
 				rel: "dns-prefetch",

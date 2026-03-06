@@ -1,9 +1,25 @@
 entries:
 
+  - date: "2026-03-06"
+    version: "0.2.6.1"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/15"
+    commit: TBD
+    status: ready
+    title: "fix(seo): cleanup GSC enhancement warnings and Lighthouse image issues"
+    details: |-
+      - Removed Product schema from structured data (eliminates GSC 'Product snippets invalid' warnings)
+      - Removed face image preload to eliminate Lighthouse preload warnings (relies on fetchpriority instead)
+      - Upgraded face image to use 400x400 as default with 1024x1024 for high-DPR displays
+      - Updated logo to use 120x120 version for better resolution and Lighthouse compliance
+      - Fixed Biome binary resolution by updating package.json scripts to use 'pnpm exec biome'
+      - All validation gates passed; ready for deployment and GSC testing
+
+      Refs: v0.2.6.1 #15 SEO-cleanup
+
   - date: "2026-03-05"
     version: "0.2.6"
     issue: "https://github.com/BallLightningAB/balllightning/issues/15"
-    commit: TBD
+    commit: fc7b627
     status: in-review
     title: "fix(seo): restore sitemap completeness and tighten canonical/non-prod indexing guards"
     details: |-
@@ -21,7 +37,7 @@ entries:
   - date: "2026-03-05"
     version: "0.2.5.15"
     issue: "https://github.com/BallLightningAB/balllightning/issues/15"
-    commit: TBD
+    commit: 1f9c69b
     status: ready
     title: "docs: update issue management and roadmap structure"
     details: |- 
@@ -37,7 +53,7 @@ entries:
   - date: "2026-03-04"
     version: "0.2.5.14"
     issue: "https://github.com/BallLightningAB/balllightning/issues/16"
-    commit: TBD
+    commit: 61ef57b
     status: ready
     title: "fix(seo): resolve duplicate canonical links and JSON-LD mainEntityOfPage URLs for portfolio pages"
     details: |- 
@@ -54,7 +70,7 @@ entries:
   - date: "2026-03-04"
     version: "0.2.5.13"
     issue: "https://github.com/BallLightningAB/balllightning/issues/14"
-    commit: TBD
+    commit: 44fcbac
     status: ready
     title: "fix(i18n): add missing /sv/ and /sv/:path* redirects to prevent fallback to /en/sv"
     details: |- 
@@ -69,7 +85,7 @@ entries:
   - date: "2026-03-04"
     version: "0.2.5.12"
     issue: "https://github.com/BallLightningAB/balllightning/issues/16"
-    commit: TBD
+    commit: 1f27fa2
     status: ready
     title: "feat(content): add Facebook & LinkedIn Management section to Jorild.se portfolio"
     details: |- 
@@ -86,7 +102,7 @@ entries:
   - date: "2026-03-04"
     version: "0.2.5.11"
     issue: "https://github.com/BallLightningAB/balllightning/issues/16"
-    commit: TBD
+    commit: 41b7cdc
     status: ready
     title: "feat(i18n): complete portfolio subpage long-form translations in sv/de/fr"
     details: |- 
@@ -102,7 +118,7 @@ entries:
   - date: "2026-03-04"
     version: "0.2.5.10"
     issue: "https://github.com/BallLightningAB/balllightning/issues/14"
-    commit: TBD
+    commit: 788f193
     status: ready
     title: "fix(i18n): restore flag emojis and improve language switcher responsive design"
     details: |-
@@ -116,7 +132,7 @@ entries:
   - date: "2026-03-04"
     version: "0.2.5.9"
     issue: "https://github.com/BallLightningAB/balllightning/issues/14 & https://github.com/BallLightningAB/balllightning/issues/16"
-    commit: TBD
+    commit: ec2261a
     status: in-review
     title: "feat(i18n): complete comprehensive I14D8-D11 and I16D1-D8 translation implementation"
     details: |-
@@ -165,7 +181,7 @@ entries:
   - date: "2026-03-04"
     version: "0.2.5.8"
     issue: "https://github.com/BallLightningAB/balllightning/issues/16"
-    commit: TBD
+    commit: 7490b71
     status: in-progress
     title: "feat(i18n): continue I14/I16 execution with full key parity, Paraglide regeneration, and test-gate validation"
     details: |-
@@ -181,7 +197,7 @@ entries:
   - date: "2026-03-04"
     version: "0.2.5.7"
     issue: "https://github.com/BallLightningAB/balllightning/issues/16"
-    commit: TBD
+    commit: ee54bdb
     status: ready
     title: "chore(docs): added I14D11 to active-context.yaml"
     details: |-
@@ -192,7 +208,7 @@ entries:
   - date: "2026-03-04"
     version: "0.2.5.6"
     issue: "https://github.com/BallLightningAB/balllightning/issues/16"
-    commit: TBD
+    commit: ee54bdb
     status: ready
     title: "feat(i18n): add portfolio subpage translation project to memory bank"
     details: |-
