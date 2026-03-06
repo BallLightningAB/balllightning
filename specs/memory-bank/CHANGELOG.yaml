@@ -1,9 +1,27 @@
 entries:
 
   - date: "2026-03-06"
-    version: "0.2.6.1"
+    version: "0.2.6.2"
     issue: "https://github.com/BallLightningAB/balllightning/issues/15"
     commit: TBD
+    status: follow-up
+    title: "docs: update SEO issue status to follow-up with validation complete"
+    details: |-
+      - Updated issue #15 status from completed to follow-up for 2-day monitoring period
+      - Added comprehensive validation results confirming all SEO fixes effective
+      - Product schema removal cleared GSC enhancement warnings on tested URLs
+      - /sv → /se 308 migration working correctly
+      - Sitemap healthy and localized with proper hreflang="sv" pointing to /se
+      - Vercel duplicate indexing mitigated via X-Robots-Tag: noindex, nofollow
+      - Follow-up plan: GSC Indexing Pages counts/reasons, Core Web Vitals status checks
+      - All deliverables completed, monitoring scheduled for 2 days from deployment
+
+      Refs: v0.2.6.2 #15 follow-up
+
+  - date: "2026-03-06"
+    version: "0.2.6.1"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/15"
+    commit: e20c0ac
     status: ready
     title: "fix(seo): cleanup GSC enhancement warnings and Lighthouse image issues"
     details: |-
