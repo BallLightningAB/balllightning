@@ -24,7 +24,7 @@ async function fetchGitHubContributions(
 	username: string
 ): Promise<GitHubGraphData> {
 	const res = await fetch(
-		`https://github-contributions-api.jogruber.de/v4/${username}`,
+		`https://github-contributions-api.jogruber.de/v4/${username}?y=last`,
 		{
 			// Avoid caching too aggressively during development; you can tune this later.
 			cache: "no-store",

@@ -27,7 +27,8 @@
   "home_hero_cta_portfolio": "Se tidigare arbeten",
   "home_activity_label": "Aktivitet",
   "home_activity_loading": "Laddar aktivitet...",
-  "home_activity_period": "804 aktiviteter/12 månader",
+  "home_activity_period": "aktiviteter/12 månader",
+  "home_activity_period_mobile": "aktiviteter/4 månader",
   "home_activity_less": "Mindre",
   "home_activity_more": "Mer",
 

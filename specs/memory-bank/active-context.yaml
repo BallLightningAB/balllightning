@@ -1,5 +1,5 @@
 meta:
-  release: "0.2.7.1"
+  release: "0.2.7.2"
   repo: github.com/BallLightningAB/balllightning
   project: https://github.com/users/BallLightningAB/projects/9
   pdd_version: "1.1"
@@ -168,6 +168,28 @@ roadmap:
       remaining_deliverables: []
       sub_issues: []  
   recent_done:
+    - id: github-contribution-graph-bug
+      issue: "https://github.com/BallLightningAB/balllightning/issues/22"
+      title: "GitHub contribution graph shows hardcoded translation values instead of dynamic counts"
+      status: completed
+      priority: high
+      labels:
+        - bug
+        - github
+        - i18n
+        - frontend
+      deliverables:
+        - "[done] Fix API URL to include ?y=last parameter for current data"
+        - "[done] Update translation strings to use dynamic template variables"
+        - "[done] Add mobile-specific translation key for 4-month period"
+        - "[done] Implement string interpolation for count + localized suffix"
+        - "[done] Verify correct display: desktop 866/12 months, mobile 4-month total"
+      progress_log:
+        - "2026-03-06: Issue created for hardcoded contribution graph values"
+        - "2026-03-06: Root cause identified - API missing ?y=last and hardcoded translations"
+        - "2026-03-06: Fixed API URL, updated all locale files, recompiled Paraglide"
+        - "2026-03-06: Mobile translation now shows correct 4-month period"
+        - "2026-03-06: Verified dynamic counts working correctly"
     - id: portfolio-subpage-translation
       issue: "https://github.com/BallLightningAB/balllightning/issues/16"
       title: "i18n: Translate all portfolio subpages to complete multilingual support"

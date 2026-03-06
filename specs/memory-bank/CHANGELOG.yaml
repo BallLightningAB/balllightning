@@ -1,9 +1,27 @@
 entries:
 
   - date: "2026-03-06"
+    version: "0.2.7.2"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/22"
+    commit: TBD
+    status: completed
+    title: "fix(contribution-graph): resolve hardcoded translations and mobile display issues"
+    details: |-
+      - Fixed GitHub contribution graph showing hardcoded "804 activities/12 months" instead of dynamic count
+      - Updated API URL to include ?y=last parameter for current 12-month data
+      - Fixed mobile translation to show "4 months" instead of "12 months" 
+      - Changed translation strings to suffix-only format without {{count}} placeholder
+      - Used string interpolation in component to build count + localized suffix
+      - Updated all locale files (en/sv/de/fr) with mobile-specific period strings
+      - Recompiled Paraglide messages for new translation structure
+      - Verified correct display: desktop shows 866 contributions/12 months, mobile shows 4-month filtered total
+    
+    Refs: v0.2.7.2 #22
+
+  - date: "2026-03-06"
     version: "0.2.7.1"
     issue: "https://github.com/BallLightningAB/balllightning/issues/19"
-    commit: TBD
+    commit: 8976b66
     status: completed
     title: "docs(analytics): update memory bank with EU consent issues and correct issue details"
     details: |-
@@ -19,7 +37,7 @@ entries:
   - date: "2026-03-06"
     version: "0.2.7"
     issue: "https://github.com/BallLightningAB/balllightning/issues/19"
-    commit: TBD
+    commit: 7b0604e
     status: in-review
     title: "feat(analytics): implement centralized analytics gate with GA4 SPA tracking and gated Vercel Web Analytics"
     details: |-
@@ -38,7 +56,7 @@ entries:
   - date: "2026-03-06"
     version: "0.2.6.2"
     issue: "https://github.com/BallLightningAB/balllightning/issues/15"
-    commit: TBD
+    commit: ecb6c49
     status: follow-up
     title: "docs: update SEO issue status to follow-up with validation complete"
     details: |-

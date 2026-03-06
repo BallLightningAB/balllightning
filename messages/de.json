@@ -27,7 +27,8 @@
   "home_hero_cta_portfolio": "Bisherige Arbeiten",
   "home_activity_label": "Aktivität",
   "home_activity_loading": "Aktivität wird geladen...",
-  "home_activity_period": "804 Aktivitäten/12 Monate",
+  "home_activity_period": "Aktivitäten/12 Monate",
+  "home_activity_period_mobile": "Aktivitäten/4 Monate",
   "home_activity_less": "Weniger",
   "home_activity_more": "Mehr",
 

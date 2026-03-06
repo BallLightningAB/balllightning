@@ -27,7 +27,8 @@
   "home_hero_cta_portfolio": "Voir mes réalisations",
   "home_activity_label": "Activité",
   "home_activity_loading": "Chargement de l'activité...",
-  "home_activity_period": "804 activités/12 mois",
+  "home_activity_period": "activités/12 mois",
+  "home_activity_period_mobile": "activités/4 mois",
   "home_activity_less": "Moins",
   "home_activity_more": "Plus",
 

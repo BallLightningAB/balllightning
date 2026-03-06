@@ -214,7 +214,7 @@ function HomePage() {
 														<ContributionGraphFooter className="mt-2 items-center">
 															<ContributionGraphTotalCount
 																className="text-muted-foreground text-xs"
-																label={m.home_activity_period()}
+																label={`${mobileGithub.totalCount} ${m.home_activity_period_mobile()}`}
 															/>
 															<ContributionGraphLegend
 																className="text-muted-foreground text-xs"
@@ -244,7 +244,7 @@ function HomePage() {
 														<ContributionGraphFooter className="mt-2 items-center">
 															<ContributionGraphTotalCount
 																className="text-muted-foreground text-xs"
-																label={m.home_activity_period()}
+																label={`${github.totalCount} ${m.home_activity_period()}`}
 															/>
 															<ContributionGraphLegend
 																className="text-muted-foreground text-xs"
