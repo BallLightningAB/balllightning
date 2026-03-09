@@ -1,8 +1,7 @@
 import type {
 	ConsentState,
-	GtagCommand,
 	GtagConsentParameters,
-	GtagParameters,
+	GtagFunction,
 } from "@/lib/consent/types";
 
 const CONSENT_DENIED: GtagConsentParameters = {
@@ -30,13 +29,9 @@ function ensureGtagFunction(): void {
 		return;
 	}
 
-	function queueGtag(
-		command: GtagCommand,
-		targetOrAction: Date | string,
-		params?: GtagParameters
-	): void {
-		window.dataLayer.push([command, targetOrAction, params]);
-	}
+	const queueGtag: GtagFunction = (...args) => {
+		window.dataLayer.push(args);
+	};
 
 	window.gtag = queueGtag;
 }

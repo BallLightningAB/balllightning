@@ -1,9 +1,27 @@
 entries:
 
+  - date: "2026-03-09"
+    version: "0.2.8.1"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/24"
+    commit: TBD
+    status: in-review
+    title: "fix(ui): address post-PR consent, mobile responsiveness, and accessibility regressions"
+    details: |-
+      - Reviewed Gemini PR feedback critically against the TanStack Start + React 19 + Radix stack instead of applying the suggestions verbatim
+      - Updated gtag typing to a typed variadic union and changed the consent queue polyfill to push the received argument tuple without trailing undefined values
+      - Improved shared sheet sizing plus CookieSettings and LanguageSwitcher mobile layouts to keep drawer content usable on narrow screens
+      - Fixed homepage Builder Coil feed cards so metadata, titles, and CTA text wrap cleanly instead of overflowing on mobile
+      - Added hidden Radix dialog title and description to the project image gallery modal to resolve accessibility warnings
+      - Added scrollbar-gutter and root overflow clipping as a conservative header layout-shift mitigation
+      - Created Issue #24 plus a current-changes artifact for the follow-up pass and linked the bug under Issue #20 tracking
+      - Validation passed for typecheck and build before final commit-process formatting and linting steps
+
+      Refs: v0.2.8.1 #24
+
   - date: "2026-03-08"
     version: "0.2.8"
     issue: "https://github.com/BallLightningAB/balllightning/issues/20"
-    commit: TBD
+    commit: ef1d146
     status: in-review
     title: "feat(consent): implement EU analytics consent flow with Google Consent Mode v2"
     details: |-

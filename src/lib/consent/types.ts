@@ -20,11 +20,15 @@ export interface GtagConsentParameters {
 
 export type GtagParameters = GtagEventParameters | GtagConsentParameters;
 
-export type GtagFunction = (
-	command: GtagCommand,
-	targetOrAction: Date | string,
-	params?: GtagParameters
-) => void;
+export type GtagArguments =
+	| [
+			command: GtagCommand,
+			targetOrAction: Date | string,
+			params?: GtagParameters,
+	  ]
+	| [command: string, ...rest: unknown[]];
+
+export type GtagFunction = (...args: GtagArguments) => void;
 
 declare global {
 	interface Window {

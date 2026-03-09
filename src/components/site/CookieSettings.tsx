@@ -29,12 +29,12 @@ export function CookieSettings() {
 			onOpenChange={(open) => (open ? undefined : closeSettings())}
 			open={isSettingsOpen}
 		>
-			<SheetContent className="w-full sm:max-w-md" side="right">
-				<SheetHeader>
+			<SheetContent className="w-[min(100vw,28rem)] max-w-full" side="right">
+				<SheetHeader className="pr-12">
 					<SheetTitle>{m.cookie_settings_title()}</SheetTitle>
 					<SheetDescription>{m.cookie_settings_description()}</SheetDescription>
 				</SheetHeader>
-				<div className="space-y-4 px-4 pb-4">
+				<div className="space-y-4 px-4 pb-4 sm:px-5">
 					<div className="rounded-lg border border-border bg-muted/40 p-4">
 						<p className="font-medium text-foreground text-sm">
 							{m.cookie_settings_status_label()}
@@ -47,11 +47,20 @@ export function CookieSettings() {
 						{m.cookie_settings_body()}
 					</p>
 				</div>
-				<SheetFooter>
-					<Button onClick={acceptAnalytics} type="button">
+				<SheetFooter className="gap-3 sm:flex-row sm:justify-end">
+					<Button
+						className="h-auto w-full whitespace-normal px-4 py-3 text-center leading-tight sm:w-auto"
+						onClick={acceptAnalytics}
+						type="button"
+					>
 						{m.cookie_settings_accept()}
 					</Button>
-					<Button onClick={rejectAnalytics} type="button" variant="outline">
+					<Button
+						className="h-auto w-full whitespace-normal px-4 py-3 text-center leading-tight sm:w-auto"
+						onClick={rejectAnalytics}
+						type="button"
+						variant="outline"
+					>
 						{m.cookie_settings_reject()}
 					</Button>
 				</SheetFooter>
