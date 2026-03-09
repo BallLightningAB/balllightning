@@ -1,5 +1,5 @@
 meta:
-  release: "0.2.8.1"
+  release: "0.2.8.2"
   repo: github.com/BallLightningAB/balllightning
   project: https://github.com/users/BallLightningAB/projects/9
   pdd_version: "1.1"
@@ -57,15 +57,16 @@ roadmap:
         - type: bug
         - area: frontend
       deliverables:
-        - "[in-progress] I24D1: Address gtag polyfill typing and queue behavior"
-        - "[in-progress] I24D2: Improve CookieSettings/LanguageSwitcher sheet responsiveness"
-        - "[in-progress] I24D3: Resolve homepage feed card overflow"
-        - "[in-progress] I24D4: Fix Radix dialog accessibility warning"
-        - "[in-progress] I24D5: Document the follow-up work + close the issue"
+        - "[done] I24D1: Address gtag polyfill typing and queue behavior"
+        - "[done] I24D2: Improve CookieSettings/LanguageSwitcher sheet responsiveness"
+        - "[done] I24D3: Resolve homepage feed card overflow"
+        - "[done] I24D4: Fix Radix dialog accessibility warning"
+        - "[done] I24D5: Document the follow-up work + close the issue"
       progress_log:
         - "2026-03-09: Logged follow-up issue #24 to capture mobile/consent UI regressions"
         - "2026-03-09: Implemented fixes for gtag typing/queue, sheet layout, feed cards, and dialog accessibility"
         - "2026-03-09: Created current-changes artifact for issue #24 and linked it under issue #20"
+        - "2026-03-09: Finalized the arguments-based queue fix after external review confirmation"
       est:
         dev_h: 3
         test_h: 1

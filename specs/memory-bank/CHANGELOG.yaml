@@ -1,9 +1,22 @@
 entries:
 
   - date: "2026-03-09"
-    version: "0.2.8.1"
+    version: "0.2.8.2"
     issue: "https://github.com/BallLightningAB/balllightning/issues/24"
     commit: TBD
+    status: in-review
+    title: "fix(consent): finalize gtag queue semantics"
+    details: |-
+      - Switched the consent `gtag` polyfill to a classic function that pushes its `arguments` object so the implementation matches Google's documented queue semantics
+      - Preserved the stricter typed surface for `GtagFunction` while satisfying the external review and Gemini Code Assist
+      - Validated typecheck + build after the final fix and noted the work in the Issue #24 artifact/active-context
+
+      Refs: v0.2.8.2 #24
+
+  - date: "2026-03-09"
+    version: "0.2.8.1"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/24"
+    commit: b0b0c39
     status: in-review
     title: "fix(ui): address post-PR consent, mobile responsiveness, and accessibility regressions"
     details: |-

@@ -1,7 +1,7 @@
 import type {
 	ConsentState,
 	GtagConsentParameters,
-	GtagFunction,
+	GtagArguments,
 } from "@/lib/consent/types";
 
 const CONSENT_DENIED: GtagConsentParameters = {
@@ -24,16 +24,13 @@ function ensureDataLayer(): void {
 
 function ensureGtagFunction(): void {
 	ensureDataLayer();
-
 	if (typeof window.gtag === "function") {
 		return;
 	}
-
-	const queueGtag: GtagFunction = (...args) => {
-		window.dataLayer.push(args);
+	window.gtag = function (this: void, ..._args: GtagArguments) {
+		// biome-ignore lint/complexity/noArguments: required for gtag queue semantics
+		window.dataLayer.push(arguments);
 	};
-
-	window.gtag = queueGtag;
 }
 
 function syncGa4DisableFlag(isEnabled: boolean): void {

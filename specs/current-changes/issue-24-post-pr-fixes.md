@@ -30,6 +30,8 @@
 ## GitHub review handling
 - Replied to both Gemini review comments on PR #23 with the stack-correct resolution
 - GitHub MCP session was invalid, so GitHub operations were completed through `gh` instead
+- Added final queue fix that pushes the `arguments` object so the implementation now matches Google’s documented `gtag` snippet and satisfies the external review
+- Confirmed the Issue #24 review thread and follow-up fixes are now resolved in the PR discussion
 
 ## Remaining checks
 - Run typecheck/build/format/lint/pre-commit again after the follow-up fixes
