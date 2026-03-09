@@ -15,6 +15,22 @@
   "footer_subscribe": "Prenumerera",
   "footer_copyright": "© {year} Ball Lightning AB. Alla rättigheter förbehållna.",
   "footer_location": "Mölndal, Sverige",
+  "footer_cookie_settings": "Cookie-inställningar",
+
+  "cookie_banner_title": "Valfri analys",
+  "cookie_banner_description": "Vi använder valfri analys för att förstå vilka sidor som hjälper besökare mest. Analys är avstängd tills du väljer, och du kan ändra ditt val senare från sidfoten.",
+  "cookie_banner_accept": "Acceptera analys",
+  "cookie_banner_reject": "Avvisa icke nödvändiga cookies",
+  "cookie_banner_settings": "Cookie-inställningar",
+
+  "cookie_settings_title": "Cookie-inställningar",
+  "cookie_settings_description": "Hantera om valfri analys får köras på den här webbplatsen.",
+  "cookie_settings_status_label": "Nuvarande status",
+  "cookie_settings_status_on": "Analys är aktiverad.",
+  "cookie_settings_status_off": "Analys är avstängd.",
+  "cookie_settings_body": "Att avvisa analys påverkar inte webbplatsens normala funktion. Om du ändrar dig senare kan du öppna dessa inställningar igen från sidfoten.",
+  "cookie_settings_accept": "Aktivera analys",
+  "cookie_settings_reject": "Inaktivera analys",
 
   "not_found_title": "Sidan hittades inte",
   "not_found_description": "Sidan du letar efter finns inte.",

@@ -1,5 +1,5 @@
 meta:
-  release: "0.2.7.2"
+  release: "0.2.8"
   repo: github.com/BallLightningAB/balllightning
   project: https://github.com/users/BallLightningAB/projects/9
   pdd_version: "1.1"
@@ -13,6 +13,39 @@ meta:
   # - I3Docs / I3UI / I3Fix / I3Test / I3Biome: tags for documentation, UI polish, minor fixes, tests and Biome/tooling work not tied to a single deliverable
 roadmap:
   current:
+    - id: analytics-consent-flow
+      issue: "https://github.com/BallLightningAB/balllightning/issues/20"
+      title: "Implement EU analytics consent flow + Google Consent Mode v2"
+      status: in-review
+      priority: high
+      labels:
+        - type: feature
+        - area: frontend
+        - type: security
+      deliverables:
+        - "[done] I20D1: Add consent state model and persistence layer"
+        - "[done] I20D2: Add consent banner and reopenable cookie settings UI"
+        - "[done] I20D3: Integrate Google Basic Consent Mode v2 defaults and updates"
+        - "[done] I20D4: Prevent analytics providers from mounting before consent and preserve correct SPA pageviews"
+        - "[done] I20D5: Add footer Cookie settings entry and minimal consent copy while keeping dedicated policy content in #21"
+      progress_log:
+        - "2026-03-06: Issue created for EU/EEA compliance with analytics consent"
+        - "2026-03-06: Goal: analytics off by default, GA4 only after explicit consent"
+        - "2026-03-06: Scope: custom consent banner, Google Basic Consent Mode, clear reject option"
+        - "2026-03-06: Architecture: src/lib/consent/*, CookieBanner.tsx, CookieSettings.tsx"
+        - "2026-03-08: Reviewed issue against current AnalyticsMount implementation and analytics-tracking guidance before implementation planning"
+        - "2026-03-08: Clarified scope to use Google Basic Consent Mode v2 defaults/updates and require analytics off by default until explicit consent"
+        - "2026-03-08: Added explicit requirement that no analytics provider mounts before consent, covering ga4_vercel_analytics mode as well as GA4"
+        - "2026-03-08: Separated dedicated Privacy / Cookies page ownership into issue #21; issue #20 now focuses on consent mechanics plus minimal supporting copy/links"
+        - "2026-03-08: Implemented src/lib/consent/* domain layer with localStorage persistence, denied-by-default Google consent helpers, and footer-accessible settings state"
+        - "2026-03-08: Added CookieBanner and CookieSettings UI, gated AnalyticsMount behind consent, and prevented GA4/Vercel analytics mounting before explicit acceptance"
+        - "2026-03-08: Updated footer and README to document cookie settings reopen flow, consent-gated analytics modes, and current privacy scope split with issue #21"
+        - "2026-03-08: Validation passed for pnpm exec paraglide-js compile, pnpm run i18n:check, pnpm run typecheck, pnpm run build, pre-commit run --all-files, pnpm format, and pnpm lint"
+      est:
+        dev_h: 4
+        test_h: 2
+      remaining_deliverables: []
+      sub_issues: []
     - id: gsc-indexing-optimization
       issue: "https://github.com/BallLightningAB/balllightning/issues/15"
       title: "SEO: Google Search Console indexing and post-rebuild optimization"
@@ -54,43 +87,6 @@ roadmap:
         test_h: 2
       remaining_deliverables: []
       sub_issues: []
-    - id: analytics-integration-review
-      issue: "https://github.com/BallLightningAB/balllightning/issues/19"
-      title: "Analytics Integration + Review (GA4 + Vercel Insights) with Easy Disable Switch"
-      status: in-review
-      priority: medium
-      labels:
-        - type: feature
-        - area: infra
-      deliverables:
-        - "[done] I19D1: Central analytics gate (single render point)"
-        - "[done] I19D2: GA4 integration (SSR-safe + SPA navigation tracking)"
-        - "[pending] I19D3: Vercel Speed Insights (gated)"
-        - "[done] I19D4: Vercel Web Analytics (gated + easy to disable later)"
-        - "[done] I19D5: Validation checklist (local + prod)"
-      progress_log:
-        - "2026-03-05: Issue created for analytics integration with single switch control"
-        - "2026-03-05: Goal: GA4 primary analytics, optional Vercel insights while on Free plan"
-        - "2026-03-05: Key requirement: one env switch (VITE_ANALYTICS_MODE) controls everything"
-        - "2026-03-05: Modes: none | ga4 | ga4_vercel for flexible analytics configuration"
-        - "2026-03-05: Verify existing GA4 implementation status first"
-        - "2026-03-06: COMPLETED I19D1 - Created src/lib/analytics/AnalyticsMount.tsx as single root analytics gate"
-        - "2026-03-06: COMPLETED I19D2 - GA4 integration with manual SPA tracking (send_page_view:false, TanStack Router navigation events)"
-        - "2026-03-06: COMPLETED I19D4 - Added @vercel/analytics dependency, gated to ga4_vercel_analytics mode"
-        - "2026-03-06: COMPLETED I19D5 - Validation passed (lint, typecheck, build) and mode contract updated to ga4_vercel_analytics"
-        - "2026-03-06: DEFERRED I19D3 - Vercel Speed Insights deferred for future mode (ga4_vercel or ga4_vercel_full)"
-        - "2026-03-06: Removed inline GA4 script injection from __root.tsx and replaced with centralized AnalyticsMount"
-        - "2026-03-06: Updated .env.example to document VITE_ANALYTICS_MODE supported values"
-        - "2026-03-06: Fixed biome.json includes to resolve Biome lint conflicts"
-        - "2026-03-06: Ready for review and deployment"
-      est:
-        dev_h: 3
-        test_h: 1
-      remaining_deliverables: []
-      sub_issues:
-        - "https://github.com/BallLightningAB/balllightning/issues/20"
-        - "https://github.com/BallLightningAB/balllightning/issues/21"
-  next_steps:
     - id: google-business-profile-refresh
       issue: "https://github.com/BallLightningAB/balllightning/issues/18"
       title: "Google Business Profile (GBP) Refresh — Post-Rebuild"
@@ -118,31 +114,6 @@ roadmap:
         test_h: 1
       remaining_deliverables: []
       sub_issues: []
-    - id: analytics-speed-insights-integration
-      issue: "https://github.com/BallLightningAB/balllightning/issues/20"
-      title: "Implement EU cookie consent banner + Google Consent Mode for GA4"
-      status: pending
-      priority: high
-      labels:
-        - type: feature
-        - area: frontend
-        - type: security
-      deliverables:
-        - "[pending] I20D1: Add consent state flow and banner component"
-        - "[pending] I20D2: Integrate Google Consent Mode for GA4"
-        - "[pending] I20D3: Prevent GA4 mounting before consent"
-        - "[pending] I20D4: Add footer Cookie settings link and persistence"
-        - "[pending] I20D5: Add privacy/cookie copy and settings modal"
-      progress_log:
-        - "2026-03-06: Issue created for EU/EEA compliance with analytics consent"
-        - "2026-03-06: Goal: analytics off by default, GA4 only after explicit consent"
-        - "2026-03-06: Scope: custom consent banner, Google Basic Consent Mode, clear reject option"
-        - "2026-03-06: Architecture: src/lib/consent/*, CookieBanner.tsx, CookieSettings.tsx"
-      est:
-        dev_h: 4
-        test_h: 2
-      remaining_deliverables: []
-      sub_issues: []
     - id: analytics-production-validation
       issue: "https://github.com/BallLightningAB/balllightning/issues/21"
       title: "Add Privacy & Cookies page for analytics consent and footer policy links"
@@ -168,6 +139,42 @@ roadmap:
       remaining_deliverables: []
       sub_issues: []  
   recent_done:
+    - id: analytics-integration-review
+      issue: "https://github.com/BallLightningAB/balllightning/issues/19"
+      title: "Analytics Integration + Review (GA4 + Vercel Insights) with Easy Disable Switch"
+      status: done
+      priority: medium
+      labels:
+        - type: feature
+        - area: infra
+      deliverables:
+        - "[done] I19D1: Central analytics gate (single render point)"
+        - "[done] I19D2: GA4 integration (SSR-safe + SPA navigation tracking)"
+        - "[deferred] I19D3: Vercel Speed Insights (gated)"
+        - "[done] I19D4: Vercel Web Analytics (gated + easy to disable later)"
+        - "[done] I19D5: Validation checklist (local + prod)"
+      progress_log:
+        - "2026-03-05: Issue created for analytics integration with single switch control"
+        - "2026-03-05: Goal: GA4 primary analytics, optional Vercel insights while on Free plan"
+        - "2026-03-05: Key requirement: one env switch (VITE_ANALYTICS_MODE) controls everything"
+        - "2026-03-05: Modes: none | ga4 | ga4_vercel for flexible analytics configuration"
+        - "2026-03-05: Verify existing GA4 implementation status first"
+        - "2026-03-06: COMPLETED I19D1 - Created src/lib/analytics/AnalyticsMount.tsx as single root analytics gate"
+        - "2026-03-06: COMPLETED I19D2 - GA4 integration with manual SPA tracking (send_page_view:false, TanStack Router navigation events)"
+        - "2026-03-06: COMPLETED I19D4 - Added @vercel/analytics dependency, gated to ga4_vercel_analytics mode"
+        - "2026-03-06: COMPLETED I19D5 - Validation passed (lint, typecheck, build) and mode contract updated to ga4_vercel_analytics"
+        - "2026-03-06: DEFERRED I19D3 - Vercel Speed Insights deferred for future mode (ga4_vercel or ga4_vercel_full)"
+        - "2026-03-06: Removed inline GA4 script injection from __root.tsx and replaced with centralized AnalyticsMount"
+        - "2026-03-06: Updated .env.example to document VITE_ANALYTICS_MODE supported values"
+        - "2026-03-06: Fixed biome.json includes to resolve Biome lint conflicts"
+        - "2026-03-06: Ready for review and deployment"
+      est:
+        dev_h: 3
+        test_h: 1
+      remaining_deliverables: []
+      sub_issues:
+        - "https://github.com/BallLightningAB/balllightning/issues/20"
+        - "https://github.com/BallLightningAB/balllightning/issues/21"
     - id: github-contribution-graph-bug
       issue: "https://github.com/BallLightningAB/balllightning/issues/22"
       title: "GitHub contribution graph shows hardcoded translation values instead of dynamic counts"

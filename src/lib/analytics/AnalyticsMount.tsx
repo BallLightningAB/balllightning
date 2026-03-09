@@ -1,17 +1,7 @@
 import { Analytics } from "@vercel/analytics/react";
 import { useRouterState } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
-
-declare global {
-	interface Window {
-		dataLayer: unknown[];
-		gtag?: (
-			command: "js" | "config" | "event",
-			targetOrDate: Date | string,
-			params?: Record<string, string | number | boolean | undefined>
-		) => void;
-	}
-}
+import type { GtagEventParameters } from "@/lib/consent/types";
 
 type AnalyticsMode = "none" | "ga4" | "ga4_vercel_analytics";
 
@@ -63,12 +53,14 @@ export function AnalyticsMount() {
 			return;
 		}
 
-		window.gtag("event", "page_view", {
+		const pageViewParameters: GtagEventParameters = {
 			page_title: document.title,
 			page_path: `${pathname}${search}`,
 			page_location: pageLocation,
 			language: document.documentElement.lang || undefined,
-		});
+		};
+
+		window.gtag("event", "page_view", pageViewParameters);
 	}, [isGa4Ready, pageLocation, pathname, search, shouldRenderGa4]);
 
 	return (

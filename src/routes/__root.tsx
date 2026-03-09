@@ -8,7 +8,10 @@ import {
 } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { AnalyticsMount } from "@/lib/analytics/AnalyticsMount";
+import { CookieBanner } from "@/components/site/CookieBanner";
+import { CookieSettings } from "@/components/site/CookieSettings";
 import { Layout } from "@/components/layout/Layout";
+import { ConsentProvider, useConsent } from "@/lib/consent/ConsentProvider";
 import {
 	generateHreflangLinks,
 	generateRootEntityGraphSchema,
@@ -191,6 +194,25 @@ function RootComponent() {
 	);
 }
 
+function ConsentManagedAnalytics() {
+	const { analyticsEnabled } = useConsent();
+
+	if (!analyticsEnabled) {
+		return null;
+	}
+
+	return <AnalyticsMount />;
+}
+
+function ConsentUiMount() {
+	return (
+		<>
+			<CookieBanner />
+			<CookieSettings />
+		</>
+	);
+}
+
 function RootDocument({ children }: { children: React.ReactNode }) {
 	const isDev = import.meta.env.DEV;
 	const locale = getLocale();
@@ -259,8 +281,11 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 				)}
 			</head>
 			<body className="scroll-smooth">
-				{children}
-				<AnalyticsMount />
+				<ConsentProvider>
+					{children}
+					<ConsentManagedAnalytics />
+					<ConsentUiMount />
+				</ConsentProvider>
 				{isDev && (
 					<TanStackDevtools
 						config={{

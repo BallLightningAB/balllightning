@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useConsent } from "@/lib/consent/ConsentProvider";
 import * as m from "@/paraglide/messages.js";
 
 function useSiteLinks() {
@@ -32,6 +33,7 @@ const footerLinks = {
 export function Footer() {
 	const currentYear = new Date().getFullYear();
 	const siteLinks = useSiteLinks();
+	const { openSettings } = useConsent();
 
 	return (
 		<footer className="border-border border-t bg-background">
@@ -125,7 +127,18 @@ export function Footer() {
 					<p className="text-muted-foreground text-sm">
 						{m.footer_copyright({ year: String(currentYear) })}
 					</p>
-					<p className="text-muted-foreground text-sm">{m.footer_location()}</p>
+					<div className="flex flex-col items-center gap-2 md:flex-row md:gap-4">
+						<p className="text-muted-foreground text-sm">
+							{m.footer_location()}
+						</p>
+						<button
+							className="text-muted-foreground text-sm transition-colors hover:text-foreground"
+							onClick={openSettings}
+							type="button"
+						>
+							{m.footer_cookie_settings()}
+						</button>
+					</div>
 				</div>
 			</div>
 		</footer>

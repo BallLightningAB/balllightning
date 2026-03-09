@@ -15,6 +15,22 @@
   "footer_subscribe": "Subscribe",
   "footer_copyright": "© {year} Ball Lightning AB. All rights reserved.",
   "footer_location": "Mölndal, Sweden",
+  "footer_cookie_settings": "Cookie settings",
+
+  "cookie_banner_title": "Optional analytics",
+  "cookie_banner_description": "We use optional analytics to understand which pages help visitors most. Analytics stays off until you choose, and you can change your preference later from the footer.",
+  "cookie_banner_accept": "Accept analytics",
+  "cookie_banner_reject": "Reject non-essential cookies",
+  "cookie_banner_settings": "Cookie settings",
+
+  "cookie_settings_title": "Cookie settings",
+  "cookie_settings_description": "Manage whether optional analytics can run on this site.",
+  "cookie_settings_status_label": "Current status",
+  "cookie_settings_status_on": "Analytics is enabled.",
+  "cookie_settings_status_off": "Analytics is disabled.",
+  "cookie_settings_body": "Rejecting analytics does not affect normal site functionality. If you change your mind later, you can reopen these settings from the footer.",
+  "cookie_settings_accept": "Enable analytics",
+  "cookie_settings_reject": "Disable analytics",
 
   "not_found_title": "Page not found",
   "not_found_description": "The page you are looking for does not exist.",
