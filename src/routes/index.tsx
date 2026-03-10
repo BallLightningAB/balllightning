@@ -416,11 +416,11 @@ function HomePage() {
 						>
 							{feedCards.map((item) => (
 								<Card
-									className="group transition-all duration-200 hover:-translate-y-0.5 hover:border-bl-red/30"
+									className="group min-w-0 transition-all duration-200 hover:-translate-y-0.5 hover:border-bl-red/30"
 									key={item.url}
 								>
 									<CardHeader>
-										<div className="mb-2 flex items-center gap-2">
+										<div className="mb-2 flex flex-wrap items-center gap-2">
 											<span
 												className={`rounded-full px-2 py-1 text-xs font-medium ${
 													item.type === "news"
@@ -432,7 +432,7 @@ function HomePage() {
 													? m.home_feed_type_news()
 													: m.home_feed_type_blog()}
 											</span>
-											<span className="text-muted-foreground text-xs">
+											<span className="break-words text-muted-foreground text-xs">
 												{new Date(item.publishedAt || "").toLocaleDateString(
 													"en-US",
 													{
@@ -443,7 +443,7 @@ function HomePage() {
 												)}
 											</span>
 										</div>
-										<CardTitle className="font-semibold text-lg leading-tight group-hover:text-bl-red">
+										<CardTitle className="break-words font-semibold text-lg leading-tight group-hover:text-bl-red">
 											{item.title}
 										</CardTitle>
 									</CardHeader>
@@ -451,8 +451,14 @@ function HomePage() {
 										<p className="mb-4 line-clamp-3 text-muted-foreground text-sm">
 											{item.excerpt}
 										</p>
-										<Button asChild className="gap-2" size="sm" variant="ghost">
+										<Button
+											asChild
+											className="h-auto min-w-0 justify-start whitespace-normal px-0 py-0 text-left leading-tight"
+											size="sm"
+											variant="ghost"
+										>
 											<a
+												className="inline-flex min-w-0 items-center gap-2 break-words"
 												href={item.url}
 												rel="noopener noreferrer"
 												target="_blank"
