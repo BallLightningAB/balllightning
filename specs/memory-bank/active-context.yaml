@@ -1,5 +1,5 @@
 meta:
-  release: "0.2.8.2"
+  release: "0.2.8.3"
   repo: github.com/BallLightningAB/balllightning
   project: https://github.com/users/BallLightningAB/projects/9
   pdd_version: "1.1"
@@ -164,6 +164,34 @@ roadmap:
       remaining_deliverables: []
       sub_issues: []  
   recent_done:
+    - id: shared-memory-sync-tooling
+      issue: "https://github.com/BallLightningAB/balllightning/issues/25"
+      title: "chore(memory): add rerunnable shared-memory extractor with source tracking"
+      status: done
+      priority: medium
+      labels:
+        - type: chore
+        - area: tooling
+        - knowledge-management
+      deliverables:
+        - "[done] Add rerunnable extractor under C:/Users/nicol/.agents/memory-sync"
+        - "[done] Preserve current server-memory graph schema while refreshing data"
+        - "[done] Back up server-memory.json before each write"
+        - "[done] Add processed vs pending source tracking sidecar"
+        - "[done] Document repository rules in AGENTS.md so Codex can surface them"
+      progress_log:
+        - "2026-03-10: Verified the shared local memory file uses the entities/relations graph structure rather than the earlier grouped export"
+        - "2026-03-10: Added refresh_server_memory.py plus a Git Bash wrapper under C:/Users/nicol/.agents/memory-sync"
+        - "2026-03-10: Added automatic timestamped backups for the shared server-memory.json before each refresh"
+        - "2026-03-10: Added source-status.json to separate processed vs pending Windsurf memory sources with SHA-256 hashes and extraction counts"
+        - "2026-03-10: Created GitHub issue #25 (closed) to capture the extractor work; assignment to @nicol pending permissions"
+        - "2026-03-10: Added AGENTS.md so the repo now declares workspace rules for Codex"
+        - "2026-03-10: Refreshed the shared memory graph and generated the first processed/pending source-status report"
+      est:
+        dev_h: 2
+        test_h: 0.5
+      remaining_deliverables: []
+      sub_issues: []
     - id: analytics-integration-review
       issue: "https://github.com/BallLightningAB/balllightning/issues/19"
       title: "Analytics Integration + Review (GA4 + Vercel Insights) with Easy Disable Switch"

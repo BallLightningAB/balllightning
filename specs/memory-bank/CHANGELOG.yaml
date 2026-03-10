@@ -1,9 +1,26 @@
 entries:
 
+  - date: "2026-03-10"
+    version: "0.2.8.3"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/25"
+    commit: TBD
+    status: in-review
+    title: "chore(memory): add rerunnable shared-memory extractor with source tracking"
+    details: |-
+      - Added `C:\Users\nicol\.agents\memory-sync\refresh_server_memory.py` to refresh the shared local memory graph without changing the current `entities` and `relations` schema
+      - Added `C:\Users\nicol\.agents\memory-sync\refresh_server_memory.sh` as a Git Bash wrapper for regular reruns
+      - Added automatic timestamped backups before each shared-memory refresh
+      - Added `source-status.json` to separate processed vs pending Windsurf memory sources with hashes, repo matches, and extraction counts
+      - Refreshed `server-memory.json` and generated the initial source-status report for the current Windsurf memory set
+      - Updated active-context and created a dedicated current-changes artifact for the memory-sync tooling pass
+      - Added AGENTS.md so the repo declares workspace rules for Codex
+
+      Refs: v0.2.8.3 #25
+
   - date: "2026-03-09"
     version: "0.2.8.2"
     issue: "https://github.com/BallLightningAB/balllightning/issues/24"
-    commit: TBD
+    commit: 19bed28
     status: in-review
     title: "fix(consent): finalize gtag queue semantics"
     details: |-
