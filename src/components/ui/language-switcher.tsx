@@ -40,7 +40,7 @@ export function LanguageSwitcher() {
 	const currentLocale = getLocale();
 	const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
 
-	const handleLocaleChange = (newLocale: string) => {
+	const handleLocaleChange = (newLocale: "en" | "sv" | "de" | "fr") => {
 		if (newLocale === currentLocale) {
 			return;
 		}
@@ -65,7 +65,7 @@ export function LanguageSwitcher() {
 				</Button>
 			</SheetTrigger>
 			<SheetContent
-				className="w-[25vw] max-w-[200px] md:w-[10vw] md:max-w-[120px]"
+				className="w-[min(100vw,18rem)] max-w-full sm:max-w-[200px] md:w-[10vw] md:max-w-[120px]"
 				side="right"
 			>
 				<SheetTitle className="sr-only">Language Menu</SheetTitle>
@@ -119,7 +119,9 @@ export function LanguageSwitcherMobile() {
 						onClick={(e) => {
 							e.preventDefault();
 							const deLocalizedHref = getCurrentDeLocalizedHref();
-							const actualHref = localizeHref(deLocalizedHref, { locale });
+							const actualHref = localizeHref(deLocalizedHref, {
+								locale: locale as "en" | "sv" | "de" | "fr",
+							});
 							window.location.href = actualHref;
 						}}
 					>

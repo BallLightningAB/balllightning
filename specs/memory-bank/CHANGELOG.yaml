@@ -1,9 +1,91 @@
 entries:
 
+  - date: "2026-03-17"
+    version: "0.2.8.4"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/24"
+    commit: TBD
+    status: in-review
+    title: "fix(typescript): resolve locale type errors in language-switcher and structured-data"
+    details: |-
+      - Fixed TypeScript errors where `string` was not assignable to locale union type `"en" | "sv" | "de" | "fr"`
+      - Updated `handleLocaleChange` parameter from `string` to strict locale union type in language-switcher.tsx
+      - Added type assertion for mobile language switcher locale parameter
+      - Updated `generateCanonical` locale parameter from `string` to strict locale union type in structured-data.ts
+      - All validation gates now pass: typecheck, i18n:check, and build
+      - Updated current-changes artifact with TypeScript fixes and completed validation checkpoints
+
+      Refs: v0.2.8.4 #24
+
+  - date: "2026-03-10"
+    version: "0.2.8.3"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/25"
+    commit: TBD
+    status: in-review
+    title: "chore(memory): add rerunnable shared-memory extractor with source tracking"
+    details: |-
+      - Added `C:\Users\nicol\.agents\memory-sync\refresh_server_memory.py` to refresh the shared local memory graph without changing the current `entities` and `relations` schema
+      - Added `C:\Users\nicol\.agents\memory-sync\refresh_server_memory.sh` as a Git Bash wrapper for regular reruns
+      - Added automatic timestamped backups before each shared-memory refresh
+      - Added `source-status.json` to separate processed vs pending Windsurf memory sources with hashes, repo matches, and extraction counts
+      - Refreshed `server-memory.json` and generated the initial source-status report for the current Windsurf memory set
+      - Updated active-context and created a dedicated current-changes artifact for the memory-sync tooling pass
+      - Added AGENTS.md so the repo declares workspace rules for Codex
+      - Moved shared-memory-sync tooling documentation to brand-system repo for cross-project reference
+
+      Refs: v0.2.8.3 #25
+
+  - date: "2026-03-09"
+    version: "0.2.8.2"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/24"
+    commit: 19bed28
+    status: in-review
+    title: "fix(consent): finalize gtag queue semantics"
+    details: |-
+      - Switched the consent `gtag` polyfill to a classic function that pushes its `arguments` object so the implementation matches Google's documented queue semantics
+      - Preserved the stricter typed surface for `GtagFunction` while satisfying the external review and Gemini Code Assist
+      - Validated typecheck + build after the final fix and noted the work in the Issue #24 artifact/active-context
+
+      Refs: v0.2.8.2 #24
+
+  - date: "2026-03-09"
+    version: "0.2.8.1"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/24"
+    commit: b0b0c39
+    status: in-review
+    title: "fix(ui): address post-PR consent, mobile responsiveness, and accessibility regressions"
+    details: |-
+      - Reviewed Gemini PR feedback critically against the TanStack Start + React 19 + Radix stack instead of applying the suggestions verbatim
+      - Updated gtag typing to a typed variadic union and changed the consent queue polyfill to push the received argument tuple without trailing undefined values
+      - Improved shared sheet sizing plus CookieSettings and LanguageSwitcher mobile layouts to keep drawer content usable on narrow screens
+      - Fixed homepage Builder Coil feed cards so metadata, titles, and CTA text wrap cleanly instead of overflowing on mobile
+      - Added hidden Radix dialog title and description to the project image gallery modal to resolve accessibility warnings
+      - Added scrollbar-gutter and root overflow clipping as a conservative header layout-shift mitigation
+      - Created Issue #24 plus a current-changes artifact for the follow-up pass and linked the bug under Issue #20 tracking
+      - Validation passed for typecheck and build before final commit-process formatting and linting steps
+
+      Refs: v0.2.8.1 #24
+
+  - date: "2026-03-08"
+    version: "0.2.8"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/20"
+    commit: ef1d146
+    status: in-review
+    title: "feat(consent): implement EU analytics consent flow with Google Consent Mode v2"
+    details: |-
+      - Added a dedicated consent domain layer under src/lib/consent for shared types, local persistence, provider state, and Google consent helpers
+      - Implemented denied-by-default Google Consent Mode v2 handling for analytics_storage, ad_storage, ad_user_data, and ad_personalization
+      - Added CookieBanner and CookieSettings UI with accept, reject, and footer-accessible reopen flows
+      - Gated AnalyticsMount so GA4 and Vercel Web Analytics never mount before explicit consent
+      - Preserved GA4 manual SPA pageview tracking with send_page_view:false after consent is granted
+      - Updated footer copy, locale messages, current-changes progress artifact, README analytics/privacy docs, and active-context tracking for Issue #20
+      - Validation passed for Paraglide compile, i18n:check, typecheck, build, pre-commit run --all-files, pnpm format, and pnpm lint
+
+      Refs: v0.2.8 #20 I20D1-I20D5
+
   - date: "2026-03-06"
     version: "0.2.7.2"
     issue: "https://github.com/BallLightningAB/balllightning/issues/22"
-    commit: TBD
+    commit: 0d312d0
     status: completed
     title: "fix(contribution-graph): resolve hardcoded translations and mobile display issues"
     details: |-

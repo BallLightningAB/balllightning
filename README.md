@@ -17,6 +17,32 @@ TanStack Start, TailwindCSS v4, Shadcn UI, Biome + Ultracite, Resend (contact fo
 🌐 Domain
 https://balllightning.cloud
 
+## Analytics & privacy
+
+The site uses a consent-gated analytics flow designed for EU/EEA-friendly behavior.
+
+- Analytics is **off by default**.
+- Google Consent Mode v2 defaults are set to denied until a visitor makes a choice.
+- No analytics provider mounts before explicit acceptance, including the combined `ga4_vercel_analytics` mode.
+- Visitors can reject analytics without affecting normal site functionality.
+- Visitors can reopen `Cookie settings` from the footer and change their choice later.
+
+### Analytics environment variables
+
+- `VITE_ANALYTICS_MODE`
+  - `none`
+  - `ga4`
+  - `ga4_vercel_analytics`
+- `VITE_GA4`
+  - GA4 measurement ID used when a consented session enables GA4
+
+### Current analytics behavior
+
+- GA4 uses `send_page_view: false`.
+- SPA pageviews are sent manually from the centralized analytics mount after consent.
+- Vercel Web Analytics is only allowed to mount after consent when `VITE_ANALYTICS_MODE=ga4_vercel_analytics`.
+- The dedicated Privacy & Cookies page content remains tracked separately in Issue `#21`.
+
 ## Security baseline
 
 Ball Lightning treats secret leakage as a first-class concern:

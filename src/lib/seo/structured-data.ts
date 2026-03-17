@@ -299,7 +299,10 @@ const LOCALES = ["en", "sv", "de", "fr"] as const;
 /**
  * Generate canonical URL for a page (locale-aware)
  */
-export function generateCanonical(path: string, locale?: string): string {
+export function generateCanonical(
+	path: string,
+	locale?: "en" | "sv" | "de" | "fr"
+): string {
 	const localizedPath = locale ? localizeHref(path, { locale }) : path;
 	return `${SITE_URL}${localizedPath}`;
 }
