@@ -25,6 +25,10 @@
 - Updated `src/routes/index.tsx` feed card layout to allow wrapping metadata/title/CTA text without horizontal overflow
 - Updated `src/components/ui/project-image-gallery.tsx` with hidden Radix dialog title/description for accessibility
 - Updated `src/styles.css` with root overflow clipping and `scrollbar-gutter: stable both-edges` as a conservative CLS mitigation
+- Fixed TypeScript locale type errors:
+  - Updated `handleLocaleChange` parameter from `string` to `"en" | "sv" | "de" | "fr"` in language-switcher.tsx
+  - Added type assertion `locale as "en" | "sv" | "de" | "fr"` for mobile language switcher
+  - Updated `generateCanonical` locale parameter from `string` to `"en" | "sv" | "de" | "fr"` in structured-data.ts
 - Created GitHub Issue #24 and linked it as a follow-up bug under Issue #20 in `active-context.yaml`
 
 ## GitHub review handling
@@ -34,6 +38,7 @@
 - Confirmed the Issue #24 review thread and follow-up fixes are now resolved in the PR discussion
 
 ## Remaining checks
-- Run typecheck/build/format/lint/pre-commit again after the follow-up fixes
-- Confirm whether any additional sheet/mobile tweaks are needed after validation
+- [x] Run typecheck/build/format/lint/pre-commit again after the follow-up fixes
+- [x] Fix TypeScript locale type errors in language-switcher.tsx and structured-data.ts
+- [x] Confirm whether any additional sheet/mobile tweaks are needed after validation
 - Run `/commitprocess` bookkeeping without committing

@@ -40,7 +40,7 @@ export function LanguageSwitcher() {
 	const currentLocale = getLocale();
 	const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
 
-	const handleLocaleChange = (newLocale: string) => {
+	const handleLocaleChange = (newLocale: "en" | "sv" | "de" | "fr") => {
 		if (newLocale === currentLocale) {
 			return;
 		}
@@ -119,7 +119,9 @@ export function LanguageSwitcherMobile() {
 						onClick={(e) => {
 							e.preventDefault();
 							const deLocalizedHref = getCurrentDeLocalizedHref();
-							const actualHref = localizeHref(deLocalizedHref, { locale });
+							const actualHref = localizeHref(deLocalizedHref, {
+								locale: locale as "en" | "sv" | "de" | "fr",
+							});
 							window.location.href = actualHref;
 						}}
 					>

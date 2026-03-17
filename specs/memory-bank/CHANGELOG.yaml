@@ -1,5 +1,21 @@
 entries:
 
+  - date: "2026-03-17"
+    version: "0.2.8.4"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/24"
+    commit: TBD
+    status: in-review
+    title: "fix(typescript): resolve locale type errors in language-switcher and structured-data"
+    details: |-
+      - Fixed TypeScript errors where `string` was not assignable to locale union type `"en" | "sv" | "de" | "fr"`
+      - Updated `handleLocaleChange` parameter from `string` to strict locale union type in language-switcher.tsx
+      - Added type assertion for mobile language switcher locale parameter
+      - Updated `generateCanonical` locale parameter from `string` to strict locale union type in structured-data.ts
+      - All validation gates now pass: typecheck, i18n:check, and build
+      - Updated current-changes artifact with TypeScript fixes and completed validation checkpoints
+
+      Refs: v0.2.8.4 #24
+
   - date: "2026-03-10"
     version: "0.2.8.3"
     issue: "https://github.com/BallLightningAB/balllightning/issues/25"
