@@ -14,6 +14,7 @@ entries:
       - Refreshed `server-memory.json` and generated the initial source-status report for the current Windsurf memory set
       - Updated active-context and created a dedicated current-changes artifact for the memory-sync tooling pass
       - Added AGENTS.md so the repo declares workspace rules for Codex
+      - Moved shared-memory-sync tooling documentation to brand-system repo for cross-project reference
 
       Refs: v0.2.8.3 #25
 
