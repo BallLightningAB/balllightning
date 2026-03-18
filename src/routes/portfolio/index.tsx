@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/card";
 import { generateCanonical } from "@/lib/seo/structured-data";
 import * as m from "@/paraglide/messages.js";
-import { getLocale, localizeHref } from "@/paraglide/runtime.js";
+import { getLocale } from "@/paraglide/runtime.js";
 
 export const Route = createFileRoute("/portfolio/")({
 	head: () => {
@@ -194,7 +194,7 @@ function PortfolioPage() {
 								<div className="flex flex-wrap gap-3">
 									<a
 										className="inline-flex items-center gap-1 text-sm font-medium text-bl-red hover:underline"
-										href={localizeHref(`/portfolio/${project.slug}`)}
+										href={`/portfolio/${project.slug}`}
 									>
 										{m.portfolio_view_case_study()}{" "}
 										<ArrowRight className="h-3 w-3" />

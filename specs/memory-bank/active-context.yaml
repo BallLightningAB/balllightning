@@ -1,5 +1,5 @@
 meta:
-  release: "0.2.8.6"
+  release: "0.2.8.5"
   repo: github.com/BallLightningAB/balllightning
   project: https://github.com/users/BallLightningAB/projects/9
   pdd_version: "1.1"
@@ -75,18 +75,18 @@ roadmap:
     - id: gsc-indexing-optimization
       issue: "https://github.com/BallLightningAB/balllightning/issues/15"
       title: "SEO: Google Search Console indexing and post-rebuild optimization"
-      status: in-review
+      status: follow-up
       priority: medium
       labels:
         - seo
         - enhancement
         - post-launch
       deliverables:
-        - "[done] I15D1: Search Console setup + initial indexing pass"
-        - "[done] I15D2: Technical SEO audit (crawlability, canonicalization, i18n)"
-        - "[done] I15D3: Performance & Core Web Vitals (baseline + actions)"
-        - "[done] I15D4: Discovery & internal linking audit (post-rebuild)"
-        - "[done] I15D5: Monitoring & follow-ups (short window)"
+        - "[pending] I15D1: Search Console setup + initial indexing pass"
+        - "[pending] I15D2: Technical SEO audit (crawlability, canonicalization, i18n)"
+        - "[pending] I15D3: Performance & Core Web Vitals (baseline + actions)"
+        - "[pending] I15D4: Discovery & internal linking audit (post-rebuild)"
+        - "[pending] I15D5: Monitoring & follow-ups (short window)"
       progress_log:
         - "2026-03-03: Issue created based on GSC indexing recommendation from issue #14"
         - "2026-03-03: Comprehensive SEO optimization plan for post-rebuild phase"
@@ -108,11 +108,6 @@ roadmap:
         - "2026-03-06: All validation gates passed; ready for deployment and GSC testing"
         - "2026-03-06: VALIDATION COMPLETE - Product schema removal effective (GSC warnings cleared), /sv→/se redirects correct, sitemap healthy with proper hreflang, Vercel duplicate indexing mitigated"
         - "2026-03-06: Follow-up monitoring scheduled for 2 days: GSC Indexing Pages counts/reasons, Core Web Vitals status checks"
-        - "2026-03-18: Reviewed Search Console follow-up exports: latest row shows 39 indexed / 12 not indexed, with 4 redirect pages, 8 discovered-not-indexed pages, and no non-critical issue buckets"
-        - "2026-03-18: Search Console Core Web Vitals follow-up shows no mobile or desktop data yet ('Not enough usage data')"
-        - "2026-03-18: Production validation found localized portfolio indexes linking to root-relative /portfolio/{slug} URLs that resolve into English detail pages"
-        - "2026-03-18: Fixed src/routes/portfolio/index.tsx to use localizeHref for case-study CTAs and created a dedicated issue #15 current-changes artifact with the GSC exports"
-        - "2026-03-18: Follow-up validation gates passed locally after the fix: pre-commit, pnpm format, pnpm lint, pnpm run i18n:check, pnpm run typecheck, and pnpm run build"
       est:
         dev_h: 4
         test_h: 2
