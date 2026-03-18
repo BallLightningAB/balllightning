@@ -106,9 +106,9 @@ function PrivacyPage() {
 						<p>{m.privacy_who_body_2()}</p>
 						<a
 							className="font-medium text-bl-red transition-colors hover:text-bl-rose hover:underline"
-							href="mailto:info@balllightning.cloud"
-						>
-							info@balllightning.cloud
+								href={`mailto:${m.privacy_contact_email()}`}
+								>
+								{m.privacy_contact_email()}
 						</a>
 					</SectionCard>
 
@@ -147,9 +147,9 @@ function PrivacyPage() {
 						<p>{m.privacy_contact_body_2()}</p>
 						<a
 							className="font-medium text-bl-red transition-colors hover:text-bl-rose hover:underline"
-							href="mailto:info@balllightning.cloud"
-						>
-							info@balllightning.cloud
+								href={`mailto:${m.privacy_contact_email()}`}
+		>
+								{m.privacy_contact_email()}
 						</a>
 					</SectionCard>
 				</div>
