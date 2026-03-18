@@ -1,5 +1,5 @@
 meta:
-  release: "0.2.8.4"
+  release: "0.2.8.5"
   repo: github.com/BallLightningAB/balllightning
   project: https://github.com/users/BallLightningAB/projects/9
   pdd_version: "1.1"
@@ -16,7 +16,7 @@ roadmap:
     - id: analytics-consent-flow
       issue: "https://github.com/BallLightningAB/balllightning/issues/20"
       title: "Implement EU analytics consent flow + Google Consent Mode v2"
-      status: in-review
+      status: follow-up
       priority: high
       labels:
         - type: feature
@@ -42,6 +42,7 @@ roadmap:
         - "2026-03-08: Updated footer and README to document cookie settings reopen flow, consent-gated analytics modes, and current privacy scope split with issue #21"
         - "2026-03-08: Validation passed for pnpm exec paraglide-js compile, pnpm run i18n:check, pnpm run typecheck, pnpm run build, pre-commit run --all-files, pnpm format, and pnpm lint"
         - "2026-03-09: Logged follow-up bug issue #24 for post-PR responsiveness, accessibility, CLS, analytics-enable verification, and sitemap review"
+        - "2026-03-17: Confirmed issue #20 as the implemented and deployed baseline for issue #21 and moved tracking to follow-up"
       est:
         dev_h: 4
         test_h: 2
@@ -139,31 +140,37 @@ roadmap:
         test_h: 1
       remaining_deliverables: []
       sub_issues: []
-    - id: analytics-production-validation
+  recent_done:
+    - id: privacy-cookies-page
       issue: "https://github.com/BallLightningAB/balllightning/issues/21"
       title: "Add Privacy & Cookies page for analytics consent and footer policy links"
-      status: pending
+      status: completed
       priority: medium
       labels:
         - type: chore
         - area: frontend
         - type: security
       deliverables:
-        - "[pending] I21D1: Create Privacy & Cookies page route and component"
-        - "[pending] I21D2: Add footer links to Privacy & Cookies and Cookie settings"
-        - "[pending] I21D3: Write analytics disclosure copy in plain language"
-        - "[pending] I21D4: Add consent management instructions and contact info"
+        - "[done] I21D1: Create Privacy & Cookies page route and component"
+        - "[done] I21D2: Add footer links to Privacy & Cookies and Cookie settings"
+        - "[done] I21D3: Write analytics disclosure copy in plain language"
+        - "[done] I21D4: Add consent management instructions and contact info"
       progress_log:
         - "2026-03-06: Issue created to support consent banner with dedicated privacy page"
         - "2026-03-06: Goal: simple, professional page explaining GA4 use and consent flow"
         - "2026-03-06: Scope: /privacy route, footer links, analytics disclosure, consent instructions"
         - "2026-03-06: Must match actual consent implementation, avoid over-engineering"
+        - "2026-03-17: Used issue #20's implemented consent flow as the baseline and kept issue #21 limited to route, footer, and content work"
+        - "2026-03-17: Added localized /privacy route with route-level canonical metadata and a page action that reopens the existing Cookie settings drawer"
+        - "2026-03-17: Added footer Privacy & Cookies link beside the existing Cookie settings action and extended en/sv/de/fr message catalogs with policy copy"
+        - "2026-03-17: Created a current-changes artifact for issue #21 and validated Paraglide compile, i18n:check, typecheck, build, and lint"
+        - "2026-03-18: Browser checks passed for /en/privacy, /se/privacy, /de/privacy, and /fr/privacy under local preview"
+        - "2026-03-18: Verified page CTA and footer Cookie settings buttons reopen the existing drawer and preserve rejected consent state in a 390x844 mobile viewport"
       est:
         dev_h: 2
         test_h: 1
       remaining_deliverables: []
-      sub_issues: []  
-  recent_done:
+      sub_issues: []
     - id: analytics-integration-review
       issue: "https://github.com/BallLightningAB/balllightning/issues/19"
       title: "Analytics Integration + Review (GA4 + Vercel Insights) with Easy Disable Switch"

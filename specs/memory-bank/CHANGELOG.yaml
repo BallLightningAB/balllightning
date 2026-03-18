@@ -1,9 +1,25 @@
 entries:
 
+  - date: "2026-03-18"
+    version: "0.2.8.5"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/21"
+    commit: TBD
+    status: completed
+    title: "feat(privacy): add localized Privacy & Cookies page and consent guidance"
+    details: |-
+      - Added a localized `/privacy` route with six concise sections covering site operator details, scope, analytics usage, consent management, cookie categories, and privacy contact guidance
+      - Added a page-level CTA that reopens the existing Cookie settings drawer without changing the consent logic from issue #20
+      - Added a footer `Privacy & Cookies` link beside the existing `Cookie settings` action
+      - Added new Privacy & Cookies copy across `en`, `sv`, `de`, and `fr` locale files and regenerated the TanStack Router route tree
+      - Updated `active-context.yaml` and created the issue #21 current-changes artifact; moved issue #20 tracking to follow-up and issue #21 to completed
+      - Validation passed for Paraglide compile, i18n:check, typecheck, build, lint, and local browser verification of `/en/privacy`, `/se/privacy`, `/de/privacy`, `/fr/privacy`, plus the settings-drawer reopen flow
+
+      Refs: v0.2.8.5 #21 I21D1-I21D4
+
   - date: "2026-03-17"
     version: "0.2.8.4"
     issue: "https://github.com/BallLightningAB/balllightning/issues/24"
-    commit: TBD
+    commit: 2daefd0
     status: in-review
     title: "fix(typescript): resolve locale type errors in language-switcher and structured-data"
     details: |-

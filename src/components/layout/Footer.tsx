@@ -131,6 +131,12 @@ export function Footer() {
 						<p className="text-muted-foreground text-sm">
 							{m.footer_location()}
 						</p>
+						<Link
+							className="text-muted-foreground text-sm transition-colors hover:text-foreground"
+							to="/privacy"
+						>
+							{m.footer_privacy_cookies()}
+						</Link>
 						<button
 							className="text-muted-foreground text-sm transition-colors hover:text-foreground"
 							onClick={openSettings}

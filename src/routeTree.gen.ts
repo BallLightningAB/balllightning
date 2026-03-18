@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TechnologiesRouteImport } from './routes/technologies'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PortfolioIndexRouteImport } from './routes/portfolio/index'
@@ -29,6 +30,11 @@ const TechnologiesRoute = TechnologiesRouteImport.update({
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -81,6 +87,7 @@ const PortfolioBlightfellRoute = PortfolioBlightfellRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/privacy': typeof PrivacyRoute
   '/services': typeof ServicesRoute
   '/technologies': typeof TechnologiesRoute
   '/portfolio/blightfell': typeof PortfolioBlightfellRoute
@@ -94,6 +101,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/privacy': typeof PrivacyRoute
   '/services': typeof ServicesRoute
   '/technologies': typeof TechnologiesRoute
   '/portfolio/blightfell': typeof PortfolioBlightfellRoute
@@ -108,6 +116,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/privacy': typeof PrivacyRoute
   '/services': typeof ServicesRoute
   '/technologies': typeof TechnologiesRoute
   '/portfolio/blightfell': typeof PortfolioBlightfellRoute
@@ -123,6 +132,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/contact'
+    | '/privacy'
     | '/services'
     | '/technologies'
     | '/portfolio/blightfell'
@@ -136,6 +146,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/contact'
+    | '/privacy'
     | '/services'
     | '/technologies'
     | '/portfolio/blightfell'
@@ -149,6 +160,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/contact'
+    | '/privacy'
     | '/services'
     | '/technologies'
     | '/portfolio/blightfell'
@@ -163,6 +175,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
+  PrivacyRoute: typeof PrivacyRoute
   ServicesRoute: typeof ServicesRoute
   TechnologiesRoute: typeof TechnologiesRoute
   PortfolioBlightfellRoute: typeof PortfolioBlightfellRoute
@@ -188,6 +201,13 @@ declare module '@tanstack/react-router' {
       path: '/services'
       fullPath: '/services'
       preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -259,6 +279,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
+  PrivacyRoute: PrivacyRoute,
   ServicesRoute: ServicesRoute,
   TechnologiesRoute: TechnologiesRoute,
   PortfolioBlightfellRoute: PortfolioBlightfellRoute,
