@@ -20,6 +20,7 @@ const STATIC_PAGES = [
 	{ path: "/technologies", priority: "0.8", changefreq: "monthly" },
 	{ path: "/portfolio", priority: "0.9", changefreq: "weekly" },
 	{ path: "/contact", priority: "0.7", changefreq: "monthly" },
+	{ path: "/privacy", priority: "0.6", changefreq: "monthly" },
 ];
 
 // Portfolio subpages

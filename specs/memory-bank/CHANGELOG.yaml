@@ -1,6 +1,22 @@
 entries:
 
   - date: "2026-03-18"
+    version: "0.2.8.7"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/15,https://github.com/BallLightningAB/balllightning/issues/20"
+    commit: TBD
+    status: completed
+    title: "fix(seo): add privacy pages to sitemap and complete analytics consent acceptance criteria"
+    details: |-
+      - Added `/privacy` pages to sitemap generation script with priority 0.6 for all 4 locales (en/sv/de/fr)
+      - Regenerated sitemap.xml now contains 44 URLs instead of 40, addressing GSC discovery discrepancy
+      - Checked off all 14 acceptance criteria on GitHub issue #20 for EU analytics consent flow
+      - Updated memory bank to mark issue #20 as completed and issue #24 moved to recent_done
+      - Fixed sub_issues structure to maintain issue URL references for completed issues
+      - Ready for production deployment to resolve GSC "Discovered - currently not indexed" pages
+
+      Refs: v0.2.8.7 #15 I15D5 #20
+
+  - date: "2026-03-18"
     version: "0.2.8.6"
     issue: "https://github.com/BallLightningAB/balllightning/issues/21"
     commit: TBD

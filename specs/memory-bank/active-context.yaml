@@ -1,5 +1,5 @@
 meta:
-  release: "0.2.8.5"
+  release: "0.2.8.6"
   repo: github.com/BallLightningAB/balllightning
   project: https://github.com/users/BallLightningAB/projects/9
   pdd_version: "1.1"
@@ -43,39 +43,17 @@ roadmap:
         - "2026-03-08: Validation passed for pnpm exec paraglide-js compile, pnpm run i18n:check, pnpm run typecheck, pnpm run build, pre-commit run --all-files, pnpm format, and pnpm lint"
         - "2026-03-09: Logged follow-up bug issue #24 for post-PR responsiveness, accessibility, CLS, analytics-enable verification, and sitemap review"
         - "2026-03-17: Confirmed issue #20 as the implemented and deployed baseline for issue #21 and moved tracking to follow-up"
+        - "2026-03-18: All acceptance criteria checked off on GitHub issue - implementation complete and ready for production deployment"
       est:
         dev_h: 4
         test_h: 2
       remaining_deliverables: []
       sub_issues:
         - "https://github.com/BallLightningAB/balllightning/issues/24"
-    - id: consent-ui-regressions
-      issue: "https://github.com/BallLightningAB/balllightning/issues/24"
-      title: "Fix post-PR consent/ui regressions"
-      status: in-review
-      priority: high
-      labels:
-        - type: bug
-        - area: frontend
-      deliverables:
-        - "[done] I24D1: Address gtag polyfill typing and queue behavior"
-        - "[done] I24D2: Improve CookieSettings/LanguageSwitcher sheet responsiveness"
-        - "[done] I24D3: Resolve homepage feed card overflow"
-        - "[done] I24D4: Fix Radix dialog accessibility warning"
-        - "[done] I24D5: Document the follow-up work + close the issue"
-      progress_log:
-        - "2026-03-09: Logged follow-up issue #24 to capture mobile/consent UI regressions"
-        - "2026-03-09: Implemented fixes for gtag typing/queue, sheet layout, feed cards, and dialog accessibility"
-        - "2026-03-09: Created current-changes artifact for issue #24 and linked it under issue #20"
-        - "2026-03-09: Finalized the arguments-based queue fix after external review confirmation"
-      est:
-        dev_h: 3
-        test_h: 1
-      remaining_deliverables: []
     - id: gsc-indexing-optimization
       issue: "https://github.com/BallLightningAB/balllightning/issues/15"
       title: "SEO: Google Search Console indexing and post-rebuild optimization"
-      status: in-review
+      status: pending-validation
       priority: medium
       labels:
         - seo
@@ -86,7 +64,7 @@ roadmap:
         - "[done] I15D2: Technical SEO audit (crawlability, canonicalization, i18n)"
         - "[done] I15D3: Performance & Core Web Vitals (baseline + actions)"
         - "[done] I15D4: Discovery & internal linking audit (post-rebuild)"
-        - "[done] I15D5: Monitoring & follow-ups (short window)"
+        - "[pending] I15D5: Production validation and monitoring (needs redo)"
       progress_log:
         - "2026-03-03: Issue created based on GSC indexing recommendation from issue #14"
         - "2026-03-03: Comprehensive SEO optimization plan for post-rebuild phase"
@@ -113,10 +91,12 @@ roadmap:
         - "2026-03-18: Production validation found localized portfolio indexes linking to root-relative /portfolio/{slug} URLs that resolve into English detail pages"
         - "2026-03-18: Fixed src/routes/portfolio/index.tsx to use localizeHref for case-study CTAs and created a dedicated issue #15 current-changes artifact with the GSC exports"
         - "2026-03-18: Follow-up validation gates passed locally after the fix: pre-commit, pnpm format, pnpm lint, pnpm run i18n:check, pnpm run typecheck, and pnpm run build"
+        - "2026-03-18: VALIDATION ISSUE - Today's validation was performed against local feature branch instead of online deployment, causing confusion. Issue was prematurely closed on GitHub. Need to redo validation against production deployment."
       est:
         dev_h: 4
         test_h: 2
-      remaining_deliverables: []
+      remaining_deliverables:
+        - "[pending] I15D5: Production validation and monitoring (needs redo against actual deployment)"
       sub_issues: []
     - id: google-business-profile-refresh
       issue: "https://github.com/BallLightningAB/balllightning/issues/18"
@@ -146,6 +126,31 @@ roadmap:
       remaining_deliverables: []
       sub_issues: []
   recent_done:
+    - id: consent-ui-regressions
+      issue: "https://github.com/BallLightningAB/balllightning/issues/24"
+      title: "Fix post-PR consent/ui regressions"
+      status: completed
+      priority: high
+      labels:
+        - type: bug
+        - area: frontend
+      deliverables:
+        - "[done] I24D1: Address gtag polyfill typing and queue behavior"
+        - "[done] I24D2: Improve CookieSettings/LanguageSwitcher sheet responsiveness"
+        - "[done] I24D3: Resolve homepage feed card overflow"
+        - "[done] I24D4: Fix Radix dialog accessibility warning"
+        - "[done] I24D5: Document the follow-up work + close the issue"
+      progress_log:
+        - "2026-03-09: Logged follow-up issue #24 to capture mobile/consent UI regressions"
+        - "2026-03-09: Implemented fixes for gtag typing/queue, sheet layout, feed cards, and dialog accessibility"
+        - "2026-03-09: Created current-changes artifact for issue #24 and linked it under issue #20"
+        - "2026-03-09: Finalized the arguments-based queue fix after external review confirmation"
+        - "2026-03-18: Issue completed and moved to recent_done - all TypeScript locale errors resolved, mobile responsiveness improved, consent queue semantics finalized"
+      est:
+        dev_h: 3
+        test_h: 1
+      remaining_deliverables: []
+      sub_issues: []
     - id: privacy-cookies-page
       issue: "https://github.com/BallLightningAB/balllightning/issues/21"
       title: "Add Privacy & Cookies page for analytics consent and footer policy links"
