@@ -1,9 +1,24 @@
 entries:
 
   - date: "2026-03-18"
+    version: "0.2.8.6"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/15"
+    commit: TBD
+    status: in-review
+    title: "fix(seo): localize portfolio case-study links and log GSC follow-up validation"
+    details: |-
+      - Fixed the portfolio index case-study CTA to use locale-aware URLs instead of root-relative `/portfolio/{slug}` links that resolved into English detail pages
+      - Added a dedicated issue #15 current-changes artifact plus the exported Search Console follow-up reports under `specs/current-changes/gsc-reports/`
+      - Logged the latest Search Console follow-up data: 39 indexed pages, 12 not indexed pages, 4 redirect pages, 8 discovered-not-indexed pages, and no non-critical issue buckets
+      - Recorded that Search Console Core Web Vitals currently has insufficient field data for both Mobile and Desktop
+      - Updated `active-context.yaml` to mark issue #15 deliverables complete and move the issue back to in-review while the localized-link fix is validated after push
+
+      Refs: v0.2.8.6 #15 I15D4-I15D5
+
+  - date: "2026-03-18"
     version: "0.2.8.5"
     issue: "https://github.com/BallLightningAB/balllightning/issues/21"
-    commit: TBD
+    commit: 325492f
     status: completed
     title: "feat(privacy): add localized Privacy & Cookies page and consent guidance"
     details: |-
