@@ -1,6 +1,21 @@
 entries:
 
   - date: "2026-03-18"
+    version: "0.2.8.8"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/15"
+    commit: TBD
+    status: completed
+    title: "fix(seo): add lastmod timestamps to sitemap for Google recrawling"
+    details: |-
+      - Updated sitemap generation script to include `<lastmod>2026-03-18</lastmod>` for all static pages
+      - Added fresh timestamps to signal Google that sitemap content is recently updated
+      - Should accelerate indexing of the 4 new privacy pages (/en/privacy, /se/privacy, /de/privacy, /fr/privacy)
+      - Addresses GSC "Discovered - currently not indexed" issues by providing clear modification signals
+      - Sitemap now contains 44 URLs with proper lastmod dates for faster Google recrawling
+
+      Refs: v0.2.8.8 #15 I15D5
+
+  - date: "2026-03-18"
     version: "0.2.8.7"
     issue: "https://github.com/BallLightningAB/balllightning/issues/15,https://github.com/BallLightningAB/balllightning/issues/20"
     commit: TBD

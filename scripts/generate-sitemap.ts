@@ -118,7 +118,7 @@ function main() {
 
 	// Build entries
 	const staticEntries = STATIC_PAGES.map((page) =>
-		generateUrlEntry(page.path, undefined, page.changefreq, page.priority)
+		generateUrlEntry(page.path, "2026-03-18", page.changefreq, page.priority)
 	);
 
 	const portfolioEntries = PORTFOLIO_SUBPAGES.map((subpage) =>
