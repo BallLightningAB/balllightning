@@ -1,5 +1,5 @@
 meta:
-  release: "0.2.8.9"
+  release: "0.2.8.10"
   repo: github.com/BallLightningAB/balllightning
   project: https://github.com/users/BallLightningAB/projects/9
   pdd_version: "1.1"
@@ -50,7 +50,60 @@ roadmap:
       remaining_deliverables: []
       sub_issues:
         - "https://github.com/BallLightningAB/balllightning/issues/24"
-    - id: gsc-indexing-optimization
+  recent_done:
+    - id: google-business-profile-refresh
+      issue: "https://github.com/BallLightningAB/balllightning/issues/18"
+      title: "Google Business Profile (GBP) Refresh — Post-Rebuild"
+      status: done
+      priority: medium
+      labels:
+        - seo
+        - enhancement
+        - post-launch
+        - gbp
+      deliverables:
+        - "[done] I18D1: Access + verification"
+        - "[done] I18D2: Core profile accuracy (NAP + key fields)"
+        - "[invalid] I18D3: Categories + services"
+        - "[done] I18D4: Visual assets (logo, cover, photos)"
+        - "[done] I18D5: Links + light ongoing hygiene"
+        - "[done] I18D6: Refresh social media profiles (LinkedIn, Facebook, X) with new logos/description"
+      progress_log:
+        - "2026-03-04: Issue created to separate GBP work from technical SEO issue #15"
+        - "2026-03-04: Focus on updating profile to reflect new site and branding"
+        - "2026-03-04: Should be addressed after translation fixes are complete and deployed"
+        - "2026-03-05: Added I18D6 for social media refresh to ensure brand consistency across platforms"
+        - "2026-03-19: I18D3 marked as invalid - all other deliverables completed, but category options on GBP are extremely limited and don't allow for accurate representation of our services; better to leave as-is than choose an inaccurate category"
+      est:
+        dev_h: 3
+        test_h: 1
+      remaining_deliverables: []
+      sub_issues: []
+    - id: social-links-lucide-animated
+      issue: "https://github.com/BallLightningAB/balllightning/issues/28"
+      title: "Social link reuse + Lucide Animated migration"
+      status: completed
+      priority: medium
+      labels:
+        - type: feature
+        - area: frontend
+      deliverables:
+        - "[done] I28D1: Extract shared social-link rendering"
+        - "[done] I28D2: Add founder LinkedIn CTA and update header LinkedIn destination"
+        - "[done] I28D3: Install Lucide Animated icons for user-facing UI"
+        - "[done] I28D4: Replace visible user-facing icons and validate the app"
+      progress_log:
+        - "2026-03-19: Created GitHub issue #28 for the social-link and Lucide Animated migration work"
+        - "2026-03-19: Shared header social links were extracted into a reusable site component"
+        - "2026-03-19: Founder LinkedIn CTA added on the home page and header LinkedIn target moved to the company page"
+        - "2026-03-19: Lucide Animated icons installed where registry items existed; lucide-react preserved for missing registry items"
+        - "2026-03-19: Validation passed for format, check, lint, i18n:check, typecheck, and build"
+      est:
+        dev_h: 4
+        test_h: 2
+      remaining_deliverables: []
+      sub_issues: []
+          - id: gsc-indexing-optimization
       issue: "https://github.com/BallLightningAB/balllightning/issues/15"
       title: "SEO: Google Search Console indexing and post-rebuild optimization"
       status: pending-validation
@@ -97,58 +150,6 @@ roadmap:
         test_h: 2
       remaining_deliverables:
         - "[pending] I15D5: Production validation and monitoring (needs redo against actual deployment)"
-      sub_issues: []
-    - id: google-business-profile-refresh
-      issue: "https://github.com/BallLightningAB/balllightning/issues/18"
-      title: "Google Business Profile (GBP) Refresh — Post-Rebuild"
-      status: pending
-      priority: medium
-      labels:
-        - seo
-        - enhancement
-        - post-launch
-        - gbp
-      deliverables:
-        - "[pending] I18D1: Access + verification"
-        - "[pending] I18D2: Core profile accuracy (NAP + key fields)"
-        - "[pending] I18D3: Categories + services"
-        - "[pending] I18D4: Visual assets (logo, cover, photos)"
-        - "[pending] I18D5: Links + light ongoing hygiene"
-        - "[pending] I18D6: Refresh social media profiles (LinkedIn, Facebook, X) with new logos/description"
-      progress_log:
-        - "2026-03-04: Issue created to separate GBP work from technical SEO issue #15"
-        - "2026-03-04: Focus on updating profile to reflect new site and branding"
-        - "2026-03-04: Should be addressed after translation fixes are complete and deployed"
-        - "2026-03-05: Added I18D6 for social media refresh to ensure brand consistency across platforms"
-      est:
-        dev_h: 3
-        test_h: 1
-      remaining_deliverables: []
-      sub_issues: []
-  recent_done:
-    - id: social-links-lucide-animated
-      issue: "https://github.com/BallLightningAB/balllightning/issues/28"
-      title: "Social link reuse + Lucide Animated migration"
-      status: completed
-      priority: medium
-      labels:
-        - type: feature
-        - area: frontend
-      deliverables:
-        - "[done] I28D1: Extract shared social-link rendering"
-        - "[done] I28D2: Add founder LinkedIn CTA and update header LinkedIn destination"
-        - "[done] I28D3: Install Lucide Animated icons for user-facing UI"
-        - "[done] I28D4: Replace visible user-facing icons and validate the app"
-      progress_log:
-        - "2026-03-19: Created GitHub issue #28 for the social-link and Lucide Animated migration work"
-        - "2026-03-19: Shared header social links were extracted into a reusable site component"
-        - "2026-03-19: Founder LinkedIn CTA added on the home page and header LinkedIn target moved to the company page"
-        - "2026-03-19: Lucide Animated icons installed where registry items existed; lucide-react preserved for missing registry items"
-        - "2026-03-19: Validation passed for format, check, lint, i18n:check, typecheck, and build"
-      est:
-        dev_h: 4
-        test_h: 2
-      remaining_deliverables: []
       sub_issues: []
     - id: consent-ui-regressions
       issue: "https://github.com/BallLightningAB/balllightning/issues/24"

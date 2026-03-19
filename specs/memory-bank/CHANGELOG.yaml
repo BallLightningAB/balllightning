@@ -1,6 +1,15 @@
 entries:
 
   - date: "2026-03-19"
+    version: "0.2.8.10"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/18"
+    commit: TBD
+    status: completed
+    title: "chore(docs): cleaned up the memory-bank and github issues."
+
+    Refs: v0.2.8.10 #18
+
+  - date: "2026-03-19"
     version: "0.2.8.9"
     issue: "https://github.com/BallLightningAB/balllightning/issues/28"
     commit: TBD
