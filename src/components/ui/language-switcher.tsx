@@ -1,6 +1,6 @@
-import { Globe } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { EarthIcon } from "@/components/ui/earth";
 import {
 	Sheet,
 	SheetContent,
@@ -60,7 +60,7 @@ export function LanguageSwitcher() {
 					size="icon"
 					variant="ghost"
 				>
-					<Globe className="h-4 w-4" />
+					<EarthIcon size={16} />
 					<span className="ml-1.5">{localeCodes[currentLocale]}</span>
 				</Button>
 			</SheetTrigger>

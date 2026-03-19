@@ -1,11 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ExternalLink, Mail, MapPin } from "lucide-react";
 import { useState } from "react";
 import { AnimatedGroup } from "@/components/motion-primitives/animated-group";
+import { AtSignIcon } from "@/components/ui/at-sign";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { LinkIcon as UrlLinkIcon } from "@/components/ui/link";
+import { MapPinIcon } from "@/components/ui/map-pin";
 import { Textarea } from "@/components/ui/textarea";
 import { submitContactForm } from "@/lib/contact/server";
 import { generateCanonical } from "@/lib/seo/structured-data";
@@ -176,7 +178,7 @@ function ContactPage() {
 							<Card>
 								<CardHeader className="pb-2">
 									<CardTitle className="flex items-center gap-2 text-base">
-										<Mail className="h-4 w-4 text-bl-red" />
+										<AtSignIcon className="text-bl-red" size={16} />
 										{m.contact_info_email()}
 									</CardTitle>
 								</CardHeader>
@@ -193,7 +195,7 @@ function ContactPage() {
 							<Card>
 								<CardHeader className="pb-2">
 									<CardTitle className="flex items-center gap-2 text-base">
-										<MapPin className="h-4 w-4 text-bl-rose" />
+										<MapPinIcon className="text-bl-rose" size={16} />
 										{m.contact_info_location()}
 									</CardTitle>
 								</CardHeader>
@@ -207,7 +209,7 @@ function ContactPage() {
 							<Card>
 								<CardHeader className="pb-2">
 									<CardTitle className="flex items-center gap-2 text-base">
-										<ExternalLink className="h-4 w-4 text-bl-ember" />
+										<UrlLinkIcon className="text-bl-ember" size={16} />
 										{m.contact_info_links()}
 									</CardTitle>
 								</CardHeader>

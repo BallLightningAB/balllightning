@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 import { AnimatedGroup } from "@/components/motion-primitives/animated-group";
+import { ArrowRightIcon } from "@/components/ui/arrow-right";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -180,13 +181,13 @@ function TechnologiesPage() {
 						<Button asChild className="gap-2" size="lg">
 							<Link to="/portfolio">
 								{m.technologies_cta_portfolio()}
-								<ArrowRight className="h-4 w-4" />
+								<ArrowRightIcon size={16} />
 							</Link>
 						</Button>
 						<Button asChild className="gap-2" size="lg" variant="outline">
 							<Link to="/services">
 								{m.technologies_cta_services()}
-								<ArrowRight className="h-4 w-4" />
+								<ArrowRightIcon size={16} />
 							</Link>
 						</Button>
 					</div>

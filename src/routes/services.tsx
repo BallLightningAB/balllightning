@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Check, Code, Globe, Puzzle } from "lucide-react";
+import { Check } from "lucide-react";
+import type { ComponentType } from "react";
 import { AnimatedGroup } from "@/components/motion-primitives/animated-group";
+import { ArrowRightIcon } from "@/components/ui/arrow-right";
 import { Button } from "@/components/ui/button";
 import {
 	Card,
@@ -9,10 +11,18 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
+import { EarthIcon } from "@/components/ui/earth";
+import { FolderCodeIcon } from "@/components/ui/folder-code";
+import { WebhookIcon } from "@/components/ui/webhook";
 import { generateCanonical } from "@/lib/seo/structured-data";
 import { COMPETENCE_TO_SLUG } from "@/lib/technologies/data";
 import * as m from "@/paraglide/messages.js";
 import { getLocale } from "@/paraglide/runtime.js";
+
+type ServiceTierIcon = ComponentType<{
+	className?: string;
+	size?: number;
+}>;
 
 export const Route = createFileRoute("/services")({
 	head: () => {
@@ -36,10 +46,17 @@ export const Route = createFileRoute("/services")({
 	component: ServicesPage,
 });
 
-function useServiceTiers() {
+function useServiceTiers(): Array<{
+	description: string;
+	features: string[];
+	highlighted?: boolean;
+	icon: ServiceTierIcon;
+	price: string;
+	title: string;
+}> {
 	return [
 		{
-			icon: Globe,
+			icon: EarthIcon,
 			title: m.services_tier_landing_title(),
 			price: m.services_tier_landing_price(),
 			description: m.services_tier_landing_description(),
@@ -52,7 +69,7 @@ function useServiceTiers() {
 			],
 		},
 		{
-			icon: Code,
+			icon: FolderCodeIcon,
 			title: m.services_tier_smart_title(),
 			price: m.services_tier_smart_price(),
 			description: m.services_tier_smart_description(),
@@ -67,7 +84,7 @@ function useServiceTiers() {
 			highlighted: true,
 		},
 		{
-			icon: Puzzle,
+			icon: WebhookIcon,
 			title: m.services_tier_integrations_title(),
 			price: m.services_tier_integrations_price(),
 			description: m.services_tier_integrations_description(),
@@ -152,7 +169,7 @@ function ServicesPage() {
 								</div>
 							)}
 							<CardHeader>
-								<tier.icon className="mb-3 h-8 w-8 text-bl-red" />
+								<tier.icon className="mb-3 text-bl-red" size={32} />
 								<CardTitle className="text-xl">{tier.title}</CardTitle>
 								<p className="font-semibold text-lg text-bl-red">
 									{tier.price}
@@ -180,7 +197,7 @@ function ServicesPage() {
 								>
 									<Link to="/contact">
 										{m.services_get_started()}
-										<ArrowRight className="h-4 w-4" />
+										<ArrowRightIcon size={16} />
 									</Link>
 								</Button>
 							</CardContent>
@@ -231,7 +248,7 @@ function ServicesPage() {
 					<Button asChild className="gap-2" size="lg">
 						<Link to="/portfolio">
 							{m.services_see_past_work()}
-							<ArrowRight className="h-4 w-4" />
+							<ArrowRightIcon size={16} />
 						</Link>
 					</Button>
 				</div>

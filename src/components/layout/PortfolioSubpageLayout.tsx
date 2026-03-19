@@ -1,7 +1,9 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import type { ReactNode } from "react";
 import { AnimatedGroup } from "@/components/motion-primitives/animated-group";
+import { ArrowLeftIcon } from "@/components/ui/arrow-left";
+import { ArrowRightIcon } from "@/components/ui/arrow-right";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ResponsiveImage } from "@/components/ui/responsive-image";
@@ -76,7 +78,7 @@ export function PortfolioSubpageLayout({
 				<div className="mb-8">
 					<Button asChild className="gap-2" size="sm" variant="ghost">
 						<Link to="/portfolio">
-							<ArrowLeft className="h-4 w-4" />
+							<ArrowLeftIcon size={16} />
 							{m.portfolio_subpage_back()}
 						</Link>
 					</Button>
@@ -205,7 +207,7 @@ export function PortfolioSubpageLayout({
 				<div className="mt-16 flex items-center justify-between border-t border-border pt-8">
 					<Button asChild className="gap-2" variant="outline">
 						<Link to="/portfolio">
-							<ArrowLeft className="h-4 w-4" />
+							<ArrowLeftIcon size={16} />
 							{m.portfolio_subpage_all_projects()}
 						</Link>
 					</Button>
@@ -213,7 +215,7 @@ export function PortfolioSubpageLayout({
 						<Button asChild className="gap-2" variant="outline">
 							<a href={localizeHref(`/portfolio/${nextProject.slug}`)}>
 								{nextProject.title}
-								<ArrowRight className="h-4 w-4" />
+								<ArrowRightIcon size={16} />
 							</a>
 						</Button>
 					)}

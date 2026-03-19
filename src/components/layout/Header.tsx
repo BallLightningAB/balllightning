@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import { Github, Linkedin, Menu, Twitter } from "lucide-react";
+import { Menu } from "lucide-react";
 import { useState } from "react";
+import { headerSocialLinks, SocialLinks } from "@/components/site/social-links";
 import { Button } from "@/components/ui/button";
 import { LanguageSwitcher } from "@/components/ui/language-switcher";
 import {
@@ -22,20 +23,6 @@ function useNavLinks() {
 		{ href: "/contact", label: m.nav_contact() },
 	];
 }
-
-const socialLinks = [
-	{
-		href: "https://github.com/BallLightningAB",
-		label: "GitHub",
-		icon: Github,
-	},
-	{ href: "https://x.com/BallLightningAB", label: "X", icon: Twitter },
-	{
-		href: "https://linkedin.com/in/nicolas-brulay-vip",
-		label: "LinkedIn",
-		icon: Linkedin,
-	},
-];
 
 export function Header() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -89,21 +76,11 @@ export function Header() {
 					</div>
 
 					{/* Social icons - desktop only */}
-					<div className="hidden items-center gap-1 md:flex">
-						{socialLinks.map((link) => (
-							<a
-								aria-label={link.label}
-								className="rounded-md p-3 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-								href={link.href}
-								key={link.href}
-								rel="noopener noreferrer"
-								target="_blank"
-							>
-								<span className="sr-only">{link.label}</span>
-								<link.icon className="h-4 w-4" />
-							</a>
-						))}
-					</div>
+					<SocialLinks
+						className="hidden items-center gap-1 md:flex"
+						itemClassName="rounded-md p-3 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+						links={headerSocialLinks}
+					/>
 
 					{/* Mobile Menu */}
 					<Sheet onOpenChange={setMobileMenuOpen} open={mobileMenuOpen}>
@@ -135,21 +112,11 @@ export function Header() {
 								))}
 							</nav>
 							{/* Social icons in mobile menu */}
-							<div className="px-4 mt-8 flex gap-4 border-border border-t pt-8">
-								{socialLinks.map((link) => (
-									<a
-										aria-label={link.label}
-										className="text-muted-foreground transition-colors hover:text-foreground"
-										href={link.href}
-										key={link.href}
-										rel="noopener noreferrer"
-										target="_blank"
-									>
-										<span className="sr-only">{link.label}</span>
-										<link.icon className="h-4 w-4" />
-									</a>
-								))}
-							</div>
+							<SocialLinks
+								className="px-4 mt-8 flex gap-4 border-border border-t pt-8"
+								itemClassName="text-muted-foreground transition-colors hover:text-foreground"
+								links={headerSocialLinks}
+							/>
 						</SheetContent>
 					</Sheet>
 				</div>

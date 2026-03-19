@@ -1,5 +1,20 @@
 entries:
 
+  - date: "2026-03-19"
+    version: "0.2.8.9"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/28"
+    commit: TBD
+    status: completed
+    title: "feat(social): reuse header social links and migrate user-facing icons to Lucide Animated"
+    details: |-
+      - Extracted shared social-link rendering into `src/components/site/social-links.tsx` and reused it for the header and founder CTA row
+      - Moved the header LinkedIn target to the Ball Lightning company page and added a founder LinkedIn button on the home page
+      - Installed Lucide Animated components through shadcn for the user-facing icons that were available in the registry
+      - Replaced the visible UI icons across header, home, services, contact, technologies, portfolio, footer, and privacy sections
+      - Preserved `lucide-react` fallbacks for registry items that were not available from Lucide Animated
+
+      Refs: v0.2.8.9 #28 I28D1-I28D4
+
   - date: "2026-03-18"
     version: "0.2.8.8"
     issue: "https://github.com/BallLightningAB/balllightning/issues/15"

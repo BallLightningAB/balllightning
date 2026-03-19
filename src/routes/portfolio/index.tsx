@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { AnimatedGroup } from "@/components/motion-primitives/animated-group";
+import { ArrowRightIcon } from "@/components/ui/arrow-right";
 import { Button } from "@/components/ui/button";
 import {
 	Card,
@@ -196,8 +197,7 @@ function PortfolioPage() {
 										className="inline-flex items-center gap-1 text-sm font-medium text-bl-red hover:underline"
 										href={localizeHref(`/portfolio/${project.slug}`)}
 									>
-										{m.portfolio_view_case_study()}{" "}
-										<ArrowRight className="h-3 w-3" />
+										{m.portfolio_view_case_study()} <ArrowRightIcon size={12} />
 									</a>
 									{project.externalUrl && (
 										<a
@@ -238,7 +238,7 @@ function PortfolioPage() {
 					<Button asChild className="gap-2" size="lg">
 						<Link to="/contact">
 							{m.portfolio_cta_button()}
-							<ArrowRight className="h-4 w-4" />
+							<ArrowRightIcon size={16} />
 						</Link>
 					</Button>
 				</div>

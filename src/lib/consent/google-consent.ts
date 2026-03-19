@@ -1,7 +1,7 @@
 import type {
 	ConsentState,
-	GtagConsentParameters,
 	GtagArguments,
+	GtagConsentParameters,
 } from "@/lib/consent/types";
 
 const CONSENT_DENIED: GtagConsentParameters = {

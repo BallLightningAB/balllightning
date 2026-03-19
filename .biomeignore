@@ -7,3 +7,15 @@ coverage
 .DS_Store
 .env*
 !.env.example
+src/components/ui/arrow-left.tsx
+src/components/ui/arrow-right.tsx
+src/components/ui/at-sign.tsx
+src/components/ui/earth.tsx
+src/components/ui/folder-code.tsx
+src/components/ui/github.tsx
+src/components/ui/link.tsx
+src/components/ui/linkedin.tsx
+src/components/ui/map-pin.tsx
+src/components/ui/shield-check.tsx
+src/components/ui/webhook.tsx
+src/components/ui/x.tsx

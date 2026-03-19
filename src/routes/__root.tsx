@@ -7,10 +7,10 @@ import {
 	useRouterState,
 } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
-import { AnalyticsMount } from "@/lib/analytics/AnalyticsMount";
+import { Layout } from "@/components/layout/Layout";
 import { CookieBanner } from "@/components/site/CookieBanner";
 import { CookieSettings } from "@/components/site/CookieSettings";
-import { Layout } from "@/components/layout/Layout";
+import { AnalyticsMount } from "@/lib/analytics/AnalyticsMount";
 import { ConsentProvider, useConsent } from "@/lib/consent/ConsentProvider";
 import {
 	generateHreflangLinks,

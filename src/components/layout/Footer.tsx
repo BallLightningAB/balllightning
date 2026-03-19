@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import { ArrowRightIcon } from "@/components/ui/arrow-right";
 import { Button } from "@/components/ui/button";
 import { useConsent } from "@/lib/consent/ConsentProvider";
 import * as m from "@/paraglide/messages.js";
@@ -116,7 +116,7 @@ export function Footer() {
 								target="_blank"
 							>
 								{m.footer_subscribe()}
-								<ArrowRight className="h-4 w-4" />
+								<ArrowRightIcon size={16} />
 							</a>
 						</Button>
 					</div>

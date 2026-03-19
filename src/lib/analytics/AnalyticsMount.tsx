@@ -1,5 +1,5 @@
-import { Analytics } from "@vercel/analytics/react";
 import { useRouterState } from "@tanstack/react-router";
+import { Analytics } from "@vercel/analytics/react";
 import { useEffect, useMemo, useState } from "react";
 import type { GtagEventParameters } from "@/lib/consent/types";
 
@@ -69,8 +69,8 @@ export function AnalyticsMount() {
 				<>
 					<script
 						async
-						src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}
 						onLoad={() => setIsGa4Ready(true)}
+						src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}
 					/>
 					<script
 						dangerouslySetInnerHTML={{

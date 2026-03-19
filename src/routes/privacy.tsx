@@ -1,17 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import type { LucideIcon } from "lucide-react";
-import {
-	BarChart3,
-	Cookie,
-	Info,
-	Mail,
-	Settings2,
-	ShieldCheck,
-} from "lucide-react";
-import type { ReactNode } from "react";
+import { BarChart3, Cookie, Info, Mail, Settings2 } from "lucide-react";
+import type { ComponentType, ReactNode } from "react";
 import { AnimatedGroup } from "@/components/motion-primitives/animated-group";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ShieldCheckIcon } from "@/components/ui/shield-check";
 import { useConsent } from "@/lib/consent/ConsentProvider";
 import { generateCanonical } from "@/lib/seo/structured-data";
 import * as m from "@/paraglide/messages.js";
@@ -43,7 +36,10 @@ export const Route = createFileRoute("/privacy")({
 });
 
 interface SectionCardProps {
-	icon: LucideIcon;
+	icon: ComponentType<{
+		className?: string;
+		size?: number;
+	}>;
 	title: string;
 	children: ReactNode;
 }
@@ -53,7 +49,7 @@ function SectionCard({ children, icon: Icon, title }: SectionCardProps) {
 		<Card className="h-full border-border/70 bg-card/70 backdrop-blur">
 			<CardHeader className="space-y-3">
 				<div className="flex h-10 w-10 items-center justify-center rounded-full bg-muted text-bl-red">
-					<Icon className="h-5 w-5" />
+					<Icon className="text-bl-red" size={20} />
 				</div>
 				<CardTitle className="font-heading text-2xl">{title}</CardTitle>
 			</CardHeader>
@@ -101,7 +97,7 @@ function PrivacyPage() {
 				</div>
 
 				<div className="grid gap-6 md:grid-cols-2">
-					<SectionCard icon={ShieldCheck} title={m.privacy_who_title()}>
+					<SectionCard icon={ShieldCheckIcon} title={m.privacy_who_title()}>
 						<p>{m.privacy_who_body_1()}</p>
 						<p>{m.privacy_who_body_2()}</p>
 						<a

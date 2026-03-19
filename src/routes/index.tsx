@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { motion } from "motion/react";
 import { useMemo } from "react";
 import {
@@ -12,11 +12,16 @@ import {
 } from "@/components/kibo-ui/contribution-graph";
 import { AnimatedGroup } from "@/components/motion-primitives/animated-group";
 import { TextEffect } from "@/components/motion-primitives/text-effect";
+import {
+	founderSocialLinks,
+	SocialLinks,
+} from "@/components/site/social-links";
+import { ArrowRightIcon } from "@/components/ui/arrow-right";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { type FeedItem, getBuilderCoilFeed } from "@/lib/builder-coil/feed";
-import { generateCanonical } from "@/lib/seo/structured-data";
 import { getGitHubContributions } from "@/lib/github";
+import { generateCanonical } from "@/lib/seo/structured-data";
 import * as m from "@/paraglide/messages.js";
 import { getLocale } from "@/paraglide/runtime.js";
 
@@ -170,7 +175,7 @@ function HomePage() {
 								<Button asChild className="gap-2" size="lg">
 									<Link to="/services">
 										{m.home_hero_cta_services()}
-										<ArrowRight className="h-4 w-4" />
+										<ArrowRightIcon size={16} />
 									</Link>
 								</Button>
 								<Button asChild size="lg" variant="outline">
@@ -324,10 +329,15 @@ function HomePage() {
 							<p className="mb-4 max-w-2xl text-muted-foreground">
 								{m.home_founder_bio()}
 							</p>
-							<div className="flex gap-4">
+							<div className="flex flex-wrap items-center gap-4">
 								<Button asChild size="sm" variant="outline">
 									<Link to="/contact">{m.home_founder_cta_contact()}</Link>
 								</Button>
+								<SocialLinks
+									className="flex items-center"
+									itemClassName="rounded-md p-3 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+									links={founderSocialLinks}
+								/>
 								<Button asChild size="sm" variant="ghost">
 									<a
 										href="https://thebuildercoil.com"
@@ -494,13 +504,12 @@ function HomePage() {
 								target="_blank"
 							>
 								{m.home_newsletter_cta()}
-								<ArrowRight className="h-4 w-4" />
+								<ArrowRightIcon size={16} />
 							</a>
 						</Button>
 					</div>
 				</div>
 			</section>
-			;
 		</div>
 	);
 }
