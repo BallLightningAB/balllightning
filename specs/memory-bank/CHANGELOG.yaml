@@ -14,7 +14,7 @@ entries:
       - Bumped vite ^7.3.1 → ^7.3.5 (patches 3 high CVEs)
       - Bumped vitest ^4.0.16 → ^4.1.8 (patches 1 critical CVE)
       - Added pnpm.overrides for 13 transitive packages: seroval, uuid, diff, undici, ws,
-        shell-quote, rollup, picomatch, postcss, kysely, h3, minimatch, @isaacs/brace-expansion
+        shell-quote, rollup, picomatch, postcss, kysely, h3, minimatch, @isaacs/brace-expansion (direct override)
       - Regenerated pnpm-lock.yaml with overrides block so CI --frozen-lockfile passes
       - Added FORCE_JAVASCRIPT_ACTIONS_TO_NODE24 job-level env to ci.yml
       - Fixed tsconfig.json vite/client type resolution: moved to src/vite-env.d.ts triple-slash ref

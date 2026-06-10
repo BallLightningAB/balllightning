@@ -26,7 +26,7 @@ security policy and secret scanning, and patch all addressable CVEs in the depen
 
 ### pnpm.overrides (transitive CVE patches)
 `seroval`, `uuid`, `diff`, `undici`, `ws`, `shell-quote`, `rollup`, `picomatch`,
-`postcss`, `kysely`, `h3`, `minimatch`, `@isaacs/brace-expansion`
+`postcss`, `kysely`, `h3`, `minimatch`, `@isaacs/brace-expansion` (direct override)
 
 ### TypeScript / CI Fixes
 - `tsconfig.json`: removed `"vite/client"` from `types[]` (no longer resolves as a
