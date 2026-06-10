@@ -34,3 +34,10 @@ updates:
     #   - "BallLightningAB"
     labels:
       - "type: dependency"
+
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "type: dependency"
