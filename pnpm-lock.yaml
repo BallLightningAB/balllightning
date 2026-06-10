@@ -17,7 +17,6 @@ overrides:
   kysely: ^0.29.2
   h3: ^2.0.1-rc.18
   minimatch: ^10.2.3
-  '@isaacs/brace-expansion': ^5.0.1
 
 importers:
 
