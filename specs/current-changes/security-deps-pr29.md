@@ -7,15 +7,13 @@
 
 ## Objective
 
-Establish the security baseline for the repo: enable Dependabot automated updates, add
-security policy and secret scanning, and patch all addressable CVEs in the dependency tree.
+Enable Dependabot automated updates and patch all addressable CVEs in the dependency tree.
+Note: SECURITY.md and secret-scan.yml were added in the initial commit (v0.1.1).
 
 ## Changes
 
 ### GitHub Security Infrastructure
 - `.github/dependabot.yml` — weekly automated PRs for npm, GitHub Actions, and Docker
-- `.github/SECURITY.md` — responsible disclosure policy
-- `.github/workflows/secret-scan.yml` — Gitleaks secret scanning on push/PR
 
 ### Direct Dependency Bumps
 | Package | Before | After | Reason |
