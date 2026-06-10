@@ -2,8 +2,8 @@
 
 **Branch**: `chore/security-and-dependabot`
 **PR**: https://github.com/BallLightningAB/balllightning/pull/29
-**Version**: 0.2.8.11
-**Status**: in-review
+**Version**: 0.2.8.12
+**Status**: completed
 
 ## Objective
 
@@ -61,6 +61,10 @@ without a coordinated TanStack + Vite major version upgrade.
 | eef8a70 | fix(deps): bump react-icons, vite, vitest + add pnpm.overrides for transitive CVEs |
 | cbf925d | fix(ci): sync pnpm-lock.yaml overrides + opt CI into Node.js 24 actions |
 | 4a910d1 | fix(types): move vite/client ref from tsconfig types[] to src/vite-env.d.ts |
+| 800d3c0 | docs: remove incorrect claims about SECURITY.md and secret-scan.yml |
+| bfae1bd | fix: remove tsconfig types array + comment out Dependabot assignees |
+| 06b594d | fix(security): update postcss override to ^8.5.15 |
+| f449d87 | feat(ci): add Docker ecosystem to Dependabot |
 | TBD | chore(memory): bump version + update memory-bank for PR #29 |
 
 ## Validation
