@@ -1,9 +1,33 @@
 entries:
 
+  - date: "2026-06-10"
+    version: "0.2.8.11"
+    issue: "https://github.com/BallLightningAB/balllightning/pull/29"
+    commit: TBD
+    status: in-review
+    title: "chore(security): add Dependabot, SECURITY.md, secret-scan + fix transitive CVEs"
+    details: |-
+      - Added .github/dependabot.yml for weekly automated npm/GH Actions/Docker PRs
+      - Added .github/SECURITY.md with responsible disclosure policy
+      - Added .github/workflows/secret-scan.yml for Gitleaks secret scanning
+      - Bumped react-icons ^5.5.0 → ^5.6.0 (SiCss3 renamed to SiCss in 5.6.0; fixes TS build error)
+      - Bumped vite ^7.3.1 → ^7.3.5 (patches 3 high CVEs)
+      - Bumped vitest ^4.0.16 → ^4.1.8 (patches 1 critical CVE)
+      - Added pnpm.overrides for 13 transitive packages: seroval, uuid, diff, undici, ws,
+        shell-quote, rollup, picomatch, postcss, kysely, h3, minimatch, @isaacs/brace-expansion
+      - Regenerated pnpm-lock.yaml with overrides block so CI --frozen-lockfile passes
+      - Added FORCE_JAVASCRIPT_ACTIONS_TO_NODE24 job-level env to ci.yml
+      - Fixed tsconfig.json vite/client type resolution: moved to src/vite-env.d.ts triple-slash ref
+      - Vulnerability severity reduced: 55 → 18 (0 critical was 1, 10 high was 27)
+      - Remaining 18 (seroval, kysely, srvx, uuid@10, h3 rc flags) locked as peer deps of
+        @tanstack/react-start@1.145.7; require separate TanStack + Vite major upgrade
+
+      Refs: v0.2.8.11 #29
+
   - date: "2026-03-19"
     version: "0.2.8.10"
     issue: "https://github.com/BallLightningAB/balllightning/issues/18"
-    commit: TBD
+    commit: c7292f3
     status: completed
     title: "chore(docs): cleaned up the memory-bank and github issues."
 
