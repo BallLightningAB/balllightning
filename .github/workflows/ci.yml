@@ -12,7 +12,9 @@ permissions:
 jobs:
   ci:
     runs-on: ubuntu-latest
-    
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -26,8 +28,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '24'
-          cache: 'pnpm'        
+          node-version: "24"
+          cache: "pnpm"
 
       - name: Fail if npm lockfile exists
         shell: bash
@@ -38,7 +40,7 @@ jobs:
           fi
 
       - name: Guard package manager
-        run: pnpm run guard:pm         
+        run: pnpm run guard:pm
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
