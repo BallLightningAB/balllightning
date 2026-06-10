@@ -9,8 +9,8 @@ updates:
       timezone: "Europe/Stockholm"
     open-pull-requests-limit: 10
 
-    assignees:
-      - "BallLightningAB"
+    # assignees:
+    #   - "BallLightningAB"
     labels:
       - "type: dependency"
 
@@ -30,7 +30,7 @@ updates:
     schedule:
       interval: "monthly"
 
-    assignees:
-      - "BallLightningAB"
+    # assignees:
+    #   - "BallLightningAB"
     labels:
       - "type: dependency"
