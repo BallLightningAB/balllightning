@@ -1,4 +1,4 @@
-version: 2.1
+version: 2
 updates:
   - package-ecosystem: "npm"
     directory: "/"
@@ -7,14 +7,13 @@ updates:
       day: "monday"
       time: "08:00"
       timezone: "Europe/Stockholm"
-    versioning-strategy: "increase"
     open-pull-requests-limit: 10
     rebase-strategy: "auto"
 
     assignees:
       - "BallLightningAB"
     labels:
-      - "type:dependency"
+      - "type: dependency"
 
     # Block major bumps for normal version updates
     ignore:
@@ -36,4 +35,4 @@ updates:
     assignees:
       - "BallLightningAB"
     labels:
-      - "type:dependency"
+      - "type: dependency"
