@@ -1,5 +1,23 @@
 entries:
 
+  - date: "2026-06-13"
+    version: "0.2.8.13"
+    issue: ""
+    commit: TBD
+    status: in-review
+    title: "test(testing): implement reusable Vitest test suite for TanStack Start"
+    details: |-
+      - Added vitest.config.ts with React plugin, jsdom environment, and coverage settings
+      - Created global test setup in src/__tests__/setup.ts with jest-dom and browser API mocks
+      - Implemented reusable test-utils.tsx with custom renderWithProviders and common mocks
+      - Added i18n translation completeness test (validates key parity across locales)
+      - Added cookie consent storage tests (localStorage read/write with server-side safety)
+      - Component/server function tests removed (better suited for E2E testing due to Router/Paraglide/AsyncLocalStorage context requirements)
+      - All 11 tests passing (3 i18n tests, 8 consent storage tests)
+      - Test infrastructure designed for reuse across TanStack Start projects
+
+      Refs: v0.2.8.13
+
   - date: "2026-06-10"
     version: "0.2.8.12"
     issue: "https://github.com/BallLightningAB/balllightning/pull/29"
