@@ -1,6 +1,5 @@
 import { paraglideVitePlugin } from "@inlang/paraglide-js";
 import tailwindcss from "@tailwindcss/vite";
-import { devtools } from "@tanstack/devtools-vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import viteReact from "@vitejs/plugin-react";
 import { nitro } from "nitro/vite";
@@ -37,7 +36,6 @@ const config = defineConfig({
 			cookieName: "locale",
 			cookieDomain: "balllightning.cloud",
 		}),
-		devtools(),
 		nitro({
 			// Use Vercel preset for deployment
 			preset: "vercel",
