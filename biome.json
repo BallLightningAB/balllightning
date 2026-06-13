@@ -58,8 +58,7 @@
         "noDangerouslySetInnerHtml": "off"
       },
       "nursery": {
-        "useSortedClasses": "off",
-        "useConsistentArrowReturn": "off"
+        "useSortedClasses": "off"
       },
       "style": {
         "useFilenamingConvention": {
@@ -69,7 +68,12 @@
           }
         },
         "useImportType": "off",
-        "noNegationElse": "off"
+        "noNegationElse": "off",
+        "noSubstr": "off",
+        "useConsistentArrowReturn": "off"
+      },
+      "suspicious": {
+        "noArrayIndexKey": "off"
       },
       "performance": {
         "noNamespaceImport": "off"
@@ -84,5 +88,5 @@
       "quoteStyle": "double"
     }
   },
-  "extends": ["ultracite/core", "ultracite/remix"]
+  "extends": ["ultracite/biome/core", "ultracite/biome/remix"]
 }
