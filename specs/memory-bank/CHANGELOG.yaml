@@ -3,8 +3,8 @@ entries:
   - date: "2026-06-13"
     version: "0.2.8.13"
     issue: ""
-    commit: TBD
-    status: in-review
+    commit: 8d702c5
+    status: completed
     title: "test(testing): implement reusable Vitest test suite for TanStack Start"
     details: |-
       - Added vitest.config.ts with React plugin, jsdom environment, and coverage settings
