@@ -1,4 +1,3 @@
-import { TanStackDevtools } from "@tanstack/react-devtools";
 import {
 	createRootRoute,
 	HeadContent,
@@ -6,7 +5,6 @@ import {
 	Scripts,
 	useRouterState,
 } from "@tanstack/react-router";
-import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { Layout } from "@/components/layout/Layout";
 import { CookieBanner } from "@/components/site/CookieBanner";
 import { CookieSettings } from "@/components/site/CookieSettings";
@@ -286,19 +284,6 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 					<ConsentManagedAnalytics />
 					<ConsentUiMount />
 				</ConsentProvider>
-				{isDev && (
-					<TanStackDevtools
-						config={{
-							position: "bottom-right",
-						}}
-						plugins={[
-							{
-								name: "Tanstack Router",
-								render: <TanStackRouterDevtoolsPanel />,
-							},
-						]}
-					/>
-				)}
 				<Scripts />
 			</body>
 		</html>
