@@ -1,11 +1,11 @@
 # Workspace Instructions
 
-This repository keeps additional workspace guidance under `.windsurf/rules/`.
+This repository keeps additional workspace guidance under `.devin/rules/`.
 Treat the following files as authoritative project instructions and apply the relevant ones for the task at hand:
 
-- `.windsurf/rules/tanstack-start.md`
-- `.windsurf/rules/paraglide.md`
-- `.windsurf/rules/ultracite.md`
+- `.devin/rules/tanstack-start.md`
+- `.devin/rules/paraglide.md`
+- `.devin/rules/ultracite.md`
 
 Treat any rule file marked with `trigger: always_on` as always active.
 

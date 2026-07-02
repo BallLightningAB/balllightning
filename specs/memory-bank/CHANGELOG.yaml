@@ -1,5 +1,18 @@
 entries:
 
+  - date: "2026-07-02"
+    version: "0.2.8.14"
+    issue: ""
+    commit: TBD
+    status: completed
+    title: "chore(repo): correct agent rule path guidance"
+    details: |-
+      - Updated AGENTS.md to point at the active .devin/rules directory instead of the removed .windsurf/rules path
+      - Confirmed the TanStack Start, Paraglide, and Ultracite rule files are present under .devin/rules
+      - Pruned stale local/cloud branches outside the two active Dependabot PR branches and fast-forwarded local main to origin/main
+
+      Refs: v0.2.8.14
+
   - date: "2026-06-13"
     version: "0.2.8.13"
     issue: ""
@@ -21,7 +34,7 @@ entries:
   - date: "2026-06-10"
     version: "0.2.8.12"
     issue: "https://github.com/BallLightningAB/balllightning/pull/29"
-    commit: TBD
+    commit: f4cf593
     status: in-review
     title: "chore(security): finalize Dependabot configuration and security fixes"
     details: |-
@@ -468,4 +481,3 @@ entries:
       - **Full multilingual support** now complete for entire site      
 
       Refs: v0.2.5.9 #14 I14D8-I14D11 #16 I16D1-I16D8
-
