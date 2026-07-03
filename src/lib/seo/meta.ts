@@ -30,7 +30,7 @@ const SITE_NAME = "Ball Lightning AB";
 const SITE_URL = "https://balllightning.cloud";
 const DEFAULT_IMAGE = `${SITE_URL}/logo-60.svg`;
 const DEFAULT_DESCRIPTION =
-	"Software consulting and product development. Full-stack web, systems integration, and AI-driven solutions by Ball Lightning AB.";
+	"Maintained company presence, portfolio, and project archive for software, integrations, and digital projects by Nicolas Brulay.";
 const TWITTER_HANDLE = "@nicbrulay";
 
 interface MetaTag {

@@ -19,11 +19,15 @@ import {
 import { ArrowRightIcon } from "@/components/ui/arrow-right";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { type FeedItem, getBuilderCoilFeed } from "@/lib/builder-coil/feed";
+import { getBuilderCoilFeed } from "@/lib/builder-coil/feed";
 import { getGitHubContributions } from "@/lib/github";
 import { generateCanonical } from "@/lib/seo/structured-data";
 import * as m from "@/paraglide/messages.js";
 import { getLocale } from "@/paraglide/runtime.js";
+
+const HIDDEN_BUILDER_COIL_FEED_SLUGS = new Set([
+	"shipping-api-dojo-auth-foundation",
+]);
 
 export const Route = createFileRoute("/")({
 	head: () => {
@@ -33,21 +37,19 @@ export const Route = createFileRoute("/")({
 		return {
 			meta: [
 				{
-					title: "Ball Lightning AB | Software Consulting & Development",
+					title: m.home_meta_title(),
 				},
 				{
 					name: "description",
-					content:
-						"Software consulting and product development. Full-stack web, systems integration, and AI-driven solutions by Ball Lightning AB.",
+					content: m.home_meta_description(),
 				},
 				{
 					property: "og:title",
-					content: "Ball Lightning AB | Software Consulting & Development",
+					content: m.home_meta_og_title(),
 				},
 				{
 					property: "og:description",
-					content:
-						"Software consulting and product development. Full-stack web, systems integration, and AI-driven solutions by Ball Lightning AB.",
+					content: m.home_meta_og_description(),
 				},
 			],
 			links: [
@@ -65,7 +67,18 @@ export const Route = createFileRoute("/")({
 			getGitHubContributions({ data: { username: "BallLightningAB" } }),
 		]);
 
-		return { feed, github };
+		const devlogFeed = feed
+			? {
+					...feed,
+					items: feed.items.filter(
+						(item) =>
+							item.type === "blog" &&
+							!HIDDEN_BUILDER_COIL_FEED_SLUGS.has(item.slug)
+					),
+				}
+			: feed;
+
+		return { feed: devlogFeed, github };
 	},
 });
 
@@ -93,11 +106,7 @@ function HomePage() {
 		};
 	}, [github]);
 
-	const newsItems =
-		feed?.items.filter((i: FeedItem) => i.type === "news").slice(0, 1) ?? [];
-	const blogItems =
-		feed?.items.filter((i: FeedItem) => i.type === "blog").slice(0, 2) ?? [];
-	const feedCards = [...newsItems, ...blogItems];
+	const feedCards = feed?.items.slice(0, 3) ?? [];
 
 	return (
 		<div className="flex flex-col" suppressHydrationWarning>
@@ -431,16 +440,8 @@ function HomePage() {
 								>
 									<CardHeader>
 										<div className="mb-2 flex flex-wrap items-center gap-2">
-											<span
-												className={`rounded-full px-2 py-1 text-xs font-medium ${
-													item.type === "news"
-														? "bg-bl-red/10 text-bl-red"
-														: "bg-bl-rose/10 text-bl-rose"
-												}`}
-											>
-												{item.type === "news"
-													? m.home_feed_type_news()
-													: m.home_feed_type_blog()}
+											<span className="rounded-full bg-bl-rose/10 px-2 py-1 font-medium text-bl-rose text-xs">
+												{m.home_feed_type_blog()}
 											</span>
 											<span className="break-words text-muted-foreground text-xs">
 												{new Date(item.publishedAt || "").toLocaleDateString(
@@ -484,32 +485,6 @@ function HomePage() {
 					</div>
 				</section>
 			)}
-			{/* Newsletter CTA — link to TBC only */}
-			<section className="border-border border-t bg-background py-16 md:py-24">
-				<div className="container mx-auto max-w-6xl px-4">
-					<div className="mx-auto max-w-2xl text-center">
-						<h2 className="mb-4 font-semibold text-3xl">
-							{m.home_newsletter_title()}
-						</h2>
-						<p className="mb-2 font-medium text-lg text-bl-red">
-							{m.home_newsletter_subtitle()}
-						</p>
-						<p className="mb-8 text-muted-foreground">
-							{m.home_newsletter_description()}
-						</p>
-						<Button asChild className="gap-2" size="lg">
-							<a
-								href="https://thebuildercoil.com/newsletter"
-								rel="noopener noreferrer"
-								target="_blank"
-							>
-								{m.home_newsletter_cta()}
-								<ArrowRightIcon size={16} />
-							</a>
-						</Button>
-					</div>
-				</div>
-			</section>
 		</div>
 	);
 }

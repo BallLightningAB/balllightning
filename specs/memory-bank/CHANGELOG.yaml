@@ -1,6 +1,25 @@
 entries:
 
   - date: "2026-07-02"
+    version: "0.2.8.15"
+    issue: ""
+    commit: TBD
+    status: completed
+    title: "content(site): reposition Ball Lightning as maintained portfolio and archive"
+    details: |-
+      - Repositioned Ball Lightning around Nicolas Brulay's full-time Hultafors Group role as Product & Service Owner - Integrations
+      - Updated homepage, capabilities, contact, portfolio, footer, metadata, and structured data away from active sales-oriented positioning
+      - Removed the public message submission flow and direct email backend; contact now uses direct email/social channels
+      - Added Chronomation archive route and reframed Chronomation as a paused archived concept
+      - Removed old lead-capture and launch-oriented public surfaces
+      - Limited the homepage Builder Coil feed to devlog/blog entries so older product/channel announcements are not serialized into the refreshed page
+      - Localized root, homepage, and technologies metadata after external review flagged hardcoded English route metadata
+      - Validated Paraglide, i18n, typecheck, lint, test, build, sitemap, SSR routes, and stale-term sweep
+      - Updated PDD to version 1.2 and ignored the local AI renovation package
+
+      Refs: v0.2.8.15 I30D1 I30D2 I30D3 I30D4 I30D5 I30D6
+
+  - date: "2026-07-02"
     version: "0.2.8.14"
     issue: ""
     commit: TBD

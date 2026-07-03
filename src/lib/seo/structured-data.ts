@@ -1,5 +1,5 @@
 /**
- * JSON-LD Structured Data for The Builder Coil
+ * JSON-LD Structured Data for Ball Lightning AB
  *
  * Provides schema.org structured data for SEO:
  * - WebSite schema on home page
@@ -41,7 +41,7 @@ export function generateRootEntityGraphSchema() {
 				name: ORGANIZATION_NAME,
 				url: BALL_LIGHTNING_URL,
 				description:
-					"Software consulting and product development company specializing in full-stack web, systems integration, and AI-driven solutions.",
+					"Maintained company presence, portfolio, and project archive for software, integrations, and digital projects by Nicolas Brulay.",
 				founder: {
 					"@type": "Person",
 					name: AUTHOR_NAME,
@@ -57,7 +57,7 @@ export function generateRootEntityGraphSchema() {
 				"@id": WEBSITE_ID,
 				name: SITE_NAME,
 				description:
-					"Software consulting and product development. Full-stack web, systems integration, and AI-driven solutions by Ball Lightning AB.",
+					"Maintained company presence, portfolio, and project archive for software, integrations, and digital projects by Nicolas Brulay.",
 				url: SITE_URL,
 				publisher: {
 					"@id": ORGANIZATION_ID,
@@ -83,9 +83,9 @@ export function generateWebSiteSchema() {
 		"@context": "https://schema.org",
 		"@type": "WebSite",
 		"@id": WEBSITE_ID,
-		name: SITE_NAME,
-		description:
-			"Software consulting and product development. Full-stack web, systems integration, and AI-driven solutions by Ball Lightning AB.",
+	name: SITE_NAME,
+	description:
+		"Maintained company presence, portfolio, and project archive for software, integrations, and digital projects by Nicolas Brulay.",
 		url: SITE_URL,
 		publisher: {
 			"@id": ORGANIZATION_ID,
@@ -111,9 +111,9 @@ export function generateOrganizationSchema() {
 		"@id": ORGANIZATION_ID,
 		name: ORGANIZATION_NAME,
 		url: BALL_LIGHTNING_URL,
-		logo: `${SITE_URL}/logo-60.svg`,
-		description:
-			"Software consulting and product development company specializing in full-stack web, systems integration, and AI-driven solutions.",
+	logo: `${SITE_URL}/logo-60.svg`,
+	description:
+		"Maintained company presence, portfolio, and project archive for software, integrations, and digital projects by Nicolas Brulay.",
 		founder: {
 			"@type": "Person",
 			name: AUTHOR_NAME,

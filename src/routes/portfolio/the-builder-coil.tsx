@@ -99,7 +99,7 @@ function TheBuilderCoilPage() {
 			}}
 			projectRole={m.portfolio_the_builder_coil_role()}
 			subtitle={m.portfolio_the_builder_coil_subtitle_long()}
-			tags={["TanStack Start", "CMS", "SEO", "Newsletter", "Full-Stack"]}
+			tags={["TanStack Start", "CMS", "SEO", "Devlog", "Full-Stack"]}
 			techStack={[
 				"TanStack Start",
 				"TanStack Router",
@@ -107,7 +107,6 @@ function TheBuilderCoilPage() {
 				"TypeScript",
 				"Tailwind CSS",
 				"shadcn/ui",
-				"Resend",
 				"Vercel",
 			]}
 			timeline={m.portfolio_the_builder_coil_timeline()}

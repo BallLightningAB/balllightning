@@ -1,6 +1,4 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRightIcon } from "@/components/ui/arrow-right";
-import { Button } from "@/components/ui/button";
 import { useConsent } from "@/lib/consent/ConsentProvider";
 import * as m from "@/paraglide/messages.js";
 
@@ -21,7 +19,7 @@ const footerLinks = {
 			label: "The Builder Coil",
 			external: true,
 		},
-		{ href: "https://chronomation.com", label: "Chronomation", external: true },
+		{ href: "/chronomation", label: "Chronomation", external: false },
 		{
 			href: "https://github.com/BallLightningAB",
 			label: "GitHub",
@@ -38,8 +36,7 @@ export function Footer() {
 	return (
 		<footer className="border-border border-t bg-background">
 			<div className="container mx-auto max-w-6xl px-4 py-12">
-				<div className="grid gap-8 md:grid-cols-4">
-					{/* Brand */}
+				<div className="grid gap-8 md:grid-cols-3">
 					<div className="md:col-span-1">
 						<Link className="flex items-center gap-2" to="/">
 							<picture>
@@ -61,7 +58,6 @@ export function Footer() {
 						</p>
 					</div>
 
-					{/* Site Links */}
 					<div>
 						<h3 className="font-heading mb-3 font-semibold text-foreground text-sm">
 							{m.footer_site()}
@@ -80,7 +76,6 @@ export function Footer() {
 						</ul>
 					</div>
 
-					{/* Ecosystem */}
 					<div>
 						<h3 className="font-heading mb-3 font-semibold text-foreground text-sm">
 							{m.footer_ecosystem()}
@@ -88,41 +83,30 @@ export function Footer() {
 						<ul className="space-y-2">
 							{footerLinks.ecosystem.map((link) => (
 								<li key={link.href}>
-									<a
-										className="text-muted-foreground text-sm transition-colors hover:text-foreground"
-										href={link.href}
-										rel="noopener noreferrer"
-										target="_blank"
-									>
-										{link.label} ↗
-									</a>
+									{link.external ? (
+										<a
+											className="text-muted-foreground text-sm transition-colors hover:text-foreground"
+											href={link.href}
+											rel="noopener noreferrer"
+											target="_blank"
+										>
+											{link.label}
+											<span className="sr-only"> external link</span>
+										</a>
+									) : (
+										<Link
+											className="text-muted-foreground text-sm transition-colors hover:text-foreground"
+											to={link.href}
+										>
+											{link.label}
+										</Link>
+									)}
 								</li>
 							))}
 						</ul>
 					</div>
-
-					{/* Newsletter CTA (link to TBC only) */}
-					<div className="space-y-3">
-						<h3 className="font-heading font-semibold text-foreground text-sm">
-							{m.footer_newsletter_title()}
-						</h3>
-						<p className="text-muted-foreground text-sm">
-							{m.footer_newsletter_description()}
-						</p>
-						<Button asChild className="gap-2" size="sm" variant="outline">
-							<a
-								href="https://thebuildercoil.com/newsletter"
-								rel="noopener noreferrer"
-								target="_blank"
-							>
-								{m.footer_subscribe()}
-								<ArrowRightIcon size={16} />
-							</a>
-						</Button>
-					</div>
 				</div>
 
-				{/* Bottom */}
 				<div className="mt-8 flex flex-col items-center justify-between gap-4 border-border border-t pt-8 md:flex-row">
 					<p className="text-muted-foreground text-sm">
 						{m.footer_copyright({ year: String(currentYear) })}

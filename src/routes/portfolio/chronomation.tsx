@@ -53,16 +53,14 @@ export const Route = createFileRoute("/portfolio/chronomation")({
 							name: "Chronomation",
 							description: m.portfolio_chronomation_schema_description(),
 							slug: "chronomation",
-							schemaType: "SoftwareApplication",
-							applicationCategory: "ProductivityApplication",
-							operatingSystem: "Web",
+							schemaType: "CreativeWork",
 							url: generateCanonical("/portfolio/chronomation", locale),
 							dateCreated: "2025",
 							keywords: [
-								"BankID document signing",
-								"PDF editor",
-								"multi-tenant SaaS",
-								"Swedish SME",
+								"archived concept",
+								"scheduling",
+								"content automation",
+								"AI-assisted workflows",
 							],
 						})
 					),
@@ -70,10 +68,10 @@ export const Route = createFileRoute("/portfolio/chronomation")({
 			],
 		};
 	},
-	component: ChronomotionPage,
+	component: ChronomationPage,
 });
 
-function ChronomotionPage() {
+function ChronomationPage() {
 	return (
 		<PortfolioSubpageLayout
 			heroImage={chronomationHero}
@@ -81,8 +79,7 @@ function ChronomotionPage() {
 			links={[
 				{
 					label: m.portfolio_chronomation_link_primary(),
-					url: "https://chronomation.com",
-					external: true,
+					url: "/chronomation",
 				},
 			]}
 			nextProject={{
@@ -91,13 +88,7 @@ function ChronomotionPage() {
 			}}
 			projectRole={m.portfolio_chronomation_role()}
 			subtitle={m.portfolio_chronomation_subtitle_long()}
-			tags={[
-				"SaaS",
-				"Multi-tenant",
-				"BankID",
-				"PDF Editor",
-				"Content Automation",
-			]}
+			tags={["Archived concept", "Scheduling", "Content Automation", "AI"]}
 			techStack={[
 				"TanStack Start",
 				"React 19",
@@ -105,13 +96,11 @@ function ChronomotionPage() {
 				"Tailwind CSS",
 				"Neon Postgres",
 				"Drizzle ORM",
-				"BankID",
 				"Vercel",
 			]}
 			timeline={m.portfolio_chronomation_timeline()}
 			title={m.portfolio_chronomation_title()}
 		>
-			{/* Overview */}
 			<section>
 				<h2 className="mb-4 text-2xl font-bold">
 					{m.portfolio_chronomation_overview_heading()}
@@ -121,7 +110,6 @@ function ChronomotionPage() {
 				</p>
 			</section>
 
-			{/* Core Product */}
 			<section>
 				<h2 className="mb-4 text-2xl font-bold">
 					{m.portfolio_chronomation_core_heading()}
@@ -137,7 +125,6 @@ function ChronomotionPage() {
 				</ul>
 			</section>
 
-			{/* Technical Architecture */}
 			<section>
 				<h2 className="mb-4 text-2xl font-bold">
 					{m.portfolio_chronomation_tech_heading()}
@@ -151,54 +138,9 @@ function ChronomotionPage() {
 					<li>{m.portfolio_chronomation_tech_list_3()}</li>
 					<li>{m.portfolio_chronomation_tech_list_4()}</li>
 				</ul>
-			</section>
-
-			{/* Build in Public */}
-			<section>
-				<h2 className="mb-4 text-2xl font-bold">
-					{m.portfolio_chronomation_build_public_heading()}
-				</h2>
-				<p className="text-muted-foreground leading-relaxed">
-					{m.portfolio_chronomation_build_public_prefix()}{" "}
-					<a
-						className="text-bl-red hover:underline"
-						href="https://thebuildercoil.com"
-						rel="noopener noreferrer"
-						target="_blank"
-					>
-						{m.portfolio_chronomation_build_public_link_text()}
-					</a>
-					, {m.portfolio_chronomation_build_public_suffix()}
+				<p className="mt-6 text-muted-foreground leading-relaxed">
+					{m.portfolio_chronomation_archive_note()}
 				</p>
-
-				{/* Screenshots */}
-				<section>
-					<h2 className="mb-4 text-2xl font-bold">
-						{m.portfolio_chronomation_screenshots_heading()}
-					</h2>
-					{/* TODO: Add real screenshots when app alpha is ready. Uncomment the gallery below once
-					images exist in src/assets/portfolio/chronomation/:
-					- chronomation-app.webp — app.chronomation.com PDF editor or signing UI
-					- chronomation-architecture.webp — architecture diagram showing multi-tenant setup
-					<ProjectImageGallery
-						columns={2}
-						images={[
-							{
-								src: "/src/assets/portfolio/chronomation/chronomation-app.webp",
-								alt: "Chronomation app interface showing PDF editor and BankID signing UI",
-								width: 1200,
-								height: 800,
-							},
-							{
-								src: "/src/assets/portfolio/chronomation/chronomation-architecture.webp",
-								alt: "Chronomation multi-tenant architecture diagram showing database and service layers",
-								width: 1200,
-								height: 800,
-							},
-						]}
-					/>
-					*/}
-				</section>
 			</section>
 		</PortfolioSubpageLayout>
 	);

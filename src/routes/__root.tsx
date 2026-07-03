@@ -46,12 +46,11 @@ export const Route = createRootRoute({
 				content: "width=device-width, initial-scale=1, viewport-fit=cover",
 			},
 			{
-				title: "Ball Lightning AB | Software Consulting & Development",
+				title: m.home_meta_title(),
 			},
 			{
 				name: "description",
-				content:
-					"Software consulting and product development. Full-stack web, systems integration, and AI-driven solutions by Ball Lightning AB.",
+				content: m.home_meta_og_description(),
 			},
 			{
 				name: "theme-color",
@@ -64,12 +63,11 @@ export const Route = createRootRoute({
 			// Open Graph
 			{
 				property: "og:title",
-				content: "Ball Lightning AB | Software Consulting & Development",
+				content: m.home_meta_og_title(),
 			},
 			{
 				property: "og:description",
-				content:
-					"Software consulting and product development. Full-stack web, systems integration, and AI-driven solutions by Ball Lightning AB.",
+				content: m.home_meta_og_description(),
 			},
 			{
 				property: "og:image",
@@ -98,12 +96,11 @@ export const Route = createRootRoute({
 			},
 			{
 				name: "twitter:title",
-				content: "Ball Lightning AB | Software Consulting & Development",
+				content: m.home_meta_og_title(),
 			},
 			{
 				name: "twitter:description",
-				content:
-					"Software consulting and product development. Full-stack web, systems integration, and AI-driven solutions.",
+				content: m.home_meta_og_description(),
 			},
 			{
 				name: "twitter:image",

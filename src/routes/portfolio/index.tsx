@@ -69,7 +69,7 @@ const projects: Project[] = [
 			m.portfolio_tag_tanstack_start(),
 			m.portfolio_tag_cms(),
 			m.portfolio_tag_seo(),
-			m.portfolio_tag_newsletter(),
+			m.portfolio_tag_devlog(),
 			m.portfolio_tag_full_stack(),
 		],
 		externalUrl: "https://thebuildercoil.com",
@@ -227,7 +227,7 @@ function PortfolioPage() {
 					))}
 				</div>
 
-				{/* CTA */}
+				{/* Archive pointer */}
 				<div className="mt-16 text-center">
 					<h2 className="mb-4 font-semibold text-2xl">
 						{m.portfolio_cta_title()}
@@ -235,8 +235,8 @@ function PortfolioPage() {
 					<p className="mb-6 text-muted-foreground">
 						{m.portfolio_cta_description()}
 					</p>
-					<Button asChild className="gap-2" size="lg">
-						<Link to="/contact">
+					<Button asChild className="gap-2" size="lg" variant="outline">
+						<Link to="/chronomation">
 							{m.portfolio_cta_button()}
 							<ArrowRightIcon size={16} />
 						</Link>
