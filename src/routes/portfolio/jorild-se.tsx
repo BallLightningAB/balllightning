@@ -133,7 +133,13 @@ function JorildSePage() {
 			}}
 			projectRole={m.portfolio_jorild_se_role()}
 			subtitle={m.portfolio_jorild_se_subtitle_long()}
-			tags={["Next.js", "i18n", "SEO", "Accessibility", "Google Business"]}
+			tags={[
+				m.portfolio_tag_nextjs(),
+				m.portfolio_tag_i18n(),
+				m.portfolio_tag_seo(),
+				m.portfolio_tag_accessibility(),
+				m.portfolio_tag_google_business(),
+			]}
 			techStack={[
 				"Next.js 15",
 				"React 19",

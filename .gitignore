@@ -48,3 +48,6 @@ src/paraglide/
 
 # Newsletter PII data (Phase 1 JSON storage)
 content/newsletter/subscribers.json
+
+# Local AI renovation package
+specs/current-changes/ai-renovation-kit/

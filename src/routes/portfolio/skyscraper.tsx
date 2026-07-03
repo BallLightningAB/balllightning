@@ -106,7 +106,12 @@ function SkyscraperPage() {
 			}}
 			projectRole={m.portfolio_skyscraper_role()}
 			subtitle={m.portfolio_skyscraper_subtitle_long()}
-			tags={["Game Dev", "MMO", "Project Management", "Systems Design"]}
+			tags={[
+				m.portfolio_tag_game_dev(),
+				m.portfolio_tag_mmo(),
+				m.portfolio_tag_project_management(),
+				m.portfolio_tag_systems_design(),
+			]}
 			techStack={[
 				"Unity",
 				"C#",

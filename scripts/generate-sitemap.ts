@@ -1,5 +1,5 @@
 /**
- * Generate sitemap.xml for The Builder Coil
+ * Generate sitemap.xml for Ball Lightning
  *
  * Run with: pnpm tsx scripts/generate-sitemap.ts
  */
@@ -12,6 +12,7 @@ const SITE_URL = "https://balllightning.cloud";
 const LOCALES = ["en", "sv", "de", "fr"] as const;
 const CONTENT_DIR = path.join(process.cwd(), "src", "data");
 const OUTPUT_PATH = path.join(process.cwd(), "public", "sitemap.xml");
+const STATIC_LASTMOD = "2026-07-02";
 
 // Static pages with priorities and change frequencies
 const STATIC_PAGES = [
@@ -19,6 +20,7 @@ const STATIC_PAGES = [
 	{ path: "/services", priority: "0.9", changefreq: "monthly" },
 	{ path: "/technologies", priority: "0.8", changefreq: "monthly" },
 	{ path: "/portfolio", priority: "0.9", changefreq: "weekly" },
+	{ path: "/chronomation", priority: "0.7", changefreq: "monthly" },
 	{ path: "/contact", priority: "0.7", changefreq: "monthly" },
 	{ path: "/privacy", priority: "0.6", changefreq: "monthly" },
 ];
@@ -118,7 +120,7 @@ function main() {
 
 	// Build entries
 	const staticEntries = STATIC_PAGES.map((page) =>
-		generateUrlEntry(page.path, "2026-03-18", page.changefreq, page.priority)
+		generateUrlEntry(page.path, STATIC_LASTMOD, page.changefreq, page.priority)
 	);
 
 	const portfolioEntries = PORTFOLIO_SUBPAGES.map((subpage) =>

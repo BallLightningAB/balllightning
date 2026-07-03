@@ -19,10 +19,17 @@ import { COMPETENCE_TO_SLUG } from "@/lib/technologies/data";
 import * as m from "@/paraglide/messages.js";
 import { getLocale } from "@/paraglide/runtime.js";
 
-type ServiceTierIcon = ComponentType<{
+type CapabilityIcon = ComponentType<{
 	className?: string;
 	size?: number;
 }>;
+
+interface CapabilityCard {
+	description: string;
+	features: string[];
+	icon: CapabilityIcon;
+	title: string;
+}
 
 export const Route = createFileRoute("/services")({
 	head: () => {
@@ -46,55 +53,36 @@ export const Route = createFileRoute("/services")({
 	component: ServicesPage,
 });
 
-function useServiceTiers(): Array<{
-	description: string;
-	features: string[];
-	highlighted?: boolean;
-	icon: ServiceTierIcon;
-	price: string;
-	title: string;
-}> {
+function useCapabilityCards(): CapabilityCard[] {
 	return [
 		{
-			icon: EarthIcon,
-			title: m.services_tier_landing_title(),
-			price: m.services_tier_landing_price(),
-			description: m.services_tier_landing_description(),
+			icon: WebhookIcon,
+			title: m.services_capability_integration_title(),
+			description: m.services_capability_integration_description(),
 			features: [
-				m.services_tier_landing_f1(),
-				m.services_tier_landing_f2(),
-				m.services_tier_landing_f3(),
-				m.services_tier_landing_f4(),
-				m.services_tier_landing_f5(),
+				m.services_capability_integration_f1(),
+				m.services_capability_integration_f2(),
+				m.services_capability_integration_f3(),
+			],
+		},
+		{
+			icon: EarthIcon,
+			title: m.services_capability_web_title(),
+			description: m.services_capability_web_description(),
+			features: [
+				m.services_capability_web_f1(),
+				m.services_capability_web_f2(),
+				m.services_capability_web_f3(),
 			],
 		},
 		{
 			icon: FolderCodeIcon,
-			title: m.services_tier_smart_title(),
-			price: m.services_tier_smart_price(),
-			description: m.services_tier_smart_description(),
+			title: m.services_capability_ai_title(),
+			description: m.services_capability_ai_description(),
 			features: [
-				m.services_tier_smart_f1(),
-				m.services_tier_smart_f2(),
-				m.services_tier_smart_f3(),
-				m.services_tier_smart_f4(),
-				m.services_tier_smart_f5(),
-				m.services_tier_smart_f6(),
-			],
-			highlighted: true,
-		},
-		{
-			icon: WebhookIcon,
-			title: m.services_tier_integrations_title(),
-			price: m.services_tier_integrations_price(),
-			description: m.services_tier_integrations_description(),
-			features: [
-				m.services_tier_integrations_f1(),
-				m.services_tier_integrations_f2(),
-				m.services_tier_integrations_f3(),
-				m.services_tier_integrations_f4(),
-				m.services_tier_integrations_f5(),
-				m.services_tier_integrations_f6(),
+				m.services_capability_ai_f1(),
+				m.services_capability_ai_f2(),
+				m.services_capability_ai_f3(),
 			],
 		},
 	];
@@ -116,7 +104,7 @@ const competences = [
 ];
 
 function ServicesPage() {
-	const serviceTiers = useServiceTiers();
+	const capabilityCards = useCapabilityCards();
 
 	return (
 		<div className="py-12 md:py-20">
@@ -142,7 +130,6 @@ function ServicesPage() {
 					},
 				}}
 			>
-				{/* Header */}
 				<div className="mb-16 text-center">
 					<h1 className="mb-4 font-bold text-4xl md:text-5xl">
 						{m.services_title()}
@@ -152,35 +139,22 @@ function ServicesPage() {
 					</p>
 				</div>
 
-				{/* Service Tiers */}
 				<div className="mb-20 grid gap-8 md:grid-cols-3">
-					{serviceTiers.map((tier) => (
+					{capabilityCards.map((capability) => (
 						<Card
-							className={`relative flex flex-col ${
-								tier.highlighted
-									? "border-bl-red/40 shadow-[0_0_30px_rgba(221,58,40,0.1)]"
-									: ""
-							}`}
-							key={tier.title}
+							className="flex flex-col transition-colors hover:border-bl-red/30"
+							key={capability.title}
 						>
-							{tier.highlighted && (
-								<div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-[#DD3A28] to-[#FF7268] px-3 py-1 text-xs font-medium text-white">
-									{m.services_recommended()}
-								</div>
-							)}
 							<CardHeader>
-								<tier.icon className="mb-3 text-bl-red" size={32} />
-								<CardTitle className="text-xl">{tier.title}</CardTitle>
-								<p className="font-semibold text-lg text-bl-red">
-									{tier.price}
-								</p>
-								<CardDescription className="text-sm">
-									{tier.description}
+								<capability.icon className="mb-3 text-bl-red" size={32} />
+								<CardTitle className="text-xl">{capability.title}</CardTitle>
+								<CardDescription className="text-sm leading-relaxed">
+									{capability.description}
 								</CardDescription>
 							</CardHeader>
-							<CardContent className="flex flex-1 flex-col">
-								<ul className="mb-6 flex-1 space-y-2">
-									{tier.features.map((feature) => (
+							<CardContent>
+								<ul className="space-y-2">
+									{capability.features.map((feature) => (
 										<li
 											className="flex items-start gap-2 text-sm text-muted-foreground"
 											key={feature}
@@ -190,22 +164,11 @@ function ServicesPage() {
 										</li>
 									))}
 								</ul>
-								<Button
-									asChild
-									className="w-full gap-2"
-									variant={tier.highlighted ? "default" : "outline"}
-								>
-									<Link to="/contact">
-										{m.services_get_started()}
-										<ArrowRightIcon size={16} />
-									</Link>
-								</Button>
 							</CardContent>
 						</Card>
 					))}
 				</div>
 
-				{/* Competence */}
 				<div className="mb-20">
 					<h2 className="mb-8 text-center font-semibold text-3xl">
 						{m.services_competence_title()}
@@ -237,7 +200,6 @@ function ServicesPage() {
 					</div>
 				</div>
 
-				{/* Selected Work */}
 				<div className="text-center">
 					<h2 className="mb-4 font-semibold text-3xl">
 						{m.services_selected_work_title()}
@@ -245,7 +207,7 @@ function ServicesPage() {
 					<p className="mx-auto mb-8 max-w-xl text-muted-foreground">
 						{m.services_selected_work_description()}
 					</p>
-					<Button asChild className="gap-2" size="lg">
+					<Button asChild className="gap-2" size="lg" variant="outline">
 						<Link to="/portfolio">
 							{m.services_see_past_work()}
 							<ArrowRightIcon size={16} />

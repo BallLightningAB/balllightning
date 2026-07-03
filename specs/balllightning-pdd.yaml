@@ -1,8 +1,8 @@
 balllightning_pdd:
   meta:
-    name: "Ball Lightning AB — Site PDD"
+    name: "Ball Lightning AB - Site PDD"
     code_name: "balllightning-pdd"
-    version: "0.1.1"
+    version: "1.2"
     repo: "https://github.com/BallLightningAB/balllightning"
     domain: "https://balllightning.cloud"
     github_project: "https://github.com/users/BallLightningAB/projects/9"
@@ -18,22 +18,30 @@ balllightning_pdd:
   product:
     kind: "company_site"
     description: >-
-      Primary company site for Ball Lightning AB. Showcases consulting services,
-      portfolio of completed projects, and provides a contact channel. SEO-first,
-      multi-page site built on TanStack Start.
+      Maintained company presence, selected-work portfolio, and project archive
+      for Ball Lightning AB. The site remains online as a reference point for
+      previous work, technical capabilities, and selected non-competing side
+      projects.
     positioning: >-
-      Ball Lightning AB is a software consulting and product development company
-      specializing in full-stack web development, systems integration, and AI-driven
-      solutions. Founded by Nicolas Brulay in Gothenburg, Sweden.
+      Nicolas Brulay works full-time at Hultafors Group as Product & Service
+      Owner - Integrations. Ball Lightning AB remains maintained on a limited
+      basis as a company presence, portfolio, and archive, but is not currently
+      used to accept new client engagements.
+    public_focus:
+      - "integration ownership"
+      - "integration modernization"
+      - "harmonization"
+      - "integration strategy"
+      - "AI and automation"
+      - "technical capability development"
 
   techstack:
-    # Inherits shared architecture — see shared-architecture.yaml
     framework: "TanStack Start (Router + Loaders + Server Functions)"
     runtime: "Vercel (Node)"
     language: "TypeScript"
     styling:
       css: "TailwindCSS v4"
-      ui: "shadcn/ui, Lucide icons, Motion (Framer Motion)"
+      ui: "shadcn/ui, Lucide icons, Motion"
     tooling:
       lint_format: ["Biome", "Ultracite"]
       hosting: "Vercel"
@@ -42,16 +50,15 @@ balllightning_pdd:
       locales: ["en", "sv", "de", "fr"]
       default_locale: "en"
       strategy: ["url", "cookie", "preferredLanguage", "baseLocale"]
-      url_pattern: "always-prefixed (/{locale}/...)" 
+      url_pattern: "always-prefixed (/{locale}/...)"
       ssr: "paraglideMiddleware in src/server.ts"
       translations: "messages/{locale}.json"
       qa_script: "pnpm i18n:check"
-    email:
-      provider: "Resend"
-      usage: "Contact form only (no newsletter)"
+    analytics:
+      provider: "GA4 and Vercel Web Analytics, consent-gated"
+      default: "off until explicit analytics consent"
 
   design:
-    # Inherits shared design foundations — see shared-design-system.yaml
     brand: "balllightning"
     color_reference: "shared-design-system.yaml#design.shared.color_schemes.balllightning"
     typography_reference: "shared-design-system.yaml#design.shared.typography"
@@ -71,69 +78,61 @@ balllightning_pdd:
         foreground_primary: "#111827"
         deep_molten: "#9C1B12"
         mid_red: "#DD3A28"
-    semantic_tokens:
-      brand_accent_1: "#DD3A28"
-      brand_accent_2: "#FF7268"
-      brand_gradient: "var(--bl-primary)"
-      brand_tag_bg: "rgba(221,58,40,0.16)"
-      brand_tag_text: "#F5E6D3"
 
   routes:
     required:
       - path: "/"
-        purpose: "Home — hero (trading card + GH graph), TBC content embed, newsletter CTA"
+        purpose: "Home with company status, founder context, GitHub activity, and recent Builder Coil notes"
       - path: "/services"
-        purpose: "Service offerings with pricing tiers"
+        purpose: "Compatibility route reframed as previous work and selected capabilities"
       - path: "/portfolio"
-        purpose: "Portfolio index with project cards"
+        purpose: "Portfolio index with selected previous work and archived concepts"
+      - path: "/chronomation"
+        purpose: "Public archive note for the paused Chronomation concept"
       - path: "/contact"
-        purpose: "Contact form via Resend + company info"
+        purpose: "Static direct-contact page with email and social links"
+      - path: "/privacy"
+        purpose: "Privacy, cookies, and analytics consent documentation"
     optional:
       - path: "/portfolio/:slug"
-        purpose: "Individual project case studies"
-      - path: "/about"
-        purpose: "Lightweight about page (optional — founder info on home for now)"
+        purpose: "Individual project notes and case studies"
 
   content:
-    services:
-      source: "specs/current-changes/content-addition/Services-text.md"
-      tiers: ["Landing Page", "Smart Site (Light)", "Integrations & APIs"]
-      excludes: ["Book a Meeting section"]
+    capabilities:
+      framing: "Previous work and selected capabilities, not an active catalogue"
+      areas:
+        - "Integration and technical ownership"
+        - "Web and application delivery"
+        - "AI and automation"
     portfolio:
       projects:
-        - slug: "blightfell"
-          title: "Blightfell — Web3 Integration for a Strategy Autobattler"
-          source: "specs/current-changes/content-addition/blightfell/blightfell-project-documentation.md"
-          assets: "src/assets/portfolio/blightfell/"
+        - slug: "chronomation"
+          title: "Chronomation - archived concept"
+          status: "paused"
+          route: "/chronomation"
+        - slug: "the-builder-coil"
+          title: "The Builder Coil - personal devlog and content system"
+          status: "maintained separately"
+        - slug: "shipping-api-dojo"
+          title: "Shipping API Dojo - carrier API tutorial platform"
         - slug: "jorild-se"
-          title: "Jorild.se — Modern Bilingual Clinic Website"
-          source: "specs/current-changes/content-addition/jorild-se/jorild-se-project-documentation.md"
-          assets: "src/assets/portfolio/jorild-se/"
+          title: "Jorild.se - modern bilingual clinic website"
+        - slug: "blightfell"
+          title: "Blightfell - Web3 game integration"
         - slug: "skyscraper"
-          title: "Skyscraper — Strategic MMO Deckbattler"
-          source: "specs/current-changes/content-migration/ (chapter-1.tsx)"
-          assets: "src/assets/portfolio/skyscraper/"
-        - slug: "data-driven-systems"
-          title: "Data-Driven Functional Systems Design"
-          source: "specs/current-changes/content-migration/ (chapter-2.tsx)"
-        - slug: "big-data-optimization"
-          title: "Big Data Optimization System"
-          source: "specs/current-changes/content-migration/ (chapter-2.tsx)"
-    tbc_feed:
-      description: "Embed latest TBC blog/news on homepage via public endpoint"
-      show: ["1 latest news", "2 latest blog posts"]
+          title: "Skyscraper - strategic MMO deckbattler"
+    builder_coil_feed:
+      description: "Embed recent TBC notes on homepage via public endpoint"
       behavior: "Cards link to canonical URLs on thebuildercoil.com"
       fallback: "Graceful degradation if endpoint unavailable"
 
   policies:
-    newsletter:
-      rule: "CTA-only linking to The Builder Coil — no subscriber PII storage"
-      reference: "shared-design-system.yaml#cross_brand_policies.newsletter"
+    public_positioning:
+      rule: "Ball Lightning remains maintained, but is not positioned as accepting new client work"
     content_syndication:
       rule: "Preview cards only, link to canonical TBC URLs, no full content duplication"
       reference: "shared-design-system.yaml#cross_brand_policies.content_syndication"
     secrets:
       rule: "All values in Vercel env vars, public repo expected"
-    contact_form:
-      recipient: "info@balllightning.cloud"
-      sender_identity: "Ball Lightning <noreply@updates.chronomation.com>"
+    contact:
+      rule: "No site form; use direct email or social links only"

@@ -100,7 +100,13 @@ function ShippingApiDojoPage() {
 			}}
 			projectRole={m.portfolio_shipping_api_dojo_role()}
 			subtitle={m.portfolio_shipping_api_dojo_subtitle_long()}
-			tags={["Education", "API Integration", "REST", "SOAP", "Developer Tools"]}
+			tags={[
+				m.portfolio_tag_education(),
+				m.portfolio_tag_api_integration(),
+				m.portfolio_tag_rest(),
+				m.portfolio_tag_soap(),
+				m.portfolio_tag_developer_tools(),
+			]}
 			techStack={[
 				"TanStack Start",
 				"React 19",

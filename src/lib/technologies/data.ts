@@ -151,15 +151,6 @@ export const TECHNOLOGIES: Technology[] = [
 			"Serverless Redis for distributed locks, anti-double-spend guards, and rate limiting in high-concurrency payment flows.",
 		projects: [blightfell],
 	},
-	{
-		slug: "resend",
-		name: "Resend",
-		category: "backend",
-		description:
-			"Modern email API for transactional emails and newsletters. Handles subscription management, delivery tracking, and React-based email templates.",
-		projects: [tbc],
-	},
-
 	// ── Deployment & Infrastructure ──────────────────────────
 	{
 		slug: "vercel",

@@ -115,7 +115,13 @@ function BlightfellPage() {
 			nextProject={{ title: m.portfolio_jorild_se_title(), slug: "jorild-se" }}
 			projectRole={m.portfolio_blightfell_role()}
 			subtitle={m.portfolio_blightfell_subtitle_long()}
-			tags={["Web3", "Node.js", "PostgreSQL", "Game Backend", "API Design"]}
+			tags={[
+				m.portfolio_tag_web3(),
+				m.portfolio_tag_nodejs(),
+				m.portfolio_tag_postgresql(),
+				m.portfolio_tag_game_backend(),
+				m.portfolio_tag_api_design(),
+			]}
 			techStack={[
 				"Next.js",
 				"React",

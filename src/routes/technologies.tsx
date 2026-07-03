@@ -36,21 +36,19 @@ export const Route = createFileRoute("/technologies")({
 		return {
 			meta: [
 				{
-					title: "Technologies We Use | Ball Lightning AB",
+					title: m.technologies_meta_title(),
 				},
 				{
 					name: "description",
-					content:
-						"Full-stack technology expertise: React 19, TanStack Start, TypeScript, Node.js, PostgreSQL, Vercel, and more — with real project case studies for each.",
+					content: m.technologies_meta_description(),
 				},
 				{
 					property: "og:title",
-					content: "Technologies We Use | Ball Lightning AB",
+					content: m.technologies_meta_og_title(),
 				},
 				{
 					property: "og:description",
-					content:
-						"Full-stack technology expertise with real project case studies. React, TanStack, TypeScript, Node.js, PostgreSQL, and more.",
+					content: m.technologies_meta_og_description(),
 				},
 				{
 					property: "og:image",
@@ -85,9 +83,8 @@ function generateTechnologiesSchema(canonicalUrl: string) {
 	return {
 		"@context": "https://schema.org",
 		"@type": "ItemList",
-		name: "Technologies Used by Ball Lightning AB",
-		description:
-			"Full-stack technology expertise with real project case studies.",
+		name: m.technologies_meta_title(),
+		description: m.technologies_meta_og_description(),
 		url: canonicalUrl,
 		numberOfItems: items.length,
 		itemListElement: items.map((tech, i) => ({
