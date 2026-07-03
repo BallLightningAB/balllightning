@@ -88,7 +88,12 @@ function ChronomationPage() {
 			}}
 			projectRole={m.portfolio_chronomation_role()}
 			subtitle={m.portfolio_chronomation_subtitle_long()}
-			tags={["Archived concept", "Scheduling", "Content Automation", "AI"]}
+			tags={[
+				m.portfolio_tag_archived_concept(),
+				m.portfolio_tag_scheduling(),
+				m.portfolio_tag_content_automation(),
+				m.portfolio_tag_ai(),
+			]}
 			techStack={[
 				"TanStack Start",
 				"React 19",

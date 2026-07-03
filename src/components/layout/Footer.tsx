@@ -91,7 +91,10 @@ export function Footer() {
 											target="_blank"
 										>
 											{link.label}
-											<span className="sr-only"> external link</span>
+											<span className="sr-only">
+												{" "}
+												{m.footer_external_link()}
+											</span>
 										</a>
 									) : (
 										<Link

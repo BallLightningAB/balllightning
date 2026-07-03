@@ -9,11 +9,11 @@ import { generateCanonical } from "@/lib/seo/structured-data";
 import * as m from "@/paraglide/messages.js";
 import { getLocale } from "@/paraglide/runtime.js";
 
-const contactLinks = [
+const getContactLinks = () => [
 	{
 		href: "mailto:info@balllightning.cloud",
 		label: "info@balllightning.cloud",
-		title: "Email",
+		title: m.contact_info_email(),
 	},
 	{
 		href: "https://linkedin.com/in/nicolas-brulay-vip",
@@ -101,7 +101,7 @@ function ContactPage() {
 								{m.contact_direct_body()}
 							</p>
 							<div className="grid gap-3">
-								{contactLinks.map((link) => (
+								{getContactLinks().map((link) => (
 									<a
 										className="flex items-center justify-between gap-3 rounded-lg border border-border bg-card/50 px-4 py-3 text-sm transition-colors hover:border-bl-red/40 hover:text-bl-red"
 										href={link.href}
