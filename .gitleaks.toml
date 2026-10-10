@@ -1,30 +1,14 @@
-# Gitleaks configuration (conservative defaults)
-# Shared by local pre-commit (optional) and CI workflow
+title = "Ball Lightning secret scanning"
 
-title = "The Builder Coil gitleaks config"
+[extend]
+useDefault = true
 
-[allowlist]
-# Reduce noise from non-code assets and documentation
-# Does NOT allowlist secrets in source files
-  description = "Allow common non-code artifacts"
-  files = [
-    '''\.md$''',
-    '''\.png$''',
-    '''\.jpg$''',
-    '''\.jpeg$''',
-    '''\.gif$''',
-    '''\.svg$''',
-    '''CHANGELOG\.yaml$'''
-  ]
-  paths = [
-    '''^specs/''',
-    '''^public/''',
-    '''^src/images/'''
-  ]
-  regexes = [
-    '''(?i)dummy|example'''
-  ]
+[[rules]]
+id = "discord-client-secret"
 
-# Notes:
-# - Built-in Gitleaks rules remain enabled; this file only trims obvious false positives.
-# - Tighten or add custom rules as the codebase matures.
+  [[rules.allowlists]]
+  description = "Skyscraper portfolio prose about a Discord community, not a client secret"
+  condition = "AND"
+  paths = ['''^messages/(en|sv|de|fr)\.json$''']
+  regexTarget = "line"
+  regexes = ['''^\s*"portfolio_skyscraper_og_description":''']
