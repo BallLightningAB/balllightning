@@ -7,7 +7,6 @@ on:
 
 permissions:
   contents: read
-  pull-requests: write
 
 jobs:
   ci:
@@ -18,12 +17,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
+        with:
+          persist-credentials: false
 
       - name: Enable corepack
         run: corepack enable
 
       - name: Prepare pnpm
-        run: corepack prepare pnpm@latest --activate
+        run: corepack prepare pnpm@10.23.0 --activate
 
       - name: Setup Node.js
         uses: actions/setup-node@v7
@@ -46,7 +47,16 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Generate Paraglide files
-        run: pnpm dlx @inlang/paraglide-js compile --project ./project.inlang --outdir ./src/paraglide
+        run: pnpm exec paraglide-js compile --project ./project.inlang --outdir ./src/paraglide
+
+      - name: Check translations and placeholders
+        run: pnpm run i18n:check
+
+      - name: Run tests
+        run: pnpm test
+
+      - name: Audit dependencies
+        run: pnpm audit --audit-level low
 
       - name: Type check
         run: pnpm run typecheck
