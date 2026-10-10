@@ -9,38 +9,23 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TechnologiesRouteImport } from './routes/technologies'
-import { Route as ServicesRouteImport } from './routes/services'
-import { Route as PrivacyRouteImport } from './routes/privacy'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as ChronomationRouteImport } from './routes/chronomation'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ChronomationRouteImport } from './routes/chronomation'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as ServicesRouteImport } from './routes/services'
+import { Route as TechnologiesRouteImport } from './routes/technologies'
 import { Route as PortfolioIndexRouteImport } from './routes/portfolio/index'
-import { Route as PortfolioTheBuilderCoilRouteImport } from './routes/portfolio/the-builder-coil'
-import { Route as PortfolioSkyscraperRouteImport } from './routes/portfolio/skyscraper'
-import { Route as PortfolioShippingApiDojoRouteImport } from './routes/portfolio/shipping-api-dojo'
-import { Route as PortfolioJorildSeRouteImport } from './routes/portfolio/jorild-se'
-import { Route as PortfolioChronomationRouteImport } from './routes/portfolio/chronomation'
 import { Route as PortfolioBlightfellRouteImport } from './routes/portfolio/blightfell'
+import { Route as PortfolioChronomationRouteImport } from './routes/portfolio/chronomation'
+import { Route as PortfolioJorildSeRouteImport } from './routes/portfolio/jorild-se'
+import { Route as PortfolioShippingApiDojoRouteImport } from './routes/portfolio/shipping-api-dojo'
+import { Route as PortfolioSkyscraperRouteImport } from './routes/portfolio/skyscraper'
+import { Route as PortfolioTheBuilderCoilRouteImport } from './routes/portfolio/the-builder-coil'
 
-const TechnologiesRoute = TechnologiesRouteImport.update({
-  id: '/technologies',
-  path: '/technologies',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServicesRoute = ServicesRouteImport.update({
-  id: '/services',
-  path: '/services',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PrivacyRoute = PrivacyRouteImport.update({
-  id: '/privacy',
-  path: '/privacy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ChronomationRoute = ChronomationRouteImport.update({
@@ -48,9 +33,24 @@ const ChronomationRoute = ChronomationRouteImport.update({
   path: '/chronomation',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TechnologiesRoute = TechnologiesRouteImport.update({
+  id: '/technologies',
+  path: '/technologies',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PortfolioIndexRoute = PortfolioIndexRouteImport.update({
@@ -58,14 +58,19 @@ const PortfolioIndexRoute = PortfolioIndexRouteImport.update({
   path: '/portfolio/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PortfolioTheBuilderCoilRoute = PortfolioTheBuilderCoilRouteImport.update({
-  id: '/portfolio/the-builder-coil',
-  path: '/portfolio/the-builder-coil',
+const PortfolioBlightfellRoute = PortfolioBlightfellRouteImport.update({
+  id: '/portfolio/blightfell',
+  path: '/portfolio/blightfell',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PortfolioSkyscraperRoute = PortfolioSkyscraperRouteImport.update({
-  id: '/portfolio/skyscraper',
-  path: '/portfolio/skyscraper',
+const PortfolioChronomationRoute = PortfolioChronomationRouteImport.update({
+  id: '/portfolio/chronomation',
+  path: '/portfolio/chronomation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortfolioJorildSeRoute = PortfolioJorildSeRouteImport.update({
+  id: '/portfolio/jorild-se',
+  path: '/portfolio/jorild-se',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PortfolioShippingApiDojoRoute =
@@ -74,19 +79,14 @@ const PortfolioShippingApiDojoRoute =
     path: '/portfolio/shipping-api-dojo',
     getParentRoute: () => rootRouteImport,
   } as any)
-const PortfolioJorildSeRoute = PortfolioJorildSeRouteImport.update({
-  id: '/portfolio/jorild-se',
-  path: '/portfolio/jorild-se',
+const PortfolioSkyscraperRoute = PortfolioSkyscraperRouteImport.update({
+  id: '/portfolio/skyscraper',
+  path: '/portfolio/skyscraper',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PortfolioChronomationRoute = PortfolioChronomationRouteImport.update({
-  id: '/portfolio/chronomation',
-  path: '/portfolio/chronomation',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PortfolioBlightfellRoute = PortfolioBlightfellRouteImport.update({
-  id: '/portfolio/blightfell',
-  path: '/portfolio/blightfell',
+const PortfolioTheBuilderCoilRoute = PortfolioTheBuilderCoilRouteImport.update({
+  id: '/portfolio/the-builder-coil',
+  path: '/portfolio/the-builder-coil',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -202,32 +202,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/technologies': {
-      id: '/technologies'
-      path: '/technologies'
-      fullPath: '/technologies'
-      preLoaderRoute: typeof TechnologiesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services': {
-      id: '/services'
-      path: '/services'
-      fullPath: '/services'
-      preLoaderRoute: typeof ServicesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/privacy': {
-      id: '/privacy'
-      path: '/privacy'
-      fullPath: '/privacy'
-      preLoaderRoute: typeof PrivacyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/chronomation': {
@@ -237,11 +216,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ChronomationRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/technologies': {
+      id: '/technologies'
+      path: '/technologies'
+      fullPath: '/technologies'
+      preLoaderRoute: typeof TechnologiesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/portfolio/': {
@@ -251,32 +251,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PortfolioIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/portfolio/the-builder-coil': {
-      id: '/portfolio/the-builder-coil'
-      path: '/portfolio/the-builder-coil'
-      fullPath: '/portfolio/the-builder-coil'
-      preLoaderRoute: typeof PortfolioTheBuilderCoilRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/portfolio/skyscraper': {
-      id: '/portfolio/skyscraper'
-      path: '/portfolio/skyscraper'
-      fullPath: '/portfolio/skyscraper'
-      preLoaderRoute: typeof PortfolioSkyscraperRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/portfolio/shipping-api-dojo': {
-      id: '/portfolio/shipping-api-dojo'
-      path: '/portfolio/shipping-api-dojo'
-      fullPath: '/portfolio/shipping-api-dojo'
-      preLoaderRoute: typeof PortfolioShippingApiDojoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/portfolio/jorild-se': {
-      id: '/portfolio/jorild-se'
-      path: '/portfolio/jorild-se'
-      fullPath: '/portfolio/jorild-se'
-      preLoaderRoute: typeof PortfolioJorildSeRouteImport
+    '/portfolio/blightfell': {
+      id: '/portfolio/blightfell'
+      path: '/portfolio/blightfell'
+      fullPath: '/portfolio/blightfell'
+      preLoaderRoute: typeof PortfolioBlightfellRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/portfolio/chronomation': {
@@ -286,11 +265,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PortfolioChronomationRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/portfolio/blightfell': {
-      id: '/portfolio/blightfell'
-      path: '/portfolio/blightfell'
-      fullPath: '/portfolio/blightfell'
-      preLoaderRoute: typeof PortfolioBlightfellRouteImport
+    '/portfolio/jorild-se': {
+      id: '/portfolio/jorild-se'
+      path: '/portfolio/jorild-se'
+      fullPath: '/portfolio/jorild-se'
+      preLoaderRoute: typeof PortfolioJorildSeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portfolio/shipping-api-dojo': {
+      id: '/portfolio/shipping-api-dojo'
+      path: '/portfolio/shipping-api-dojo'
+      fullPath: '/portfolio/shipping-api-dojo'
+      preLoaderRoute: typeof PortfolioShippingApiDojoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portfolio/skyscraper': {
+      id: '/portfolio/skyscraper'
+      path: '/portfolio/skyscraper'
+      fullPath: '/portfolio/skyscraper'
+      preLoaderRoute: typeof PortfolioSkyscraperRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portfolio/the-builder-coil': {
+      id: '/portfolio/the-builder-coil'
+      path: '/portfolio/the-builder-coil'
+      fullPath: '/portfolio/the-builder-coil'
+      preLoaderRoute: typeof PortfolioTheBuilderCoilRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
