@@ -36,6 +36,9 @@ leases against the previously fetched commit.
   Four historical Discord-secret matches were verified as portfolio prose.
 - Pinned Gitleaks binary version to 8.30.1 and disabled PR comments.
 - Verified a synthetic token is detected and a full-history scan passes.
+- The final security follow-up corrects the SARIF upload filename from
+  `gitleaks.sarif` to the action's actual `results.sarif`; the old condition
+  silently skipped uploads even though scans ran and blocked on leaks.
 - Merged at 17:58:29 UTC; production CI, Gitleaks, and Vercel all succeeded
   before #46 was rebased.
 
@@ -99,6 +102,8 @@ alerts must not be dismissed as fixed based solely on an npm audit.
 ## Limits and follow-up
 
 - Biome emits an existing deprecated-configuration informational message.
+- Existing memory-bank YAML syntax/duplicate-key errors are unchanged; the
+  added release entries introduce no new parser diagnostics.
 - Final Nitro production deployment and automatic GitHub alert reconciliation
   are verified after the upgrade PR merges.
 - On Windows, the Nitro beta build reaches both Vite bundles but its parallel
