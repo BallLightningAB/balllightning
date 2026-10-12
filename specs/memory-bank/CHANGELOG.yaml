@@ -1,5 +1,22 @@
 entries:
 
+  - date: "2026-10-12"
+    version: "0.2.8.16"
+    issue: ""
+    commit: TBD
+    status: completed
+    title: "fix(security): patch dependencies and enforce PR validation"
+    details: |-
+      - Reviewed and sequenced PRs #51, #47, and #46 with successful CI and production deployment between merges
+      - Patched critical TanStack Start XSS and transitive dependency advisories; kept Ultracite 7.8.3 to avoid introducing vulnerable braces
+      - Upgraded Nitro to 3.0.260903-beta for two advisories missed by pnpm audit; raised H3 override to 2.0.2 and removed an obsolete srvx override that rewrote peer ranges
+      - Enabled blocking default Gitleaks scanning with a narrow verified portfolio-prose exception
+      - Required up-to-date CI and Gitleaks on main and enabled Dependabot alerts/security updates
+      - Pinned pnpm and Paraglide execution, reduced CI permissions, and added i18n, Vitest, and audit checks
+      - Validated 11 tests, 393 translation keys across four locales, and 52 SSR routes; added reusable deployment smoke script
+
+      Refs: v0.2.8.16 I3Fix I3Test I3Docs
+
   - date: "2026-07-02"
     version: "0.2.8.15"
     issue: ""

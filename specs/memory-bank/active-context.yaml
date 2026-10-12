@@ -1,5 +1,5 @@
 meta:
-  release: "0.2.8.15"
+  release: "0.2.8.16"
   repo: github.com/BallLightningAB/balllightning
   project: https://github.com/users/BallLightningAB/projects/9
   pdd_version: "1.2"
@@ -78,6 +78,16 @@ roadmap:
       sub_issues:
         - "https://github.com/BallLightningAB/balllightning/issues/24"
   recent_done:
+    - id: pr-security-review-2026-10
+      title: "Review and secure dependency and CI pull requests"
+      status: done
+      progress_log:
+        - "2026-10-10: Reviewed PRs #51, #47, and #46; deployed the critical TanStack Start fix before rebasing subsequent branches"
+        - "2026-10-10: Enabled blocking default Gitleaks rules, required CI and Gitleaks on main, and enabled Dependabot security features"
+        - "2026-10-12: Merged #46 after successful checks; upgraded vulnerable Nitro alpha to 3.0.260903-beta and H3 to 2.0.2"
+        - "2026-10-12: Added reproducible i18n, test, and audit CI checks and a reusable 52-route localization smoke check"
+      validation: "See specs/current-changes/pr-security-review-2026-10-10.md for evidence and deployment reconciliation"
+      remaining_deliverables: []
     - id: google-business-profile-refresh
       issue: "https://github.com/BallLightningAB/balllightning/issues/18"
       title: "Google Business Profile (GBP) Refresh — Post-Rebuild"
