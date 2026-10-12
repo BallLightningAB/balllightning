@@ -83,9 +83,9 @@ export function generateWebSiteSchema() {
 		"@context": "https://schema.org",
 		"@type": "WebSite",
 		"@id": WEBSITE_ID,
-	name: SITE_NAME,
-	description:
-		"Maintained company presence, portfolio, and project archive for software, integrations, and digital projects by Nicolas Brulay.",
+		name: SITE_NAME,
+		description:
+			"Maintained company presence, portfolio, and project archive for software, integrations, and digital projects by Nicolas Brulay.",
 		url: SITE_URL,
 		publisher: {
 			"@id": ORGANIZATION_ID,
@@ -111,9 +111,9 @@ export function generateOrganizationSchema() {
 		"@id": ORGANIZATION_ID,
 		name: ORGANIZATION_NAME,
 		url: BALL_LIGHTNING_URL,
-	logo: `${SITE_URL}/logo-60.svg`,
-	description:
-		"Maintained company presence, portfolio, and project archive for software, integrations, and digital projects by Nicolas Brulay.",
+		logo: `${SITE_URL}/logo-60.svg`,
+		description:
+			"Maintained company presence, portfolio, and project archive for software, integrations, and digital projects by Nicolas Brulay.",
 		founder: {
 			"@type": "Person",
 			name: AUTHOR_NAME,

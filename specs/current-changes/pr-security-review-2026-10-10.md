@@ -1,6 +1,6 @@
 # PR security review — 2026-10-10
 
-Continued on 2026-10-12 after the #46 preview and CI checks passed.
+Completed on 2026-10-12 after production validation of PR #52.
 
 ## Sequence and findings
 
@@ -73,8 +73,11 @@ Official advisories:
 - https://github.com/nitrojs/nitro/security/advisories/GHSA-9phm-9p8f-hw5m
 - https://github.com/nitrojs/nitro/security/advisories/GHSA-5w89-w975-hf9q
 
-Final deployment and GitHub alert reconciliation are checked after merge;
-alerts must not be dismissed as fixed based solely on an npm audit.
+PR #52 merged on 2026-10-12 at 20:12:13 UTC as
+`712e202987e448dbb62a1e7c9a90c01c64b3a2cd`. Main CI, Gitleaks, and Vercel
+production deployment succeeded. GitHub automatically marked the remaining
+Nitro alerts fixed; none were dismissed. Final checks found zero open PRs and
+zero open Dependabot, secret-scanning, or code-scanning alerts.
 
 ## Repository protections
 
@@ -98,15 +101,19 @@ alerts must not be dismissed as fixed based solely on an npm audit.
   analytics. No browser errors after successful hydration.
 - Production `/sv`, `/sv/`, `/sv/privacy`, and a Swedish portfolio path redirect
   with 308 to `/se` equivalents; localized HTML sends `Cache-Control: no-store`.
+- After #52, all 52 authenticated preview and all 52 production SSR routes
+  passed again. The Swedish production browser check showed the correct
+  language, heading, and canonical URL with no console warnings or errors.
+- GitHub ingested the corrected Gitleaks SARIF on both the PR and main with
+  zero results.
 
 ## Limits and follow-up
 
 - Biome emits an existing deprecated-configuration informational message.
 - Existing memory-bank YAML syntax/duplicate-key errors are unchanged; the
   added release entries introduce no new parser diagnostics.
-- Final Nitro production deployment and automatic GitHub alert reconciliation
-  are verified after the upgrade PR merges.
 - On Windows, the Nitro beta build reaches both Vite bundles but its parallel
   static-asset copies fail with `EPERM` on `chmod`. The Linux CI and Vercel
-  builds must pass before merge; no filesystem workaround is shipped.
+  builds passed before merge and production is healthy; no filesystem
+  workaround is shipped.
 - The user's untracked `glantbyn-storyworld-windows-clean/` directory is untouched.

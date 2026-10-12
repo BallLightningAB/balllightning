@@ -20,7 +20,10 @@ export const Route = createFileRoute("/chronomation")({
 		return {
 			meta: [
 				{ title: m.chronomation_archive_meta_title() },
-				{ name: "description", content: m.chronomation_archive_meta_description() },
+				{
+					name: "description",
+					content: m.chronomation_archive_meta_description(),
+				},
 				{ property: "og:title", content: m.chronomation_archive_og_title() },
 				{
 					property: "og:description",
