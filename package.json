@@ -58,7 +58,7 @@
     "tailwindcss": "^4.3.3",
     "urlpattern-polyfill": "^10.1.0",
     "vite-tsconfig-paths": "^5.1.4",
-    "zod": "^4.6.5"
+    "zod": "^4.6.6"
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.14",
