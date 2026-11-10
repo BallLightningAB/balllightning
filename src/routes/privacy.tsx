@@ -36,12 +36,12 @@ export const Route = createFileRoute("/privacy")({
 });
 
 interface SectionCardProps {
+	children: ReactNode;
 	icon: ComponentType<{
 		className?: string;
 		size?: number;
 	}>;
 	title: string;
-	children: ReactNode;
 }
 
 function SectionCard({ children, icon: Icon, title }: SectionCardProps) {

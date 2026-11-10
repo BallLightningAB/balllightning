@@ -1,12 +1,12 @@
 interface ResponsiveImageProps {
-	src: string;
 	alt: string;
-	width?: number;
-	height?: number;
 	className?: string;
-	loading?: "lazy" | "eager";
-	fetchPriority?: "high" | "low" | "auto";
 	decoding?: "async" | "sync" | "auto";
+	fetchPriority?: "high" | "low" | "auto";
+	height?: number;
+	loading?: "lazy" | "eager";
+	src: string;
+	width?: number;
 }
 
 export function ResponsiveImage({

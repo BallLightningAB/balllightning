@@ -6,24 +6,24 @@
  */
 
 export interface SeoMeta {
-	title: string;
+	/** Article author name */
+	author?: string;
 	description: string;
-	/** Canonical URL for the page */
-	url?: string;
 	/** OG image URL (absolute) */
 	image?: string;
 	/** OG image alt text */
 	imageAlt?: string;
-	/** Article publish date (ISO 8601) */
-	publishedAt?: string;
 	/** Article modified date (ISO 8601) */
 	modifiedAt?: string;
-	/** Article author name */
-	author?: string;
+	/** Article publish date (ISO 8601) */
+	publishedAt?: string;
 	/** Article tags/keywords */
 	tags?: string[];
+	title: string;
 	/** Page type: website, article, etc. */
 	type?: "website" | "article";
+	/** Canonical URL for the page */
+	url?: string;
 }
 
 const SITE_NAME = "Ball Lightning AB";
@@ -34,18 +34,18 @@ const DEFAULT_DESCRIPTION =
 const TWITTER_HANDLE = "@nicbrulay";
 
 interface MetaTag {
+	content: string;
 	name?: string;
 	property?: string;
-	content: string;
 }
 
 interface CoreMetaInput {
-	title: string;
 	description: string;
-	url: string;
 	image: string;
 	imageAlt: string;
+	title: string;
 	type: string;
+	url: string;
 }
 
 function buildCoreMeta(input: CoreMetaInput): MetaTag[] {
@@ -126,4 +126,4 @@ export function generateCanonical(path: string) {
 	return { rel: "canonical", href: url };
 }
 
-export { SITE_NAME, SITE_URL, DEFAULT_IMAGE, DEFAULT_DESCRIPTION };
+export { DEFAULT_DESCRIPTION, DEFAULT_IMAGE, SITE_NAME, SITE_URL };

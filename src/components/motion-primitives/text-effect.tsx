@@ -4,13 +4,13 @@ import { motion, type Variants } from "motion/react";
 import type { ElementType, ReactNode } from "react";
 
 interface TextEffectProps {
+	as?: ElementType;
 	children: ReactNode;
 	className?: string;
-	as?: ElementType;
-	preset?: "fade-in-blur" | "fade-in" | "slide-up";
 	delay?: number;
-	speedSegment?: number;
 	per?: "word" | "char" | "line";
+	preset?: "fade-in-blur" | "fade-in" | "slide-up";
+	speedSegment?: number;
 }
 
 const presets: Record<string, Variants> = {

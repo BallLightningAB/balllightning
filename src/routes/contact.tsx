@@ -111,11 +111,15 @@ function ContactPage() {
 												? undefined
 												: "noopener noreferrer"
 										}
-										target={link.href.startsWith("mailto:") ? undefined : "_blank"}
+										target={
+											link.href.startsWith("mailto:") ? undefined : "_blank"
+										}
 									>
 										<span>
 											<span className="block font-medium">{link.title}</span>
-											<span className="text-muted-foreground">{link.label}</span>
+											<span className="text-muted-foreground">
+												{link.label}
+											</span>
 										</span>
 										{link.href.startsWith("mailto:") ? (
 											<AtSignIcon className="h-4 w-4 shrink-0" />

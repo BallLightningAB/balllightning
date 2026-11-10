@@ -10,16 +10,16 @@
 import { localizeHref } from "@/paraglide/runtime.js";
 
 interface Post {
-	slug: string;
-	title: string;
-	summary: string;
-	publishedAt: string;
-	updatedAt?: string;
 	author?: string;
 	heroImage?: string;
-	tags?: string[];
+	publishedAt: string;
 	readingTime?: number;
+	slug: string;
+	summary: string;
+	tags?: string[];
+	title: string;
 	type: string;
+	updatedAt?: string;
 }
 
 const SITE_URL = "https://balllightning.cloud";
@@ -83,9 +83,9 @@ export function generateWebSiteSchema() {
 		"@context": "https://schema.org",
 		"@type": "WebSite",
 		"@id": WEBSITE_ID,
-	name: SITE_NAME,
-	description:
-		"Maintained company presence, portfolio, and project archive for software, integrations, and digital projects by Nicolas Brulay.",
+		name: SITE_NAME,
+		description:
+			"Maintained company presence, portfolio, and project archive for software, integrations, and digital projects by Nicolas Brulay.",
 		url: SITE_URL,
 		publisher: {
 			"@id": ORGANIZATION_ID,
@@ -111,9 +111,9 @@ export function generateOrganizationSchema() {
 		"@id": ORGANIZATION_ID,
 		name: ORGANIZATION_NAME,
 		url: BALL_LIGHTNING_URL,
-	logo: `${SITE_URL}/logo-60.svg`,
-	description:
-		"Maintained company presence, portfolio, and project archive for software, integrations, and digital projects by Nicolas Brulay.",
+		logo: `${SITE_URL}/logo-60.svg`,
+		description:
+			"Maintained company presence, portfolio, and project archive for software, integrations, and digital projects by Nicolas Brulay.",
 		founder: {
 			"@type": "Person",
 			name: AUTHOR_NAME,
@@ -244,15 +244,15 @@ export function generateNewsArticleSchema(post: Post) {
  * Project schema for portfolio subpages
  */
 interface ProjectSchemaOptions {
-	name: string;
-	description: string;
-	slug: string;
-	schemaType: "SoftwareApplication" | "CreativeWork" | "VideoGame" | "WebSite";
 	applicationCategory?: string;
-	operatingSystem?: string;
-	image?: string;
 	dateCreated?: string;
+	description: string;
+	image?: string;
 	keywords?: string[];
+	name: string;
+	operatingSystem?: string;
+	schemaType: "SoftwareApplication" | "CreativeWork" | "VideoGame" | "WebSite";
+	slug: string;
 	url?: string;
 }
 

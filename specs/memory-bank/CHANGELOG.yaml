@@ -1,9 +1,39 @@
 entries:
 
+  - date: "2026-11-10"
+    version: "0.2.8.18"
+    issue: "https://github.com/BallLightningAB/balllightning/pull/58"
+    commit: TBD
+    status: in-review
+    title: "fix(deps): validate November updates and patch transitive advisories"
+    details: |-
+      - Update application dependencies and migrate removed TanStack inputValidator to validator
+      - Retain compatible Biome/Ultracite pins; raise seroval/minimatch floors and patch Ultracite glob
+      - Patch deepmerge prototype poisoning with installed-dependency regression tests and a documented advisory-specific audit exception
+      - Pass 14 tests, 393-key translation parity, typecheck, lint, build, pre-commit, 52 built SSR routes, and browser language/consent checks
+      - Sequence grouped #58 before #56; newer grouped Vite/Zod versions supersede #54/#57
+
+      Refs: v0.2.8.18 I3Fix I3Test I3Docs #58 #54 #57
+
+  - date: "2026-10-12"
+    version: "0.2.8.17"
+    issue: "https://github.com/BallLightningAB/balllightning/pull/52"
+    commit: a6e34c0
+    status: completed
+    title: "chore(repo): finalize security review and commit checks"
+    details: |-
+      - Recorded successful main CI, Gitleaks SARIF ingestion, and Vercel production deployment after PR #52
+      - Confirmed all 52 production localization routes, legacy Swedish redirects, cache isolation, and the Swedish browser check
+      - Confirmed zero open PRs and zero open dependency, secret-scanning, or code-scanning alerts without dismissals
+      - Populated the previous release commit and completed the commit-process checks
+      - Applied repository formatting without changing application behavior
+
+      Refs: v0.2.8.17 I3Docs I3Test
+
   - date: "2026-10-12"
     version: "0.2.8.16"
     issue: ""
-    commit: TBD
+    commit: 712e202987e448dbb62a1e7c9a90c01c64b3a2cd
     status: completed
     title: "fix(security): patch dependencies and enforce PR validation"
     details: |-

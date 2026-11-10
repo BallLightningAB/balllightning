@@ -1,13 +1,13 @@
 import { createServerFn } from "@tanstack/react-start";
 
 export interface FeedItem {
-	type: "blog" | "news";
-	title: string;
-	slug: string;
-	url: string;
 	excerpt: string;
-	publishedAt: string;
 	image?: { url: string; alt: string };
+	publishedAt: string;
+	slug: string;
+	title: string;
+	type: "blog" | "news";
+	url: string;
 }
 
 export interface FeedResponse {

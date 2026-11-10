@@ -11,10 +11,10 @@ export interface GtagEventParameters {
 }
 
 export interface GtagConsentParameters {
-	ad_storage?: GoogleConsentValue;
-	analytics_storage?: GoogleConsentValue;
-	ad_user_data?: GoogleConsentValue;
 	ad_personalization?: GoogleConsentValue;
+	ad_storage?: GoogleConsentValue;
+	ad_user_data?: GoogleConsentValue;
+	analytics_storage?: GoogleConsentValue;
 	wait_for_update?: number;
 }
 
@@ -32,9 +32,9 @@ export type GtagFunction = (...args: GtagArguments) => void;
 
 declare global {
 	interface Window {
+		__blAnalyticsConsentGranted?: boolean;
+		__blConsentDefaultsApplied?: boolean;
 		dataLayer: unknown[];
 		gtag?: GtagFunction;
-		__blConsentDefaultsApplied?: boolean;
-		__blAnalyticsConsentGranted?: boolean;
 	}
 }

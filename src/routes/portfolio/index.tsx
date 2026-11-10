@@ -37,13 +37,13 @@ export const Route = createFileRoute("/portfolio/")({
 });
 
 interface Project {
-	slug: string;
-	title: string;
-	subtitle: string;
 	description: string;
-	tags: string[];
 	externalUrl?: string;
 	secondaryUrl?: string;
+	slug: string;
+	subtitle: string;
+	tags: string[];
+	title: string;
 }
 
 const projects: Project[] = [
