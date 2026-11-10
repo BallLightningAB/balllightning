@@ -1,5 +1,7 @@
 # Dependency PR review — 2026-11-10
 
+Completed. All four original PRs are handled.
+
 ## Sequence
 
 1. Review #54 (Vite), #57 (Zod), #58 (grouped dependencies), and #56 (CodeQL upload).
@@ -50,9 +52,9 @@
   canonical and language correct, no browser warnings/errors.
 - Main Gitleaks SARIF analysis 2138176061 has zero results.
 - Closed #54 and #57 as superseded by merged Vite 8.3.6 and Zod 4.6.7.
-- GitHub still showed the old 13 Dependabot alerts during observation; none were
-  dismissed. Installed-package audit has no unignored findings. Recheck the
-  asynchronous GitHub reconciliation at completion.
+- GitHub automatically closed all 13 previous dependency alerts. Only #61 for
+  locally patched deepmerge remains open; none were dismissed. The installed-package
+  audit has no unignored findings. See patches/README.md for the mitigation.
 
 ## #56
 
@@ -60,4 +62,22 @@
 - Code change is solely upload-sarif v4.37.3 to v4.39.1; results.sarif and blocking
   Gitleaks remain intact. No existing reviews or unresolved review threads.
 - Frozen install, i18n, 14 tests, format, lint, typecheck, and pre-commit rerun.
-- Pending current-head checks, preview, merge, main SARIF, and production checks.
+- Follow-up head 7c003d0c56f9d055a3a2a798f92d5f86577ee98b passed CI 42885156812,
+  Gitleaks 42885156847, Vercel, and authenticated privacy routes in all four locales.
+- Application/source/dependency tree is identical to validated #58.
+- PR SARIF analysis 2138218842 contains zero results.
+- Merged as 2bb136687a36650eeda210997301c6bc74eedd79.
+- Main CI 42885403843 and Gitleaks 42885403853 passed.
+- Production deployment 7692059852 succeeded at 19:27:36 UTC.
+- All 52 final production localization routes passed at 19:28:28 UTC.
+- Main SARIF analysis 2138230612 contains zero results.
+
+## Final state
+
+- Zero open PRs, secret-scanning alerts, or code-scanning alerts.
+- One low upstream-version Dependabot alert (#61): development-only deepmerge,
+  locally patched and covered by three security regression cases. No dismissals.
+- Main contains Vite 8.3.6 and Zod 4.6.7, superseding #54/#57.
+- Memory bank YAML parses after repairing its pre-existing indentation error.
+- Final documentation committed on codex/finalize-november-review following user
+  authorization. User's untracked directory is untouched.
