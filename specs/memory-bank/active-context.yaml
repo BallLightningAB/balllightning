@@ -1,5 +1,5 @@
 meta:
-  release: "0.2.8.18"
+  release: "0.2.8.19"
   repo: github.com/BallLightningAB/balllightning
   project: https://github.com/users/BallLightningAB/projects/9
   pdd_version: "1.2"
@@ -19,6 +19,7 @@ roadmap:
       progress_log:
         - "2026-11-10: Prioritized #58 to include newer Vite/Zod security fixes that supersede #54/#57; #56 follows after production validation"
         - "2026-11-10: Fixed removed TanStack validator API, patched development-only deepmerge, retained compatible lint tooling, and passed 14 tests plus 52 built localization routes"
+        - "2026-11-10: Merged #58 after green CI/Gitleaks and 52 authenticated preview routes; main checks/deployment and two production passes over a two-minute interval passed; closed superseded #54/#57 then rebased #56"
       validation: "See specs/current-changes/pr-dependency-review-2026-11-10.md"
       remaining_deliverables:
         - "Complete current-head CI, preview, production checks, and observation intervals before the next PR"

@@ -1,10 +1,24 @@
 entries:
 
   - date: "2026-11-10"
-    version: "0.2.8.18"
-    issue: "https://github.com/BallLightningAB/balllightning/pull/58"
+    version: "0.2.8.19"
+    issue: "https://github.com/BallLightningAB/balllightning/pull/56"
     commit: TBD
     status: in-review
+    title: "chore(ci): update SARIF upload after validated dependency deployment"
+    details: |-
+      - Upgrade CodeQL SARIF upload action to v4.39.1; retain blocking Gitleaks/results.sarif
+      - Rebase after #58 main checks/deployment and two production localization passes over a two-minute interval
+      - Record 52 authenticated preview routes and production mobile consent/cache/redirect checks
+      - Close superseded #54/#57 and repair the existing active-context YAML indentation error
+
+      Refs: v0.2.8.19 I3Docs I3Test #56 #58
+
+  - date: "2026-11-10"
+    version: "0.2.8.18"
+    issue: "https://github.com/BallLightningAB/balllightning/pull/58"
+    commit: 89d31138ad0b0fc6c6e8a7c01a5aa2deb40ab5ca
+    status: completed
     title: "fix(deps): validate November updates and patch transitive advisories"
     details: |-
       - Update application dependencies and migrate removed TanStack inputValidator to validator

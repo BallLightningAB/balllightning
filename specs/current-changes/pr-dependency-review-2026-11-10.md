@@ -36,8 +36,28 @@
   rejection persists and Swedish settings reopen with analytics disabled. No warnings/errors.
 - Windows production build succeeds; the prior Nitro EPERM limitation did not recur.
 
-## Pending
+## #58 deployment evidence
 
-- Push #58 follow-up, wait for current-head checks and preview, merge and validate production.
-- Reconcile superseded #54/#57 and complete #56 after the production observation interval.
-- Record final merge/deployment evidence here.
+- Follow-up 89d31138ad0b0fc6c6e8a7c01a5aa2deb40ab5ca passed CI, Gitleaks,
+  Vercel, and all 52 authenticated preview routes.
+- Merged as 8c49b1100ecd1b13a8b8ef17d4daac3743f8b238.
+- Main CI 42884259672 and Gitleaks 42884259386 succeeded.
+- Production deployment 7691900332 succeeded at 19:20:50 UTC.
+- All 52 production routes passed at 19:21:45 and 19:24:08 UTC (over two minutes apart).
+- /sv, /sv/, /sv/privacy, and /sv/portfolio/jorild-se redirect with 308 to /se;
+  localized HTML sends Cache-Control: no-store.
+- Production Swedish mobile privacy/settings check passed: rejection persisted,
+  canonical and language correct, no browser warnings/errors.
+- Main Gitleaks SARIF analysis 2138176061 has zero results.
+- Closed #54 and #57 as superseded by merged Vite 8.3.6 and Zod 4.6.7.
+- GitHub still showed the old 13 Dependabot alerts during observation; none were
+  dismissed. Installed-package audit has no unignored findings. Recheck the
+  asynchronous GitHub reconciliation at completion.
+
+## #56
+
+- Rebased after the second production pass, at 19:24 UTC.
+- Code change is solely upload-sarif v4.37.3 to v4.39.1; results.sarif and blocking
+  Gitleaks remain intact. No existing reviews or unresolved review threads.
+- Frozen install, i18n, 14 tests, format, lint, typecheck, and pre-commit rerun.
+- Pending current-head checks, preview, merge, main SARIF, and production checks.
