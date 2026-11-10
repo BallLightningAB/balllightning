@@ -18,12 +18,12 @@ import {
 import type { ConsentState, PersistedConsentState } from "@/lib/consent/types";
 
 interface ConsentContextValue {
+	acceptAnalytics: () => void;
 	analyticsEnabled: boolean;
+	closeSettings: () => void;
 	consentState: ConsentState;
 	hasResolved: boolean;
 	isSettingsOpen: boolean;
-	acceptAnalytics: () => void;
-	closeSettings: () => void;
 	openSettings: () => void;
 	rejectAnalytics: () => void;
 }

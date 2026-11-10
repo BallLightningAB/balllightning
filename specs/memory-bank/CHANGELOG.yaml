@@ -1,9 +1,24 @@
 entries:
 
+  - date: "2026-11-10"
+    version: "0.2.8.18"
+    issue: "https://github.com/BallLightningAB/balllightning/pull/58"
+    commit: TBD
+    status: in-review
+    title: "fix(deps): validate November updates and patch transitive advisories"
+    details: |-
+      - Update application dependencies and migrate removed TanStack inputValidator to validator
+      - Retain compatible Biome/Ultracite pins; raise seroval/minimatch floors and patch Ultracite glob
+      - Patch deepmerge prototype poisoning with installed-dependency regression tests and a documented advisory-specific audit exception
+      - Pass 14 tests, 393-key translation parity, typecheck, lint, build, pre-commit, 52 built SSR routes, and browser language/consent checks
+      - Sequence grouped #58 before #56; newer grouped Vite/Zod versions supersede #54/#57
+
+      Refs: v0.2.8.18 I3Fix I3Test I3Docs #58 #54 #57
+
   - date: "2026-10-12"
     version: "0.2.8.17"
     issue: "https://github.com/BallLightningAB/balllightning/pull/52"
-    commit: TBD
+    commit: a6e34c0
     status: completed
     title: "chore(repo): finalize security review and commit checks"
     details: |-

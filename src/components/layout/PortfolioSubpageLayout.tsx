@@ -11,29 +11,29 @@ import * as m from "@/paraglide/messages.js";
 import { localizeHref } from "@/paraglide/runtime.js";
 
 interface ProjectLink {
+	external?: boolean;
 	label: string;
 	url: string;
-	external?: boolean;
 }
 
 interface NextProject {
-	title: string;
 	slug: string;
+	title: string;
 }
 
 interface PortfolioSubpageLayoutProps {
-	title: string;
-	subtitle: string;
-	tags: string[];
-	projectRole?: string;
-	timeline?: string;
-	techStack?: string[];
-	links?: ProjectLink[];
+	children: ReactNode;
+	heroGradient?: string;
 	heroImage?: string;
 	heroImageAlt?: string;
-	heroGradient?: string;
+	links?: ProjectLink[];
 	nextProject?: NextProject;
-	children: ReactNode;
+	projectRole?: string;
+	subtitle: string;
+	tags: string[];
+	techStack?: string[];
+	timeline?: string;
+	title: string;
 }
 
 export function PortfolioSubpageLayout({

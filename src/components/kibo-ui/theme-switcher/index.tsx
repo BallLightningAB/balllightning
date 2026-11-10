@@ -25,10 +25,10 @@ const themes = [
 ];
 
 export interface ThemeSwitcherProps {
-	value?: "light" | "dark" | "system";
-	onChange?: (theme: "light" | "dark" | "system") => void;
-	defaultValue?: "light" | "dark" | "system";
 	className?: string;
+	defaultValue?: "light" | "dark" | "system";
+	onChange?: (theme: "light" | "dark" | "system") => void;
+	value?: "light" | "dark" | "system";
 }
 
 export const ThemeSwitcher = ({

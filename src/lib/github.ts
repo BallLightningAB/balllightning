@@ -1,17 +1,17 @@
 import { createServerFn } from "@tanstack/react-start";
 
 export interface GitHubContributionDay {
-	date: string;
 	count: number;
+	date: string;
 }
 
 export interface GitHubContributionResponse {
-	total: Record<string, number>;
 	contributions: Array<{
 		date: string;
 		count: number;
 		level: number;
 	}>;
+	total: Record<string, number>;
 }
 
 export interface GitHubGraphData {
@@ -68,7 +68,7 @@ async function fetchGitHubContributions(
 }
 
 export const getGitHubContributions = createServerFn({ method: "GET" })
-	.inputValidator((input: { username: string }) => input)
+	.validator((input: { username: string }) => input)
 	.handler(async ({ data }) => {
 		try {
 			return await fetchGitHubContributions(data.username);

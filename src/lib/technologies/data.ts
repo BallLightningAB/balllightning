@@ -6,16 +6,16 @@ export type TechCategory =
 	| "game-dev";
 
 export interface PortfolioProject {
-	title: string;
 	slug: string;
+	title: string;
 }
 
 export interface Technology {
-	slug: string;
-	name: string;
 	category: TechCategory;
 	description: string;
+	name: string;
 	projects: PortfolioProject[];
+	slug: string;
 }
 
 export const CATEGORY_LABELS: Record<TechCategory, string> = {

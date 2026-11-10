@@ -72,11 +72,11 @@ ${hreflangLinks}
 }
 
 interface PostMeta {
-	slug: string;
-	type: string;
 	publishedAt: string;
-	updatedAt?: string;
+	slug: string;
 	status: string;
+	type: string;
+	updatedAt?: string;
 }
 
 function loadPostsFromDir(dirPath: string, type: string): PostMeta[] {

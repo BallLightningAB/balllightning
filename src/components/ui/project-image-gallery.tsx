@@ -6,16 +6,16 @@ import { ResponsiveImage } from "@/components/ui/responsive-image";
 import { cn } from "@/lib/utils";
 
 interface GalleryImage {
-	src: string;
 	alt: string;
-	width?: number;
 	height?: number;
+	src: string;
+	width?: number;
 }
 
 interface ProjectImageGalleryProps {
-	images: GalleryImage[];
-	columns?: 2 | 3;
 	className?: string;
+	columns?: 2 | 3;
+	images: GalleryImage[];
 }
 
 export function ProjectImageGallery({

@@ -26,26 +26,26 @@ import {
 import { cn } from "@/lib/utils";
 
 export interface Activity {
-	date: string;
 	count: number;
+	date: string;
 	level: number;
 }
 
 type Week = Array<Activity | undefined>;
 
 export interface Labels {
-	months?: string[];
-	weekdays?: string[];
-	totalCount?: string;
 	legend?: {
 		less?: string;
 		more?: string;
 	};
+	months?: string[];
+	totalCount?: string;
+	weekdays?: string[];
 }
 
 interface MonthLabel {
-	weekIndex: number;
 	label: string;
+	weekIndex: number;
 }
 
 const DEFAULT_MONTH_LABELS = [
@@ -74,20 +74,20 @@ const DEFAULT_LABELS: Labels = {
 };
 
 interface ContributionGraphContextType {
-	data: Activity[];
-	weeks: Week[];
 	blockMargin: number;
 	blockRadius: number;
 	blockSize: number;
+	data: Activity[];
 	fontSize: number;
-	labels: Labels;
+	height: number;
 	labelHeight: number;
+	labels: Labels;
 	maxLevel: number;
 	totalCount: number;
 	weekStart: WeekDay;
-	year: number;
+	weeks: Week[];
 	width: number;
-	height: number;
+	year: number;
 }
 
 const ContributionGraphContext =

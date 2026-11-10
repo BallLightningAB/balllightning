@@ -1,8 +1,8 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import {
+	CONSENT_STORAGE_KEY,
 	readPersistedConsentState,
 	writePersistedConsentState,
-	CONSENT_STORAGE_KEY,
 } from "@/lib/consent/storage";
 
 /**

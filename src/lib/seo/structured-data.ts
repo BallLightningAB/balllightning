@@ -10,16 +10,16 @@
 import { localizeHref } from "@/paraglide/runtime.js";
 
 interface Post {
-	slug: string;
-	title: string;
-	summary: string;
-	publishedAt: string;
-	updatedAt?: string;
 	author?: string;
 	heroImage?: string;
-	tags?: string[];
+	publishedAt: string;
 	readingTime?: number;
+	slug: string;
+	summary: string;
+	tags?: string[];
+	title: string;
 	type: string;
+	updatedAt?: string;
 }
 
 const SITE_URL = "https://balllightning.cloud";
@@ -244,15 +244,15 @@ export function generateNewsArticleSchema(post: Post) {
  * Project schema for portfolio subpages
  */
 interface ProjectSchemaOptions {
-	name: string;
-	description: string;
-	slug: string;
-	schemaType: "SoftwareApplication" | "CreativeWork" | "VideoGame" | "WebSite";
 	applicationCategory?: string;
-	operatingSystem?: string;
-	image?: string;
 	dateCreated?: string;
+	description: string;
+	image?: string;
 	keywords?: string[];
+	name: string;
+	operatingSystem?: string;
+	schemaType: "SoftwareApplication" | "CreativeWork" | "VideoGame" | "WebSite";
+	slug: string;
 	url?: string;
 }
 
