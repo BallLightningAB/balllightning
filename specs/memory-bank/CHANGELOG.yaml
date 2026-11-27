@@ -1,9 +1,23 @@
 entries:
 
+  - date: "2026-11-27"
+    version: "0.2.8.21"
+    issue: "https://github.com/BallLightningAB/balllightning/pull/61"
+    commit: TBD
+    status: in-review
+    title: "fix(deps): validate PR 61 and retire withdrawn advisory workaround"
+    details: |-
+      - Accept nine application/build dependency updates while retaining compatible Biome and Ultracite pins
+      - Remove the deepmerge patch, three patch-specific cases, and audit exception after GitHub withdrew GHSA-gcqx-w48m-w2h4 on November 16
+      - Confirm no open GitHub security alerts and a clean full dependency audit without exceptions
+      - Validate frozen install, translations, consent tests, typecheck, lint, build, and localized routes
+
+      Refs: v0.2.8.21 I3Fix I3Test I3Docs #61
+
   - date: "2026-11-10"
     version: "0.2.8.20"
     issue: "https://github.com/BallLightningAB/balllightning/pull/56"
-    commit: TBD
+    commit: aa9d87a1411f71264b4588f1216c0e50a8b36e57
     status: completed
     title: "docs(repo): finalize November PR validation evidence"
     details: |-
