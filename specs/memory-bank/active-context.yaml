@@ -1,5 +1,5 @@
 meta:
-  release: "0.2.8.21"
+  release: "0.2.8.22"
   repo: github.com/BallLightningAB/balllightning
   project: https://github.com/users/BallLightningAB/projects/9
   pdd_version: "1.2"
@@ -15,13 +15,13 @@ roadmap:
   current:
     - id: pr-dependency-review-2026-11-27
       title: "Review and validate dependency PR #61"
-      status: in-progress
+      status: done
       progress_log:
         - "2026-11-27: Reviewed the sole open PR #61, its failed CI and security status; no unresolved review threads or open security alerts"
         - "2026-11-27: Retained compatible Biome 2.5.14 and Ultracite 7.8.3; accepted application upgrades and removed the withdrawn deepmerge advisory patch, tests, and audit exception together"
+        - "2026-11-27: Merged #61 after fresh CI/Gitleaks/Vercel and 52 authenticated preview routes; main checks/SARIF/deployment and two production localization passes over two minutes apart passed; no open PRs or security alerts"
       validation: "See specs/current-changes/pr-dependency-review-2026-11-27.md"
-      remaining_deliverables:
-        - "Complete local, preview, main, and production localization validation; observe production before any next PR"
+      remaining_deliverables: []
     - id: pr-dependency-review-2026-11
       title: "Validate and sequence November dependency PRs"
       status: done

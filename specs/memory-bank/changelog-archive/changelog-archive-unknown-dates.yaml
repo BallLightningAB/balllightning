@@ -1,4 +1,440 @@
 entries:
+  - date: "2026-03-19"
+    version: "0.2.8.10"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/18"
+    commit: c7292f3
+    status: completed
+    title: "chore(docs): cleaned up the memory-bank and github issues."
+
+    Refs: v0.2.8.10 #18
+
+
+  - date: "2026-03-19"
+    version: "0.2.8.9"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/28"
+    commit: TBD
+    status: completed
+    title: "feat(social): reuse header social links and migrate user-facing icons to Lucide Animated"
+    details: |-
+      - Extracted shared social-link rendering into `src/components/site/social-links.tsx` and reused it for the header and founder CTA row
+      - Moved the header LinkedIn target to the Ball Lightning company page and added a founder LinkedIn button on the home page
+      - Installed Lucide Animated components through shadcn for the user-facing icons that were available in the registry
+      - Replaced the visible UI icons across header, home, services, contact, technologies, portfolio, footer, and privacy sections
+      - Preserved `lucide-react` fallbacks for registry items that were not available from Lucide Animated
+
+      Refs: v0.2.8.9 #28 I28D1-I28D4
+
+
+  - date: "2026-03-18"
+    version: "0.2.8.8"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/15"
+    commit: TBD
+    status: completed
+    title: "fix(seo): add lastmod timestamps to sitemap for Google recrawling"
+    details: |-
+      - Updated sitemap generation script to include `<lastmod>2026-03-18</lastmod>` for all static pages
+      - Added fresh timestamps to signal Google that sitemap content is recently updated
+      - Should accelerate indexing of the 4 new privacy pages (/en/privacy, /se/privacy, /de/privacy, /fr/privacy)
+      - Addresses GSC "Discovered - currently not indexed" issues by providing clear modification signals
+      - Sitemap now contains 44 URLs with proper lastmod dates for faster Google recrawling
+
+      Refs: v0.2.8.8 #15 I15D5
+
+
+  - date: "2026-03-18"
+    version: "0.2.8.7"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/15,https://github.com/BallLightningAB/balllightning/issues/20"
+    commit: TBD
+    status: completed
+    title: "fix(seo): add privacy pages to sitemap and complete analytics consent acceptance criteria"
+    details: |-
+      - Added `/privacy` pages to sitemap generation script with priority 0.6 for all 4 locales (en/sv/de/fr)
+      - Regenerated sitemap.xml now contains 44 URLs instead of 40, addressing GSC discovery discrepancy
+      - Checked off all 14 acceptance criteria on GitHub issue #20 for EU analytics consent flow
+      - Updated memory bank to mark issue #20 as completed and issue #24 moved to recent_done
+      - Fixed sub_issues structure to maintain issue URL references for completed issues
+      - Ready for production deployment to resolve GSC "Discovered - currently not indexed" pages
+
+      Refs: v0.2.8.7 #15 I15D5 #20
+
+
+  - date: "2026-03-18"
+    version: "0.2.8.6"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/21"
+    commit: TBD
+    status: completed
+    title: "feat(privacy): add localized Privacy & Cookies page and consent guidance"
+    details: |-
+      - Added a localized `/privacy` route with six concise sections covering site operator details, scope, analytics usage, consent management, cookie categories, and privacy contact guidance
+      - Added a page-level CTA that reopens the existing Cookie settings drawer without changing the consent logic from issue #20
+      - Added a footer `Privacy & Cookies` link beside the existing `Cookie settings` action
+      - Added new Privacy & Cookies copy across `en`, `sv`, `de`, and `fr` locale files and regenerated the TanStack Router route tree
+      - Updated `active-context.yaml` and created the issue #21 current-changes artifact; moved issue #20 tracking to follow-up and issue #21 to completed
+      - Validation passed for Paraglide compile, i18n:check, typecheck, build, lint, and local browser verification of `/en/privacy`, `/se/privacy`, `/de/privacy`, `/fr/privacy`, plus the settings-drawer reopen flow
+
+      Refs: v0.2.8.6 #21 I21D1-I21D4
+    issue: "https://github.com/BallLightningAB/balllightning/issues/15"
+    commit: TBD
+    status: in-review
+    title: "fix(seo): localize portfolio case-study links and log GSC follow-up validation"
+    details: |-
+      - Fixed the portfolio index case-study CTA to use locale-aware URLs instead of root-relative `/portfolio/{slug}` links that resolved into English detail pages
+      - Added a dedicated issue #15 current-changes artifact plus the exported Search Console follow-up reports under `specs/current-changes/gsc-reports/`
+      - Logged the latest Search Console follow-up data: 39 indexed pages, 12 not indexed pages, 4 redirect pages, 8 discovered-not-indexed pages, and no non-critical issue buckets
+      - Recorded that Search Console Core Web Vitals currently has insufficient field data for both Mobile and Desktop
+      - Updated `active-context.yaml` to mark issue #15 deliverables complete and move the issue back to in-review while the localized-link fix is validated after push
+
+      Refs: v0.2.8.5 #15 I15D4-I15D5
+
+
+  - date: "2026-03-17"
+    version: "0.2.8.4"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/24"
+    commit: 2daefd0
+    status: in-review
+    title: "fix(typescript): resolve locale type errors in language-switcher and structured-data"
+    details: |-
+      - Fixed TypeScript errors where `string` was not assignable to locale union type `"en" | "sv" | "de" | "fr"`
+      - Updated `handleLocaleChange` parameter from `string` to strict locale union type in language-switcher.tsx
+      - Added type assertion for mobile language switcher locale parameter
+      - Updated `generateCanonical` locale parameter from `string` to strict locale union type in structured-data.ts
+      - All validation gates now pass: typecheck, i18n:check, and build
+      - Updated current-changes artifact with TypeScript fixes and completed validation checkpoints
+
+      Refs: v0.2.8.4 #24
+
+
+  - date: "2026-03-10"
+    version: "0.2.8.3"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/25"
+    commit: TBD
+    status: in-review
+    title: "chore(memory): add rerunnable shared-memory extractor with source tracking"
+    details: |-
+      - Added `C:\Users\nicol\.agents\memory-sync\refresh_server_memory.py` to refresh the shared local memory graph without changing the current `entities` and `relations` schema
+      - Added `C:\Users\nicol\.agents\memory-sync\refresh_server_memory.sh` as a Git Bash wrapper for regular reruns
+      - Added automatic timestamped backups before each shared-memory refresh
+      - Added `source-status.json` to separate processed vs pending Windsurf memory sources with hashes, repo matches, and extraction counts
+      - Refreshed `server-memory.json` and generated the initial source-status report for the current Windsurf memory set
+      - Updated active-context and created a dedicated current-changes artifact for the memory-sync tooling pass
+      - Added AGENTS.md so the repo declares workspace rules for Codex
+      - Moved shared-memory-sync tooling documentation to brand-system repo for cross-project reference
+
+      Refs: v0.2.8.3 #25
+
+
+  - date: "2026-03-09"
+    version: "0.2.8.2"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/24"
+    commit: 19bed28
+    status: in-review
+    title: "fix(consent): finalize gtag queue semantics"
+    details: |-
+      - Switched the consent `gtag` polyfill to a classic function that pushes its `arguments` object so the implementation matches Google's documented queue semantics
+      - Preserved the stricter typed surface for `GtagFunction` while satisfying the external review and Gemini Code Assist
+      - Validated typecheck + build after the final fix and noted the work in the Issue #24 artifact/active-context
+
+      Refs: v0.2.8.2 #24
+
+
+  - date: "2026-03-09"
+    version: "0.2.8.1"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/24"
+    commit: b0b0c39
+    status: in-review
+    title: "fix(ui): address post-PR consent, mobile responsiveness, and accessibility regressions"
+    details: |-
+      - Reviewed Gemini PR feedback critically against the TanStack Start + React 19 + Radix stack instead of applying the suggestions verbatim
+      - Updated gtag typing to a typed variadic union and changed the consent queue polyfill to push the received argument tuple without trailing undefined values
+      - Improved shared sheet sizing plus CookieSettings and LanguageSwitcher mobile layouts to keep drawer content usable on narrow screens
+      - Fixed homepage Builder Coil feed cards so metadata, titles, and CTA text wrap cleanly instead of overflowing on mobile
+      - Added hidden Radix dialog title and description to the project image gallery modal to resolve accessibility warnings
+      - Added scrollbar-gutter and root overflow clipping as a conservative header layout-shift mitigation
+      - Created Issue #24 plus a current-changes artifact for the follow-up pass and linked the bug under Issue #20 tracking
+      - Validation passed for typecheck and build before final commit-process formatting and linting steps
+
+      Refs: v0.2.8.1 #24
+
+
+  - date: "2026-03-08"
+    version: "0.2.8"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/20"
+    commit: ef1d146
+    status: in-review
+    title: "feat(consent): implement EU analytics consent flow with Google Consent Mode v2"
+    details: |-
+      - Added a dedicated consent domain layer under src/lib/consent for shared types, local persistence, provider state, and Google consent helpers
+      - Implemented denied-by-default Google Consent Mode v2 handling for analytics_storage, ad_storage, ad_user_data, and ad_personalization
+      - Added CookieBanner and CookieSettings UI with accept, reject, and footer-accessible reopen flows
+      - Gated AnalyticsMount so GA4 and Vercel Web Analytics never mount before explicit consent
+      - Preserved GA4 manual SPA pageview tracking with send_page_view:false after consent is granted
+      - Updated footer copy, locale messages, current-changes progress artifact, README analytics/privacy docs, and active-context tracking for Issue #20
+      - Validation passed for Paraglide compile, i18n:check, typecheck, build, pre-commit run --all-files, pnpm format, and pnpm lint
+
+      Refs: v0.2.8 #20 I20D1-I20D5
+
+
+  - date: "2026-03-06"
+    version: "0.2.7.2"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/22"
+    commit: 0d312d0
+    status: completed
+    title: "fix(contribution-graph): resolve hardcoded translations and mobile display issues"
+    details: |-
+      - Fixed GitHub contribution graph showing hardcoded "804 activities/12 months" instead of dynamic count
+      - Updated API URL to include ?y=last parameter for current 12-month data
+      - Fixed mobile translation to show "4 months" instead of "12 months"
+      - Changed translation strings to suffix-only format without {{count}} placeholder
+      - Used string interpolation in component to build count + localized suffix
+      - Updated all locale files (en/sv/de/fr) with mobile-specific period strings
+      - Recompiled Paraglide messages for new translation structure
+      - Verified correct display: desktop shows 866 contributions/12 months, mobile shows 4-month filtered total
+
+    Refs: v0.2.7.2 #22
+
+
+  - date: "2026-03-06"
+    version: "0.2.7.1"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/19"
+    commit: 8976b66
+    status: completed
+    title: "docs(analytics): update memory bank with EU consent issues and correct issue details"
+    details: |-
+      - Updated analytics integration issue #19 status to in-review with completed deliverables
+      - Added sub-issues #20 and #21 to analytics integration review issue
+      - Added issues #20 and #21 as separate entries in next_steps with correct GitHub content
+      - Issue #20: Implement EU cookie consent banner + Google Consent Mode for GA4
+      - Issue #21: Add Privacy & Cookies page for analytics consent and footer policy links
+      - Bumped version to 0.2.7.1 for memory bank updates
+
+      Refs: v0.2.7.1 #19 #20 #21
+
+
+  - date: "2026-03-06"
+    version: "0.2.7"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/19"
+    commit: 7b0604e
+    status: in-review
+    title: "feat(analytics): implement centralized analytics gate with GA4 SPA tracking and gated Vercel Web Analytics"
+    details: |-
+      - Added src/lib/analytics/AnalyticsMount.tsx as single root analytics gate
+      - GA4 now uses VITE_GA4 with VITE_ANALYTICS_MODE=none|ga4|ga4_vercel_analytics
+      - GA4 initializes with send_page_view:false and sends manual page_view events on initial load and TanStack Router navigation changes
+      - Removed inline GA4 script injection from src/routes/__root.tsx and replaced with single <AnalyticsMount />
+      - Added @vercel/analytics dependency and gated <Analytics /> to ga4_vercel_analytics mode only
+      - Updated .env.example to document supported analytics mode values
+      - Fixed biome.json includes to resolve Biome lint conflicts with extended packages
+      - Validation passed with pnpm install, pnpm run lint, pnpm run typecheck, and pnpm run build
+      - Mode contract uses ga4_vercel_analytics now to preserve future-safe naming for later Speed Insights addition
+
+      Refs: v0.2.7 #19 I19D1-I19D5
+
+
+  - date: "2026-03-06"
+    version: "0.2.6.2"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/15"
+    commit: ecb6c49
+    status: follow-up
+    title: "docs: update SEO issue status to follow-up with validation complete"
+    details: |-
+      - Updated issue #15 status from completed to follow-up for 2-day monitoring period
+      - Added comprehensive validation results confirming all SEO fixes effective
+      - Product schema removal cleared GSC enhancement warnings on tested URLs
+      - /sv → /se 308 migration working correctly
+      - Sitemap healthy and localized with proper hreflang="sv" pointing to /se
+      - Vercel duplicate indexing mitigated via X-Robots-Tag: noindex, nofollow
+      - Follow-up plan: GSC Indexing Pages counts/reasons, Core Web Vitals status checks
+      - All deliverables completed, monitoring scheduled for 2 days from deployment
+
+      Refs: v0.2.6.2 #15 follow-up
+
+
+  - date: "2026-03-06"
+    version: "0.2.6.1"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/15"
+    commit: e20c0ac
+    status: ready
+    title: "fix(seo): cleanup GSC enhancement warnings and Lighthouse image issues"
+    details: |-
+      - Removed Product schema from structured data (eliminates GSC 'Product snippets invalid' warnings)
+      - Removed face image preload to eliminate Lighthouse preload warnings (relies on fetchpriority instead)
+      - Upgraded face image to use 400x400 as default with 1024x1024 for high-DPR displays
+      - Updated logo to use 120x120 version for better resolution and Lighthouse compliance
+      - Fixed Biome binary resolution by updating package.json scripts to use 'pnpm exec biome'
+      - All validation gates passed; ready for deployment and GSC testing
+
+      Refs: v0.2.6.1 #15 SEO-cleanup
+
+
+  - date: "2026-03-05"
+    version: "0.2.6"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/15"
+    commit: fc7b627
+    status: in-review
+    title: "fix(seo): restore sitemap completeness and tighten canonical/non-prod indexing guards"
+    details: |-
+      - Ran production preflight checks: robots/sitemap 200, locale roots 200, and /sv redirects verified as 308 to /se equivalents
+      - Confirmed deployed sitemap regression (only 4 URLs, missing localized pages and portfolio detail routes)
+      - Regenerated public/sitemap.xml with locale-aware entries + hreflang alternates (en/sv/de/fr + x-default)
+      - Added non-prod duplicate-content protection in src/server.ts: X-Robots-Tag noindex,nofollow for *.vercel.app HTML responses
+      - Added route-level canonical/meta coverage for home, services, contact, and portfolio index routes
+      - Fixed technologies route canonical and ItemList schema URL to use locale-aware canonical URL
+      - Verified internal-link discovery on production portfolio indexes (all 6 slugs present across en/se/de/fr)
+      - Passed validation gates: pnpm format, pnpm lint, pnpm i18n:check, pnpm typecheck, pnpm build
+
+      Refs: v0.2.5.6 #15 I15D2-I15D4
+
+
+  - date: "2026-03-05"
+    version: "0.2.5.15"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/15"
+    commit: 1f9c69b
+    status: ready
+    title: "docs: update issue management and roadmap structure"
+    details: |-
+      - Updated issue #15 status from blocked to pending since translation work (#16) is complete
+      - Updated issue #18 status from blocked to pending and added social media refresh deliverable I18D6
+      - Added issue #19 analytics integration to next_steps with complete deliverable structure
+      - Enhanced issue #18 estimates to account for social media work (dev_h: 2 → 3)
+      - All issues now properly structured and ready for implementation
+      - Memory bank version bumped to 0.2.5.15 to reflect roadmap updates
+
+      Refs: v0.2.5.15 #15 #18 #19
+
+
+  - date: "2026-03-04"
+    version: "0.2.5.14"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/16"
+    commit: 61ef57b
+    status: ready
+    title: "fix(seo): resolve duplicate canonical links and JSON-LD mainEntityOfPage URLs for portfolio pages"
+    details: |-
+      - Fixed duplicate canonical links on portfolio pages by removing canonical generation from root layout
+      - Kept canonical generation in individual portfolio routes to ensure single canonical link per page
+      - Updated generateProjectSchema to use localized URLs for mainEntityOfPage matching canonical URLs
+      - Applied fixes to all 6 portfolio subpages: chronomation, the-builder-coil, shipping-api-dojo, jorild-se, blightfell, skyscraper
+      - Removed unused generateCanonical import from root route to clean up code
+      - JSON-LD structured data now properly localized per locale (e.g., /se/portfolio/chronomation for Swedish)
+      - Build, typecheck, and i18n:check all pass - ready for deployment
+
+      Refs: v0.2.5.14 #16 I16D10
+
+
+  - date: "2026-03-04"
+    version: "0.2.5.13"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/14"
+    commit: 44fcbac
+    status: ready
+    title: "fix(i18n): add missing /sv/ and /sv/:path* redirects to prevent fallback to /en/sv"
+    details: |-
+      - Added /sv/ redirect pattern to catch Swedish root route with trailing slash
+      - Added /sv/:path* redirect pattern to catch all Swedish sub-routes
+      - Fixed issue where /sv/ was treated as path segment under /en/sv instead of redirecting to /se
+      - Updated vercel.json headers to use /se/:path* instead of /sv/:path* for cache control
+      - Testing confirmed /sv/ now redirects correctly to /se instead of /en/sv
+
+      Refs: v0.2.5.13 #14 I14D8
+
+
+  - date: "2026-03-04"
+    version: "0.2.5.12"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/16"
+    commit: 1f27fa2
+    status: ready
+    title: "feat(content): add Facebook & LinkedIn Management section to Jorild.se portfolio"
+    details: |-
+      - Added new section between SEO and Performance sections in src/routes/portfolio/jorild-se.tsx
+      - Implemented strategic social media management content with 5 key points
+      - Added emphasis on using properly attributed Unsplash photos instead of AI-generated images
+      - Translated section content across all 4 locales (en, sv, de, fr)
+      - Added 5 new translation keys: portfolio_jorild_se_social_heading/body/list_1-5
+      - Compiled Paraglide messages and validated with i18n:check (351 keys total)
+      - All quality gates passed: typecheck, i18n:check, build
+
+      Refs: v0.2.5.12 #16 I16D9
+
+
+  - date: "2026-03-04"
+    version: "0.2.5.11"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/16"
+    commit: 41b7cdc
+    status: ready
+    title: "feat(i18n): complete portfolio subpage long-form translations in sv/de/fr"
+    details: |-
+      - Translated remaining English portfolio long-form content blocks in Swedish, German, and French locale files
+      - Covered all six portfolio subpages: chronomation, the-builder-coil, shipping-api-dojo, jorild-se, blightfell, skyscraper
+      - Preserved proper nouns, brand names, URLs, and technical terms while translating descriptive content
+      - Applied localized meta titles, descriptions, and SEO metadata for each portfolio page
+      - Validated with i18n:check, typecheck, and build - all quality gates passed
+      - Reduced remaining English keys from ~176 (fr) to ~39 (intentionally identical proper nouns/labels)
+
+      Refs: v0.2.5.11 #16 I16D2-I16D7
+
+
+  - date: "2026-03-04"
+    version: "0.2.5.10"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/14"
+    commit: 788f193
+    status: ready
+    title: "fix(i18n): restore flag emojis and improve language switcher responsive design"
+    details: |-
+      - Restored flag emoji display (🇬🇧🇸🇪🇩🇪🇫🇷) in language switcher for visual consistency
+      - Removed BigShouldersStencilDisplay font class from flag display to fix emoji rendering
+      - Implemented responsive sheet width: 25vw/200px for mobile, 10vw/120px for desktop
+      - Maintained existing functionality while improving visual appearance and UX
+
+      Refs: v0.2.5.10 #14 I14D9
+
+
+  - date: "2026-03-04"
+    version: "0.2.5.9"
+    issue: "https://github.com/BallLightningAB/balllightning/issues/14 & https://github.com/BallLightningAB/balllightning/issues/16"
+    commit: ec2261a
+    status: in-review
+    title: "feat(i18n): complete comprehensive I14D8-D11 and I16D1-D8 translation implementation"
+    details: |-
+      ## Phase 1-3: I14D8-D10 Technical Fixes
+      - **I14D8**: Changed Swedish URL prefix from `/sv/` to `/se/` via Paraglide urlPatterns mapping (locale stays `sv` internally)
+      - **I14D9**: Updated English language switcher to use 🇬🇧 flag for consistency with other locales
+      - **I14D10**: Removed unwanted scrollbars by constraining overflow-x hidden to body instead of global rules
+
+      ## Phase 4: I14D11 Translation Audit
+      - Completed systematic translation quality review across en/sv/de/fr locale files
+      - Improved German, Swedish, and French copy consistency by removing mixed-language artifacts
+      - Fixed currency display: EUR for en/de/fr, SEK for sv (preserving Swedish locale)
+      - Validated placeholder parity and key completeness across all locales
+
+      ## Phase 5: I16D1 PortfolioSubpageLayout Migration
+      - Extracted static layout strings to `portfolio_subpage_*` message keys
+      - Migrated PortfolioSubpageLayout component to use Paraglide messages
+      - Established key naming convention: `portfolio_subpage_{key}` for layout, `portfolio_{slug}_{section}_{element}` for content
+
+      ## Phase 6: I16D2-D7 Portfolio Subpage Translation (6 pages)
+      - **chronomation**: Multi-tenant productivity tool - full content translation + SEO meta
+      - **the-builder-coil**: Developer blog CMS - full content translation + SEO meta
+      - **shipping-api-dojo**: Carrier API tutorial - full content translation + SEO meta
+      - **jorild-se**: Bilingual clinic website - full content translation + SEO meta
+      - **blightfell**: Web3 game integration - full content translation + SEO meta
+      - **skyscraper**: MMO deckbattler - full content translation + SEO meta
+      - Preserved proper nouns, tech stack names, and code snippets as untranslated
+      - Applied localized meta titles, descriptions, and canonical URLs per page
+
+      ## Phase 7-8: I16D8 SEO, Sitemap & Testing
+      - Updated hreflang generation to use Paraglide URL helpers consistently
+      - Added all 6 portfolio slugs × 4 locales to sitemap generation
+      - Unified canonical/hreflang/sitemap generation via `localizeHref` helper
+      - Completed mobile responsiveness workflow validation across all translated pages
+      - Passed performance-audit workflow review with no regressions
+      - All quality gates validated: `pnpm i18n:check`, `pnpm run typecheck`, `pnpm run build`
+
+      ## Technical Summary
+      - **~300-420 new translation keys** added across all locales
+      - **8 phases** completed in sequence without version increase
+      - **Zero breaking changes** - all existing functionality preserved
+      - **Full multilingual support** now complete for entire site
+
+      Refs: v0.2.5.9 #14 I14D8-I14D11 #16 I16D1-I16D8
+
   - date: "2026-03-04"
     version: "0.2.5.8"
     issue: "https://github.com/BallLightningAB/balllightning/issues/16"
@@ -24,7 +460,7 @@ entries:
     title: "chore(docs): added I14D11 to active-context.yaml"
     details: |-
       - added I14D11 to active-context.yaml
-      
+
       Refs: v0.2.5.7
 
 
@@ -41,7 +477,7 @@ entries:
       - Substantial technical content requiring careful translation approach
       - SEO implementation includes hreflang, meta tags, and localized URLs
       - Bumped version to 0.2.5.6 in active-context.yaml
-      
+
       Refs: v0.2.5.6 #16 I16D1-I16D8
 
 
@@ -112,7 +548,7 @@ entries:
       - Updated issue #14 with expanded scope and related issue references
       - Added sub-issue linking between translation work and portfolio content
       - Bumped version to 0.2.5.2 in active-context.yaml
-      
+
       Refs: v0.2.5.2 #14 I14D8-I14D9 #16
 
 
@@ -128,7 +564,7 @@ entries:
       - Updated memory bank with new issue in next_steps section
       - Bumped version to 0.2.5.1 in active-context.yaml
       - Issue addresses GSC indexing recommendation from issue #14 feedback
-      
+
       Refs: v0.2.5.1 #15 I15D1-I15D5
 
 
@@ -148,7 +584,7 @@ entries:
       - FIXED I14D7: Updated Twitter link from @nicbrulay to @BallLightningAB in Header navigation
       - Created GitHub issue #14 to collect br1dge's feedback on German translation and mobile responsiveness
       - Added issue to memory bank with 7 deliverables, all completed
-      
+
       Refs: v0.2.5.0 #14 I14D1-I14D7
 
 
@@ -165,7 +601,7 @@ entries:
       - Moved language switcher from mobile menu to header (next to hamburger)
       - Added proper touch targets and optimized mobile responsiveness
       - Final result: Ultra-compact language switcher (64-124px on phones) with centered flags
-      
+
       Refs: v0.2.4.9 #13 I13D1-I13D5
 
 
@@ -182,7 +618,7 @@ entries:
       - Enhanced debug logging to show renderPath vs switchingPath comparison
       - Root cause: Component was using stale path captured at initial render, causing wrong redirects
       - Now properly preserves current page context: /sv/services → switch to German → /de/services
-      
+
       Refs: v0.2.4.8 #12 I12D1-I12D2
 
 
@@ -198,7 +634,7 @@ entries:
       - Deployed with debug logging to investigate why language switching always redirects to /technologies
       - Issue: language switching from any page (e.g., /en/portfolio) redirects to /de/technologies instead of /de/portfolio
       - Debug logging will help identify if issue is with path detection, locale detection, or localizeHref function
-      
+
       Refs: v0.2.4.7 #12 I12D1-I12D2
 
 
@@ -218,7 +654,7 @@ entries:
       - Manually recreated changelog-archive-2026-Q1-1.yaml with proper reverse chronological ordering
       - Removed old unknown-dates.yaml file and replaced with properly named archive
       - Ran rotation to reduce CHANGELOG.yaml from 691 to 195 lines (moved 496 entries to archives)
-      
+
       Refs: v0.2.4.6 changelog-rotation-fix
 
 
@@ -234,7 +670,7 @@ entries:
       - Now switching from /en/technologies to German redirects to /de/technologies instead of /de
       - Preserves user's current page context across all locale switches
       - Applied to LanguageSwitcher and LanguageSwitcherMobile components
-      
+
       Refs: v0.2.4.5 #12 I12D1-I12D2
 
 
@@ -251,7 +687,7 @@ entries:
       - Verified /de/ route now returns 200 OK with German content (lang="de", "Startseite" labels)
       - Confirmed URL strategy overrides cookie preference when accessing locale-prefixed routes
       - Fixed redirect loops while maintaining functional language switching
-      
+
       Refs: v0.2.4.4 #12 I12D1-I12D2
 
 
@@ -269,7 +705,7 @@ entries:
       - Verified build output now contains runtime nodejs24.x via nitro.json
       - Confirmed production deployment working: https://balllightning.cloud/ (200 OK)
       - Confirmed localized routes working: https://balllightning.cloud/en (200 OK)
-      
+
       Refs: v0.2.4.3 #12 I12D1-I12D2
 
 
@@ -285,7 +721,7 @@ entries:
       - Removed TanStack Router rewrite (deLocalizeUrl/localizeUrl) to avoid double URL localization with Paraglide middleware
       - Verified build output now contains runtime nodejs24.x via nitro.json
       - Kept outputStructure: 'message-modules' in paraglideVitePlugin since removing it broke dev environment
-      
+
       Refs: v0.2.4.2 #12 I12D1-I12D2
 
 
@@ -301,7 +737,7 @@ entries:
       - Investigated local preview server conflicts with Node 24 native URLPattern support
       - Confirmed polyfill is no-op when URLPattern global exists, safe for local development
       - Local preview server limitation acceptable; production deployment should resolve 500 errors
-      
+
       Refs: v0.2.4.1 #12 I12D1-I12D2
 
 
@@ -316,7 +752,7 @@ entries:
       - Imported polyfill at top of src/server.ts before Paraglide middleware to ensure global availability
       - Fixes production 500 errors caused by Paraglide's extractLocaleFromUrl using URLPattern
       - Polyfill is no-op when URLPattern global exists; safe for local Node 24 environments
-      
+
       Refs: v0.2.4.0 #12 I12D1-I12D2
 
 
@@ -346,7 +782,7 @@ entries:
       - Ensures pnpm 10.23.0 is properly activated during Vercel builds
       - Fixes deployment issues after pnpm migration where Vercel wasn't triggering
       - Build process now: corepack enable → pnpm run build
-      
+
       Refs: v0.2.3.8 #10 I10D5
 
 
@@ -362,7 +798,7 @@ entries:
       - Vitest was failing due to ES module issues when no test files exist
       - CI workflow now runs: typecheck → lint → build (no test step)
       - Test step can be re-added when actual test files are created
-      
+
       Refs: v0.2.3.7 #10 I10D4
 
 
@@ -378,7 +814,7 @@ entries:
       - Specifies project file (--project ./project.inlang) and output directory (--outdir ./src/paraglide)
       - Fixes CI build error: "error: unknown command 'project'"
       - Ensures Paraglide files are properly generated before type checking
-      
+
       Refs: v0.2.3.6 #4 I4D5
 
 
@@ -394,7 +830,7 @@ entries:
       - Uses pnpm inlang project compile to generate Paraglide files
       - Fixes CI builds that would fail due to missing generated TypeScript files
       - Step placed after dependency installation, before type checking
-      
+
       Refs: #4 I4D5
 
 
@@ -409,7 +845,7 @@ entries:
       - Resolves 46 TypeScript errors from old Next.js code in content migration files
       - Fixes build failures while preserving archived content for reference
       - Typecheck now passes successfully with exit code 0
-      
+
       Refs: #10 I10D3
 
 
@@ -424,7 +860,5 @@ entries:
       - Ensures guard validates package manager before any installation occurs
       - Provides early failure detection if wrong package manager is used
       - Corrects workflow order: checkout → prepare pnpm → setup-node → fail npm lockfile → guard → install
-      
+
       Refs: #10 I10D3
-
-
