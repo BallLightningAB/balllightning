@@ -1,5 +1,7 @@
 # Dependency PR review — 2026-11-27
 
+Completed. PR #61 is merged and production validation passed.
+
 ## Scope and sequence
 
 - The sole open PR is #61, the grouped dependency update from November 23.
@@ -48,5 +50,35 @@ Reference: https://github.com/advisories/GHSA-gcqx-w48m-w2h4
 
 ## Deployment evidence
 
-Pending current-head preview, merge, main checks, SARIF ingestion, production
-checks, observation interval, and final security/PR reconciliation.
+- Follow-up head e1492cedaf9dfdc92f6633759a05a88c56cc6e63 passed CI run
+  45950763040, Gitleaks 45950762991, and Vercel. All CI steps succeeded.
+- Preview deployment 8103232456 passed all 52 authenticated SSR locale routes.
+- PR SARIF analysis 2261059864 contains zero results.
+- Merged as 91912a7681bcd78d3c30f3d5cf84fd6c663115e1.
+- Main CI 45951038790 and Gitleaks 45951038830 passed.
+- Main SARIF analysis 2261069873 contains zero results.
+- Production deployment 8103273986 succeeded at 06:19:26 UTC.
+- First 52-route production pass completed at 06:20:04 UTC.
+- /sv, /sv/, /sv/privacy, and /sv/portfolio/jorild-se redirect with 308 to /se
+  equivalents; localized HTML has Cache-Control: no-store.
+- Production Swedish privacy/settings checked at a mobile breakpoint: correct
+  language/canonical, persisted disabled consent, no horizontal overflow or
+  browser warnings/errors. Viewport override reset afterwards.
+- At 06:20 UTC GitHub reported zero open PRs and zero Dependabot,
+  secret-scanning, or code-scanning alerts. No alerts were dismissed.
+- Second 52-route production pass completed at 06:22:31 UTC, over two minutes
+  after the first. No regressions were detected before the final documentation branch.
+- Final documentation is submitted through a separate protected-branch PR;
+  application code and dependencies are identical to validated #61.
+
+## Final status
+
+- Full dependency audit passes with zero exceptions and no known vulnerabilities.
+- All original PRs handled; the only deferred updates are the incompatible lint
+  tool pair, with the existing compatible versions retained in package.json.
+- Memory bank and this evidence record updated. User's untracked directory is untouched.
+
+The changelog exceeded 600 lines and was rotated with scripts/rotate-changelog.sh.
+The existing archive destination was retained; all historical entry blocks were
+verified preserved, and the active changelog is 192 lines. YAML parsing passes.
+Moved-entry trailing whitespace was normalized before the final whitespace check.
